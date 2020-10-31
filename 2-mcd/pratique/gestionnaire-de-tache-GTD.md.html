@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>gestionnaire-de-tache-GTD</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="gestionnaire-de-tâches-gtd-getting-things-done" class="slide section level1">
+<h1>Gestionnaire de Tâches GTD (“Getting Things Done”)</h1>
+<p>Un GTD est un gestionnaire de tâches qui met en œuvre une méthode de gestion des priorités quotidiennes appelé Getting Things Done <a href="http://fr.wikipedia.org/wiki/Getting_Things_Done">Getting Things Done</a>.</p>
+<p>Il s’agit ici de développer une application GTD multi-utilisateurs.</p>
+<h2 id="spécifications-fonctionnelles">Spécifications fonctionnelles</h2>
+<p>L’application est destinée à être utilisé au sein d’une organisation et doit permettre aux membres de l’organisation de gérer la liste de leurs tâches à réaliser et de les partager avec les autres membres.</p>
+<h2 id="tâche">Tâche</h2>
+<p>Une tâche est définie par :</p>
+<ul>
+<li>l’initiateur de la tâche (celui qui l’a créée),</li>
+<li>la date de création de la tâche,</li>
+<li>son intitulé,</li>
+<li>la date de réalisation de la tâche, ou une date butoir,</li>
+<li>déléguée à : éventuellement la personne à qui la tâche est déléguée,</li>
+<li>le type de tâche à réaliser (cf. les types de tâches plus bas),</li>
+<li>le statut de la tâche (initialisée, en cours, terminée),</li>
+<li>durée estimée de réalisation de la tâche,</li>
+<li>priorité de la tâche (de 1 à 3).</li>
+</ul>
+<h2 id="types-de-tâche">Types de tâche</h2>
+<ul>
+<li>téléphoner</li>
+<li>envoyer un mail</li>
+<li>envoyer un courrier</li>
+<li>rencontrer</li>
+<li>rédiger un document</li>
+<li>aller à</li>
+<li>planifier une tâche</li>
+</ul>
+<p>On définira un code abrégé et une icône pour chaque type de tâche.</p>
+<h2 id="utilisateurs">Utilisateurs</h2>
+<p>Les utilisateurs doivent s’authentifier pour accéder à l’application (donc être inscris au préalable).</p>
+<p>On distinguera 2 profils :</p>
+<ul>
+<li>administrateur : dispose des droits d’administration en plus des droits « utilisateur »,</li>
+<li>utilisateur.</li>
+</ul>
+<p>Une fois authentifié, un profil utilisateur accède à la liste de ses tâches non terminées. Il peut éditer/supprimer les tâches ou créer d’autres tâches, pour cela il dispose de boutons d’actions. Il doit aussi pouvoir modifier les données d’une tâche directement à partir de la liste (fonction ajax d’édition inline).</p>
+<p>L’utilisateur visualise également les tâches qui lui ont été déléguées, celles-ci ne sont pas modifiables sauf le statut qui peut être passé à « terminée ».</p>
+<h2 id="vues">Vues</h2>
+<p>On définira plusieurs vues possibles pour l’affichage des tâches :</p>
+<ul>
+<li>une vue liste : liste des tâches d’un utilisateur donné, possibilité de trier cette liste suivant divers critères (date butoir, types de tâche, statut, durée, priorité…), possibilité d’édition inline.</li>
+<li>une vue planning : affichage dans un calendrier mensuel des tâches d’un utilisateur donné.</li>
+<li>une vue planning partagée : affichage dans un calendrier mensuel des tâches de plusieurs utilisateurs sélectionnés au préalable.</li>
+</ul>
+<p>Travail à réaliser (modélisation de la base de données)</p>
+<ol style="list-style-type: decimal">
+<li>Trouver les entités et leurs attributs ainsi que les relations et réaliser le MCD</li>
+<li>Ecrire ou générer le MPD pour MySql</li>
+<li>ajouter un script de jeu de données.</li>
+<li>Développer le CRUD qui constitue la partie “Administration” de l’application donc uniquement accessible au profil « Admin ».</li>
+<li>Développer l’application pour le profil « Utilisateur ».</li>
+</ol>
+<p><em>les points 3, 4 et 5 seront abordés ultérieurement lors des acquis de nouvelles compétences.</em></p>
+</div>
+</body>
+</html>

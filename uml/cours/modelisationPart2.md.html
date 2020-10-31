@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>modelisationPart2</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide section level1">
+
+<center>
+<h1>
+Modélisation partie 2 - Base de données avec UML
+</h1>
+</center>
+</div>
+<div id="schéma-global" class="slide section level1">
+<h1>Schéma global</h1>
+<div class="figure">
+<img src="img/cours.png" alt="Cours" />
+<p class="caption">Cours</p>
+</div>
+</div>
+<div id="génération-des-tables-à-partir-des-classes" class="slide section level1">
+<h1>Génération des tables à partir des classes</h1>
+<ul>
+<li>Une classe devient une table</li>
+<li>Toutes les propriétés de la classe deviennent de champs de table</li>
+<li>Pour les associations, il y a import des id ou création nouvelle table (dans le cas du manyToMany).</li>
+<li>L’import des id entraîne la création d’une clef étrangère (foreign key).</li>
+<li>Le champ d’une table ne peut pas contenir de d’occurrences (ni tableau, ni liste).</li>
+<li>Vous pouvez utiliser un logiciel comme <strong>SQL Designer</strong>, <strong>MySQL WorkBench</strong> ou <strong>DataGrip</strong> de JetBrains.</li>
+</ul>
+<h2 id="héritage">Héritage</h2>
+<p>A hérite de B.<br />
+2 solutions : * créer 2 tables : tableA et tableB * importer les champs dans la table fille : créer tableA avec les champs de la classe B</p>
+<h2 id="associations">Associations</h2>
+<h3 id="association-1-1">Association 1 1</h3>
+<p>A—&gt;B<br />
+2 solutions : * copie des champs dans la table maître si c’est la seule association : créer tableA avec les champs de la classe B * 2 tables : tableA et tableB</p>
+<h3 id="association-1-et-agrégation">Association 1 * et agrégation</h3>
+<p>A 1—&gt;* B<br />
+import de l’id de cardinalité 1 dans la table de cardinalité *.<br />
+tableA avec idA<br />
+tableB avec idB et idA.</p>
+<h3 id="association">Association * *</h3>
+<p>A <em>—&gt;</em> B<br />
+création d’un table intermédiaire contenant les id des 2 tables. tableA avec idA<br />
+tableB avec idB<br />
+tableC avec idCn idA et idB.</p>
+<h2 id="solutions">solutions</h2>
+<h3 id="une-solution-en-utilisation-des-majuscules">Une solution en utilisation des majuscules :</h3>
+<div class="figure">
+<img src="img/tables.png" alt="tables" />
+<p class="caption">tables</p>
+</div>
+<h3 id="une-solution-en-camelcase">Une solution en camelCase</h3>
+<div class="figure">
+<img src="img/tables2.png" alt="tables2" />
+<p class="caption">tables2</p>
+</div>
+</div>
+<div id="clef-et-index" class="slide section level1">
+<h1>clef et index</h1>
+<p>Les clefs et les index permettent un accès rapide aux données, et servent aussi de contrainte d’intégrité de la base.</p>
+<h2 id="clef-primaire">clef primaire</h2>
+<p>La clef primaire est constituée d’un id. C’est un entier auto-incrémenté qui est unique.<br />
+Ceci simplifie grandement les relations entre les tables.<br />
+Il a l’inconvénient de ne pas contrôler les doublons.<br />
+Il s’agit d’un id technique qui ne doit pas être visible pour l’utilisateur.<br />
+Même si la clef primaire n’est pas obligatoire en MYSQL, vous devez en déclarer une <strong>obligatoirement</strong>. C’est une erreur de conception d’avoir une table sans clef primaire.</p>
+<h2 id="clef-fonctionnelle-ou-clef-unique">clef fonctionnelle ou clef unique</h2>
+<p>La clef fonctionnelle ’ou clef unique) est l’ensemble des champs constituants l’unicité d’un enregistrement (id primaire exclu).<br />
+L’ajout de cette clef vous oblige à déterminer l’unicité des enregistrements et contribue fortement à l’intégrité de la base.<br />
+Pour rappel : l’id est un concept technique, il ne doit pas être vu par l’utilisateur. C’est la clef fonctionnelle qui compte pour un utilisateur. Cette clef est appelée aussi clef unique. Elle est composé d’un ou plusieurs champs.</p>
+<h3 id="champ-unique">Champ unique</h3>
+<p>S’il y a un seul champ, on la définit grâce à une contrainte d’unicité sur le champ. Prenons l’ exemple d’un produit qui a un champ <em>reference</em>. Il est unique. Il ne peut y avoir 2 produits qui ont la même référence.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">UNIQUE</span> <span class="kw">INDEX</span> `reference_UNIQUE` <span class="kw">ON</span> `stock`.`produit` (`reference` <span class="kw">ASC</span>);</a></code></pre></div>
+<h3 id="champs-multiples">Champs multiples</h3>
+<p>S’il y a plusieurs champs, on la définit grâce à un index unique composé des champs la composant.<br />
+Prenons l’ exemple d’une personne qui a 4 champs : <em>nom</em>, <em>prenom</em>, <em>dateDeNaissance</em>, <em>email</em>. (nom, prenom, dateDeNaissance) constitue la clef fonctionnelle. Il ne peut pas avoir 2 personnes avec le même triplet nom, prénom et date de naissance.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">UNIQUE</span> <span class="kw">INDEX</span> `uk_UNIQUE` <span class="kw">ON</span> `carnet`.`personne` (`nom` <span class="kw">ASC</span>, `prenom` <span class="kw">ASC</span>, `dateDeNaissance` <span class="kw">ASC</span>);</a></code></pre></div>
+<h3 id="modification-de-la-valeur-de-la-clef">Modification de la valeur de la clef</h3>
+<p>Dans la logique des choses, une fois l’enregistrement créé, on ne devrait pas pouvoir modifier les valeurs de la clef fonctionnelle. Ce contrôle est du domaine du développement (java, php).<br />
+Imaginez : vous créez dans la base un produit avec une référence. Vous faites une commande avec ce produit et éditez une facture. Vous changer ensuite la référence du produit. Il sera impossible à l’acheteur de retrouver son produit inscrit sur la facture.</p>
+<h2 id="clef-étrangère">clef étrangère</h2>
+<p>La clef étrangère fait la relation entre les 2 tables et maintient en partie l’intégrité de la base.<br />
+C’est une contrainte de base.<br />
+Cette clef vérifie si l’enregistrement étranger existe.<br />
+Ceci est très utile lors de la création et la suppression d’un enregistrement Dans une relation 1 <em>, c’est la table proche de </em> qui contient la clef étrangère.<br />
+Dans une relation * <em>, on décompose en 2 relations 1 </em>.<br />
+Dans une relation 1 1, on décide d’une table maître.</p>
+<h2 id="index">index</h2>
+<p>Les index permettent une lecture plus rapide de la base en fonction des champs indexés.<br />
+En théorie, on pourrait avoir autant d’index que de critères de recherche.<br />
+Cependant les index sont coûteux en place et en temps d’écriture.<br />
+De plus les processeurs et les moteurs de base de données sont devenus très performants. Une lecture séquentielle est bien souvent plus efficace.<br />
+En fait tout dépend de l’utilisation de la base : * nombre d’enregistrements * table utilisée principalement en lecture * table utilisée principalement en écriture * fréquence de la requête</p>
+</div>
+<div id="normalisation-des-bases-de-données-relationnelles" class="slide section level1">
+<h1>Normalisation des bases de données relationnelles</h1>
+<p>Il existe 6 niveaux de forme normale.<br />
+Une base de données relationnelle doit être au minimum en 3ème forme normale.<br />
+Avec les id techniques, il est très facile de ne pas respecter la normalisation.<br />
+Une base relationnelle non normalisée entraîne de graves erreurs de comportement, et oblige le développeur à écrire plus de code.</p>
+<h2 id="règles-de-normalisation">Règles de normalisation</h2>
+<p>Dans une base de données relationnelle, il y a 3 règles qui sont obligatoires.</p>
+<h3 id="atomicité">Atomicité</h3>
+<p>Il n’y a pas de tableau, ni de liste dans un champ.<br />
+Par exemple, il est interdit de mettre un nom suivi du prénom dans le même champ. On doit dans ce cas créer un champ nom et un champ prénom.<br />
+De même, il est interdit de mettre un tableau (array) de noms d’article dans la table facture. On doit créer une table article contenant le nom de l’article.</p>
+<h3 id="information-centralisée">Information centralisée</h3>
+<p>Les informations sur une entité sont sur un seul enregistrement de la table. Il est interdit de disperser les informations sur plusieurs enregistrements.</p>
+<h3 id="information-unique">Information unique</h3>
+<p>L’information est représentée une seule fois dans la base. Il est interdit d’avoir des doublons dans la table. Pour cela il faut ajouter une contrainte d’unicité (clef unique ou fonctionnelle).<br />
+De même il est interdit de dupliquer l’information dans une autre table.<br />
+Par exemple la description d’un fournisseur ne peut pas être dans une table produit, seul y figure son id.</p>
+<h2 id="définition">Définition</h2>
+<p>Pour le fun, voici la définition mathématique.<br />
+Note : la définition a été écrite avant l’utilisation systématique des id, il faut comprendre par clef primaire la clef fonctionnelle.</p>
+<h3 id="ère-forme-normale">1ère forme normale</h3>
+<p>Une relation est en 1ère forme normale si elle ne contient que des “valeurs atomiques”, c’est-à-dire pas de “groupes répétitifs”.<br />
+Un champ contient une valeur au plus : pas de tableau, ni de liste.</p>
+<h3 id="ème-forme-normale">2ème forme normale</h3>
+<p>Une relation est en 2ème forme normale si elle est déjà en 1ère forme normale, et si tout attribut n’appartenant pas à la clé (primaire) dépend complètement de cette clef.<br />
+Un champ non clé primaire ne doit pas dépendre d’une partie de la clé primaire. Il doit en dépendre entièrement.</p>
+<h3 id="ème-forme-normale-1">3ème forme normale</h3>
+<p>Un champ non clé primaire ne doit pas dépendre d’un autre champ non clé primaire.<br />
+Dans ce cas, on peut décomposer la table en deux tables afin d’éviter une redondance d’informations dans la base.</p>
+<h3 id="un-complément-dinformations">Un complément d’informations</h3>
+<p>Vous voulez des explications complètes, lisez <a href="http://fsmrel.developpez.com/basesrelationnelles/normalisation/">ceci</a>.<br />
+STOP, je n’ai rien compris, lisez <a href="https://openclassrooms.com/courses/faites-une-base-de-donnees-avec-uml/optimisez-votre-modele-relationnel-avec-les-formes-normales">ceci</a>.</p>
+</div>
+<div id="pièges-à-éviter-lors-de-la-conception-et-évolution-de-la-base" class="slide section level1">
+<h1>Pièges à éviter lors de la conception et évolution de la base</h1>
+<ul>
+<li>Ne pas prendre le temps de bien réfléchir
+<ul>
+<li>Un schéma complexe donnera une base complexe et une application complexe.</li>
+<li>Une modélisation mal pensée donnera une mauvaise application.</li>
+<li>Survoler la notion de clef primaire, fonctionnelle, étrangère.</li>
+<li>Déclarer les VARCHAR avec des longueurs aléatoires. Il faut bien réfléchir à la longueur d’un champ texte.</li>
+</ul></li>
+<li>Maintenance de la base
+<ul>
+<li>Il faut penser à l’évolution du système. Un logiciel vit. La description des données évoluent avec le temps. Mettre à jour le schéma d’une base de données sans mettre à jour le MOO rendra rapidement ce dernier inutile.</li>
+<li>Lors d’une évolution d’une base mise en production, il faut penser aux données existantes. Il faudra passer un incrémental compatible et efficace.</li>
+</ul></li>
+<li>index et contraintes
+<ul>
+<li>Une utilisation immodérée des index, ralentira la base.</li>
+<li>Oublier une contrainte lors de la conception peut nous faire perdre beaucoup de temps. Imaginer l’oubli d’une contrainte d’unicité. Dans la base nous avons un doublon. Comment allez-vous ajouter cette contrainte ?</li>
+</ul></li>
+</ul>
+</div>
+</body>
+</html>

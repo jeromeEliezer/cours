@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>diagrammeUML</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="les-diagrammes-utiles-pour-modéliser-une-application-web" class="slide section level1">
+<h1>Les diagrammes utiles pour modéliser une application web</h1>
+<p>Nous utiliserons 3 catégories de diagrammes : * un diagramme décrivant les fonctionnalités * un diagramme décrivant les données, la partie invariante * des diagrammes décrivant les actions dans le temps</p>
+<h2 id="description-des-fonctionnalités">Description des fonctionnalités</h2>
+<p>Un seul diagramme. C’est le diagramme des cas d’utilisation (USE CASE) L’équivalent en SCRUM est le USER STORY. Avec ce diagramme, on identifie les acteurs et leur rôles ainsi que les fonctionnalités de l’application.<br />
+On définit un Use Case global pour l’application, puis des Uses Cases détaillés si besoin pour chaqu’un des Uses case principaux.<br />
+<a href="http://www.uml-sysml.org/diagrammes-uml-et-sysml/diagramme-uml/use-case-diagramme">exemple</a></p>
+<p>Chaque use case doit donner lieu à la description d’un scénario textuel décrivant tout le cheminement du traitement : * quand tout se passe bien * quand quelque chose se passe mal Les scénaris permettent aussi de décrire les champs impactées par le traitement. On le relie souvent à une page.</p>
+<h2 id="description-des-données">Description des données</h2>
+<p>Un seul diagramme. C’est le diagramme des classes (MOO) On définit les classes (entités) qui sont <strong>persistantes</strong> (celles qui seront stockées en base de données).<br />
+Tuto <a href="modelisationPart1.md">ici</a></p>
+<h2 id="description-des-traitements">Description des traitements</h2>
+<p>Ici nous avons 3 diagrammes. Vous utilisez au choix le diagramme des séquences ou le diagramme d’activité.<br />
+Pour l’enchaînement des écrans, on utilise le diagramme de navigation. C’est ce que l’on appelle la cinématique.</p>
+<h3 id="le-diagramme-dactivité">Le diagramme d’activité</h3>
+<p>Le diagramme d’activité décrit un comportement en fonction du temps. Il ressemble beaucoup au flowchart (diagramme de programmation) vu avec Flowgorithm.</p>
+<p><a href="https://creately.com/diagram-community/examples/t/activity-diagram?utm_source=umltypes&amp;utm_medium=blog&amp;utm_campaign=tutorialposts">exemples</a></p>
+<h3 id="le-diagramme-de-navigation">Le diagramme de navigation</h3>
+<p>Le diagramme de navigation définit l’enchaînement des vues (écrans). Il est complémentaire du diagramme d’activité.</p>
+<h3 id="le-diagramme-des-séquences-si">Le diagramme des séquences SI</h3>
+<p>On définit une action utilisateur dans le temps.<br />
+Une action exécute une URL donc un contrôleur, ce qui déclenche une action et renvoie un réponse. Bien utile dans une architecture MVC, car il aide à la réalisation des contrôleurs. Avec ce diagramme, nous sommes capable de nommer un requête http.<br />
+Un exemple d’authentification de token avec Spring Boot.<br />
+<img src="img/Diagram-Authentification.png" alt="OAuth" /></p>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<p>N’hésitez pas à vous procurer ce très bon <a href="https://www.eyrolles.com/Informatique/Livre/uml-2-9782212123890">livre</a>.</p>
+</div>
+</body>
+</html>

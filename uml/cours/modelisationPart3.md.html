@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>modelisationPart3</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide section level1">
+
+<center>
+<h1>
+Modélisation - Babysitting web site
+</h1>
+</center>
+</div>
+<div id="demande" class="slide section level1">
+<h1>Demande</h1>
+<p>Vous allez modélisez un site de réservation de babysitting.<br />
+L’application permet de mettre en relation un babysitter et des parents d’enfants.</p>
+<p>Le babysitter s’inscrit sur le site, il donne :</p>
+<ul>
+<li>son nom, son prénom, son age</li>
+<li>son adresse postale</li>
+<li>ses compétences (anglais, musicien, ….)</li>
+<li>ses disponibilités dans un calendrier hebdomadaire</li>
+</ul>
+<p>Le parent s’inscrit sur le site, il donne :</p>
+<ul>
+<li>son nom</li>
+<li>le nombre d’enfants à garder</li>
+<li>son adresse postale</li>
+</ul>
+<p>Le parent et le babysitter doivent s’identifier pour accéder au site.</p>
+<p>Le calendrier est composé :</p>
+<ul>
+<li>de jours dans la semaine (lundi, mardi,…)</li>
+<li>de plages horaires (heure de début, heure de fin)</li>
+</ul>
+<p>Le parent recherche un babysitter disponible, pour une date donnée, sur une plage horaire de son choix, et peut choisir des compétences. La recherche affiche la liste des babysitters disponibles.</p>
+</div>
+<div id="une-solution" class="slide section level1">
+<h1>Une solution</h1>
+<h2 id="définition-des-entités">Définition des entités</h2>
+<p>Dans un 1er temps, il faut définir les entités sans les relier entre elles.<br />
+La 1ère erreur que fait un débutant lorsqu’il demarre un diagramme, c’est de partir dans le détail. Par exemple, on commence à penser comment un parent va interagir avec un babysitter, ou on définit comment un babysitter enregistre ses disponibilités.<br />
+On finit par concevoir un schéma complexe.<br />
+En fait, il faut commencer par définir les acteurs et le référentiel.</p>
+<h3 id="les-acteurs">Les acteurs</h3>
+<p>Les acteurs sont les entités qui interagissent sur le système.<br />
+Il y a 2 acteurs : * le babysitter * le parent</p>
+<p>Ces 2 acteurs doivent s’identifier.<br />
+Ils héritent donc de User qui est une entité classique de connexion à un site.</p>
+<div class="figure">
+<img src="img/bbSitter1.png" alt="Acteurs" />
+<p class="caption">Acteurs</p>
+</div>
+<p>Puis on complète, et on relie les acteurs.</p>
+<div class="figure">
+<img src="img/bbSitter2.png" alt="Acteurs" />
+<p class="caption">Acteurs</p>
+</div>
+<h3 id="le-référentiel">Le référentiel</h3>
+<p>Le référentiel est composé d’éléments qui évoluent très peu. C’est les fondations du modèle.<br />
+Ici, nous avons des compétences :<br />
+<img src="img/bbSitter3.png" alt="Référentiel" /></p>
+<p>un calendrier:<br />
+<img src="img/bbSitter4.png" alt="Référentiel" /></p>
+<p>un calendrier avec des relations :<br />
+<img src="img/bbSitter5.png" alt="Référentiel" /></p>
+<h2 id="les-relations-du-babysitter">Les relations du babysitter</h2>
+<p>Un babysitter posséde des compétences et mets ces disponibilités dans le calendrier.<br />
+<img src="img/bbSitter6.png" alt="Référentiel" /></p>
+<h2 id="le-schéma-final">Le schéma final</h2>
+<p>Et voilà :</p>
+<p><img src="img/bbSitter7.png" alt="Référentiel" /><br />
+note : Il existe une relation entre le parent les compétences car les compétences recherchées par les parents sont des données persistentes (le parent ne resaisit pas à chaque requête les compétences qu’il désire.)</p>
+</div>
+</body>
+</html>

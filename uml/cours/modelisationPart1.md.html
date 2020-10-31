@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>modelisationPart1</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide section level1">
+
+<center>
+<h1>
+Modélisation partie 1 - les classes
+</h1>
+</center>
+</div>
+<div id="introduction" class="slide section level1">
+<h1>Introduction</h1>
+<p>La modélisation des données est l’une des étapes la plus importante et la plus délicate d’un projet informatique.<br />
+Elle permet de définir le côté back-end du logiciel. A partir de cette modélisation, le développeur peut définir les classes et la base de données.<br />
+En effet, les classes et la base sont étroitement liées. Le plus souvent une table a pour correspondance une classe qui aura les mêmes propriétés.<br />
+Pour cela on va utiliser un langage : le UML. UML est composé de plusieurs diagrammes. Nous allons voir ici le diagramme des classes.</p>
+</div>
+<div id="outils" class="slide section level1">
+<h1>Outils</h1>
+<p>Il existe plusieurs produits sur le marché comme PowerAMC, ArgoUml, StarUml, BoUml ou Dia.<br />
+J’ai selectionné pour vous 4 produits.<br />
+Je vous conseille de démarré avec StartUML qui répond bien à nos besoins.</p>
+<h2 id="staruml">StarUML</h2>
+<p>StarUml 2 est un logiciel payant, qui a une version d’évaluation illimitée.<br />
+C’est un logiciel qui a une interface moderne.<br />
+Il existe une V1 de starUML écrite en Delphi (donc Windows) qui est OpenSource.</p>
+<h2 id="dia">DIA</h2>
+<p>Dia est un éditeur de diagrammes.<br />
+Il est simple d’utilisation mais pas assez complet pour une écriture approfondie en UML.<br />
+Il reste suffisant pour dessiner des classes.<br />
+Modélisation du MOO et des tables.<br />
+C’est ce dernier est utilisé dans ce tuto.</p>
+<p>[logiciel de création de diagramme - DIA] (https://fr.wikipedia.org/wiki/Dia_(logiciel))</p>
+<p>[Lien de téléchargement] (https://sourceforge.net/projects/dia-installer/files/dia-win32-installer/0.97.2/dia-setup-0.97.2-2-unsigned.exe/download)</p>
+<h2 id="argouml">ArgoUml</h2>
+<p>ArgoUml est un logiciel gratuit, assez complet.<br />
+Sa conception est malheureusement vieillote. Le logiciel n’est plus mis à jour (2011).</p>
+<h2 id="le-papier-et-le-crayon">Le papier et le crayon</h2>
+<p>Et oui, la bonne vieille éthode du papier et du crayon reste très efficace.<br />
+Mieux encore : s’isoler dans un bureau avec un tableau blanc et des feutres, et réfléchir à plusieurs sur le sujet.<br />
+Et pourquoi pas le Brainstorming ?<br />
+L’inconvénient du papier est la persistence de l’information.</p>
+</div>
+<div id="uml" class="slide section level1">
+<h1>UML</h1>
+<p>UML est une notation qui permet de représenter graphiquement les besoins du logiciel à développer.<br />
+UML intervient dans la phase d’analyse des besoins. Il existe de nombreux diagrammes. Les diagrammes UML doivent être considérés comme un <strong>outil de communication</strong>.</p>
+<p>Ces diagrammes donnent des points de vu différents du projet à réaliser. Pour avoir un bon aperçu de l’UML, je vous conseille ce <a href="https://openclassrooms.com/courses/debutez-l-analyse-logicielle-avec-uml?status=published">tuto de démarrage</a>.</p>
+<p>Et pour une documentation plus poussée : <a href="http://uml.developpez.com">documentation complète</a>.</p>
+<p>L’UML est très orienté objet. Il a donc tout son sens dès que l’application sera écrite en objet.<br />
+Cette approche sera <strong>insdispensable</strong> dès que l’on utilisera un framework contenant un ORM (JPA, Hibernate, Doctrine).<br />
+Le diagramme que l’on va exclusivement étudier dans ce tuto est le diagramme des classes du Modèle Orienté Objet (MOO). C’est le diagramme le plus important pour un développeur.</p>
+</div>
+<div id="le-diagramme-des-classes" class="slide section level1">
+<h1>Le diagramme des classes</h1>
+<h2 id="classe">Classe</h2>
+<p>La classe est la description d’une famille d’objet. On définit son nom, ses attributs et ses méthodes.</p>
+<ul>
+<li>Le nom est l’identifiant de la classe. Il commence toujours par une majuscule. Deux classes ne peuvent pas avoir le même nom.<br />
+</li>
+<li>Les attributs sont les caractéristiques que possède une classe. C’est l’état ou la possesion =&gt; verbe être et avoir.<br />
+</li>
+<li>Les méthodes sont les actions que peut faire un objet appartenant à une classe. Pour une modélisation rapide, on peut se permettre de ne mettre que les attributs importants et s’économiser l’écriture des méthodes.</li>
+</ul>
+<p><img src="img/classe.png" alt="Classe" /><br />
+&gt; Signification :<br />
+&gt; Une personne possède des propriétés : un id, un nom, un prénom<br />
+&gt; Elle posséde une méthode : elle sait lire.</p>
+<h2 id="les-associations">Les associations</h2>
+<p>Une fois les classes déterminées, il faut les relier entre elles.<br />
+Une association est une relation entre 2 ou plusieurs classes.</p>
+<h2 id="héritage">Héritage</h2>
+<p>L’héritage (ou la généralisation) est la base des langages objets.<br />
+L’héritage consiste à regrouper dans une classe toutes les propriétés et méthodes communes à plusieurs classes.<br />
+Si l’héritage est très employé en programmation, en modélisation il doit rester discret. En effet, l’héritage n’est pas toujours utile et il faut choisir parmi 3 manières pour les adapter à une BD relationnelle.</p>
+<p><img src="img/heritage.png" alt="Héritage" /><br />
+&gt; Signification :<br />
+&gt; Un Etudiant EST une Personne (il hérite des propriétés et méthodes de Personne)<br />
+&gt; Il possède un id, un nom, un prénom et un diplôme.<br />
+&gt; Il sait lire et écrire.</p>
+<h3 id="la-multiplicité">La multiplicité</h3>
+<p>La multiplicité exprime et quantifie la relation entre 2 instances de 2 classes.<br />
+Les multiplicités s’expriment avec un nombre de relations minimales et maximales.<br />
+Par exemple, on va dire qu’un véhicule possède entre 2 et 4 roues (minimale : 2 roues, maximale : 4 roues).<br />
+Ceci s’écrit 2..4.</p>
+<p>Pour une modélisation plus rapide, on n’utilise que les multiplicités maximales et on se limite aux valeurs 0, 1, * (* signifiant plusieurs).<br />
+- 0 signifie une relation optionnelle. - 1 signifie une relation unitaire. - * signifie une relation multiple.</p>
+<h3 id="la-direction">La direction</h3>
+<p>La relation peut être unidirectionnelle ou bidirectionnelle. Il existe une notion de navigabilité qui se traduit par des flèches. Elle indique quelle classe contient la 2ème classe.<br />
+Une relation unidirectionnelle est représentée par une flèche. Par défaut une relation est bidirectionnelle (sans flèche).</p>
+<ul>
+<li>A -&gt; B : A stocke B. B ne connait pas A.</li>
+<li>B -&gt; A : B stocke A. A ne connait pas B.</li>
+<li>A &lt;-&gt; B : A stocke B, et B stocke A.</li>
+</ul>
+<p>N’oublions pas. Il faut raisonner objet et non relationnel. Ceci signifie qu’une classe peut contenir une collection (ou un tableau) d’une autre classe.<br />
+<strong>Cette notion est importante pour l’écriture du code, mais ne l’est pas pour la modélisation d’une base de données.</strong></p>
+<p><img src="img/direction.png" alt="Direction" /> &gt; Signification :<br />
+&gt; les instances de la classe Ligne ne stockent pas de liste d’objets du type Facture.<br />
+&gt; chaque objet facture contient une liste de ligne</p>
+<h3 id="association-1..1">Association 1..1</h3>
+<p>Une association 1 1 signifie que : * une instance d’une classe A correspond une seule instance dans la classe B * une instance d’une classe B correspond une seule instance dans la classe A (vice versa).</p>
+<p>note :<br />
+Une association 1..1 1..1 signifie que les 2 classes sont très liées.<br />
+Si vous créer une instance dans la classe A vous devez créer une instance dans la classe B.<br />
+De même si vous supprimez l’instance A, l’instance B doit aussi être détruite. Il faut vérifier ce type de relation qui n’est pas accepté dans un MCD Merise !</p>
+<p><img src="img/relation11.png" alt="Relation 1 1" /> &gt; Signification :<br />
+&gt; Un client a au plus une adresse<br />
+&gt; Une adresse appartient à un seul client, et ne peut exister sans l’existence d’un client.</p>
+<h3 id="association-1..">Association 1..*</h3>
+<p>Une association 1 * signifie que : * une instance de la classe A peut avoir plusieurs instances dans la classe B.<br />
+* une instance de la classe B peut avoir une seule instance dans la classe A.</p>
+<p><img src="img/relation1n.png" alt="Relation 1 n" /><br />
+&gt; Signification :<br />
+&gt; Un professeur enseigne dans plusieurs cours.<br />
+&gt; Un cours est fait par un seul professeur.</p>
+<h3 id="association-..">Association <em>..</em></h3>
+<p>Une association <em>..</em> signifie que : * une instance de la classe A peut avoir plusieurs instances dans la classe B.<br />
+* une instance de la classe B peut avoir plusieurs instance dans la classe A.<br />
+Une association <em>..</em> génère automatiquement une nouvelle classe : la <em>classe association</em>.</p>
+<p><img src="img/relationNn.png" alt="Relation n n" /><br />
+&gt; Signification :<br />
+&gt; Un étudiant assiste à plusieurs cours.<br />
+&gt; Un cours contient plusieurs étudiants.</p>
+<p>Une association <em>..</em> peut être remplacée par 2 associations 1..*.</p>
+<div class="figure">
+<img src="img/relation1Nn1.png" alt="Relation n n" />
+<p class="caption">Relation n n</p>
+</div>
+<h3 id="association-reflective">Association reflective</h3>
+<p>C’est une association ou la classe a une relation avec elle même.<br />
+Cette association est très utilisée pour représenter une arborescence.<br />
+Par exemple, un dossier (enfant) est contenu dans un dossier (parent).</p>
+<div class="figure">
+<img src="img/relationReflect.png" alt="Relation reflective" />
+<p class="caption">Relation reflective</p>
+</div>
+<h3 id="agrégation">Agrégation</h3>
+<p>C’est une relation 1..* qui a une notion de subordination <strong>faible</strong></p>
+<p><img src="img/agregation.png" alt="Agrégation" /><br />
+&gt; Signification :<br />
+&gt; Une voiture possède un moteur<br />
+&gt; Si on détruit la voiture, le moteur peut être ré-utiliser ou pas !?</p>
+<h3 id="composition">Composition</h3>
+<p>C’est une relation 1..* qui a une notion d’appartenance <strong>forte</strong>.<br />
+C’est une aggrégation qui a un lien plus poussé.<br />
+Une instance de la classe B ne peut exister sans la présence d’une instance de la classe A. A utiliser avec parcimonie !</p>
+<p><img src="img/composition.png" alt="Composition" /><br />
+&gt; Signification :<br />
+&gt; Une matière est composée de plusieurs cours.<br />
+&gt; Si la matière disparait, le cours aussi.</p>
+<h2 id="schéma-global">Schéma global</h2>
+<p>Voici un exemple de modélisation d’un enseignement.<br />
+<img src="img/cours.png" alt="Cours" /></p>
+</div>
+<div id="ce-quil-faut-retenir" class="slide section level1">
+<h1>Ce qu’il faut retenir</h1>
+<ul>
+<li>Un modèle est un schéma. Il doit être facile à lire et permet de communiquer.<br />
+</li>
+<li>Plus le schéma est complexe, plus l’application sera complexe.<br />
+</li>
+<li>Pour modéliser simplement, il faut aller à l’essentiel.<br />
+</li>
+<li>Une entité doit être bien nommée pour bien comprendre la signification du schéma.<br />
+</li>
+<li>Une classe est souvent confondue avec l’<strong>objet</strong> ou l’<strong>instance</strong>.<br />
+</li>
+<li>Pour relier les classes entre elles, on utilise les liens (associations) ou l’héritage.</li>
+</ul>
+</div>
+</body>
+</html>

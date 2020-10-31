@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Diagrammes-de-classes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="pratique" class="slide section level1">
+<h1>Pratique</h1>
+<p>Maintenant que vous connaissez les concepts UML et les différents diagrammes, il ne vous reste plus qu’à mettre en pratique vos nouvelles compétences.</p>
+<h2 id="diagrammes-de-classes">Diagrammes de classes</h2>
+<h3 id="diagrammes-de-classe-sans-multiplicité">1) 15 Diagrammes de classe (sans multiplicité)</h3>
+<ol style="list-style-type: decimal">
+<li><p>Un pays possède une capitale</p></li>
+<li><p>Une personne dîne avec une fourchette</p></li>
+<li><p>Un chemin peut représenter un fichier ou un répertoire</p></li>
+<li><p>Un chemin est un répertoire avec éventuellement un nom de fichier</p></li>
+<li><p>Un fichier contient des enregistrements</p></li>
+<li><p>Un fichier est accessible par un utilisateur selon des droits d’accès</p></li>
+<li><p>Un dessin est soit du texte, soit une forme géométrique, soit un groupe de dessins</p></li>
+<li><p>Des personnes utilisent un langage pour un projet</p></li>
+<li><p>Une personne joue dans une équipe pour une certaine durée</p></li>
+<li><p>Une équipe est composée de plusieurs personnes</p></li>
+<li><p>Une route connecte deux villes</p></li>
+<li><p>Un ordinateur est composé d’un ou plusieurs moniteurs, d’un boîtier, d’une souris optionnelle et d’un clavier. Un boîtier a un châssis métallique, une carte mère, plusieurs barrettes de mémoire (RAM, ROM et cache), un ventilateur optionnel, des supports de stockage (SSD, HD, CD-ROM, DVD-ROM,…) et des cartes périphériques (son, réseau, graphique,…). Un ordinateur possède toujours au moins 2 ports USB.</p></li>
+<li><p>L’université comporte des personnels administratifs et techniques, des enseignants, des étudiants et des chercheurs (qui sont tous des personnes). Certains étudiants peuvent être des chercheurs (les doctorants) ou des enseignants (les assistants enseignants). Certaines personnes (étudiants ou non) peuvent être à la fois chercheurs et enseignants.</p></li>
+<li><p>Un éditeur de documents graphiques supporte le groupement d’objets graphiques. Un document se compose de plusieurs feuilles, chacune contenant des objets graphiques (texte, forme géométrique et groupe d’objets). Un groupe est un ensemble d’objets pouvant contenir d’autres groupes. Un groupe doit contenir au moins deux éléments. Les formes géométriques comprennent les cercles, les ellipses, les rectangles, les carrés, les lignes…</p></li>
+<li><p>Une personne physique peut avoir jusqu’à trois sociétés (personnes morales) qui l’emploient. Chaque personne physique possède un numéro de sécurité sociale qui l’identifie. Une voiture a un numéro d’immatriculation. Une voiture est la propriété d’une personne (physique ou morale). Un emprunt dans une banque peut être demandé pour l’achat d’une voiture.</p></li>
+</ol>
+<h3 id="réservation-des-vols-avec-multiplicités">2) Réservation des vols (avec multiplicités)</h3>
+<p>Cette étude de cas concerne un système de réservation de vols pour une agence de voyages.</p>
+<p>Les interviews des experts métiers auxquelles on a procédé ont permis de résumer leur connaissance du domaine sous la forme des phrases suivantes :</p>
+<ul>
+<li>Des compagnies aériennes proposent différents vols.</li>
+<li>Un vol est ouvert à la réservation et refermé sur ordre de la compagnie.</li>
+<li>Un client peut réserver un ou plusieurs vols, pour des passagers différents.</li>
+<li>Une réservation concerne un seul vol et un seul passager.</li>
+<li>Une réservation peut être annulée ou confirmée.</li>
+<li>Un vol a un aéroport de départ et un aéroport d’arrivée.</li>
+<li>Un vol a un jour et une heure de départ, et un jour et une heure d’arrivée.</li>
+<li>Un vol peut comporter des escales dans des aéroports.</li>
+<li>Une escale a une heure d’arrivée et une heure de départ.</li>
+<li>Chaque aéroport dessert une ou plusieurs villes.</li>
+</ul>
+<p>Travail : Représenter le diagramme de classes avec les multiplicités.</p>
+<h3 id="locauto---location-de-véhicules">3) Locauto - Location de Véhicules</h3>
+<p>Une société de locations de véhicules a une implantation nationale et possède plusieurs agences dans différentes villes. Elle souhaite informatiser la gestion des réservations.</p>
+<p>Elle met en location des véhicules de type utilitaire ou voiture. Ils sont caractérisés par un numéro d’immatriculation, une marque et une catégorie.</p>
+<p>Les clients peuvent réserver un véhicule d’une certaine catégorie, pour une certaine date et pour une durée.</p>
+<p>La société de location garde une trace de ses clients : nom, adresse, téléphone.</p>
+<p>Il existe 2 sortes de clients : - les particuliers - les entreprises.</p>
+<p>Dans le cas des entreprises, la société de location demande un nom qui servira de contact. Un taux de remise est attribué suite à une négociation commerciale.</p>
+<p>Le jour où le client se présente pour prendre le véhicule réservé, l’agence établit un contrat sur lequel figurent les données du véhicule (y compris le kilométrage), les données du client et le nom du conducteur.</p>
+<p>Au retour du véhicule, l’agence récupère le nouveau kilométrage.</p>
+<p>Représenter le diagramme de classes le plus complet possible avec les multiplicités, les attributs et les méthodes que vous pensez utiles.</p>
+<h2 id="diagrammes-de-classe-scénario-et-séquence">Diagrammes de classe, scénario et séquence</h2>
+<h3 id="vidéolocatout---étude-de-cas-complet">1) « VidéoLocaTout » - étude de cas complet</h3>
+<h4 id="cahier-des-charges">Cahier des charges</h4>
+<p>L’application VideoLocaTout assure la gestion d’un Vidéo club. Et oui, ça revient à la mode comme pour les vinyles !</p>
+<p>Un film peut être enregistré sur plusieurs types de support (cassettes VHS, CD, DVD, DVD-Blue-Ray), cette liste n’est pas exhaustive compte tenu de l’évolution technologique.</p>
+<p>Pour renseigner les clients, le vendeur souhaite pouvoir effectuer des rechercher selon différents critères : - Film, - Acteur, - Réalisateur, - Année, - Genre du Film (Comique, dramatique,…)</p>
+<p>Les supports sont loués au comptoir avec facturation immédiate. Un chèque de caution non encaissé est demandé et sera rendu au retour des emprunts.</p>
+<p>Un Client peut s’abonner, dans ce cas sa caution est conservée mais il bénéficie d’une remise d’un montant de 10%. Un support a un prix de location journalier.</p>
+<p>Une location peut regrouper plusieurs supports empruntés sur un ou plusieurs jours. Elle est numérotée automatiquement (dernier numéro incrémenté de 1). Sa date de début est la date du jour, la date de retour sera renseignée lorsque le client restituera les ou le support (théoriquement &gt;= date emprunt + nombre de jours avec le week-end qui compte pour un seul jour).</p>
+<p>Le montant de la location est calculé par la formule suivante : montantLocation = somme (prixDuSupport X nombreDeJour )</p>
+<p>Le Client paye immédiatement, soit en liquide, en carte ou en chèque.</p>
+<p>Quand on reçoit de nouveaux supports, il faut les enregistrer avec leurs caractéristiques de location (prix, type, …) ainsi que ses critères de recherche (film, acteur,..). La base de données des films, acteurs et réalisateur sera ainsi alimentée en continue.</p>
+<p>Toutes les semaines le vendeur a besoin de la liste des locations non revenues. Si le client est abonné il lui enverra une lettre de relance sinon il gardera la caution. Un client avec un seul retard ne peut plus louer d’autres cassettes. Cela bloque les emprunts.</p>
+<p>Le vendeur a aussi besoin de connaître la prochaine date de retour d’un film si aucun de ses supports n’est en stock. Les supports (surtout les K7 VHS) ou DVD peuvent être dégradés au retour, dans ce cas, leur état est enregistré mais le support ne peut plus être emprunté et sont prix d’achat n’est pas comptabilisé à l’inventaire.</p>
+<p>L’inventaire totalise le prix d’achat des supports classés par type puis année d’achat. Le vendeur doit pouvoir consulter les statistiques de location par genre, par type de support et par Film.</p>
+<p>Travail à faire :</p>
+<ol style="list-style-type: decimal">
+<li>construire le diagramme de classes avec un dictionnaire de données.</li>
+<li>Les cas d’utilisation d’après l’énoncé.</li>
+<li>Ecrire le scénario du cas d’utilisation « Enregistrer location » seulement.</li>
+<li>Ecrire le diagramme de séquence pour « Enregistrer location ».</li>
+</ol>
+<h3 id="étude-de-cas-waouf-waouf-facultatif">2) Étude de cas « Waouf-waouf » (facultatif)</h3>
+<p>Conserver bien au chaud pour le moment car ce tp est très long et compliqué !</p>
+</div>
+</body>
+</html>
