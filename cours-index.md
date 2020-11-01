@@ -27,6 +27,3 @@
 ### [Mapping ORM](framework-back/1-jpa-orm/mapping-orm.md)
  
 ### ressources Web
-
-
-
