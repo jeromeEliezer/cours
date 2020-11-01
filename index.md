@@ -1,37 +1,76 @@
-## Welcome to GitHub Pages
+# Bienvenue
 
-You can use the [editor on GitHub](https://github.com/pbouget/cours-swing/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Formation Java - Swing
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Durée : 18 jours
 
-### Markdown
+Période : novembre 2020
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Objectif
 
-```markdown
-Syntax highlighted code block
+> A partir d'un cahier des charges, chacun.e devra concevoir et réaliser une application de type Desktop en Java avec la mise en place d'une interface graphique développée avec l'API Swing. L'application devra permettre l'accès à une base de données MySQL.
 
-# Header 1
-## Header 2
-### Header 3
+## Contraintes
 
-- Bulleted
-- List
+- Respecter le plus possible l'architecture MVC.
+- Réaliser la modélisation avec UML (use Case, diag de classe,...)
+- Modéliser les données avec les MCD/MLD/MPD de Merise ou un Diagramme de classe UML.
+- Mettre en place une base de données sous MySQL ou autre.
+- Réaliser des composants d'accès aux données aux choix (JDBC/DAO, JPA, Hibernate, EJB3).
+- Utiliser l'API SWING pour la mise en place de l'IHM.
+- Mettre en place une application multi-couches.
+- Mettre en place des tests et jeu d'essai. 
+- Déployer l'application en générant un JAR exécutable.
+- Réaliser une documentation Javadoc.
+- Gérer le multilingue (Anglais, Français, Allemand).
 
-1. Numbered
-2. List
+## Outils
 
-**Bold** and _Italic_ and `Code` text
+- IDE : Eclipse, NetBeans, IntelliJ (licence fournit si besoin)
+- Gestion de suivi du projet personnel : Trello
+- un cerveau...
 
-[Link](url) and ![Image](src)
-```
+## En pratique
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+> Théorie suivie d'une mise en pratique en prenant les exemples du cours et en réalisant les différents TPs avant de passer au projet.
 
-### Jekyll Themes
+### Semaine 1 (du 02/11 au 06/11)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pbouget/cours-swing/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- Découverte et pratique des bases pour la mise en place d'une IHM en Java Swing :
 
-### Support or Contact
+    - API et composants graphiques Swing.
+    - Gestion des événements permettant l'interactivité.
+    - Réalisation de 2 TPs
+    - Bilan des acquis 
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Semaine 2 (du 09/11 au 13/11) sauf 11/11
+
+- Mettre en place la gestion multilingue en java (properties).
+- Respect du MVC dans une application Desktop.
+- Mise en place du pattern DAO pour la partie persistence.
+- Réalisation d'un TP simple et complet
+- Bilan de la semaine
+
+- Cahier des charges du projet à réaliser (toute proposition est bienvenue pour un autre projet personnel s'il répond aux exigences du CDC)
+
+### Semaine 3 (du 16/11 au 20/11) sauf le 18
+
+- Travail sur le projet
+- Partage des problèmes et solutions trouvées.
+- Suivi individuel
+- Point quotidien sur l'avancée de la conception et du développement
+- Bilan de la semaine
+
+### Semaine 4 (du 23/11 au 27/11)
+
+- Travail sur le projet
+- Partage des problèmes et solutions trouvées.
+- Suivi individuel
+- Point quotidien sur l'avancée de la conception et du développement
+- Finalisation du projet avec Tests et déploiement.
+- Présentation de son projet au groupe.
+- Bilan de la formation Java-Swing.
+
+## Liens vers les cours et ressources
+
+- [Cours, ressources, travaux pratiques et projets](cours-index.md)
