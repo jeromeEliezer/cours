@@ -33,22 +33,18 @@ le lien entre JSON, JPA, Hibernate et SpringBoot avec une table **Apprenant**
 
 [Application à développer avec SpringBoot](5-pratiques.md)
 
-## Spring : quelques notes (Josselin)
-
-[Diverses sources](notes.md)
-
-### 10 raisons de se mettre à Spring (Josselin)
+### 10 raisons de se mettre à Spring
 
 [Partie 1](http://blog.ellixo.com/2015/06/08/10-raisons-de-se-mettre-a-Spring-Boot-1ere-partie.html)
 
 [Partie 2](http://blog.ellixo.com/2015/06/26/10-raisons-de-se-mettre-a-Spring-Boot-2eme-partie.html)
 
-### Les guides (Josselin)
+### Les guides
 
 [https://spring.io/guides](https://spring.io/guides)
 
-### Référence (Josselin)
+### Référence
 
 [https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/](https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/)
 
-## [Retour à la session 3](../README.md)
+## [Retour](../README.md)
