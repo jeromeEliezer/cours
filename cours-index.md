@@ -12,14 +12,12 @@
 
 ### [6. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
 
-#
 ## Modélisation
 
 ### [Cours UML](uml/README.md)
 
 ### [Cours Merise](2-mcd/README.md)
 
-#
 ## Bonus
 
 ### [SpringBoot](framework-back/1-springboot/README.md)
