@@ -2,11 +2,17 @@
 
 ### Java les bases
 
-#### [les bases](java/1-bases/README.md)
+#### [les bases](java/java1/1-bases/README.md)
 
-#### [Tableaux](java/2-tableaux/README.md)
+#### [Tableaux](java/java1/2-tableaux/README.md)
 
-#### [Fichiers](java/3-fichiers)
+#### [Fichiers](java/java1/3-fichiers)
+
+### [IDE Eclipse](java/java2/5-ide/README.md)
+
+### [IDE Eclipse](java/java2/6-heritage/README.md)
+
+### [IDE Eclipse](java/java2/7-rest/README.md)
 
 ### [1. Construire des IHMs avec Swing](cours-swing.md)
 
