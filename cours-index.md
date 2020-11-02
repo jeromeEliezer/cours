@@ -1,5 +1,13 @@
 # Cours
 
+### Java les bases
+
+#### [les bases](java/1-bases/README.md)
+
+#### [Tableaux](java/2-tableaux/README.md)
+
+#### [Fichiers](java/3-fichiers)
+
 ### [1. Construire des IHMs avec Swing](cours-swing.md)
 
 ### [2. Approfondissement sur la gestion des événements](cours-java-evenement.md)
