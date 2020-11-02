@@ -8,11 +8,11 @@
 
 #### [Fichiers](java/java1/3-fichiers)
 
-### [IDE Eclipse](java/java2/5-ide/README.md)
+#### [IDE Eclipse](java/java2/5-ide/README.md)
 
-### [IDE Eclipse](java/java2/6-heritage/README.md)
+#### [Héritage](java/java2/6-heritage/README.md)
 
-### [IDE Eclipse](java/java2/7-rest/README.md)
+#### [Rest API](java/java2/7-rest/README.md)
 
 ### [1. Construire des IHMs avec Swing](cours-swing.md)
 
