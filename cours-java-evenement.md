@@ -1,4 +1,4 @@
-# Java et les événements : que des bonne choses !
+# Java et les événements : que des bonnes choses !
 
 ## Modèle par délégation
 
