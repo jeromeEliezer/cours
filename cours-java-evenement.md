@@ -346,6 +346,10 @@ Le mot clé **new** provoque l'instanciation de la classe interne au moment de l
 
 Une fois encore un objet séparé est enregistré pour recevoir les **WindowEvents**. Notre classe « MaFenetre » (l'application) ne déclare pas qu'elle implémente WindowListener. **Elle n'implémente aucune des méthodes de l'interface WindowListener, ce rôle est tenu par la classe interne**.
 
+### Tableau des Composants associés aux événements (à mettre à jour)
+
+![images/evenements.jpg](images/evenements.jpg)
+
 ### Résumé de ce chapitre
 
 Dans ce chapitre nous avons présenté trois conceptions d'interception des événements de l'interface graphique utilisateur :
