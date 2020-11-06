@@ -1667,7 +1667,10 @@ Le tableau ci-dessous donne la correspondance entre le _XxxListener_ (Interface)
 - MouseMotionListener : MouseMotionAdapter
 - WindowListener : WindowAdapter
 
-> Remarque : les classes Adapter sont très faciles à identifier par rapport aux interfaces Listener !
+>Si vous voulez connaître tous les codes des touches du clavier c'est pas ici :
+[https://docs.oracle.com/javase/9/docs/api/java/awt/event/KeyEvent.html](https://docs.oracle.com/javase/9/docs/api/java/awt/event/KeyEvent.html)
+
+> Remarque : les classes Adapter sont très faciles à identifier par rapport aux interfaces **Listener** !
 
 Par exemple: Effacer la zone de texte lorsque l'application est mise en icône.
 
