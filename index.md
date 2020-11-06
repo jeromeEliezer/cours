@@ -39,19 +39,21 @@ Période : novembre 2020
     - API et composants graphiques Swing.
     - Gestion des événements permettant l'interactivité.
     - Réalisation de 2 TPs
+    - Réalisation interface graphique du TP3
     - Bilan des acquis 
 
-### Semaine 2 (du 09/11 au 13/11) sauf 11/11
+### Semaine 2 (du 09/11 au 13/11) sauf 10/11 et 11/11
 
 - Mettre en place la gestion multilingue en java (properties).
 - Respect du MVC dans une application Desktop.
+- Utilisation d'une connection JDBC avec MySQL
 - Mise en place du pattern DAO pour la partie persistence.
-- Réalisation d'un TP simple et complet
+- Réalisation d'un TP simple et complet (TP3)
 - Bilan de la semaine
 
 - Cahier des charges du projet à réaliser (toute proposition est bienvenue pour un autre projet personnel s'il répond aux exigences du CDC)
 
-### Semaine 3 (du 16/11 au 20/11) sauf le 18
+### Semaine 3 (du 16/11 au 20/11)
 
 - Travail sur le projet
 - Partage des problèmes et solutions trouvées.
