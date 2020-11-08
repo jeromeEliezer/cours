@@ -20,11 +20,13 @@
 
 ### [3. Rappel : Connection à une BD avec JDBC](java/java2/8-jdbc/README.md)
 
-### [4. Travaux pratiques Swing](travaux-pratiques-swing.md)
+### [4. Gestion de configuration et des langues avec les fichiers **properties**](cours-properties.md)
 
-### 5. Propositions de corrections
+### [5. Travaux pratiques Swing](travaux-pratiques-swing.md)
 
 ### [6. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
+
+### 7. Aides, conseils et propositions de corrections
 
 ## Modélisation
 
