@@ -336,7 +336,7 @@ Voici le lien pour le télécharger [https://jar-download.com/artifacts/net.java
 
 #### Projet final
 
-![images/nimbusapplicationBanque.jpg](images/nimbusapplicationBanque.jpg)
+![images/nimbusApplicationBanque.jpg](images/nimbusApplicationBanque.jpg)
 
 #### TP3- IHM SQL
 
