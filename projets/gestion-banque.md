@@ -1,13 +1,15 @@
 # Cahier des Charges (Opérations Bancaires)
 
+![../images/nimbusApplicationBanque.jpg](../images/nimbusApplicationBanque.jpg)
+
 ## Objectifs
 
 - Réaliser une application Java Desktop
-- Gérer le multilingue (Anglais/Français)
+- Gérer le multilingue (Anglais/Français/Allemand)
 - Maquetter l'application avec un outil de maquettage
 - Modéliser la BD avec Merise et/ou UML
 - Modéliser avec UML (Uses Cases, Diag de classe)
-- Mettre en place de la base de données sous MySQL
+- Mettre en place la base de données sous MySQL
 - Respecter l'architecture MVC
 - Choix libre sur les composants d'accès aux données :
     - JPA
@@ -72,5 +74,25 @@ Un Type de compte est identifié par un code auto-généré et possède un intit
 
 L'utilisateur de l'application possède un identifiant et un mot de passe lui permettant de s'authentifier pour accèder aux fonctionnalités (à l'ouverture de la fenêtre principale de l'application).
 
-### Exemples d'IHM possible pour cette application
+### Propositions d'IHM pour cette application
+
+#### Onglet Compte
+
+![../images/nimbusApplicationBanque.jpg](../images/nimbusApplicationBanque.jpg)
+
+#### Onglet Titulaire
+
+![../images/nimbusApplicationBanqueTitulaire.jpg](../images/nimbusApplicationBanqueTitulaire.jpg)
+
+#### Onglet Type Compte
+
+![../images/nimbusApplicationBanqueTypeCompte.jpg](../images/nimbusApplicationBanqueTypeCompte.jpg)
+
+#### Onglet Opération
+
+![../images/nimbusApplicationBanqueOperation.jpg](../images/nimbusApplicationBanqueOperation.jpg)
+
+#### Onglet Virement
+
+![../images/nimbusApplicationBanqueVirement.jpg](../images/nimbusApplicationBanqueVirement.jpg)
 

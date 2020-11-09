@@ -10,7 +10,7 @@
 
 ## Avertissement
 
-Ce document présente les principales entités graphiques nécessaires à la construction d'une IHM (Interface Homme-Machine) en Java. Les applications étudiées dans ce cours sont de type SDI (Simple Document Interface). Elles ne comporteront qu'une seule fenêtre incluant uniquement les contrôles simples, que l'on rencontre le plus couramment.
+Ce document présente les principales entités graphiques nécessaires à la construction d'une IHM (Interface Homme-Machine) en Java. Les applications étudiées dans ce cours sont de type SDI (Simple Document Interface). Elles ne comporteront qu'une seule fenêtre incluant uniquement les composants simples, que l'on rencontre le plus couramment.
 
 ## Avant propos
 
@@ -48,23 +48,23 @@ Proposition d'architecture
 
 Réflexions techniques
 
-Tour d'horizon des contrôles simples
+Tour d'horizon des composants simples
 
-Ajout des contrôles à la fenêtre application
+Ajout des composants à la fenêtre application
 
 Les panneaux
 
-Les contrôles toujours associés à un panneau
+Les composants toujours associés à un panneau
 
 Propriétés communes des composants
 
-Agencement des contrôles
+Agencement des composants
 
 Les différentes stratégies de positionnement
 
 Critères de choix
 
-Un petit exercice Agencement des Controles
+Un petit exercice Agencement des composants
 
 Gestion des évènements
 
@@ -74,7 +74,7 @@ Mise en place d'un écouteur
 
 Autre exemple
 
-[Démarche générale
+Démarche générale
 
 Autre type d'écouteur
 
@@ -84,17 +84,17 @@ La classe Timer
 
 Interface utilisateur complet
 
-La barre de menus
+Barre de menus
 
-La barre d'outils
+Barre d'outils
 
-La barre d'état
+Barre d'état
 
-Les fenêtres prédéfinies
+Fenêtres prédéfinies
 
-La boîte à propos
+Boîte à propos
 
-Sous-classement des contrôles
+Sous-classement des composants
 
 Séparation classes UI et classes métier
 
@@ -104,13 +104,13 @@ Application Editeur de texte
 
 Règle de conception de l'interface utilisateur
 
-Positionnement des contrôles
+Positionnement des composants
 
 Cohérence entre les éléments de l'interface
 
 Annexes
 
-Correction de l'exercice sur l'agencement des contrôles
+Correction de l'exercice sur l'agencement des composants
 
 Astuce pour l'accessibilité aux braillistes
 
@@ -137,7 +137,7 @@ Des objets purs Java !
 
 Swing est présenté comme étant écrit uniquement en Java. La JVM doit être capable d'interagir avec l'OS pour pouvoir tracer un point. Or c'est ce que font les classes de base de l'AWT (telles que _Component_, _Container_, ...).
 
->En conséquence, **tous les composants de Swing dérivent d'une classe de l'AWT**.
+>En conséquence, **tous les composants de Swing dérivent d'une classe d'AWT**.
 
 Les mécanismes de gestion d'évènements et de positionnent des composants de l'AWT restent utilisable avec Swing. Certaines classes déjà utilisées avec l'AWT sont donc toujours d'actualité. Une application Swing doit importer des packages spécifiques mais aussi certains packages de l'AWT. Tout source utilisant Swing commence par :
 
@@ -150,7 +150,7 @@ import java.awt.event.*; // événements ou écouteurs
 
 ```
 
-Swing est bien plus riche que l'AWT. Même si un composant n'existe pas en natif sur l'OS, rien ne vous empêche de le redessiner à nouveau. **Les classes qui font appel aux fonctions systèmes de la machine sous-jacente sont appelées communément des composants lourds**. Elles utilisent du code natif. C'est le cas d'un nombre réduit de classes comme celles qui conceptualisent les fenêtres. **Les composants légers sont eux écrits en java pur**. C'est le cas par exemple des contrôles qui ne sont pas dessinés par l'OS mais par du code Java. Ces contrôles auront toujours le même aspect et seront toujours disponibles quelle que soit la machine.
+Swing est bien plus riche que l'AWT. Même si un composant n'existe pas en natif sur l'OS, rien ne vous empêche de le redessiner à nouveau. **Les classes qui font appel aux fonctions systèmes de la machine sous-jacente sont appelées communément des composants lourds**. Elles utilisent du code natif. C'est le cas d'un nombre réduit de classes comme celles qui conceptualisent les fenêtres. **Les composants légers sont eux écrits en java pur**. C'est le cas par exemple des composants qui ne sont pas dessinés par l'OS mais par du code Java. Ces composants auront toujours le même aspect et seront toujours disponibles quelle que soit la machine.
 
 ## API JavaFX
 
@@ -196,7 +196,7 @@ La classe **JFrame** est associée à la fenêtre principale de l'application. E
 
 #### JDialog
 
-La classe **JDialog** est associée à une boite de dialogue en général ouverte en **mode modal** ou **non modal** par la fenêtre application. Elle contient des contrôles tous dérivés directement ou indirectement de **JComponent** (liste, bouton, label, …).
+La classe **JDialog** est associée à une boite de dialogue en général ouverte en **mode modal** ou **non modal** par la fenêtre application. Elle contient des composants tous dérivés directement ou indirectement de **JComponent** (liste, bouton, label, …).
 
 ![images/jdialog.jpg](images/jdialog.jpg)
 
@@ -209,7 +209,7 @@ contient 2 composants :
 
 L'une comme l'autre fenêtre est composée d'objets panneaux (au sens de la composition UML) instances d'une sous-classe de _Container_.
 
-Un premier panneau appelé **layeredPane** (de classe _JLayeredPane_) représente la zone utile de la fenêtre. Elle est elle-même composée d'une barre de menu (de classe _JMenuBar_) et une zone client appelée _contentPane_ (de classe _JPanel_) conteneur pour les contrôles éventuels.
+Un premier panneau appelé **layeredPane** (de classe _JLayeredPane_) représente la zone utile de la fenêtre. Elle est elle-même composée d'une barre de menu (de classe _JMenuBar_) et une zone client appelée _contentPane_ (de classe _JPanel_) conteneur pour les composants éventuels.
 
 ![images/layered-panel.jpg](images/layered-panel.jpg)
 
@@ -252,13 +252,13 @@ public Application ()
 -**Classe Fenêtre Principale** : Classe dérivée de _JFrame_. C'est la fenêtre principale de l'application. _JFrame_ est une classe représentant une fenêtre évoluée qui peut s'afficher sur le bureau.
 Elle possède une barre de titre et peut être réduite, mise en icône ou fermée par des boutons.
 
-Elle recevra des contrôles et possèdera éventuellement une barre de menu ou une barre d'état.
+Elle recevra des composants et possèdera éventuellement une barre de menu ou une barre d'état.
 
 Cette classe aura toujours la structure suivante:
 
 ```java
 public class FenetrePrincipale extends JFrame {
-	// Champs privés: Réferences d'objets contrôles, menus,...
+	// Champs privés: Réferences d'objets composants, menus,...
 	public FenetrePrincipale()
 	{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -267,7 +267,7 @@ public class FenetrePrincipale extends JFrame {
 	}
 	private void initControls ()
 	{
-		// Définition de l'état initial des contrôles
+		// Définition de l'état initial des composants
 		// Positionnement des controles
 	}
 	// Gestion des événements
@@ -280,7 +280,7 @@ public class FenetrePrincipale extends JFrame {
 
 ### Programmation objet et interface graphique
 
->Il est important de préciser qu'a toute entité graphique de l'interface utilisateur (fenêtre, menu, boutons, contrôles,...) sera associée un objet, instance d'une classe Swing. Tout appel de méthode sur un objet Swing agira sur l'état de l'objet et aura un effet visuel sur l'entité graphique associée.
+>Il est important de préciser qu'a toute entité graphique de l'interface utilisateur (fenêtre, menu, boutons, composants,...) sera associée un objet, instance d'une classe Swing. Tout appel de méthode sur un objet Swing agira sur l'état de l'objet et aura un effet visuel sur l'entité graphique associée.
 
 ### Le look and feel
 
@@ -316,6 +316,32 @@ UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 ```
 
 Un changement de _L&F_ n'impacte ni la nature, ni le positionnement des composants, mais *seulement le rendu visuel des composants*
+
+Exemple avec le L&F **Nimbus** que vous devez implémenter comme ci-dessous
+
+```java
+try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException e)
+    {
+			e.printStackTrace();
+		}
+```
+
+>Remarque : Pensez à copier le fichier **nimbus-weekly-080113.jar** dans le répertoire **lib** de la JRE ou bien dans la librairie de votre projet Java.
+Voici le lien pour le télécharger [https://jar-download.com/artifacts/net.java.dev.nimbus](https://jar-download.com/artifacts/net.java.dev.nimbus)
+
+### Exemples de rendus avec Nimbus
+
+#### Projet final
+
+![images/nimbusapplicationBanque.jpg](images/nimbusapplicationBanque.jpg)
+
+#### TP3- IHM SQL
+
+![images/nimbusaApplicationIhmSQL.jpg](images/nimbusApplicationIhmSQL.jpg)
+
 
 ### Ouverture et fermeture d'une fenêtre
 
@@ -401,7 +427,7 @@ Les opérations de dessins sont des actions de bas niveau. Il n'existe donc aucu
 
 ### **Les composants Swing**
 
-Le but de ce chapitre est de présenter rapidement les principaux **composants** Swing désignant les **contrôles** qui permettent une interaction classique entre l' utilisateur et le logiciel et les **panneaux** qui regroupent ou contiennent des contrôles. Chaque composant est associé à une classe spécifique placée dans la hiérarchie des classes Swing. Chaque composant de l'Interface Utilisateur de l'application sera un objet, instance d'une de ces classes sur lequel il sera possible d'appliquer un grand nombre de méthodes (définies en direct dans la classe ou héritées des classes parents).
+Le but de ce chapitre est de présenter rapidement les principaux **composants** Swing désignant les **composants** qui permettent une interaction classique entre l' utilisateur et le logiciel et les **panneaux** qui regroupent ou contiennent des composants. Chaque composant est associé à une classe spécifique placée dans la hiérarchie des classes Swing. Chaque composant de l'Interface Utilisateur de l'application sera un objet, instance d'une de ces classes sur lequel il sera possible d'appliquer un grand nombre de méthodes (définies en direct dans la classe ou héritées des classes parents).
 
 #### Hiérarchie des classes
 
@@ -426,11 +452,11 @@ Dans une application, ces composants vont être posés sur la zone client de la 
 - **JComboBox** : Boîte combo pouvant être préfixée  **cbo**xxx (cboVille)
 - **JScrollPane**, **JPanel** : Panneaux pouvant être préfixée  **pan** xxx (panHaut, panBas)
 
-## Tour d'horizon des contrôles simples
+## Tour d'horizon des composants simples
 
 **_JLabel_** - L'étiquette
 
-Un Jlabel permet d'afficher un texte fixe et/ou une image. Il ne réagit pas aux sollicitations de l' utilisateur. Il est purement décoratif et sert à décrire les autres contrôles de l'interface utilisateur. Il correspond à un objet instance de la classe _JLabel_ dont le texte est prédéfini lors de l'appel du constructeur.
+Un Jlabel permet d'afficher un texte fixe et/ou une image. Il ne réagit pas aux sollicitations de l' utilisateur. Il est purement décoratif et sert à décrire les autres composants de l'interface utilisateur. Il correspond à un objet instance de la classe _JLabel_ dont le texte est prédéfini lors de l'appel du constructeur.
 
 ```java
  JLabel lblDescription = new JLabel ("Texte du JLabel");
@@ -579,11 +605,11 @@ On peut connaître le nombre d'éléments de la liste et savoir quel élément a
 - **getItemCount()**
 - **getSelectedItem()**
 
-## Ajout des contrôles à la fenêtre application
+## Ajout des composants à la fenêtre application
 
 Ce chapitre propose une démarche rigoureuse pour coder correctement une classe IHM correspondant à la fenêtre Principale. Celle qui est proposée ici est librement inspirée de l'approche utilisée par les outils RAD du marché.
 
-**Règle 1**  : Tous les contrôles de l'interface seront une instance d'une classe Swing.
+**Règle 1**  : Tous les composants de l'interface seront une instance d'une classe Swing.
 **Règle 2**  : Tous les composants dont l'aspect varie ou qui seront sollicités par l'utilisateur seront définis comme des champs privés de la classe Fenêtre Principale.
 **Règle 3**  : Les composants doivent être crées et initialisés en même temps que la fenêtre principale, c'est la raison pour laquelle les initialisations sont regroupées dans une méthode privée initControles() appelée par le constructeur de la classe.
 
@@ -592,7 +618,7 @@ Exemple de staructure de la classe :
 ```java
 public class FenetrePrincipale extends JFrame
 {
-// Champs privés: Référence vers les contrôles et instanciation
+// Champs privés: Référence vers les composants et instanciation
 public FenetrePrincipale ()
 {
 // Initialisation de la fenêtre
@@ -600,7 +626,7 @@ initControles();
 }
 private void initControles ()
 {
-// Définition de l'état initial des contrôles
+// Définition de l'état initial des composants
 }
 }
 ```
@@ -609,24 +635,24 @@ Exemple d'application
 
 ![images/exemplejcombo.jpg](images/exemplejcombo.jpg)
 
- Cette application dispose de 3 contrôles: un label purement décoratif qui ne variera jamais :
+ Cette application dispose de 3 composants: un label purement décoratif qui ne variera jamais :
 
 - une boîte combo (on souhaite connaître la valeur choisie)
 - un bouton simple (qui déclenchera par la suite une action).
 
-Déclaration d'une référence et création de 2 objets pour les contrôles  actifs :
+Déclaration d'une référence et création de 2 objets pour les composants  actifs :
 
 ```java
 private JButton cmdOK = new JButton("OK");
 private JComboBox cboChoix = new JComboBox();
 ```
 
-Les 3 contrôles vont être ajoutés dans la zone client de la fenêtre principale. Il faut donc obtenir une référence vers cette zone client et lui ajouter (_add_) 3 instances :
+Les 3 composants vont être ajoutés dans la zone client de la fenêtre principale. Il faut donc obtenir une référence vers cette zone client et lui ajouter (_add_) 3 instances :
 
 - l'une anonyme (JLabel)
 - les 2 autres explicites (JCombo et JButton).
 
-Les 3 contrôles seront  organisés l'un à côté de l'autre par un **layout manager** qui définit la politique d'organisation des contrôles (ceci sera étudié dans le chapitre ultérieur).
+Les 3 composants seront  organisés l'un à côté de l'autre par un **layout manager** qui définit la politique d'organisation des composants (ceci sera étudié dans le chapitre ultérieur).
 
 ```java
 private void initControles()
@@ -661,36 +687,36 @@ zoneClient.add (cmdOK);
 
 ## Les panneaux
 
-Un panneau est un conteneur (**containers**), composant particulier, en général transparent (il est possible de changer sa couleur de fond). Il est chargé de contenir des contrôles. Les panneaux servent à :
+Un panneau est un conteneur (**containers**), composant particulier, en général transparent (il est possible de changer sa couleur de fond). Il est chargé de contenir des composants. Les panneaux servent à :
 
-1. regrouper des contrôles pour mieux les positionner dans une fenêtre.
-2. regrouper visuellement des contrôles.
+1. regrouper des composants pour mieux les positionner dans une fenêtre.
+2. regrouper visuellement des composants.
 3. ajouter des barres de défilement aux composants  scrollables.
 
 ### Les panneaux déjà rencontrés – _JFrame_ et _ContentPane_
 
->La fenêtre principale pouvant regrouper des contrôles est elle-même un conteneur.
+>La fenêtre principale pouvant regrouper des composants est elle-même un conteneur.
 
 Elle est composée de plusieurs panneaux superposés. Tout d'abord un panneau de classe _JLayeredPane_ qui recouvre toute la surface de la fenêtre. Sur ce dernier sont posés 2 autres panneaux :
 
 - une barre de menu (_JMenuBar_)
-- un espace appelé "zone client" (_ContentPane_) sur laquelle sont posés les contrôles.
+- un espace appelé "zone client" (_ContentPane_) sur laquelle sont posés les composants.
 
 ![images/panneaux.jpg](images/panneaux.jpg)
 
 Pour information, le tout est recouvert d'un panneau transparent (_Glass Pane_) que l'on n'utilisera pas. L'ensemble de ces 4 panneaux forme un _JRootPane_.
 
-### Regroupement des contrôles dans un _JPanel_
+### Regroupement des composants dans un _JPanel_
 
 >La méthode **getContentPane()** fournit une référence sur la zone client. C'est un objet, instance de la classe _JPanel_.
 
-Il est possible de regrouper les contrôles dans des panneaux, eux aussi de classe _JPanel_ soit pour encadrer graphiquement un groupe de contrôles, soit pour positionner globalement un groupe de contrôles comme nous le verrons dans le prochain chapitre. Le principe est simple :
+Il est possible de regrouper les composants dans des panneaux, eux aussi de classe _JPanel_ soit pour encadrer graphiquement un groupe de composants, soit pour positionner globalement un groupe de composants comme nous le verrons dans le prochain chapitre. Le principe est simple :
 
->il faut ajouter les contrôles aux panneaux puis ajouter les panneaux à la zone client.
+>il faut ajouter les composants aux panneaux puis ajouter les panneaux à la zone client.
 
 ![images/exemplejpanel.jpg](images/exemplejpanel.jpg)
 
-Le JButton et JComboBox sont toujours des contrôles sollicités par l'utilisateur donc :
+Le JButton et JComboBox sont toujours des composants sollicités par l'utilisateur donc :
 
 ```java
 private JButton cmdOK = new JButton( OK );
@@ -699,7 +725,7 @@ private JComboBox cboChoix = new JComboBox();
 
 Le JLabel et la JComboBox sont réunis dans un panneau avec bordure et titre. On écrit une méthode _private_ nommée _initControles()_ qui contiendra :
 
-1. L'initialisation éventuelle de l'aspect des contrôles :
+1. L'initialisation éventuelle de l'aspect des composants :
 
 ```java
 String [] choix = {"DUPOND Jean","DOE John","MARTIN Marie","DURAND Jules"};
@@ -744,7 +770,7 @@ zoneClient.add (cmdOK);
 
 **JDesktopPane** :  conteneur de haut niveau se comportant comme un bureau de système d'exploitation. Il contient des fenêtres avec barre de titre et bouton d'agrandissement. Ce conteneur permet de réaliser des applications _MDI_ (Multiple Documents Interface).
 
-## Les contrôles toujours associés à un panneau
+## Les composants toujours associés à un panneau
 
 ![images/jtextcomponents.png](images/jtextcomponents.png)
 
@@ -976,7 +1002,7 @@ if (index!=-1) listData.removeRow(index);
  La mise en œuvre consiste à suivre les étapes suivantes :
 
 1. Créer autant de panneaux, instances de la classe _JPanel,_ que nécessaire.
-2. Ajouter à chacun d'eux, leurs contrôles.
+2. Ajouter à chacun d'eux, leurs composants.
 3. Accrocher les panneaux au panneau à onglets.
 4. Ajouter le panneau à onglets à la fenêtre principale.
 
@@ -1008,17 +1034,17 @@ private void initControles()
 La classe _JComponent_ regroupe les propriétés communes à tous les composants Swing. Tous ces composants ont donc un comportement commun :
 
 - Il est possible de les rendre actifs ou inactifs (on dit aussi grisés), autorisant, ou non, les actions de l'utilisateur. Cet état est fixé par la méthode **setEnabled()**
-- Les contrôles peuvent être visibles ou invisibles. Cet état est fixé par la méthode **setVisible()**
+- Les composants peuvent être visibles ou invisibles. Cet état est fixé par la méthode **setVisible()**
 - La couleur du texte et la couleur du fond d'un composant peuvent être imposées par, respectivement **setForeground()** et **setBackground()**. Ces méthodes reçoivent comme argument une constante définie dans la classe _Color_(Color.red, Color.green,...).
 Ces 2 méthodes ne doivent être utilisées que dans des cas exceptionnels. Tous les composants ont des couleurs de fond (gris, blanc ou transparent) et de texte (noir) standard que les utilisateurs connaissent bien.
-- Il est souvent utile d'associer aux contrôles une bulle d'aide (_tool tip_) qui apparaît lorsque l'utilisateur laisse le pointeur de la souris sur le composant. La méthode **setToolTipText()** permet de définir la bulle d'aide. Elle reçoit en argument le libellé de la bulle.
+- Il est souvent utile d'associer aux composants une bulle d'aide (_tool tip_) qui apparaît lorsque l'utilisateur laisse le pointeur de la souris sur le composant. La méthode **setToolTipText()** permet de définir la bulle d'aide. Elle reçoit en argument le libellé de la bulle.
 - 3 méthodes permettent d'assurer les dimensions et/ou la position d'un composant. Il s'agit de **setLocation()**, **setSize()** et **setBounds()**.
 - Le focus peut être donné à un contrôle par la méthode **requestFocus()**. Lorsqu'un contrôle à la focus toutes les actions clavier sont interceptées par le contrôle.
 
 #
-### **Agencement des contrôles**
+### **Agencement des composants**
 
-Visuellement, une interface graphique est une fenêtre (_JFrame_), un conteneur, sur laquelle est placée une combinaison de contrôles (des composants) de type _JTextArea_, _JLabel_,..., et de panneaux eux aussi conteneurs pour d'autres contrôles et autres panneaux.
+Visuellement, une interface graphique est une fenêtre (_JFrame_), un conteneur, sur laquelle est placée une combinaison de composants (des composants) de type _JTextArea_, _JLabel_,..., et de panneaux eux aussi conteneurs pour d'autres composants et autres panneaux.
 
 >Une difficulté importante que doit résoudre le développeur.euse est le positionnement de ces composants les uns par rapport aux autres. Il doit aussi définir l'agencement visuel des composants par les conteneurs.
 
@@ -1034,7 +1060,7 @@ Cette particularité, en Java, consiste à associer aux conteneurs un **layout m
 - JComboBox : La taille du plus grand élément et le nombre d'éléments visibles dans la fenêtre pop-up imposé par **setMaximumRowCount()**
 - JPanel : La taille idéale des composants qu'il contient
 
-Ce mode de positionnement des contrôles est volontairement différent de celui proposé par les outils RAD où les contrôles ont une taille et un positionnement fixe et absolu définit par l'application. Ce dernier mode, bien qu'il existe aussi avec Swing, génère parfois des problèmes d'alignement ou de répartition des espaces. Ceci est dû aux caractéristiques de l'écran de la machine, à la taille de la fenêtre de l'application, à la configuration de la carte graphique,...
+Ce mode de positionnement des composants est volontairement différent de celui proposé par les outils RAD où les composants ont une taille et un positionnement fixe et absolu définit par l'application. Ce dernier mode, bien qu'il existe aussi avec Swing, génère parfois des problèmes d'alignement ou de répartition des espaces. Ceci est dû aux caractéristiques de l'écran de la machine, à la taille de la fenêtre de l'application, à la configuration de la carte graphique,...
 
 >Les layout managers garantissent la portabilité visuelle  de l'interface utilisateur de l'application quelles que soient les caractéristiques de la machine et du système d'exploitation.
 
@@ -1183,11 +1209,11 @@ zoneClient.setLayout(new BorderLayout(10, 10));
 - Pour toutes les directions, les composants sont arrangés dans l'ordre d'ajout au conteneur et resteront alignés quelque soit la taille de celui-ci. Si les composants sont arrangés horizontalement et qu'ils n'ont pas la même hauteur préférée **le _BoxLayout_ adapte la hauteur à celle du plus haut**.
 - Si les composants sont arrangés verticalement et qu'ils n'ont pas la même largeur préférée **le _BoxLayout_ adapte la largeur à celle du plus large**.
 
-Soit par exemple l'application ci-dessous où les contrôles sont placés dans 2 layout managers verticaux, eux-mêmes placés dans un layout manager horizontal placé au sud de la zone client.
+Soit par exemple l'application ci-dessous où les composants sont placés dans 2 layout managers verticaux, eux-mêmes placés dans un layout manager horizontal placé au sud de la zone client.
 
 ![images/boxlayout1.jpg](images/boxlayout1.jpg)
 
-Le panneau gauche est associé à un _BoxLayout_ vertical. Vous noterez que le layout manager doit obtenir une référence vers le panneau dont il doit gérer les contrôles.
+Le panneau gauche est associé à un _BoxLayout_ vertical. Vous noterez que le layout manager doit obtenir une référence vers le panneau dont il doit gérer les composants.
 
 ```java
 JPanel panGauche = new JPanel();
@@ -1276,12 +1302,12 @@ zoneClient.add (txtPrenom);
 
 ## Critères de choix (du gestionnaire de positionnement)
 
-La quasi-totalité des interfaces utilisateur (GUI) peuvent être obtenues en posant les contrôles dans des panneaux, chaque panneau ayant sa propre stratégie d'organisation (une des quatre précédemment décrites). Ces panneaux pouvant à leur tour être posés dans d'autres panneaux et ainsi de suite.
+La quasi-totalité des interfaces utilisateur (GUI) peuvent être obtenues en posant les composants dans des panneaux, chaque panneau ayant sa propre stratégie d'organisation (une des quatre précédemment décrites). Ces panneaux pouvant à leur tour être posés dans d'autres panneaux et ainsi de suite.
 
 La seule façon rationnelle de définir rapidement une interface utilisateur avec Swing est :
 
 1. Dessiner sur une feuille de papier l'interface souhaitée ou sur un tableur.
-2. Identifier les zones géographiques des différents contrôles.
+2. Identifier les zones géographiques des différents composants.
 3. Déduire les panneaux et leur stratégie d'organisation.
 
 #
@@ -1297,7 +1323,7 @@ On identifie rapidement 3 zones :
 
 ![images/exemple1.jpg](images/exemple1.jpg)
 
-Les 3 boutons de classe _JButton_ doivent conserver leur taille idéale fixée par la taille de leur l'image. La zone supérieure doit donc être un panneau de classe _JPanel_ associé à un _FlowLayout_ alignant à gauche puisque c'est le seul qui conserve la taille idéale des contrôles qu'il contient. La hauteur idéale du panneau haut sera celle des boutons.
+Les 3 boutons de classe _JButton_ doivent conserver leur taille idéale fixée par la taille de leur l'image. La zone supérieure doit donc être un panneau de classe _JPanel_ associé à un _FlowLayout_ alignant à gauche puisque c'est le seul qui conserve la taille idéale des composants qu'il contient. La hauteur idéale du panneau haut sera celle des boutons.
 
 La zone inférieure sera un panneau de classe _JScrollPane_ associé à une _JTextArea_ puisqu'elle doit avoir une barre de défilement.
 
@@ -1704,7 +1730,7 @@ class AppWindowAdapter extends WindowAdapter {
 
 ## Optimisation du code source technique
 
-La démarche qui vient d'être étudiée semble lourde surtout pour coder une application simple. Cette démarche trouve son intérêt lors du développement d'applications réelles disposant d'un nombre important de contrôles, chacun étant susceptible de propager des événements qui déclenchent des traitements applicatifs. Pour ne pas alourdir le code il est préférable de ne pas trop multiplier les écouteurs.
+La démarche qui vient d'être étudiée semble lourde surtout pour coder une application simple. Cette démarche trouve son intérêt lors du développement d'applications réelles disposant d'un nombre important de composants, chacun étant susceptible de propager des événements qui déclenchent des traitements applicatifs. Pour ne pas alourdir le code il est préférable de ne pas trop multiplier les écouteurs.
 
 ### Cas lorsque plusieurs composants génèrent le même type d'événement
 
@@ -1796,7 +1822,7 @@ Elément de classe **_JMenuItem_**
 
 Un menu (_JMenu_) et un élément (_JMenuItem_) sont en fait des boutons, le premier qui déclenche l'ouverture d'une fenêtre pop-up, le second qui est associé à une méthode applicative.
 
-Les éléments de menu déclenchent des actions et vont parfois changer d'état. Il faut donc les définir comme champs privés. Les autres objets pourront être déclarés localement à la méthode d'initialisation des contrôles. Par convention l'élément de libellé *Ouvrir*  dans le menu  *Fichier* sera nommé **mnuFichierOuvrir**.
+Les éléments de menu déclenchent des actions et vont parfois changer d'état. Il faut donc les définir comme champs privés. Les autres objets pourront être déclarés localement à la méthode d'initialisation des composants. Par convention l'élément de libellé *Ouvrir*  dans le menu  *Fichier* sera nommé **mnuFichierOuvrir**.
 
 ```java
 private JMenuItem mnuFichierNouveau = new JMenuItem("Nouveau", 'N');
@@ -2146,7 +2172,7 @@ Il est possible de définir des boîtes de dialogue spécifiques à l'applicatio
 
 Etudions simplement une boîte de dialogue que toute application doit posséder. Il s'agit de la boîte  **A Propos**, ouverte en réponse à un clic sur l'élément  "A Propos..."  du menu de droite.
 
-Cette boîte est de type modal et de taille fixe. L'utilisateur ne dispose que d'un bouton OK. Elle ne comporte que des contrôles statiques de renseignement pour l'utilisateur :
+Cette boîte est de type modal et de taille fixe. L'utilisateur ne dispose que d'un bouton OK. Elle ne comporte que des composants statiques de renseignement pour l'utilisateur :
 
 - Description
 - Copyright
@@ -2155,7 +2181,7 @@ Cette boîte est de type modal et de taille fixe. L'utilisateur ne dispose que d
 
 ![images/apropos.jpg](images/apropos.jpg)
 
-Le nombre de contrôles et leur disposition sont les mêmes quelque soit l'application. Seul change leur contenu. C'est l'occasion d'en faire un composant logiciel réutilisable. Ce sera donc une classe indépendante qui hérite de **_JDialog_** dont la structure sera proche de celle de la fenêtre principale.
+Le nombre de composants et leur disposition sont les mêmes quelque soit l'application. Seul change leur contenu. C'est l'occasion d'en faire un composant logiciel réutilisable. Ce sera donc une classe indépendante qui hérite de **_JDialog_** dont la structure sera proche de celle de la fenêtre principale.
 
 ```java
 public class APropos extends JDialog
@@ -2210,7 +2236,7 @@ import javax.swing.JPanel;
 public class APropos extends JDialog implements ActionListener
 
 {
-	//Plusieurs méthodes vont accéder aux contrôles donc:
+	//Plusieurs méthodes vont accéder aux composants donc:
 	private JLabel lblDescription = new JLabel ();
 	private JLabel lblCopyright = new JLabel ();
 	private JLabel lblVersion = new JLabel () ;
@@ -2232,7 +2258,7 @@ public APropos(JFrame parent, String titre)
 	}
 ```
 
-Les contrôles sont initialisés et ajoutés aux panneaux. Les panneaux sont eux-mêmes ajoutés à la zone client :
+Les composants sont initialisés et ajoutés aux panneaux. Les panneaux sont eux-mêmes ajoutés à la zone client :
 
 ```java
 private void initControles()
@@ -2263,7 +2289,7 @@ public void actionPerformed(ActionEvent e)
 	}
 ```
 
-Pour rendre la classe réutilisable il faut prévoir des **_setters_** publics permettant de définir la description, la version, le copyright et l'icône qui seront affichés dans les contrôles. Remarquons l'instruction **this.pack()** qui permet d'ajuster la taille de la boîte de dialogue en fonction de la taille idéale des contrôles (dépendant du contenu) :
+Pour rendre la classe réutilisable il faut prévoir des **_setters_** publics permettant de définir la description, la version, le copyright et l'icône qui seront affichés dans les composants. Remarquons l'instruction **this.pack()** qui permet d'ajuster la taille de la boîte de dialogue en fonction de la taille idéale des composants (dépendant du contenu) :
 
 ```java
 public void setDescription (String texte)
@@ -2309,7 +2335,7 @@ public void setDescription (String texte)
 
 ### Code complet de l'ouverture de la boîte
 
-Création d'une instance de la classe **APropos**, appel des **_setters_** pour fixer la valeur des contrôles et ouverture de la boîte :
+Création d'une instance de la classe **APropos**, appel des **_setters_** pour fixer la valeur des composants et ouverture de la boîte :
 
 ```java
 public static void main(String args[]) {
@@ -2324,13 +2350,13 @@ public static void main(String args[]) {
 ```
 
 #
-## Sous-classement des contrôles : Utilisation d'un JavaBean
+## Sous-classement des composants : Utilisation d'un JavaBean
 
 Ce chapitre correspond à une approche ultra simplifiée du concept de **JavaBean** sur lequel repose tous les composants Swing.
 
 >Un composant JavaBean est un composant réutilisable qui, s'il est graphique, peut être intégré à la barre d'outils d'environnement de développement de type RAD comme JBuilder, NetBeans ou autre IDE. Un composant JavaBean à ses champs propres, ses méthodes et propage des événements spécifiques à des listeners spécialisés.
 
-Il existe de nombreux exemples dans l'API Swing, de classes conceptualisant des contrôles spéciaux, héritées d'autres classes plus générales. Ainsi, un **_JPasswordField_** est un **_JTextField_** spécifique qui affiche des \* rendant la saisie des caractères non visible. Le **_JTextField_** standard à été sous-classé pour répondre à un besoin particulier. Il est possible d'étendre cette particularité à certains contrôles de l'application. Par exemple une application de supervision pourrait avoir besoin d'un **_JVoyant_** considéré comme un **_JTextField_** non éditable avec une bordure et un fond qui passe en couleur ou en blanc suivant son état, allumé ou éteint.
+Il existe de nombreux exemples dans l'API Swing, de classes conceptualisant des composants spéciaux, héritées d'autres classes plus générales. Ainsi, un **_JPasswordField_** est un **_JTextField_** spécifique qui affiche des \* rendant la saisie des caractères non visible. Le **_JTextField_** standard à été sous-classé pour répondre à un besoin particulier. Il est possible d'étendre cette particularité à certains composants de l'application. Par exemple une application de supervision pourrait avoir besoin d'un **_JVoyant_** considéré comme un **_JTextField_** non éditable avec une bordure et un fond qui passe en couleur ou en blanc suivant son état, allumé ou éteint.
 
 ```java
 public class JVoyant extends JTextField
@@ -2365,7 +2391,7 @@ v1.setToolTipText("Alarme"); // méthode héritée
 if (...) v1.setOn(); // on ajoute les conditions correspondantes
 ```
 
-Ces contrôles dérivés peuvent disposer de leur propre politique de gestion interne des événements. Ainsi le **_JVoyant_** peut disposer d'un objet de classe **_Timer_** assurant le clignotement du voyant.
+Ces composants dérivés peuvent disposer de leur propre politique de gestion interne des événements. Ainsi le **_JVoyant_** peut disposer d'un objet de classe **_Timer_** assurant le clignotement du voyant.
 
 ```java
 public class Voyant extends JTextField
@@ -2520,7 +2546,7 @@ public final class DemandeMgr
 
 La composition ou la présentation d'une _JFrame_ ne doit pas nuire à son caractère esthétique qui a aussi un impact considérable sur la fonctionnalité d'une application. La composition comprend des facteurs déterminants tels que :
 
-- le positionnement des contrôles
+- le positionnement des composants
 - la cohérence entre les éléments
 - l'accessibilité
 - l'utilisation d'espaces vierges
@@ -2528,7 +2554,7 @@ La composition ou la présentation d'une _JFrame_ ne doit pas nuire à son carac
 
 La simplicité est sans doute un des principes les plus importants à respecter lors de la création d'une interface. Si celle-ci semble complexe au niveau des applications, c'est qu'elle l'est réellement. Pour créer une interface conviviale, il faut prendre le temps de réfléchir au préalable à sa conception. De même, d'un point de vue esthétique, une conception nette et simple est toujours préférable.
 
-## Positionnement des contrôles (Composants)
+## Positionnement des composants (Composants)
 
 Tous les éléments ne sont pas d'une importance équivalente dans la plupart des interfaces. Une conception soigneuse est indispensable pour que l'utilisateur puisse immédiatement repérer les éléments les plus importants. Les éléments importants ou souvent utilisés doivent être placés bien en vue, alors que les éléments moins importants peuvent être relégués à des emplacements moins visibles.
 
@@ -2538,25 +2564,25 @@ La plupart des langues se lisent de gauche à droite et de haut en bas par rappo
 
 Par exemple, si les informations d'une fiche de saisie concernent un client, le champ du nom doit apparaître à un endroit pertinent (donc visible). Les boutons OK ou Suivant doivent être placés dans la partie inférieure droite de l'écran car l'utilisateur n'y accédera que lorsqu'il aura terminé de traiter la fiche.
 
-Il est aussi **important de regrouper les éléments et les contrôles**. Il faut les regrouper d'une façon logique, selon leurs fonctions ou leurs relations. Comme leurs fonctions sont liées, les boutons permettant de consulter une base de données doivent être regroupés visuellement, et non dispersés sur l'écran. La même règle s'applique aux informations: les champs de noms et d'adresses sont généralement regroupés, car ils sont étroitement liés. Dans la plupart des cas, il est possible d'utiliser des panneaux avec bordures de classe **_JTitleBorder_** pour souligner les relations entre les contrôles.
+Il est aussi **important de regrouper les éléments et les composants**. Il faut les regrouper d'une façon logique, selon leurs fonctions ou leurs relations. Comme leurs fonctions sont liées, les boutons permettant de consulter une base de données doivent être regroupés visuellement, et non dispersés sur l'écran. La même règle s'applique aux informations: les champs de noms et d'adresses sont généralement regroupés, car ils sont étroitement liés. Dans la plupart des cas, il est possible d'utiliser des panneaux avec bordures de classe **_JTitleBorder_** pour souligner les relations entre les composants.
 
 ## Cohérence entre les éléments de l'interface
 
 La cohérence est une vertu dans la conception d'une interface utilisateur. Une présentation cohérente contribue à l'harmonie d'une application qui doit constituer un ensemble coordonné. Le manque de cohérence peut rendre une application confuse, chaotique et désorganisée. L'utilisateur peut alors en conclure que l'application est d'une qualité médiocre et il doutera de sa fiabilité.
 
-Pour obtenir une cohérence visuelle, il est conseillé de définir une stratégie de conception et des conventions de styles avant de passer à la création. Certains éléments tels que les types de contrôles, les normes de dimensionnement et de regroupement de contrôles et les choix de polices doivent être définis à l'avance.
+Pour obtenir une cohérence visuelle, il est conseillé de définir une stratégie de conception et des conventions de styles avant de passer à la création. Certains éléments tels que les types de composants, les normes de dimensionnement et de regroupement de composants et les choix de polices doivent être définis à l'avance.
 
->l'API **javax.swing** offre une vaste gamme de contrôles. Vous ne devez pas tenter de tous les utiliser !
+>l'API **javax.swing** offre une vaste gamme de composants. Vous ne devez pas tenter de tous les utiliser !
 
-Sélectionnez plutôt un sous-ensemble de contrôles qui s'adapte le mieux à l'application. Les contrôles de zone de liste, de zone de liste éditable, de grille et d'arborescence peuvent tous servir à présenter des listes d'informations, mais il est préférable de se limiter à un seul style dans la mesure du possible.
+Sélectionnez plutôt un sous-ensemble de composants qui s'adapte le mieux à l'application. Les composants de zone de liste, de zone de liste éditable, de grille et d'arborescence peuvent tous servir à présenter des listes d'informations, mais il est préférable de se limiter à un seul style dans la mesure du possible.
 
-Essayez également d'utiliser les contrôles de façon appropriée. Alors qu'un contrôle **_JTextField_** peut être défini en lecture seule et servir à afficher du texte, un contrôle **_JLabel_** est généralement plus approprié à cette usage. La cohérence entre les différentes fenêtres de l'application est également primordiale. Il est préférable de sélectionner un style et le conserver pour toutes les fenêtre de l'application.
+Essayez également d'utiliser les composants de façon appropriée. Alors qu'un contrôle **_JTextField_** peut être défini en lecture seule et servir à afficher du texte, un contrôle **_JLabel_** est généralement plus approprié à cette usage. La cohérence entre les différentes fenêtres de l'application est également primordiale. Il est préférable de sélectionner un style et le conserver pour toutes les fenêtre de l'application.
 
 ### Utilisation d'espaces vierges
 
-L'utilisation d'espaces vierges peut contribuer à mettre en valeur des éléments et à améliorer les fonctionnalités de l'interface. Un espace vierge n'est pas nécessairement un espace blanc ! Il peut aussi s'agir de l'intervalle entre les contrôles et autour d'eux. Si une fenêtre contient trop de contrôles, l'interface risque de devenir confuse et la recherche d'un champ ou d'un contrôle peut s'avérer fastidieuse. N'hésitez pas à utiliser des espaces vierges pour mettre en valeur les éléments.
+L'utilisation d'espaces vierges peut contribuer à mettre en valeur des éléments et à améliorer les fonctionnalités de l'interface. Un espace vierge n'est pas nécessairement un espace blanc ! Il peut aussi s'agir de l'intervalle entre les composants et autour d'eux. Si une fenêtre contient trop de composants, l'interface risque de devenir confuse et la recherche d'un champ ou d'un contrôle peut s'avérer fastidieuse. N'hésitez pas à utiliser des espaces vierges pour mettre en valeur les éléments.
 
-Un intervalle constant entre les contrôles et l'alignement des éléments verticaux et horizontaux rend l'application plus lisible, exactement comme un magazine où le texte est disposé en colonnes égales, avec un espacement homogène entre les lignes.
+Un intervalle constant entre les composants et l'alignement des éléments verticaux et horizontaux rend l'application plus lisible, exactement comme un magazine où le texte est disposé en colonnes égales, avec un espacement homogène entre les lignes.
 
 ### Couleurs et images
 
@@ -2577,7 +2603,7 @@ Il est aussi important de tenir compte de la signification culturelle des images
 #
 ### **Annexes**
 
-## Correction de l'exercice sur l'agencement des contrôles
+## Correction de l'exercice sur l'agencement des composants
 
 ![images/exercice1.jpg](images/exercice1.jpg)
 
@@ -2677,6 +2703,10 @@ public class FenetrePrincipale extends JFrame
 
 ```
 
+## Un Plug-in Eclipse bien pratique : WindowBuilder
+
+Procédure d'installation (bientôt)
+
 ## Astuce pour que les développeurs.euses braillistes
 
 Se déplacer dans une JTextArea :
@@ -2730,7 +2760,7 @@ lien : https://www.oracle.com/java/technologies/javafxscenebuilder-1x-archive-do
 
 javafx_scenebuilder-2_0-windows.msi
 
-Formateur Informatique Indépendant
-Philippe Bouget
-Cours Java Swing
-Mise à jour le 26/10/2020
+Formateur Informatique Indépendant   
+Philippe Bouget   
+Cours Java Swing   
+Mise à jour : le 09/11/2020   

@@ -4,7 +4,7 @@
 
 **TP1 – Agencement de composants Swing**
 
-- Exercice simple avec agencement des Contrôles
+- Exercice simple avec agencement des composants
 
 **TP2 – Swing et gestion d'événements**
 
@@ -227,7 +227,7 @@ Dans la zone du bas, il doit y avoir 2 boutons, l'un pour effacer la zone de sai
 
 Voici ce que vous devez obtenir
 
-![](images/tp3sqlswing.jpg)
+![images/nimbusApplicationIhmSQL.jpg](images/nimbusApplicationIhmSQL.jpg)
 
 Description détaillée de la fenêtre :
 
