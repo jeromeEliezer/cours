@@ -49,7 +49,7 @@ Période : novembre 2020
 - Utilisation d'une connection JDBC avec MySQL
 - Découverte et mise en place du pattern DAO pour la partie persistence.
 - Réalisation d'un TP simple et complet (TP3)
-- Découverte du Framework SpringBoot et JPA pour le Projet. 
+- Découverte du FrameWork Hibernate
 - Bilan de la semaine
 
 - Cahier des charges du projet à réaliser (toute proposition est bienvenue pour un autre projet personnel s'il répond aux exigences du CDC)
