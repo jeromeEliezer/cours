@@ -47,8 +47,9 @@ Période : novembre 2020
 - Mettre en place la gestion multilingue en java (properties).
 - Respect du MVC dans une application Desktop.
 - Utilisation d'une connection JDBC avec MySQL
-- Mise en place du pattern DAO pour la partie persistence.
+- Découverte et mise en place du pattern DAO pour la partie persistence.
 - Réalisation d'un TP simple et complet (TP3)
+- Découverte du Framework SpringBoot et JPA pour le Projet.
 - Bilan de la semaine
 
 - Cahier des charges du projet à réaliser (toute proposition est bienvenue pour un autre projet personnel s'il répond aux exigences du CDC)
