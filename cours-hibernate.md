@@ -270,7 +270,7 @@ public class PiloteDaoImpl  implements PiloteDao {
 
 	private final String SELECT_PILOTE_PAR_NOM = "SELECT p FROM Pilote p WHERE PI_NOM =:nom";
 	private final String SELECT_ALL = "SELECT p FROM Pilote p";
-	private final String SELECT_COUNT = "SELECT MAX(p.PI_ID) FROM Pilote p";
+	private final String SELECT_COUNT = "SELECT MAX(p.ID) FROM Pilote p";
 	private SessionFactory factory = HibernateFactory.getSessionFactory();
 	private Session session = factory.getCurrentSession();
 
@@ -444,3 +444,10 @@ INSERT INTO `pilote` (`ID`, `NOM`, `SITE`) VALUES
 (12, 'ELODIE', 'BREST');
 
 ```
+
+
+## Amélioration de l'application en ajoutant uneIHM
+
+- **Proposition d'IHM pour Pilote**
+
+![images/gradle-projet-pilote-ihm.jpg](images/gradle-projet-pilote-ihm.jpg)
