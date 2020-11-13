@@ -406,7 +406,7 @@ public class PiloteDaoImpl  implements PiloteDao {
 ## Tester le fonctionnement dans votre méthode main()
 
 ```java
-// on instancie l'interface
+// on instancie la classe d'implémentation de l'interface
 PiloteDao piloteDao = new PiloteDaoImpl(); 
 
 // on récupère une liste d'objets Pilote
