@@ -1,5 +1,9 @@
 # Accès BD avec Hibernate
 
+## Structure du projet à mettre en place
+
+![images/gradle-projet-struture.jpg](images/gradle-projet-structure.jpg)
+
 ## Configuration du fichier **hibernate.cfg.xml**
 
 ```xml
@@ -93,7 +97,7 @@ public class HibernateFactory {
 	    // Hibernate version 5:
 	    private static SessionFactory buildSessionFactory() {
 	        try {
-	            // Create the ServiceRegistry from hibernate.cfg.xml
+	            // Création du ServiceRegistry grâce à "hibernate.cfg.xml"
 	            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 	                    .configure("hibernate.cfg.xml")
 	                    .build();
@@ -139,13 +143,13 @@ public class Pilote implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="PI_ID")
+	@Column(name="ID")
 	private Integer id;
 	
-	@Column(name="PI_NOM")
+	@Column(name="NOM")
 	private String nom;
 	
-	@Column(name="PI_SITE")
+	@Column(name="SITE")
 	private String site;
 
 	public Pilote() {super();}
@@ -210,7 +214,7 @@ public class Pilote implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Pilote : "+this.getId()+ " "+this.getNom()+ " "+this.getSite();
+		return this.getNom();
 	}
 }
 
@@ -259,7 +263,7 @@ import fr.bouget.pilote.utiles.HibernateFactory;
 
 /**
  * @author Philippe
- * Demo avec Hibernate
+ * Demo avec Hibernate et une seule table
  *
  */
 public class PiloteDaoImpl  implements PiloteDao {
@@ -299,7 +303,7 @@ public class PiloteDaoImpl  implements PiloteDao {
 		try
 		{
 			session.getTransaction().begin();
-			Query<Pilote> requete = session.createQuery("SELECT p FROM Pilote p");
+			Query<Pilote> requete = session.createQuery(SELECT_ALL);
 			pilotes = requete.getResultList();
 			session.getTransaction().commit();
 		}
@@ -313,7 +317,7 @@ public class PiloteDaoImpl  implements PiloteDao {
 
 	@Override
 	/**
-	 * Méthode pour ajouter un pilote et retourner la clé auto-générée
+	 * Méthode pour ajouter un pilote
 	 * par MySQL.
 	 */
 	public int addPilote(Pilote pilote) {
@@ -335,7 +339,7 @@ public class PiloteDaoImpl  implements PiloteDao {
 	
 	@Override
 	/**
-	 * M�thode pour supprimer un pilote en base de donn�es
+	 * Méthode pour supprimer un pilote en base de données
 	 */
 	public int removePilote(Pilote pilote) {
 
