@@ -22,11 +22,13 @@
 
 ### [4. Gestion de configuration et des langues avec les fichiers **properties**](cours-properties.md)
 
-### [5. Travaux pratiques Swing](travaux-pratiques-swing.md)
+### [5. Exemple simple avec le Framework Hibernate](cours-hibernate.md)
 
-### [6. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
+### [6. Travaux pratiques Swing](travaux-pratiques-swing.md)
 
-### 7. Aides, conseils et propositions de corrections
+### [7. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
+
+### 8. Aides, conseils et propositions de corrections
 
 ## Modélisation
 
