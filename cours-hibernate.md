@@ -39,7 +39,7 @@
 
 ```
 
-Placer ce fichier dans le répertoire *src//main//java* de votre projet Gradle. 
+Placer ce fichier dans le répertoire **src/main/java** de votre projet Gradle.
 
 ### Contenu de **build.gradle**
 
