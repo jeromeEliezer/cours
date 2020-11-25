@@ -18,7 +18,7 @@ De petites différences de syntaxe existent entre la version 4 et version 5.
 
 Pour organiser le code, un projet possède généralement deux sources :
 
-![img](dossier.png)
+![img](images/dossier.png)
 
 Pour chaque classe du projet à tester, on va créer une classe portant le même nom avec le suffixe Test. Il faut la même structure de package dans les 2 environnements.
 
@@ -173,7 +173,7 @@ Pour exécuter une classe de test, il faut selectionner **run as... junit test c
 
 On peut alors visualiser (eclipse, IntelliJ, ...) les résultats graphiquement :
 
-![img](resultat.png)
+![img](images/resultat.png)
 
 Les resultats (pour les non *daltoniens*) sont de 3 couleurs :
 
@@ -183,7 +183,7 @@ Les resultats (pour les non *daltoniens*) sont de 3 couleurs :
 
 Si on clique sur un test, on obtient le détail (ce qui était attendu et ce que l'on a obtenu) :
 
-![img](resultat-detail.png)
+![img](images/resultat-detail.png)
 
 ## La méthode TDD
 
@@ -201,7 +201,3 @@ La méthode TDD, c'est écrire les tests dès le début puis coder pour que les 
 Voici d'autres sources :
 
 [https://howtodoinjava.com/junit5/junit-5-assertions-examples/](https://howtodoinjava.com/junit5/junit-5-assertions-examples/)
-
-
-
-[exercices.md](exercices.md)

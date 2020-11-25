@@ -26,9 +26,13 @@
 
 ### [6. Travaux pratiques Swing](travaux-pratiques-swing.md)
 
-### [7. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
+### [7. Utilisation de l'encodage en java](cours-cryptage-simple.md)
 
-### 8. Aides, conseils et propositions de corrections
+### [8. Utilisation de JUnit](cours-tests-junit5.md)
+
+### [9. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
+
+### 10. Aides, conseils et propositions de corrections
 
 ## Modélisation
 
