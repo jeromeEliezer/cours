@@ -1,18 +1,22 @@
 # Cours
 
-### Java les bases
+## Java : Découverte
 
-#### [les bases](java/java1/1-bases/README.md)
+### [1. Entrainement à l'Algorithme](cours-algo-java.md)
 
-#### [Tableaux](java/java1/2-tableaux/README.md)
+### [2. Bases du langage](java/java1/1-bases/README.md)
 
-#### [Fichiers](java/java1/3-fichiers)
+### [3. Tableaux](java/java1/2-tableaux/README.md)
 
-#### [IDE Eclipse](java/java2/5-ide/README.md)
+### [4. Fichiers](java/java1/3-fichiers)
 
-#### [Héritage](java/java2/6-heritage/README.md)
+### [5. IDE Eclipse](java/java2/5-ide/README.md)
 
-#### [Rest API](java/java2/7-rest/README.md)
+### [6. Héritage](java/java2/6-heritage/README.md)
+
+### [7. Rest API](java/java2/7-rest/README.md)
+
+## Java Swing
 
 ### [1. Construire des IHMs avec Swing](cours-swing.md)
 
@@ -48,4 +52,4 @@
 
 ### [Mapping ORM](framework-back/1-jpa-orm/mapping-orm.md)
  
-### ressources Web
+## ressources Web
