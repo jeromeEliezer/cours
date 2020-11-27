@@ -8,10 +8,15 @@ Période : Décembre 2020
 
 > Découvrir le principe des algorithmes à l'aide du langage Java ainsi que des concepts Objets et pouvoir utiliser un IDE pour tester les programmes.
 
+## Compétences à valider
+
+- 
+
 ## Outils
 
 - IDE : Eclipse ou un editeur comme VS Code.
 - un cerveau...
+- et un... ordinateur !
 
 ## En pratique
 
