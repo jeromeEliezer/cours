@@ -1,11 +1,12 @@
-# Session 1 - Algo & Java
-## Semaine 6
-#### **Lun 5, Mar 6 Fev :** Découverte de l'algorithmique avec Flowgorithm
+# Algo & Java
+
+## Découverte de l'algorithmique avec Flowgorithm
+
 * **Elément.s du programme :** Algorithmie
-* **Objectif.s :** Savoir **concevoir un algorithme** pour résoudre un problème simple
-* **Compétence.s visées.s :** 4) Développer une interface utilisateur [écrire un algorithme]
+* **Objectif.s :** Savoir **concevoir un algorithme** pour résoudre un problème simple.
+* **Compétence.s visées.s :** Développer une interface utilisateur [écrire un algorithme]
 * **Contexte (prérequis) :** Néant
-* **Modalités pédagogiques :** Introduction théorique, exercices pratiques avec Flowgorithm, partage de connaissances entre apprenants
+* **Modalités pédagogiques :** Introduction théorique, exercices pratiques avec Flowgorithm, partage de connaissances entre apprenant.e.s.
 * **Supports nécessaires :** [Présentation aglorithmique](../presentation/algo_basics.html), [Présentation outils pour réussir](../presentation/tools_to_suceed.html), [Théorie algorithmie](../course/algo_basics.md), [Exercices algo](../exercices/algo_basics_ex.md), [Exercices partitions](../exercices/algo_basics_partitions.md)
 * **Temporalité :** 8h
 * **Evaluation :** Néant

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Les bases du langage Java</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Les bases du langage Java</h1><p class="date">Created: 2018-02-07 Wed 16:19</p>
+</section>
+
+<section>
+<section id="slide-org6c87bae">
+<h2 id="org6c87bae"><span class="section-number-2">1</span> Programme bien formé</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc32feaa">
+<h3 id="orgc32feaa"><span class="section-number-3">1.1</span> Constantes littérales</h3>
+<p>
+On considère les valeurs selon leur <b>type</b>.
+</p>
+</section>
+<section id="slide-orgf4ff8a6">
+<h4 id="orgf4ff8a6"><span class="section-number-4">1.1.1</span> Nombre entier</h4>
+<dl>
+<dt>32 bits</dt><dd><code>int</code></dd>
+<dt>64 bits</dt><dd><code>long</code></dd>
+<dt>8 bits</dt><dd><code>byte</code></dd>
+<dt>16 bits</dt><dd><code>short</code></dd>
+
+</dl>
+
+</section>
+<section id="slide-orgb344820">
+<h4 id="orgb344820"><span class="section-number-4">1.1.2</span> Nombre à virgule flottante</h4>
+<dl>
+<dt>32 bits</dt><dd><code>float</code> <code>0.5f</code></dd>
+<dt>64 bits</dt><dd><code>double</code> <code>0.5</code></dd>
+
+</dl>
+
+<p>
+<b>Attention aux erreurs de représentations !</b>
+</p>
+
+
+</section>
+<section id="slide-org052fcc6">
+<h4 id="org052fcc6"><span class="section-number-4">1.1.3</span> Booléen</h4>
+<dl>
+<dt><code>boolean</code></dt><dd><code>true</code> , <code>false</code></dd>
+
+</dl>
+
+</section>
+<section id="slide-org22d8990">
+<h4 id="org22d8990"><span class="section-number-4">1.1.4</span> Caractère</h4>
+<dl>
+<dt>caractère (UTF-16)</dt><dd><code>char</code></dd>
+
+</dl>
+<p>
+<code>'a'</code> , <code>'\n'</code>
+</p>
+
+</section>
+<section id="slide-org1aa5b89">
+<h4 id="org1aa5b89"><span class="section-number-4">1.1.5</span> Chaîne de caractères</h4>
+<p>
+<code>String</code>
+</p>
+
+<p>
+<code class="src src-java"><span style="color: #8b2252;">"ceci est une cha&#238;ne"</span></code>
+</p>
+
+
+<p>
+<code class="src src-java"><span style="color: #8b2252;">"2"</span></code>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbc73852">
+<h3 id="orgbc73852"><span class="section-number-3">1.2</span> Déclaration de variable</h3>
+<p>
+<code class="src src-java"><span style="color: #228b22;">type</span> <span style="color: #a0522d;">nomDeVariable</span> ;</code>
+</p>
+
+
+<p>
+par exemple <code class="src src-java"><span style="color: #228b22;">int</span> <span style="color: #a0522d;">requiredNumberOfChars</span> ;</code>
+</p>
+
+
+<p>
+ou
+<code class="src src-java"><span style="color: #228b22;">type</span> <span style="color: #a0522d;">nomDeVariable</span>= valeurInitiale ;</code>
+</p>
+
+
+
+<p>
+par exemple <code class="src src-java"><span style="color: #228b22;">int</span> <span style="color: #a0522d;">currentNumberOfChars</span>= 0;</code>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orge24cbae">
+<h3 id="orge24cbae"><span class="section-number-3">1.3</span> Affectation</h3>
+<p>
+<code class="src src-java">nomDeVariable= expression ;</code>
+</p>
+
+
+<p>
+Ce n'est <b>pas</b> une <i>relation</i> (d'égalité).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgea202d8">
+<h3 id="orgea202d8"><span class="section-number-3">1.4</span> Opérateurs</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+</section>
+<section id="slide-orgf6861b6">
+<h4 id="orgf6861b6"><span class="section-number-4">1.4.1</span> Arithmétiques</h4>
+<p>
+<code class="src src-java">+ - * / % &lt;&lt; &gt;&gt;</code>
+</p>
+</section>
+<section id="slide-org87d67d1">
+<h4 id="org87d67d1"><span class="section-number-4">1.4.2</span> Binaires</h4>
+<p>
+par exemple <code class="src src-java"> &amp; | ^ ~</code>
+(<i>bitwise</i> in english)
+</p>
+</section>
+<section id="slide-org0e42cd3">
+<h4 id="org0e42cd3"><span class="section-number-4">1.4.3</span> Booléens</h4>
+<p>
+<code class="src src-java"> &amp;&amp; || ^ !</code> Les opérateurs <code>&amp;&amp;</code> et
+<code>||</code> <i>court-circuitent</i> : l'ordre peut être important.
+</p>
+
+
+<p>
+par exemple pour <code class="src src-java">(i !=0) &amp;&amp; (10/i &lt; 3)</code>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgf628147">
+<h3 id="orgf628147"><span class="section-number-3">1.5</span> Affectation modification</h3>
+<p>
+<code class="src src-java"> <span style="color: #228b22;">variable</span> <span style="color: #a0522d;">op</span>= expression;</code>
+</p>
+
+
+<p>
+est un raccourci (<i>syntactic sugar</i>) pour
+</p>
+
+
+<p>
+<code class="src src-java"> variable = variable op expression;</code>
+</p>
+
+<p>
+par exemple <code class="src src-java"> currentNumberOfChars += 2;</code>
+</p>
+
+
+<p>
+est équivalent à
+</p>
+
+
+<p>
+<code class="src src-java"> currentNumberOfChars = currentNumberOfChars + 2;</code>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf954684">
+<h3 id="orgf954684"><span class="section-number-3">1.6</span> [pre|post][inc|dec]rémentation</h3>
+<p>
+<code class="src src-java"> ++variable </code> est :
+</p>
+<ul>
+<li>un raccourci pour l'instruction <code class="src src-java"> variable=variable + 1 </code></li>
+<li>une expression qui vaut la valeur <b>après</b> incrémentation</li>
+
+</ul>
+
+<p>
+<code class="src src-java"> variable++ </code> vaut la valeur <b>avant</b> incrémentation.
+</p>
+
+<p>
+De même avec <code>--</code> pour décrémenter.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfbcacd9">
+<h3 id="orgfbcacd9"><span class="section-number-3">1.7</span> Déclaration de fonction</h3>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span>  <span style="color: #228b22;">typeRetourn&#233;</span> <span style="color: #0000ff;">nomDeFonction</span>( <span style="color: #228b22;">typeArg1</span> <span style="color: #a0522d;">nomArg1</span>, <span style="color: #228b22;">typeArg2</span> <span style="color: #a0522d;">nomArg2</span>){
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}
+</pre>
+</div>
+<p>
+Par exemple :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java">  <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">double</span> <span style="color: #0000ff;">power</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">x</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">n</span>){
+      <span style="color: #228b22;">double</span> <span style="color: #a0522d;">result</span>= 1.;
+      <span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=0; i != n; ++i){
+          result *= x;
+      }
+      <span style="color: #a020f0;">return</span> result;
+  }
+  <span style="color: #b22222;">//</span>
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>){
+    System.out.println(<span style="color: #8b2252;">"1.5 ^ 3="</span>+power(1.5, 3));
+}
+</pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org71cf8ea">
+<h3 id="org71cf8ea"><span class="section-number-3">1.8</span> Exécution conditionnelle</h3>
+<p>
+Selon qu'une expression booléenne vaut <code class="src src-java"> <span style="color: #008b8b;">true</span> </code>
+ou <code class="src src-java"> <span style="color: #008b8b;">false</span> </code>, le bloc sera exécuté ou non (ou
+un autre bloc sera exécuté s'il y a une clause <code>else</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">if</span>(booleanExpression){
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}
+<span style="color: #b22222;">//</span>
+<span style="color: #a020f0;">if</span>(otherBooleanExpression){
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}<span style="color: #a020f0;">else</span>{
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfd73d46">
+<h3 id="orgfd73d46"><span class="section-number-3">1.9</span> Remarque sur les blocs d'instructions</h3>
+<p>
+Un bloc correspond à une portée de variables locales : les variables
+définies dans un bloc ne seront pas accessibles en dehors du bloc.
+</p>
+
+<p>
+Une seule instruction peut tenir lieu de bloc implicite !
+L'instruction vide <code>;</code> est une instruction valide !!
+</p>
+
+<p>
+<b>Toujours</b> mettre un bloc explicite.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbad7539">
+<h3 id="orgbad7539"><span class="section-number-3">1.10</span> Évaluation conditionnelle</h3>
+<p>
+<code class="src src-java"> booleanExpression ? valueIfTrue : valueIfFalse </code>
+</p>
+
+<p>
+Par exemple :
+<code class="src src-java"> (i % 2 == 0) ? <span style="color: #8b2252;">"even"</span> : <span style="color: #8b2252;">"odd"</span> </code>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaa042fc">
+<h3 id="orgaa042fc"><span class="section-number-3">1.11</span> Boucles <code>while</code></h3>
+<div class="outline-text-3" id="text-1-11">
+</div>
+</section>
+<section id="slide-org1170caf">
+<h4 id="org1170caf"><span class="section-number-4">1.11.1</span> <code>while(){}</code></h4>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">while</span>(booleanExpression){
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}
+</pre>
+</div>
+
+</section>
+<section id="slide-orgbf8b2f6">
+<h4 id="orgbf8b2f6"><span class="section-number-4">1.11.2</span> <code>do{} while();</code></h4>
+<p>
+On exécute au moins une fois le bloc car le test est fait à la fin:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">do</span>{
+<span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">*/</span>
+}<span style="color: #a020f0;">while</span>(booleanExpression);
+</pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf7e15cc">
+<h3 id="orgf7e15cc"><span class="section-number-3">1.12</span> Boucles <code>for</code></h3>
+<div class="outline-text-3" id="text-1-12">
+</div>
+</section>
+<section id="slide-org93ecdf1">
+<h4 id="org93ecdf1"><span class="section-number-4">1.12.1</span> <code>for(;;){}</code></h4>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">for</span>(initialisation; continuationCondition; postIterUpdate){
+<span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">*/</span>
+}
+</pre>
+</div>
+<p>
+Équivalent à :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java">initialisation
+<span style="color: #a020f0;">while</span>(continuationCondition){
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+    postIterUpdate
+}
+</pre>
+</div>
+
+
+</section>
+<section id="slide-org31db86c">
+<h4 id="org31db86c"><span class="section-number-4">1.12.2</span> <code>for( : ){}</code></h4>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">for</span>(<span style="color: #228b22;">type</span> <span style="color: #a0522d;">element</span> : collection){
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}
+</pre>
+</div>
+<p>
+Plus ou moins ęquivalent à :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=0; i != collection.length; ++i){
+    <span style="color: #228b22;">type</span> <span style="color: #a0522d;">element</span>= collection[i];
+    <span style="color: #b22222;">/*</span>
+<span style="color: #b22222;">     */</span>
+}
+</pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orga7dd22e">
+<h3 id="orga7dd22e"><span class="section-number-3">1.13</span> Sémantique</h3>
+<p>
+La nature des valeurs détermine le sens éventuel des opérations:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">String</span> <span style="color: #a0522d;">two</span>=<span style="color: #8b2252;">"2"</span>;
+System.out.println(two + two);
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">int</span> <span style="color: #a0522d;">two</span>= 2;
+System.out.println(two + two);
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org32095bc">
+<h3 id="org32095bc"><span class="section-number-3">1.14</span> Convention de nommage</h3>
+<p>
+Les noms composés sont écrits en camelCase : <code>compositeNameWithManyWords</code>.
+Sauf noms de classes, la première lettre est en minuscule.
+</p>
+
+
+<p>
+Les noms de contantes sont écrits <i>screaming snake case</i> :
+<code>SCREAMING_SNAKE_CASE</code>.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org43d0f20">
+<h2 id="org43d0f20"><span class="section-number-2">2</span> "Enrobage"</h2>
+<p>
+Cf. Programmation Orientée Objet
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Main</span> { <span style="color: #b22222;">// </span><span style="color: #b22222;">file must have the same name + .java (i.e. Main.java)</span>
+  <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>){
+  <span style="color: #b22222;">// </span><span style="color: #b22222;">function called when the progam runs (i.e. "java Main")</span>
+  }
+}
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf11fcaa">
+<h2 id="orgf11fcaa"><span class="section-number-2">3</span> Chaînes de caractères</h2>
+<p>
+Le type <code>String</code> est une <i>classe</i> particulière.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java">    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>){
+        <span style="color: #228b22;">String</span> <span style="color: #a0522d;">s1</span> = <span style="color: #8b2252;">"toto"</span>;
+        <span style="color: #228b22;">String</span> <span style="color: #a0522d;">s2</span> = <span style="color: #8b2252;">"toto"</span>;
+        System.out.println(<span style="color: #8b2252;">"s1:"</span>+s1+<span style="color: #8b2252;">", s2:"</span>+s2+<span style="color: #8b2252;">", s1 == s2 :"</span> +(s1 == s2));
+        <span style="color: #228b22;">String</span> <span style="color: #a0522d;">base</span> = <span style="color: #8b2252;">"tot"</span>;
+        <span style="color: #228b22;">String</span> <span style="color: #a0522d;">s3</span>= <span style="color: #8b2252;">"tot"</span> + <span style="color: #8b2252;">"o"</span>;
+        System.out.println(<span style="color: #8b2252;">"s1:"</span>+s1+<span style="color: #8b2252;">", s3:"</span>+s3+<span style="color: #8b2252;">", s1 == s3 :"</span> +(s1 == s3));
+            s3= base + <span style="color: #8b2252;">"o"</span>;
+        System.out.println(<span style="color: #8b2252;">"s1:"</span>+s1+<span style="color: #8b2252;">", s3:"</span>+s3+<span style="color: #8b2252;">", s1 == s3 :"</span> +(s1 == s3));
+    }
+}
+</pre>
+</div>
+<p>
+Quel seraient les résultats avec des types primitifs, par exemple <code>int</code> avec "toto"→4 , "tot"→3, "o"→1 ?
+Avec des valeurs &gt; 256 ?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org3cf6670">
+<h2 id="org3cf6670"><span class="section-number-2">4</span> Tableaux</h2>
+<p>
+Déclaration <code>type[] nomDuTabeau</code>
+</p>
+
+<p>
+Le type peut être lui-même un tableau &rarr; tableaux à N dimensions.
+</p>
+
+<dl>
+<dt>Tableau</dt><dd>séquence indexée (0 &hellip; ) d'éléments de même type</dd>
+
+<dt>Tableau [de tableaux [de tableaux [&hellip;] ] ]</dt><dd>N dimensions</dd>
+
+</dl>
+
+
+<ul>
+<li>L' <b>implémentation</b> dans des espaces mémoire consécutifs ne nous concerne pas.</li>
+<li>Notion de i<sup>ème</sup> élément, pas (encore d'élément suivant)</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">int</span>[] <span style="color: #a0522d;">initWithValue</span>={2,3,5,7,11};
+<span style="color: #228b22;">int</span>[] <span style="color: #a0522d;">initWithSize</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">int</span>[integralExpression];
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc5c5746">
+<h3 id="orgc5c5746"><span class="section-number-3">4.1</span> Tableau de tableaux</h3>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">int</span>[][] <span style="color: #a0522d;">tab</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">int</span>[3][];
+<span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=0;i&lt;3;i++){
+    tab[i] = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">int</span>[i+2];
+}
+
+</pre>
+</div>
+
+<div class="figure">
+<p><img src="reveal.js/images/tabtab.png" alt="tableau de tableau" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf275ddb">
+<h2 id="orgf275ddb"><span class="section-number-2">5</span> Types "Wrapper"</h2>
+<p>
+Pour chaque type primitif, on a une <i>classe</i> correspondante :
+<code>int</code> → <code>Integer</code>, <code>double</code> → <code>Double</code>,…
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">IntegerValue</span>{
+    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>){
+        <span style="color: #228b22;">Integer</span> <span style="color: #a0522d;">i1</span> = 512;
+        <span style="color: #228b22;">Integer</span> <span style="color: #a0522d;">i2</span> = 512;
+        System.out.println(<span style="color: #8b2252;">"i1:"</span>+i1+<span style="color: #8b2252;">", i2:"</span>+i2+<span style="color: #8b2252;">", i1 == i2 :"</span> +(i1 == i2));
+        <span style="color: #228b22;">Integer</span> <span style="color: #a0522d;">base</span> = 384;
+        <span style="color: #228b22;">Integer</span> <span style="color: #a0522d;">i3</span>= 384 + 128 ;
+        System.out.println(<span style="color: #8b2252;">"i1:"</span>+i1+<span style="color: #8b2252;">", i3:"</span>+i3+<span style="color: #8b2252;">", i1 == i3 :"</span> +(i1 == i3));
+        i3= base + 128;
+        System.out.println(<span style="color: #8b2252;">"i1:"</span>+i1+<span style="color: #8b2252;">", i3:"</span>+i3+<span style="color: #8b2252;">", i1 == i3 :"</span> +(i1 == i3));
+    }
+}
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org444abfb">
+<h2 id="org444abfb"><span class="section-number-2">6</span> Entrées / Sorties</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc81f85f">
+<h3 id="orgc81f85f"><span class="section-number-3">6.1</span> Sorties</h3>
+<p>
+<code>System.out.print()</code> ou <code>System.out.println()</code> si l'on veut passer à
+la ligne.
+</p>
+
+<p>
+<code>System.err</code> pour la <i>sortie d'erreurs standard</i>.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org999f5d0">
+<h3 id="org999f5d0"><span class="section-number-3">6.2</span> Entrées</h3>
+<p>
+On crée un objet de la classe <code>java.util.Scanner</code>. Pour ne pas avoir à
+écrire le nom complet (<i>qualifié</i>) avec le nom de <i>package</i>, on peut
+<i>importer</i> le nom de classe en début de fichier :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">import</span> <span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">util</span>.<span style="color: #228b22;">Scanner</span>;
+</pre>
+</div>
+<p>
+Ensuite :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">Scanner</span> <span style="color: #a0522d;">sc</span>= <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Scanner</span>(System.in);
+</pre>
+</div>
+<p>
+<code>System.in</code> est <i>l'entrée standard</i>, c-à-d le clavier de la console
+(sauf redirection). On peut ensuite lire des valeur de différents
+types en appelant des <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#nextInt()">méthodes de la classe java.util.Scanner</a> sur
+l'objet créé :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">int</span> <span style="color: #a0522d;">requestedSize</span>= sc.nextInt();
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org844dc54">
+<h2 id="org844dc54"><span class="section-number-2">7</span> Quizz</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd0dbd21">
+<h3 id="orgd0dbd21"><span class="section-number-3">7.1</span> int</h3>
+<p>
+Le morceau de programme suivant se termine-t'il ?
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>;
+<span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0 ; i &gt;= 0 ; i++ ) {
+    <span style="color: #b22222;">/* </span><span style="color: #b22222;">on ne fait rien */</span>
+}
+
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org5df691a">
+<h3 id="org5df691a"><span class="section-number-3">7.2</span> double</h3>
+<p>
+Le morceau de programme suivant se termine-t'il ?
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">for</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">x</span> = 1 ; x &gt; 0. ; x/=2. ) {
+    <span style="color: #b22222;">/* </span><span style="color: #b22222;">on ne fait rien */</span>
+}
+
+</pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

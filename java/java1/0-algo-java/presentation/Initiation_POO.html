@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Initiation la Programmation Orientée Objet en Java</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Initiation la Programmation Orientée Objet en Java</h1><p class="date">Created: 2018-02-14 Wed 16:58</p>
+</section>
+
+
+<section>
+<section id="slide-org316f120">
+<h2 id="org316f120"><span class="section-number-2">1</span> Principe</h2>
+<p>
+Un programme est constitué de données et de code manipulant ces
+données. Les classes sont des unités de décomposition de données et du
+code qui les manipule.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org7703812">
+<h2 id="org7703812"><span class="section-number-2">2</span> Classe et objet</h2>
+<ul>
+<li>Une classe est le type d'un objet.</li>
+
+<li>Un objet est une instance d'une classe</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org4ab01e4">
+<h2 id="org4ab01e4"><span class="section-number-2">3</span> Classes en Java</h2>
+<p>
+En Java, tout le code est implémenté sous forme de classes.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org836fbdf">
+<h2 id="org836fbdf"><span class="section-number-2">4</span> Packages</h2>
+<p>
+Les packages sont l'organisation hiérarchique des classes
+(cf. répertoires pour les fichiers).
+</p>
+
+<p>
+On peut utiliser un nom complètement qualifié (<i>fully qualified name</i>)
+<code>java.util.Scanner</code> ou utuliser des directives <code>import</code> : <code>import
+java.util.Scanner</code> ou <code>java.util.*</code>.
+</p>
+</section>
+<section id="slide-org025af26">
+<h3 id="org025af26"><span class="section-number-3">4.1</span> En pratique</h3>
+<ul>
+<li>Créer une classe dans un package</li>
+<li>Dans un programme existant, utiliser une classe par son nom
+complètement qualifié, puis avec un <code>import</code> spécifique, qui avec un
+<code>import</code> de tout le contenu d'un <i>package</i>.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org9532636">
+<h2 id="org9532636"><span class="section-number-2">5</span> Interface et implémentation</h2>
+<ul>
+<li>Interface : "quoi" / ce qui est visible</li>
+<li>Implémentation : "comment" / ce qui est caché</li>
+
+</ul>
+
+<p>
+On parle d' <i>encapsulation</i>. 
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org2b7b59b">
+<h2 id="org2b7b59b"><span class="section-number-2">6</span> Minimisation de la compléxité</h2>
+<p>
+On minimise ce qui est visible : il n'y a pas de dépendance envers ce
+qui n'est pas visible (&rarr; possibilité d'évolutions).
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orge187d41">
+<h2 id="orge187d41"><span class="section-number-2">7</span> Visibilités</h2>
+<p>
+Les différents niveaux de visibilité indiquent quel code a accès à ce
+qui est qualifié:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">qualificatif</th>
+<th scope="col" class="org-left">Classe</th>
+<th scope="col" class="org-left">Package</th>
+<th scope="col" class="org-left">Sous-classe</th>
+<th scope="col" class="org-left">Tout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>public</code></td>
+<td class="org-left">✓</td>
+<td class="org-left">✓</td>
+<td class="org-left">✓</td>
+<td class="org-left">✓</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>protected</code></td>
+<td class="org-left">✓</td>
+<td class="org-left">✓</td>
+<td class="org-left">✓</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✓</td>
+<td class="org-left">✓</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>private</code></td>
+<td class="org-left">✓</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+(sous-classe &rarr; cf. infra héritage)
+</p>
+
+</section>
+<section id="slide-org1951f5f">
+<h3 id="org1951f5f"><span class="section-number-3">7.1</span> Pratique</h3>
+<ul>
+<li>Créer une classe <code>VisiP</code> sans qualificatif de visibilité dans un
+package <code>co.simplon.p1</code> avec une fonction :</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">message</span>(){
+System.out.println(<span style="color: #8b2252;">"Hello from VisiP !"</span>);
+}
+</pre>
+</div>
+<ul>
+<li>Créer une classe <code>Main</code> dans un package <code>co.simplon.p1</code> avec une
+fonction <code>public static void main(String[] args)</code> qui essaie
+d'appeler <code>VisiP.message()</code>.</li>
+<li>Que se passe-t'il si <code>Main</code> est dans un package <code>co.simplon</code> ?
+Quelle(s) modification(s) faut-il faire ?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1fcb5d0">
+<h2 id="org1fcb5d0"><span class="section-number-2">8</span> Mot clé <code>static</code></h2>
+<p>
+Ce qui est qualifié de <code>static</code> concerne la classe (n'est pas créé en
+cours d'exécution). Cf. <code>public static vois main(String[] args)</code>.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org5b68117">
+<h2 id="org5b68117"><span class="section-number-2">9</span> Attributs de classe</h2>
+<p>
+On peut associer des données à une classe avec des
+<i>attributs</i>. Ceux-ci sont accessibles, selon leur visibilité, comme
+des variables avec une durée de vie qui est celle du programme.
+On accède à un attribut d'une classe comme à une fonction (<i>méthode</i>) de classe:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java">System.out;
+<span style="color: #008b8b;">Integer</span>.MAX_VALUE;
+</pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgcc05eae">
+<h2 id="orgcc05eae"><span class="section-number-2">10</span> Attributs constants</h2>
+<p>
+En fait, pour limiter le <i>couplage</i> on utilise généralement des
+attributs de classe qui sont déclarés constant :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #a020f0;">final</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">NB_OF_RETRIES</span>= 3;
+</pre>
+</div>
+
+</section>
+<section id="slide-org510033a">
+<h3 id="org510033a"><span class="section-number-3">10.1</span> En pratique 1/2</h3>
+<p>
+Dans la classe <code>VisiP</code>, mettre un attribut de classe <code>GREETING</code> de
+type <code>String</code> pour remplacer le <code>"hello"</code> de la classe <code>VisiP</code>.
+</p>
+
+</section>
+<section id="slide-org1071e75">
+<h3 id="org1071e75"><span class="section-number-3">10.2</span> En pratique 2/2</h3>
+<p>
+Modifier la classe <code>Quizz</code> pour que la fonction <code>main</code> soit comme suit :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>){
+ <span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=0; i != questions.length; ++i){
+     System.out.println(questions[i]);
+     <span style="color: #228b22;">String</span> <span style="color: #a0522d;">answer</span>= in.nextLine();
+     <span style="color: #a020f0;">if</span>(answer.equals(answers[i])){
+         score+= scores[i];
+     }
+ }
+ displayResult();
+}
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org1342f7c">
+<h2 id="org1342f7c"><span class="section-number-2">11</span> Objets</h2>
+<p>
+Lorsque l'on veut manipuler différents <i>valeurs pour un même type
+composé, l'on doit /instancier</i> la classe décrivant ce type:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">TestItem</span> {
+    <span style="color: #228b22;">String</span> <span style="color: #a0522d;">question</span>;
+    <span style="color: #228b22;">String</span> <span style="color: #a0522d;">answer</span>;
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">points</span>;
+}
+</pre>
+</div>
+<p>
+On utilise le mot-clé <code>new</code> :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #228b22;">TestItem</span> <span style="color: #a0522d;">ti</span>= <span style="color: #a020f0;">new</span> <span style="color: #228b22;">TestItem</span>();
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc352d17">
+<h2 id="orgc352d17"><span class="section-number-2">12</span> Constructeurs</h2>
+<p>
+On initialise les <i>attributs</i> d'un objet à l'occasion de la
+<i>construction</i> d'un objet. Dans une méthode d'instance (et un
+constructeur) on peut accéder directement aux attributs de l'instance.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">TestItem</span> {
+    <span style="color: #a020f0;">public</span> <span style="color: #0000ff;">TestItem</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">q</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">p</span>){
+        question= q;
+        answer= a;
+        points= p;
+    }
+}
+</pre>
+</div>
+
+</section>
+<section id="slide-orgacce867">
+<h3 id="orgacce867"><span class="section-number-3">12.1</span> mot clé <code>this</code></h3>
+<p>
+On peut aussi préfixer avec le mot-clé <code>this</code> :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">TestItem</span> {
+    <span style="color: #a020f0;">public</span> <span style="color: #0000ff;">TestItem</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">question</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">answer</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">points</span>){
+        <span style="color: #a020f0;">this</span>.question= question;
+        <span style="color: #a020f0;">this</span>.answer= answer;
+        <span style="color: #a020f0;">this</span>.points= points;
+    }
+}
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgcc01200">
+<h2 id="orgcc01200"><span class="section-number-2">13</span> Accesseurs</h2>
+<p>
+Généralement, on ne permet pas l'accès direct aux attributs, mais l'on
+utilise <b>si nécessaire</b> des <i>accesseurs</i> : <i>getter</i> et <i>setter</i> :
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #228b22;">TypeOfXXX</span> <span style="color: #0000ff;">getXXX</span>(){
+  <span style="color: #a020f0;">return</span> xxx;
+}
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">setXXX</span>( <span style="color: #228b22;">TypeOfXXX</span> <span style="color: #a0522d;">xxx</span> ){
+  <span style="color: #a020f0;">this</span>.xxx= xxx;
+}
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf78eb58">
+<h2 id="orgf78eb58"><span class="section-number-2">14</span> Méthodes</h2>
+<p>
+Une méthode d'instance (non qualifiée par <code>static</code>) :
+</p>
+<ul>
+<li><p>
+est appelée sur une instance 
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java">System.out.println();
+str.equals(<span style="color: #8b2252;">"test"</span>);
+</pre>
+</div></li>
+<li>a accès implicite aux attributs d'instance (Cf. accesseurs)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgc335f56">
+<h2 id="orgc335f56"><span class="section-number-2">15</span> equals et toString</h2>
+<p>
+On réimplémente (cf. infra héritage) généralement au moins les
+méthodes <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a> et <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--">toString</a>. Cette dernière est appellée
+automatiquement lors d'une concaténation ou d'un affichage avec
+<code>println</code>.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org5b1bd04">
+<h2 id="org5b1bd04"><span class="section-number-2">16</span> Références</h2>
+<p>
+En fait, tous les objets sont manipulés par
+références (comme les instances de <code>String</code>, <code>Integer</code>,…).
+</p>
+
+<p>
+Cf. implications pour arguments, ==, …
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgb42e2ea">
+<h2 id="orgb42e2ea"><span class="section-number-2">17</span> Classes immutables</h2>
+<p>
+Si tous les attributs d'instance sont constants, il n'y a pas de
+risques de modifications problématiques.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org9c3e4e9">
+<h2 id="org9c3e4e9"><span class="section-number-2">18</span> En pratique 1/2</h2>
+<p>
+Modifier le programme <code>Quizz</code> pour utiliser des objets d'une classe
+<code>TestItem</code>.
+</p>
+
+</section>
+<section id="slide-org58c5e0a">
+<h3 id="org58c5e0a"><span class="section-number-3">18.1</span> Classe QuizzItem immutable</h3>
+<p>
+Utiliser une classe <code>QuizzItem</code> immutable, avec une méthode qui
+retourne le nombre de points obtenus en validant ou non une réponse
+proposée.
+</p>
+
+</section>
+<section id="slide-org3ecfd82">
+<h3 id="org3ecfd82"><span class="section-number-3">18.2</span> Classe QuizzItem mutable</h3>
+<p>
+Utiliser une classe <code>QuizzItem</code> mutable avec un attribut qui permette
+de reproposer la question en cas de réponse erronée.
+</p>
+
+</section>
+<section id="slide-org73b1e68">
+<h3 id="org73b1e68"><span class="section-number-3">18.3</span> Instances de la classe Quizz</h3>
+<p>
+Modifier la classe <code>Quizz</code> pour que le main instancie un objet
+paramétré par le nombre d'essais:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>){
+    <span style="color: #228b22;">Quizz</span> <span style="color: #a0522d;">session</span>= <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Quizz</span>(nbRetries);
+    session.doTest();
+    session.displayResults();
+}
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgce6192c">
+<h2 id="orgce6192c"><span class="section-number-2">19</span> En pratique 2/2</h2>
+<p>
+Réarchitecturer ("refactorer") le code de gestion de données sur les
+aliments avec une architecture Orientée Objet.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction à git</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction à git</h1><p class="date">Created: 2018-02-09 Fri 10:48</p>
+</section>
+
+<section>
+<section id="slide-org185abc9">
+<h2 id="org185abc9"><span class="section-number-2">1</span> Gestionnaire de version décentralisé</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6a95dd9">
+<h3 id="org6a95dd9"><span class="section-number-3">1.1</span> Gestion de version</h3>
+<ul>
+<li>historique : versions identifiée et décrites (commentaire)</li>
+<li>changement d'état atomique : <i>commit</i> des changements d'un ensemble
+de fichiers.</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orga99f922">
+<h3 id="orga99f922"><span class="section-number-3">1.2</span> Décentralisé</h3>
+<ul>
+<li>Chaque poste de travail possède l'ensemble de l'historique des</li>
+
+</ul>
+<p>
+versions (un dépôt ou <i>repository</i>).
+</p>
+<ul>
+<li>On synchronise les différents dépôts locaux des membres de l'équipe
+avec un dépôt de référence distant (<i>remote</i>).</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4f381d4">
+<h2 id="org4f381d4"><span class="section-number-2">2</span> Git</h2>
+<p>
+<a href="http://www.ndpsoftware.com/git-cheatsheet.html">http://www.ndpsoftware.com/git-cheatsheet.html</a>
+</p>
+
+<ul>
+<li>Système de fichiers</li>
+<li>Index</li>
+<li>Dépôt local</li>
+<li>Dépôt distant</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc1c3ee8">
+<h3 id="orgc1c3ee8"><span class="section-number-3">2.1</span> Création d'un dépôt</h3>
+<ul>
+<li>git init : création locale</li>
+<li>git clone : création à partir d'un dépôt distant</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0abee57">
+<h3 id="org0abee57"><span class="section-number-3">2.2</span> Informations sur le dépôt</h3>
+<ul>
+<li>git status</li>
+<li>git log</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org45409bc">
+<h3 id="org45409bc"><span class="section-number-3">2.3</span> Création d'une nouvelle version</h3>
+<ul>
+<li>git add fichier1</li>
+<li>git add fichier2</li>
+<li>…</li>
+<li>git commit -m "message de commit"</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org074bad3">
+<h3 id="org074bad3"><span class="section-number-3">2.4</span> Changement de version</h3>
+<ul>
+<li>git reset</li>
+
+</ul>
+
+<p>
+HEAD, HEAD^, HEAD^^, identifiant
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org60750c0">
+<h3 id="org60750c0"><span class="section-number-3">2.5</span> Mise jour à partir du dépôt distant</h3>
+<ul>
+<li>git pull</li>
+<li>git pull &#x2013;rebase</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge7a5b73">
+<h3 id="orge7a5b73"><span class="section-number-3">2.6</span> Mise à jour du dépôt distant</h3>
+<ul>
+<li>git push</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0d67a47">
+<h2 id="org0d67a47"><span class="section-number-2">3</span> Git sous Eclipse</h2>
+<p>
+<a href="http://www.vogella.com/tutorials/EclipseGit/article.html#how-to-configure-the-usage-of-git-in-eclipse">http://www.vogella.com/tutorials/EclipseGit/article.html#how-to-configure-the-usage-of-git-in-eclipse</a>
+</p>
+
+<p>
+<a href="https://openclassrooms.com/courses/egit-quand-git-s-invite-dans-eclipse">https://openclassrooms.com/courses/egit-quand-git-s-invite-dans-eclipse</a>
+</p>
+
+<ul>
+<li>Window→Preferences→Team→Git</li>
+<li>Window→Perspective→Customize perspective…</li>
+<li>Window→Show View→Other</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org061a452">
+<h2 id="org061a452"><span class="section-number-2">4</span> En pratique</h2>
+<ul>
+<li>on garde l'historique de l'ensemble des sous-répertoires du projet
+(par exemple pour avoir les fichiers de config)</li>
+<li>on exclue (cf. <code>.gitignore</code>) :
+<ul>
+<li>les fichiers class / jar</li>
+<li>ce qui contient des informations sensibles ! (e.g. mots de passe)</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

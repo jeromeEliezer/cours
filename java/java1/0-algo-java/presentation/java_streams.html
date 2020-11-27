@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Les flux de données en Java</title>
+
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/presentation.css">
+  <link rel="stylesheet" href="reveal.js/lib/css/atom-one-dark.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+
+<body>
+  <!-- Wrap the entire slide show in a div using the "reveal" class. -->
+  <div class="reveal">
+    <!-- Wrap all slides in a single "slides" class -->
+    <div class="slides">
+
+      <!-- ALL SLIDES GO HERE -->
+      <!-- Each section element contains an individual slide -->
+      <section>
+        <h1>Les flux de données en Java</h1>
+        <img class="no-border" src="reveal.js/images/logo_simplon.png" alt="Logo Simplon">
+      </section>
+
+      <section>
+        <h3>Qu'est ce qu'un flux de données ?</h3>
+        <p class="fragment"><q cite="https://fr.wikipedia.org/wiki/Flux_(informatique)">En informatique, un flux [...] est une suite infinie d'éléments gérés de façon temporelle</q></p>
+      </section>
+
+      <section>
+        <p>
+          Flux de données = ensemble d'informations qui circulent d'une entité à une autre (fichier, ...).
+        </p>
+      </section>
+
+      <section>
+        <p>Exemples d'utilisation de flux de données :</p>
+        <ul>
+          <li>Lecture d'un fichier texte</li>
+          <li>Envoi de données sur un socket réseau</li>
+          <li>Ecriture de données en ligne de commande</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Les 2 types de flux</h3>
+        <ul>
+          <li>Flux d'octets</li>
+          <li>Flux de caractères</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Les 2 sens possibles</h3>
+        <ul>
+          <li>Input : le flux entre dans le programme</li>
+          <li>Output : le flux sort du programme</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Exemple</h3>
+        <img src="reveal.js/images/streams.png" alt="Java stream">
+      </section>
+
+      <section>
+        <h3>Quelques exemples d'application</h3>
+      </section>
+
+      <section>
+        <h3>Lire depuis la console</h3>
+        <pre><code class="hljs java" data-trim>
+          public static void readFromConsole() {
+            // Création de l'objet Scanner (pour lire les entrées clavier)
+            Scanner scanner = new Scanner(System.in);
+            String userName;
+            System.out.println("Entrez votre nom : ");
+
+            userName = scanner.nextLine();
+
+            // On ferme l'objet scanner (obligatoire !)
+            scanner.close();
+          }
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Ecrire dans un fichier</h3>
+        <pre><code class="hljs java" data-trim>
+          public static void writeToFile(String newLearner) {
+            // Création de l'objet writer qui écrira dans learners.txt.
+            BufferedWriter writer = new BufferedWriter
+                                      (new FileWriter("learners.txt", true));
+            // On écrit la chaîne de caractères passées
+            // en argument de la fonction.
+            writer.write(newLearner);
+            // On ferme notre objet writer.
+            writer.close();
+          }
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Lire depuis un fichier</h3>
+        <pre><code class="hljs java" data-trim>
+          public static void readFromFile() {
+            String fileContent = "";
+            // Création d'un objet Scanner pour lire le fichier learners.txt.
+            Scanner scanner = new Scanner(new File("learners.txt"));
+            // Tant que l'objet scanner n'est pas à la fin du fichier, on lit.
+            while (scanner.hasNextLine()) {
+              fileContent += scanner.nextLine() + "\n";
+            }
+            // On ferme notre objet scanner car on a fini de lire le fichier.
+            scanner.close();
+            // On afficher le contenu dans la console.
+            System.out.println(fileContent);
+          }
+        </code></pre>
+      </section>
+
+      <section>
+        <p>Les ressources utiles pour approfondir les notions de Stream</p>
+        <ul>
+          <li><a href="https://docs.oracle.com/javase/tutorial/essential/io/streams.html">La documentation officielle Java Oracle</a></li>
+          <li><a href="https://www.jmdoudoux.fr/java/dej/chap-flux.htm">Le chapitre Java Streams sur Développez.com</a></li>
+          <li><a href="https://openclassrooms.com/courses/apprenez-a-programmer-en-java/les-flux-d-entree-sortie">Le chapitre Java Streams sur OpenClassrooms</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/search/search.js', async: true },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true }
+    ]
+  });
+  </script>
+</body>
+
+</html>

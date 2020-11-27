@@ -1,0 +1,32 @@
+body {
+    background-image: url(../images/picto_simplon.png);
+    background-position: 96% 3%;
+    background-repeat: no-repeat;
+    background-size: 10%;
+}
+
+strong {
+  color: #ed1450;
+  font-weight: bold;
+}
+
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sliding-tiles table td {
+  border: 1px solid;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  text-align: center;
+  }
+
+.sliding-tiles table tbody tr:last-child th,
+.sliding-tiles table tbody tr:last-child td {
+    border-bottom: 1px solid; }
+
+.sliding-tiles p {
+    color: #ed1450;
+    font-size: 0.7em;
+}

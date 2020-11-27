@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Les exceptions en Java</title>
+
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/presentation.css">
+  <link rel="stylesheet" href="reveal.js/lib/css/atom-one-dark.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+
+<body>
+  <!-- Wrap the entire slide show in a div using the "reveal" class. -->
+  <div class="reveal">
+    <!-- Wrap all slides in a single "slides" class -->
+    <div class="slides">
+      <!-- ALL SLIDES GO HERE -->
+      <!-- Each section element contains an individual slide -->
+      <section>
+        <h1>Les exceptions en Java</h1>
+        <img class="no-border" src="reveal.js/images/logo_simplon.png" alt="Logo Simplon">
+      </section>
+
+      <section>
+        <h3>Qu'est ce qu'une exception ?</h3>
+        <p class="fragment">Evénement exceptionnel</p>
+        <p class="fragment">Evénement non voulu</p>
+        <p class="fragment">Comportement anormal du programme développé</p>
+      </section>
+
+      <section>
+        <h3>En Java</h3>
+        <p>Existence d'un mécanisme intégré permettant de <strong>lancer</strong> et de <strong>gérer</strong> les exceptions.</p>
+        <p>Objectif : gérer proprement les erreurs qui arrivent pendant l'exécution</p>
+      </section>
+
+      <section>
+        <section>
+          <h3>Comprendre la pile d'appel</h3>
+          <p>Comment marche le programme quand les fonctions <strong>s'appellent</strong> entre elles ?</p>
+        </section>
+
+        <section>
+          <h3>Extrait de code</h3>
+          <pre><code class="hljs java" data-trim>
+            public static void main(String[] args) {
+              int random = getNumberBetween(-10, 60);
+              System.out.println(random);
+            }
+
+            public static int getNumberBetween(int lowLimit, int highLimit) {
+              int result = 0;
+              if (lowLimit &lt; 0 && highLimit &lt; 0) {
+                result = (int) ((lowLimit - highLimit) * getRandomNumber()) + highLimit;
+              } else {
+                result = (int) ((highLimit - lowLimit) * getRandomNumber()) + lowLimit;
+              }
+              return result;
+            }
+
+            public static double getRandomNumber() {
+              return Math.random();
+            }
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Pile d'appels correspondante</h3>
+          <img src="reveal.js/images/call_stack.png" alt="Java call stack" width="800px">
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Et si ça se passe mal ?</h3>
+          <p>Est-ce possible dans l'exemple précédent ?</p>
+          <p class="fragment">Non, ça parait difficile</p>
+        </section>
+
+        <section>
+          <h3>Et si l'utilisateur.trice rentre en jeu ?</h3>
+          <p>Exemple : On demande à l'utilisateur de spécifier le chemin d'un fichier qu'on veut lire</p>
+        </section>
+
+        <section data-background="https://media.giphy.com/media/zOvBKUUEERdNm/giphy.gif">
+          <!-- Singe devant son PC -->
+        </section>
+
+        <section>
+          <p>Potentiels problèmes :</p>
+          <ul>
+            <li>Le chemin du fichier pointe sur un fichier inexistant</li>
+            <li>Le fichier existe mais ne contient pas de contenu</li>
+            <li>Le fichier contient du contenu mais pas celui qu'on attend</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>C'est là que les exceptions arrivent</h3>
+          <p>Une fonction <strong>gère</strong> et/ou <strong>lance</strong> des exceptions.</p>
+        </section>
+        <section>
+          <h3>Lancer une exception</h3>
+          <pre><code class="hljs java" data-trim>
+            public static int[] getLimitsFromFile(String limitPath) throws FileNotFoundException {
+              int[] limits = new int[2];
+
+              Scanner scanner = new Scanner(new File(limitPath));
+              limits[0] = scanner.nextInt();
+              scanner.nextLine();
+              limits[1] = scanner.nextInt();
+              scanner.nextLine();
+
+              scanner.close();
+
+              return limits;
+            }
+          </code></pre>
+        </section>
+        <section>
+          <h3>Gérer une exception</h3>
+          <pre><code class="hljs java" data-trim>
+            public static void main(String[] args) {
+              System.out.println("Bienvenue dans l'application de calcul de nombre aléatoire !");
+
+              int[] limits;
+              try {
+                String limitPath = getFileNameFromConsole();
+                limits = getLimitsFromFile(limitPath);
+                System.out.println(getNumberBetween(limits[0], limits[1]));
+              } catch (FileNotFoundException e) {
+                System.out.println("Le fichier \"limite\" que vous avez spécifié n'existe pas.");
+                System.out.println("Impossible de calculer un nombre aléatoire.");
+              } finally {
+                System.out.println("Merci d'avoir utilisé mon application, aurevoir");
+              }
+
+            }
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Pile d'appels correspondante</h3>
+          <img src="reveal.js/images/call_stack_file.png" alt="Java call stack" width="1000px">
+        </section>
+
+        <section>
+          <h3>Plus de détails sur la gestion</h3>
+          <p>Le <strong>try</strong> est le bloc où les instructions sont autorisées à renvoyer des exceptions</p>
+          <p>Le(s) <strong>catch(s)</strong> sont là pour capturer les exceptions lancées dans le <strong>try</strong> et agir en conséquence</p>
+          <p>Le <strong>finally</strong> est un bloc qui s'exécute dans tous les cas même après une exception</p>
+        </section>
+      </section>
+
+
+      <!-- TODO continuer ici -->
+
+      <section>
+        <p>Les ressources utiles pour approfondir les notions de Stream</p>
+        <ul>
+          <li><a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html">La documentation officielle Java Oracle</a></li>
+          <li><a href="http://anisfrikha.developpez.com/tutoriel/java/exceptions/">Les bonnes pratiques</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/search/search.js', async: true },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true }
+    ]
+  });
+  </script>
+</body>
+
+</html>
