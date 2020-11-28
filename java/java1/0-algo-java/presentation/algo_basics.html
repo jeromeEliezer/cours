@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Les Algorithmes "purs et durs"</title>
+  <title>Algorithmes "purs et durs"</title>
 
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
@@ -28,8 +28,8 @@
       <!-- ALL SLIDES GO HERE -->
       <!-- Each section element contains an individual slide -->
       <section>
-        <h1>Les algorithmes purs et durs</h1>
-        <img class="no-border" src="reveal.js/images/logo_simplon.png" alt="Logo Philippe">
+        <h1>Les algorithmes</h1>
+        <img class="no-border" src="reveal.js/images/about-1.jpg" alt="Logo Philippe">
       </section>
 
       <section>
@@ -78,13 +78,17 @@
             Il nous montre aussi l’importance de connaître <strong>toutes</strong> les actions possibles pour résoudre un problème.
             <aside class="notes">Si je vous dit au départ que vous pouvez revenir en arrière avec le canard ou le renard, alors vous résolvez le problème plus facilement.</aside>
           </p>
-          <p class="fragment"><strong>Solution : </strong>Reformuler le problème et le regarder sous tous les angles avant de chercher la solution</p>
+          <p class="fragment"><strong>Solution : </strong>Reformuler le problème et le regarder sous tous les angles avant de chercher une solution</p>
         </section>
       </section>
       <section>
         <section>
           <h3>Exemple #2</h3>
           <h3>Le jeu du taquin</h3>
+          <figure class="fragment">
+            <img src="reveal.js/images/taquin.jpg" alt="taquin" width="250">
+            <figcaption>Jeu du Taquin</figcaption>
+          </figure>
         </section>
         <section>
           <h3>Enoncé</h3>
@@ -144,14 +148,14 @@
       <section>
         <h3>Les clés pour solutionner un problème</h3>
         <ul>
-          <li>Toujours avoir un <strong>plan</strong> <aside class="notes">Même si un plan risque d’être modifié, cela permet de définir des étapes intermédiaires et de suivre l’avancement de la résolution)</aside></li>
-          <li><strong>Reformuler</strong> le problème <aside class="notes">Cela permet à minima de s’assurer qu’on a compris le problème et parfois de voir le problème sous un autre angle et de trouver plus facilement une solution</aside></li>
-          <li><strong>Diviser</strong> le problème <aside class="notes">Exemple avec le tri de livres par hauteur, il vaut mieux trier 100 livres en découpant 25 par 25 puis rassembler les 4 x 25 triés que de trier les 100 d’un coup</aside></li>
+          <li>Toujours avoir un <strong>plan</strong> <aside class="notes">Même si un plan risque d’être modifié, cela permet de définir des étapes intermédiaires et de suivre l’avancement de la résolution</aside></li>
+          <li><strong>Reformuler</strong> le problème <aside class="notes">Cela permet à minima de s’assurer qu’on a compris le problème et d'aborder le problème sous un angle différent et trouver plus facilement une solution</aside></li>
+          <li><strong>Diviser</strong> le problème <aside class="notes">Exemple avec le tri des livres par hauteur, il vaut mieux trier 100 livres en <strong>découpant</strong> 25 par 25 puis rassembler les 4 x 25 triés plutôt que de trier les 100 d’un coup !</aside></li>
           <li>Commencer par <strong>ce que l'on sait</strong> faire</li>
           <li><strong>Simplifier</strong> le problème <aside class="notes">Parfois il est préférable de supprimer des contraintes pour avoir une solution intermédiaire plus simple, même si elle ne couvre pas tout le problème</aside></li>
           <li>Chercher des <strong>analogies</strong> <aside class="notes">Ne veut pas dire copier/coller</aside></li>
           <li><strong>Expérimenter</strong> <aside class="notes">Ne veut pas dire deviner ou faire “au pif”</aside></li>
-          <li>Garder la <strong>motivation</strong> <aside class="notes">Eviter de laisser la frustration vous atteindre. Soyez indulgent avec vous même !</aside></li>
+          <li>Garder la <strong>motivation</strong> <aside class="notes">Eviter de laisser la frustration vous atteindre. Soyez indulgent.e avec vous même !</aside></li>
         </ul>
       </section>
       <section>
@@ -164,7 +168,7 @@
           Il s’agit d’une <strong>suite (finie) d’opérations élémentaires</strong> qui permettent de résoudre un problème.
         </p>
         <p class="fragment">
-          C’est une procédure de calcul qui prend en entrée un ensemble E de valeurs et qui retourne en sortie en ensemble E’ de valeurs.
+          C’est une procédure de <i>calcul</i> qui prend en entrée un ensemble V de valeurs et qui retourne en sortie en ensemble V’ de valeurs.
         </p>
       </section>
       <section>
@@ -172,7 +176,7 @@
           Un algorithme doit toujours se <strong>terminer</strong> et <strong>fournir un résultat</strong>.
         </p>
         <p class="fragment">
-          Un algorithme est dit <strong>correct</strong> si pour chaque ensemble de valeurs <strong>E</strong> en entrée il fournit le même ensemble de résultat <strong>E'</strong> en sortie.
+          Un algorithme est dit <strong>correct</strong> si pour chaque ensemble de valeurs <strong>V</strong> en entrée il fournit le même ensemble de résultat <strong>V'</strong> en sortie.
         </p>
       </section>
       <section>
@@ -243,7 +247,7 @@
       <section>
         <h3>La complexité</h3>
         <p class="fragment">
-          Il s'agit en fait de <strong>l'efficacité</strong> de l'algorithme qu'on va développer.
+          Il s'agit en fait de <strong>l'efficacité</strong> de l'algorithme que l'on va développer.
         </p>
         <ul class="fragment">
           <li>En temps</li>

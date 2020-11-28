@@ -1,39 +1,48 @@
 # Hello World
-Bienvenu dans le monde de java. C'est un langage de programmation orienté objet crée en 1995. Il est actuellement détenu par la société Oracle qui le distribue gratuitement ([est-ce toujours le cas? article](https://blog.invivoo.com/java-va-t-il-devenir-payant/)).
 
-Une de ses caractéristiques principales est la jvm : java virtual machine. C'est une couche qui permet à un même programme java de tourner sur différents systèmes d'exploitation. Pour exécuter un programme java, il suffit d'installer la jre (java runtime environment).
+Bienvenu dans le monde de java. C'est un langage de programmation orienté objet crée en 1995. Il est actuellement détenu par la société Oracle qui le distribue gratuitement ([est-ce toujours le cas ? article](https://blog.invivoo.com/java-va-t-il-devenir-payant/)).
+
+Une de ses caractéristiques principales est la **JVM** : Java Virtual Machine. C'est une couche qui permet à un même programme java de tourner sur différents systèmes d'exploitation. Pour exécuter un programme java, il suffit d'installer un JRE (Java Runtime Environment).
 
 ![img](jvm.webp)
 
-Lorsqu'un développeur (vous!) souhaite installer java sur sa machine, il installe la jse (java standard edition). Cette installation comprend la jre, la jdk (toutes les librairies java+outils de programmation tels que le compilateur) et jsr (java specification request). La dernière version de la JSE est la 13. ([plus de détail sur les versions](https://fr.wikipedia.org/wiki/Java_%28langage%29#Contenu_et_%C3%A9volutions)).
+Lorsqu'un développeur.euse (vous!) souhaitez installer java sur votre machine, JAVA installe la JSE (Java Standard Edition). Cette installation comprend la JRE, la JDK (toutes les librairies java + outils de programmation tels que le compilateur) et JSR (Java Specification Request).
 
-Java est un langage à la fois robuste (grâce à des règles de compilation strictes, vous en ferez vite l'expérience) et sa syntaxe permet d'implémenter des concepts élaborés (plus simplement qu'en c++). C'est un langage très largement répandu, je n'ai pas trouvé à combien de [sloc](https://en.wikipedia.org/wiki/Source_lines_of_code#Example) il était estimé. Ainsi java possède une large communauté d'utilisateurs et de nombreux programmes déjà écrits, si bien qu'une solution existe souvent pour un besoin donné.
+>La dernière version de la JSE est la 13. ([plus de détail sur les versions](https://fr.wikipedia.org/wiki/Java_%28langage%29#Contenu_et_%C3%A9volutions)).
 
-Voici les tendances sur le site [stackoverflow](https://stackoverflow.com/) pour quelques langages choisis : ![tendances](trends.png).
-On voit l'apparition de scala et kotlin, notamment depuis 2017 ([explication](https://fr.wikipedia.org/wiki/Kotlin_(langage))) qui sont totalement compatibles avec java et la jvm mais font évoluer sa syntaxe en s'inspirant des bonnes trouvailles des autres langages.
+Java est un langage à la fois robuste (grâce à des règles de compilation strictes, vous en ferez vite l'expérience) et sa syntaxe permet d'implémenter des concepts élaborés (plus simplement qu'en C++). C'est un langage très largement répandu, je n'ai pas trouvé à combien de [sloc](https://en.wikipedia.org/wiki/Source_lines_of_code#Example) il était estimé. Ainsi java possède une large communauté d'utilisateurs et de nombreux programmes déjà écrits, si bien qu'une solution existe souvent pour un besoin donné.
+
+Voici les tendances sur le site [stackoverflow](https://stackoverflow.com/) pour quelques langages choisis (je vous laisse décrypter ce graphique car je suis daltonien!) : ![tendances](trends.png).
+
+On voit l'apparition de scala et kotlin, notamment depuis 2017 ([explication](https://fr.wikipedia.org/wiki/Kotlin_(langage))) qui sont totalement compatibles avec JAVA et la JVM mais font évoluer sa syntaxe en s'inspirant des bonnes trouvailles des autres langages.
 
 Voici à quoi ressemble un programme java :
 ```java
 public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println("Hello evrybody!");
+    System.out.println("Bonjour les apprenant.e.s !");
   }
 }
 ```
-Le nom du fichier est le nom de la classe (ici HelloWorld) avec l'extension .java. Comme on peut le voir, ce fichier est écrit de façon _compréhensible_. Il va ensuite être compilé en bytecode (écrit en octets) qui sera interprété par la jvm : java est donc un langage compilé et interprété.
+Le nom du fichier est le nom de la classe (ici **HelloWorld**) avec l'extension **.java.** Comme on peut le voir, ce fichier est écrit de façon _compréhensible_. Il va ensuite être compilé en bytecode (écrit en octets) qui sera interprété par la JVM.
 
-## Tester des instructions avec jshell
+> Java est donc un langage **compilé et interprété**.
+
+## Testez des instructions avec jshell
 
 Depuis Java 1.8, on peut simplement tester du code java en lançant jshell :
-```
-jshell> System.out.println("Hello World!");
-Hello World!
-```
 
+Il suffit de lancer un terminal windows et de taper jshell pour exécuter du code java.
+
+```
+jshell> System.out.println("Coucou !");
+Coucou !
+```
+![jshell-exemple.png](images/jshell-exemple.jpg)
 
 ## Commenter le code
 
-Avant toute chose, il convient de parler des commentaires ! C'est certainement une des choses les plus importantes que l'on écrit lorsque l'on code. Ce sont des lignes de code qui ne seront pas interprétées mais qui donnent des indications primordiales pour les programmeurs qui liront le code (y compris vous dans quelques mois / années).
+Avant toute chose, il convient de parler des commentaires ! C'est certainement une des choses les plus importantes que l'on écrit lorsque l'on code. Ce sont des lignes de code qui ne seront pas interprétées mais qui donnent des indications primordiales pour les programmeurs qui liront le code (y compris vous dans quelques mois ou années).
 
 ```java
 // Voici comment j'écris un commentaire en java : en démarrant ma ligne de code par //
@@ -42,70 +51,78 @@ Avant toute chose, il convient de parler des commentaires ! C'est certainement u
 ```
 
 On peut aussi regrouper plusieurs lignes de commentaires ainsi :
+
 ```java
 /*
-Je peux dire n'importe quoi, le compilateur ne le lira pas (par contre les autres développeurs, si :)
+Je peux dire n'importe quoi, le compilateur ne le lira pas (par contre les autres développeur.euse.s, oui !)
 */
 ```
 
-> Question : quelle est votre priorité en tant que développeur?
-- [ ] que votre code fonctionne?
-- [x] que votre code soit maintenable? (eh oui!)
+> Question : quelle est votre priorité en tant que développeur.euse ?
+
+- [ ] que votre code fonctionne ?
+- [x] que votre code soit maintenable ? (eh oui!)
 
 ---
 
 ## 1. Variables et types de données
 Les variables en java permettent de stocker des données en mémoire pour pouvoir les utiliser ensuite. Les variables sont typées (type nombre, mot, ...) et sont créées en deux phases :
-- déclaration
-- initialisation
+
+- Déclaration
+- Initialisation
 
 ```java
-int unNombre; // on déclare que le type de la variable est 'int'
-unNombre = 17;
+// on déclare que le type de la variable est 'int'
+int unNombre;
+// on initialise la variable
+unNombre = 22;
 ```
 
 On peut rassembler ces deux phases en une seule instruction :
+
 ```java
-int unNombre = 17;
+// on déclare et on initialise
+int unNombre = 33;
 ```
 
-Une fois qu'une variable est déclarée, on ne peut pas changer son type. On peut cependant lui affecter de nouvelles valeurs.
+Une fois qu'une variable est déclarée, on ne peut pas changer son **TYPE**. On peut cependant lui affecter de nouvelles valeurs.
+
 ```java
-int unNombre = 17;
-unNombre = 13; // ok
-unNombre = "abc"; // no!
+int unNombre = 22;
+unNombre = 33; // ok
+unNombre = "abc"; // alors là, possible ou pas ?
 ```
 
-En java, les types des variables sont soit des primitives, soit des classes. Les primitives sont les types de base (nombres, caractères, booléens, ...) et les classes sont toutes les classes qui viennent dans la jse ([liste des classes](https://docs.oracle.com/javase/10/docs/api/index.html?overview-summary.html)) + toutes celles que vous développez pour vous-même.
+En java, les types des variables sont soit des **primitives**, soit des **classes**. Les primitives sont les types de base (nombres, caractères, booléens, ...) et les classes sont toutes les classes qui viennent dans la JSE ([liste des classes](https://docs.oracle.com/javase/10/docs/api/index.html?overview-summary.html)) + toutes celles que vous développez pour vous-même.
 
 ```java
-int unNombre = 17; // primitives en minuscules
+int unNombre = 25; // primitives en minuscules
 char initiale = 'b';
-double monSouvenirDePi = 3.1415;
-boolean simplonAMontreuil = true;
+double monSouvenirDePi = 3.1415926;
+boolean AfpaAParis = true;
 
-String unMotOuUnTexte = "hey jude, don't make it bad"; // String n'est pas un type primitif : commence par une majuscule
+String unMotOuUnTexte = "hey jude, don't make it bad"; // String n'est pas un type primitif : c'est une classe qui commence par une majuscule.
 ```
 
-> Remarque, lire du java n'est pas forcément évident, il est donc important de respecter les conventions de nommage. Pour le nom des variables, les noms des classes, etc.., on utilise la convention camelCase. Les classes doivent commencer par une majuscule, et les variables par une minuscule :
+> Remarque, lire du java n'est pas forcément évident, il est donc important de respecter les conventions de nommage. Pour le nom des variables, les noms des classes, etc.., on utilise la **convention camelCase**. Les classes doivent commencer par une majuscule, et les variables par une minuscule :
 
 ![convention](convention.png)
 
-Pour afficher le contenu d'une variable, on utilise `System.out.println` :
+Pour afficher le contenu d'une variable, on utilise la méthode `System.out.println()` :
 ```java
-int unNombre = 17;
-int unAutre = 23;
+int unNombre = 10;
+int unAutre = 156;
 int total = unNombre + unAutre;
 System.out.println(total);
 ```
 
-### Les booléens
+### Booléens
 
-Le type de données élémentaire à connaître qui est à la base de l'informatique d'aujourd'hui est le booléen. Il s'agit d'un type de données qui n'a que deux valeurs possibles : `true`ou `false`. Cela correspond au `0` et au `1` du binaire (le yi et le yang de l'informaticien). Nous l'utiliserons beaucoup lorsque nous aborderons les conditions.
+Le type de données élémentaire à connaître qui est à la base de l'informatique d'aujourd'hui est le booléen. Il s'agit d'un type de données qui n'a que deux valeurs possibles : `true`ou `false`. Cela correspond au `0` et au `1` du binaire (le yin et le yang de l'informaticien.ne). Nous l'utiliserons beaucoup lorsque nous aborderons les conditions.
 
 ```java
 // Une vérité
-boolean jeTravailleASimplon = true;
+boolean jeTravailleEnIndependant = true;
 
 // Un mensonge
 boolean jeSuisPlusRicheQueBillGates = false;
@@ -113,44 +130,57 @@ boolean jeSuisPlusRicheQueBillGates = false;
 
 ### Les nombres
 
-Deux grand types de nombre nous seront utiles : les `int` qui représentent les nombres entiers et les `double` qui représentent les nombres décimaux.
+Deux grand types de nombre nous seront utiles :
+
+- `int` : représentent les nombres entiers
+- `double` : représentent les nombres décimaux.
 
 ```java
 int monAge = 30;
-int ageMatusalem = 1_042; // le tiret du bas peut être utilisé pour rendre visuellement les nb plus faciles à lire
+int ageMatusalem = 1_042; // le tiret du bas peut être utilisé pour rendre visuellement les nb plus faciles à lire. Ce n'est pas une obligation.
 
-// Ma taille en cm
-double taille = 184.5;
+// Ma taille en cm, enfin je triche un peu
+double taille = 165.5;
 ```
-> Remarque : il existe d'autres types de nombres entiers : byte, short, long et d'autres types de décimaux : float. Mais ils sont utilisés plutôt pour des questions d’optimisation de programme.
 
-On peut **caster** (=convertir) des types en d'autres, mais attention au résultat :
+> Remarque : il existe d'autres types de nombres entiers :
+
+- byte
+- short
+- long
+- et d'autres types de décimaux : float. Mais ils sont utilisés plutôt pour des questions d’optimisation de programme.
+
+On peut **caster** (convertir) des types en d'autres, mais attention au résultat :
+
 ```java
 int a = 10.0; // a = 10, rien à faire
-a = (int)3.14; // a = 3, il faut faire le cast
+a = (int) 3.14; // a = 3, il faut faire le cast si on veut la partie entière.
 ```
 
 
 Pour plus de détails : [La documentation officielle de java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 
 ### Les caractères
+
 ```java
-char initialeMajuscule = 'J';
-char dernierLettre = 'n';
+char initialeMajuscule = 'P';
+char dernierLettre = 'e';
 char unNombreOuBien = '1';  // c'est bien le caractère 1, et pas un nombre sur lequel on peut faire des opérations
 ```
 
 ### Les chaînes de caractères
 
-Afin de stocker du texte (un prénom, un nom, une phrase, ...) nous utiliserons les `String` qui représentent les chaînes de caractères :
+Afin de stocker du texte (un prénom, un nom, une phrase,...) nous utiliserons les `String` qui représentent les chaînes de caractères :
 
 ```java
-String prenom1 = "Josselin";
+String prenom1 = "Véronique";
 String prenom2 = "Philippe";
-String starP3 = "Jean Michel Doudoux"
+String starJava = "Jean Michel Doudoux"
 ```
 
-On peut utiliser un certain nombre de caractère spéciaux qui n’apparaîtront pas en les **échappant** avec un backslash :
+On peut utiliser un certain nombre de caractères spéciaux qui n’apparaîtront pas en les **échappant** avec un **backslash** :
+
+Ici le **\\n** correspondà un saut de ligne.
 
 ```java
 String menu = "Faites votre choix :\n1-Pour démarrer\n2-Pour quitter";
@@ -212,29 +242,28 @@ nbPart = nbPartPizza/nbPersonne; // 5/2 = 2, attention
 > Pour avoir le résultat de la division précédente exact, on **caste** un des deux nombres `int` en `double` :
 
 ```java
-int a = 4;
+int a = 5;
 int b = 2;
 double exact = a/(double)b;
 ```
 
-
 Les priorités de calcul sont les priorités habituelles, on peut utiliser des parenthèses.
 ```java
 int a = (2+4)*3; // 18
-int b = 2+4*3; // ?
+int b = 2+4*3; // ? selon vous...
 ```
 
 
 ### Division entière
 
-On utilise souvent en informatique la division entière qui donne deux résultats : le reste et le quotient.
+On utilise souvent en informatique la division entière qui donne deux résultats : le reste (ou modulo) et le quotient.
 
 ```java
-int etudiants = 26;
+int etudiants = 16;
 int nbGroupes = 3;
 
-int etudiantsParGroupe = 26 / 3; // un résultat entier
-int etudiantsRestant = 26 % 3; // on dit 26 modulo 3
+int etudiantsParGroupe = 16 / 3; // un résultat entier
+int etudiantsRestant = 16 % 3; // on dit 16 modulo 3, il reste 1
 ```
 
 ### Comparaison
@@ -247,8 +276,9 @@ Les relations d'ordre produisent des booleans.
 2*3 <= 6; // true
 2 < 4 < 8; // erreur, l'encadrement ne fonctionne pas en java, il faut utiliser &&
 2 < 4 && 4 < 8; // true
-"la ligne rouge" < "apocalypse now"; // erreur, il faut comparer des nb
+"la ligne rouge" < "apocalypse now"; // erreur, il faut comparer des nombres !
 ```
+
 On peut bien sur les stocker dans des variables :
 
 ```java
@@ -263,33 +293,39 @@ boolean estPlusGrand = (unNombre > unAutre); // true
 On compare des variables avec `==`, puisque le `=` est déjà utilisé pour l'affectation. Cela produit aussi un boolean. Le signe différent est `!=`.
 
 ```java
-line1 = "Nah nah nah nah nah nah nah nah nah yeah";
-line2 = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
-line3 = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
+ligne1 = "Nah nah nah nah nah nah nah nah nah yeah";
+ligne2 = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
+ligne3 = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
 
-line1 == line2
-line2 == line3
+ligne1 == ligne2
+ligne2 == ligne3
 
-isDifferent = line1 != line3 // il est vrai que ces lignes ne sont pas égales!
+isDifferent = ligne1 != ligne3 // il est vrai que ces lignes ne sont pas égales!
 ```
 
 ### Opérations avec les booleans
 
 [L'algèbre de Boole](https://fr.wikipedia.org/wiki/Alg%C3%A8bre_de_Boole_(logique)) (c'est à dire les calculs sur les booléens) est à la base de l’électronique. On la retrouve aussi dans les langages de programmation, notamment pour exprimer des conditions (voir plus loin : branchements, et aussi boucles).
 
-Il y a trois opérations importantes à connaître : **et**, **ou**, **non** qui s'écrivent : `&&`, `||`, `!`
+Il y a trois opérations importantes à connaître :
+
+- **et** : `&&`
+- **ou** : `||`
+- **non** : `!`
+
 ```java
 int revenu = 26_000;
 int seuil1 = 16_000;
 int seuil2 = 38_000;
 
-boolean exonere = revenu < seuil1;
+boolean exonere = revenu < seuil1; // exo si inférieur à 16000.
 boolean doitPaye = !exonere; // on doit payer si on n'est pas exonéré
 
 boolean payeTranche1 = revenu > seuil1 && revenu < seuil2; // si le revenu est compris entre seuil1 et seuil2
 ```
 
 Un autre exemple avec **ou** :
+
 ```java
 int note = 12;
 boolean noteInvalide = note < 0 || note >20;
@@ -297,7 +333,7 @@ boolean noteInvalide = note < 0 || note >20;
 
 ### Opérations avec des chaînes
 
-On peut concaténer (mettre bout à bout) des chaînes de caractères avec l'opérateur +.
+On peut concaténer (mettre bout à bout) des chaînes de caractères avec l'opérateur `+`.
 
 ```java
 String nom = "Odile";
@@ -309,11 +345,18 @@ String presentation = "Bonjour, je m'appelle "+nom+ " et j'ai "+age+ " ans";
 
 ---
 ## 3. POO
-Dans cette partie, nous allons aborder les concepts de base de la programmation orientée objet, à savoir les **classes**, les **attributs** et les **méthodes**.
+
+Dans cette partie, nous allons aborder les concepts de base de la programmation orientée objet, à savoir :
+
+- **classes**
+- **attributs**
+- **méthodes**
 
 En effet, en plus des librairies java de base qui contiennent beaucoup de classes (pour représenter des listes, des fichiers, des images, ...), on peut se construire ses propres classes. Une classe est composée d'attributs et de méthodes, elle sert à fabriquer des objets.
 
 Par exemple si je travaille sur des mails, il est plus simple de créer une classe mail qui regroupe toutes les variables de chaque mail :
+
+- A ne pas faire !
 
 ```java
 String objet1 = "ton compte";
@@ -326,6 +369,7 @@ String message2 = "Salut, ça va?";
 ```
 
 Version avec une **classe** Mail :
+
 ```java
 Mail mail1 = new Mail("ton compte", "toto@yopmail.com", "bonjour, votre compte a été désactivé. Au revoir.");
 Mail mail2 = new Mail("salut","pipou@yopmail.com","Salut, ça va?");
@@ -339,7 +383,7 @@ public class Mail {
   String destinataire;
   String sujet;
 
-  // ceci est le constructeur, qui va permettre d'initialiser les attributs
+  // ceci est le constructeur, qui va permettre d'initialiser les attributs et construire des objets de type Mail
   public Mail(String monMessage, String monDestinataire,  String monSujet) {
     this.message = monMessage;
     this.destinataire = monDestinataire;
@@ -351,9 +395,10 @@ public class Mail {
   }
 }
 ```
+
 Une classe permet de créer des objets (ou instances). Ainsi mail1 et mail2 sont des **instances** de la **classe** Mail.
 
-La classe est comme un moule qui permet de fabriquer toujours les même sortes d'objet.
+La classe est comme un moule qui permet de fabriquer toujours les mêmes **types** d'objet.
 
 Le mot clé `this` à l'intérieur de la classe permet de désigner l'instance sur laquelle on travaille.
 
@@ -419,7 +464,7 @@ public class Mail {
 
 ### Modification des attributs d'un objet
 
-Méthodes get et set...
+Méthodes **getXXXX()** et **setXXXX()**
 
 
 ### Méthodes statiques
@@ -449,8 +494,7 @@ public class Calculs {
 }
 ```
 
-
-> Ce qu'il faut retenir : une classe permet de structurer des données (les attributs). Une classe permet aussi de définir des actions pour des objets, ce sont les méthodes.
+> Ce qu'il faut retenir : une classe permet de structurer des données (les attributs). Une classe permet aussi de définir des actions ou des comportements pour des objets, ce sont les méthodes.
 
 > Si les méthodes n'ont pas besoin d'être propres à un objet, alors elles sont static
 
@@ -461,7 +505,7 @@ Pour plus de détails : [La documentation officielle de java](https://docs.oracl
 
 ### Branchements
 
-Pour effectuer un bloc d'instructions si une condition est vraie, on utilise le mot-clé `if`. Pour délimiter la taille du bloc d'instructions, on utilise des accolades (et de fortement recommandée : une indentation).
+Pour effectuer un bloc d'instructions si une condition est vraie, on utilise le mot-clé `if`. Pour délimiter la taille du bloc d'instructions, on utilise des accolades (et fortement recommandée : une **indentation**).
 
 ```java
 int temperature = 10;
@@ -475,6 +519,7 @@ if (temperature < 15) { // on délimite le bloc avec des accolades
 System.out.println(vetement);
 
 ```
+
 Si la condition est vraie, on exécute les instructions du blocs. Sinon on saute le bloc.
 
 On peut ajouter un bloc à exécuter seulement si la condition est fausse avec `else`.
@@ -503,7 +548,7 @@ On peut aussi ajouter d'autres conditions intermédiaires avec `else if`, a exé
 int age = 2;
 
 if (age < 0) {
-  System.out.println("merci d'entrer un age valide (positif)");
+  System.out.println("merci d'entrer un âge valide (positif)");
 }
 
 else if (age < 3) {// on ne rentre pas ici si on est déjà entré dans le cas d'avant
@@ -531,7 +576,7 @@ Dans le cas précédent, on obtient un tarif réduit si l'âge est inférieur à
 int age = 2;
 
 if (age < 0) {
-  System.out.println("merci d'entrer un age valide (positif)");
+  System.out.println("merci d'entrer un âge valide (positif)");
 }
 
 else if (age < 3) {// on ne rentre pas ici si on est déjà entré dans le cas d'avant
@@ -547,7 +592,7 @@ else {// dans tous les autres cas
 }
 ```
 
-Une erreur classique est d'utiliser un **or** lorsqu'il faudrait un **and** ou inversement. Ici par exemple, un age qui est inférieur à 18 **et** supérieur à 65 n'existe pas, il fallait bien utiliser **ou**.
+Une erreur classique est d'utiliser un **or** lorsqu'il faudrait un **and** ou inversement. Ici par exemple, **un age qui est inférieur à 18 **et** supérieur à 65 n'existe pas**, il fallait bien utiliser **ou**.
 
 ```
 brocoli = 4
@@ -557,13 +602,16 @@ radis = 2
 pomme = 3
 mure = 9
 ```
-> quelle condition sur les prix pour ne sélectionner que :
+
+> Quelle condition sur les prix pour ne sélectionner que :
+
 ```
 brocoli = 4
 radis = 2
 pomme = 3
 mure = 9
 ```
+
 question tirée du concours [castor informatique 2016](http://concours.castor-informatique.fr)
 
 Pour plus de détails : [La documentation officielle de java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)

@@ -1,5 +1,5 @@
 # Exercices algorithmiques
-On utilisera le logiciel Flowgorithm qui permet de visualiser les algorithmes. Cela rendra les exercices un peu plus "sexy".
+Vous pouvez utiliser le logiciel **Flowgorithm** qui permet de visualiser les algorithmes. Cela rendra les exercices plus sympathiques.
 
 ## Niveau 1 (la base)
 * **Entrée/Sortie** : Ecrire un algorithme qui demande un nom en entrée et qui affiche "Hello " + nom_entrée + " !"

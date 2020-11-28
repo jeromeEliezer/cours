@@ -1,5 +1,4 @@
-# Utiliser le repo bnp-pf-2018
-Le repository `bnp-pf-2018` est le lieu de stockage de la majorité des ressources pédagogiques de la formation. En le récupérant en local sur votre PC vous pourrez à la fois pratiquer git et suivre l'avancement du cours.
+
 
 #### Etape 1 : Installer l'utilitaire Git sur votre poste
 * Pour Windows : [Install Windows](https://git-scm.com/download/win)

@@ -38,6 +38,7 @@ Voici la pile d'appels (en vert foncé : la dernière fonction appelée = en cou
 ## Si ça tourne au vinaigre ?
 
 Imaginons maintenant qu'une des fonctions de la pile d'appel présente un risque de ne pas fonctionner (dans l'exemple précédent ça paraît impossible). Mais si on ajoute une fonction de récupération des limites dans un fichier texte. On demande alors à l'utilisateur.trice de spécifier la localisation du fichier où sont stockées les limites. On aura potentiellement les problèmes suivants :
+
 * Lire un fichier qui n'existe pas
 * Lire un fichier qui existe mais qui ne contient pas le bon contenu (du texte au lieu d'entiers)
 * Lire un fichier qui existe et contient du contenu valide mais mal formaté (le fichier commence à la ligne 4 au lieu de 1)

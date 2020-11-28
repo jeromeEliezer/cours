@@ -4,7 +4,7 @@ Avant de commencer, n'hésitez pas à relire le cours, et à tester les exemples
 
 ![img](jshell.gif)
 
-## HelloWorld
+## Salut l'univers !
 
 ### Installation de java sur votre ordinateur
 
@@ -14,7 +14,7 @@ Avant de commencer, n'hésitez pas à relire le cours, et à tester les exemples
 ```java
 public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println("Hello evrybody!");
+    System.out.println("Salut l'univers !");
   }
 }
 ```
@@ -32,7 +32,8 @@ java HelloWorld
 
 ### CodeAcademy en mode dojo
 
-Mettez vous par groupes de à personnes. On va définir des rôles qui vont tourner à chaque question :
+Mettez vous par groupes de n personnes. On va définir des rôles qui vont tourner à chaque question :
+
 - 1 codeur au clavier
 - 2 conseillers
 - 2-4 observateurs
@@ -115,9 +116,11 @@ double tva = 0.20;
 
 int budget = 2000;
 ```
+
 Créer une variable **budgetSuffisant** qui indique si le budget est supérieur ou égal au prix initial plus le prix initial multiplié par la tva. Afficher cette variable.
 
 ### Ex6 : égalité
+
 Pour éviter les doublons, on cherche à comparer des albums par rapport à leur durée totale et au nombre de chansons par album.
 
 ```java
@@ -126,6 +129,7 @@ int songsB = 9;
 int albumLengthA = 41;
 int albumLengthB = 53;
 ```
+
 Créer une variable **sameSongs** qui est vraie si les deux albums contiennent le même nombre de chansons.
 Créer une variable **sameAlbumLength** qui est vraie si les deux albums ont la même longueur au total. Afficher ces variables.
 
@@ -139,7 +143,7 @@ Créer une variable **sameAlbumLength** qui est vraie si les deux albums ont la 
 
 ### CodeAcademy en mode dojo
 
-Mettez vous par groupes de à personnes. On va définir des rôles qui vont tourner à chaque question :
+Mettez vous par groupes de n personnes. On va définir des rôles qui vont tourner à chaque question :
 - 1 codeur au clavier
 - 2 conseillers
 - 2-4 observateurs
