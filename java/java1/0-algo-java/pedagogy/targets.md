@@ -96,14 +96,7 @@
 - [Version Orientée Objet du programme de Quizz](../resources/initiation_poo)
 - [Proposition de correction exercice Streams & Exceptions](../resources/java_streams/FoodDB.java)
 
-##  Découverte de la programmation Objet
-* **Elément.s du programme :** Classes abstraites, interfaces, polymorphisme dynamique
-* **Objectif.s :**
-* **Compétence.s visées.s :**
-* **Contexte (prérequis) :**
-* **Modalités pédagogiques :** 
-* **Temporalité :** 
-* **Evaluation :**
+## Liens vers les cours au format MD.
 
+## Solutions des premiers Exercices
 
-## Liens vers les cours au format MD

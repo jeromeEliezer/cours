@@ -10,7 +10,11 @@ Période : Décembre 2020
 
 ## Compétences à valider
 
-- 
+- Développer une interface utilisateur [écrire un algorithme]
+- Développer une interface utilisateur [utiliser un environnement de développement intégré]
+- Développer une interface utilisateur [développer dans un langage objet]
+- Développer une interface utilisateur [gérer de façon complète les erreurs et les exceptions]
+- Savoir créer et/ou modifier une classe, instancier des objets et utiliser des attributs/méthodes d’instances ou de classe.
 
 ## Outils
 
