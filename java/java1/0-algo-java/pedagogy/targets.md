@@ -13,6 +13,7 @@
 
 - [Présentation aglorithmique](../presentation/algo_basics.html)
 - [Théorie algorithmie](../course/algo_basics.md)
+- [Exercices pratiques...](../exercices/algo_basics_ex.md)
 
 ## Découverte du Java en mode console
 
@@ -76,11 +77,6 @@
 * **Modalités pédagogiques :** Live coding
 * **Supports nécessaires :** Néant
 
-**En bonus :** Après-midi en autonomie avec utilisation des sites de code en ligne :
-
-- [Code Wars](https://www.codewars.com)
-- [Hacker Rank](https://www.hackerrank.com)
-
 ## Découverte de la programmation Objet : Encapsulation
 * **Elément.s du programme :** Classes, objets, instances, attributs, visibilités, constructeurs, méthodes.
 * **Objectif.s :**
@@ -96,7 +92,10 @@
 - [Version Orientée Objet du programme de Quizz](../resources/initiation_poo)
 - [Proposition de correction exercice Streams & Exceptions](../resources/java_streams/FoodDB.java)
 
-## Liens vers les cours au format MD.
+**En bonus : les mardis et jeudis** Après-midi en autonomie avec utilisation des sites de code en ligne pour s'exercer tranquillement.
+
+- [Code Wars](https://www.codewars.com)
+- [Hacker Rank](https://www.hackerrank.com)
 
 ## Solutions des premiers Exercices
 
