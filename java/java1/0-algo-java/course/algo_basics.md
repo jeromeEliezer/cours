@@ -60,9 +60,10 @@ Il y a de fortes chances que ce soit les plus contraintes (celles où il y a le 
 **Littérature** : [Think Like A Programmer An Introduction To Creative Problem Solving (V. Anton Spraul)](https://www.nostarch.com/thinklikeaprogrammer)
 
 ## Qu’est ce qu’un algorithme ?
+
 Il s’agit d’une suite (finie) d’opérations élémentaires qui permettent de résoudre un problème. C’est une procédure de calcul qui prend en entrée un ensemble E de valeurs et qui retourne en sortie en ensemble E’ de valeurs.
 
-Un algorithme doit toujours se terminer et fournir un résultat. Un algorithme est dit **correct** si pour chaque ensemble de valeurs **E** en entrée il fournit le même ensemble de résultat **E'** en sortie. Afin de s'assurer qu'un algorithme est correct, on peut le prouver de manière formelle. On utilise parfois certains algorithmes non corrects si l'on sait gérer le taux d'erreur de l'algorithme.
+Un algorithme doit toujours se terminer et fournir un résultat. Un algorithme est dit **correct** si pour chaque ensemble de valeurs **V** en entrée il fournit le même ensemble de résultat **V'** en sortie. Afin de s'assurer qu'un algorithme est correct, on peut le prouver de manière formelle. On utilise parfois certains algorithmes non corrects si l'on sait gérer le taux d'erreur de l'algorithme.
 
 _Attention_ : certains problèmes ne sont **pas calculables**, il n'existe pas d'algorithme qui permette leur résolution.
 
@@ -133,31 +134,35 @@ Pour plus de détails :
 
 Généralement, s'il n'y a qu'une seule valeur traiter, il est possible de le
 faire directement. Pour traiter des ensembles de valeurs, il y a principalement
-deux façon de décomposer :
+deux façons de décomposer :
 
 ##### Itérations
+
 On traite les valeurs les unes après les autres. On initialise le résultat avec la valeur correspondant à un ensemble vide, puis, pour chacune des valeurs à traiter, on met à jour ce résultat.
 Par exemple, pour calculer la somme des valeurs, on initialise le résultat à 0 et l'on additionne successivement chacune des valeurs au résultat partiel :
 ```
+
 début
-  xs
+  tab (est un tableau)
   somme = 0
-  pour_chaque x de xs :
+  pour_chaque x de tab :
     somme = somme + x
   fin_pour_chaque
 fin
 ```
 
 ##### Récursion
+
 On traite les valeurs par sous-ensemble (par exemple par moitiés), sauf si l'ensemble à traiter est trivial (un seul élément) et l'on combine les résultats sur les sous-ensembles.
 Par exemple, pour calculer la somme des valeurs, si l'ensemble est vide la somme est 0, s'il contient une valeur c'est celle-ci, sinon c'est la somme des sommes des deux moitiés :
+
 ```
 début
-  xs
-  si xs est vide :
+  tab est un tableau
+  si tab est vide :
     somme = 0
   sinon
-    si xs contient un seul élément x :
+    si tab contient un seul élément x :
       somme = x
     sinon
       somme1 = somme de la première motié
@@ -169,9 +174,10 @@ fin
 ```
 
 ### Nos amies les machines
+
 Grâce à nos machines (ordinateurs, calculateurs, microprocesseurs, ...), nous pouvons aujourd'hui (et depuis quelques décennies) leur demander de résoudre les algorithmes à notre place. Ceci grâce aux langages de programmation qui nous permettent de traduire nos algorithmes de calcul en langage compréhensible par la machine.
 
-Dans la pratique lorsque nous faisons du developpement Web, on prouve rarement un algorithme. En effet, il s'agit peu souvent d'applications critiques et nous "faisons confiance" à notre code.
+Dans la pratique lorsque nous faisons du developpement Web, on prouve rarement un algorithme. En effet, il s'agit peu souvent d'applications critiques et nous "faisons confiance" à notre code !
 
 Le développement Web n'est peut-être pas le plus exigeant en ce qui concerne les preuves algorithmiques mais nous devons bien avoir conscience de la notion de complexité algorithmique. En effet ne pouvons pas demander tout et n'importe quoi à notre machine car, comme nous, elle a des limites en temps d'exécution et en mémoire.
 
@@ -179,7 +185,9 @@ Le développement Web n'est peut-être pas le plus exigeant en ce qui concerne l
 C'est important aussi en développement Web car les calculs se font majoritairement sur votre serveur, donc plus vos algorithmes seront rapides et plus votre serveur le sera.
 
 Pour plus de détails :
+
 * [La complexité algorithmique avec exemple sur OpenClassrooms](https://openclassrooms.com/courses/decouvrez-le-fonctionnement-des-algorithmes/comprenez-la-complexite-algorithmique)
+
 * [La complexité algorithmique sur Wikipedia](https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes)
 
 **_Les applications d'algo_**
