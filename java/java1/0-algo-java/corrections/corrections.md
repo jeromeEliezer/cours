@@ -53,6 +53,8 @@ La correction peut-être affichée avec un diagramme Flowgorithm ou bien en java
 * **Conditions et Boucles** :
   -   Écrire une fonction qui affiche si un nombre est premier ou non.
 
+![nombrePremier](images/algo-premier.png)
+
 ## Niveau 3 (on se creuse les méninges)
 
 * **Palindrome** : Ecrire un algorithme qui permet de vérifier si un nombre donné en entrée est un palindrome.
