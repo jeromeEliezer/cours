@@ -4,7 +4,7 @@ package menu;
 /**
  * Le point d'entrée de notre application. Son seul rôle est de lancer le menu.
  * 
- * @author Josselin Tobelem
+ * @author PB & JT
  *
  */
 public class Main {

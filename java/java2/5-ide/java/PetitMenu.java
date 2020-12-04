@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * Une classe uniquement pour gérer les intéractions avec l'utilisateur.
  *
- * @author Josselin Tobelem
+ * @author JT & PB
  *
  */
 public class PetitMenu {
@@ -27,7 +27,7 @@ public class PetitMenu {
 		String menu = "\n"
 				+ "Bienvnue dans mon programme!\n"
 				+ "1.Pour afficher l'heure\n"
-				+ "2.Pour afficher le temps restant avant le pessage du titre!\n"
+				+ "2.Pour afficher le temps restant avant le peasage du titre!\n"
 				+ "0.Pour quitter";
 
         int choix;
@@ -35,9 +35,6 @@ public class PetitMenu {
         do {
             System.out.println(menu);
             choix = sc.nextInt();
-
-						// TODO place a breakpoint here
-
             if (choix == 1) {
             	LocalDateTime time = Temps.now();
                 String timeMsg = MessageFormat.format("Il est {0}, nous sommes le {1}",

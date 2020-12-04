@@ -9,12 +9,12 @@ import java.time.temporal.ChronoUnit;
  * 
  * Toutes les méthodes sont statiques.
  * 
- * @author Josselin Tobelem
+ * @author JT & PB
  *
  */
 public class Temps {
 	
-	private final static LocalDateTime DATE_OF_CERTIF = LocalDateTime.of(2020, 7, 3, 9, 0);
+	private final static LocalDateTime DATE_OF_CERTIF = LocalDateTime.of(2021, 8, 20, 23, 59);
 	
 	public static LocalDateTime now() {
 		return LocalDateTime.now();

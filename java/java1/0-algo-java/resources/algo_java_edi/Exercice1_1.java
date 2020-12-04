@@ -5,8 +5,10 @@ public class Exercice1_1 {
    * J'ai un problème à l'exécution de ce programme Java.
    */
   public static void main(String[] args) {
+   
     int[] numbers = new int[4];
-    for (int i = 1; i < 5; i++) {
+
+    for (int i = 0; i < 5; i++) {
       System.out.println("About to try to insert " + i + " into the array at position " + i);
       numbers[i] = i;
       System.out.println("Successful");
