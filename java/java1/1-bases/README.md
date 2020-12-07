@@ -1,21 +1,29 @@
-# Séquence de cours sur Java
-Les bases
+# Cours sur Java
 
-## Résumé
+## 1. Hello World
 
-1 Hello World
+## 2. Variables et opérations
 
-2 Variables et opérations
+## 3. POO, dans les grandes lignes (classes et méthodes)
 
-3 POO, dans les grandes lignes (classes et méthodes)
+## 4. Conditions, boucles, Chaînes, collections
 
-4 conditions (if/else)
+## 5. Support de cours
 
-## 1. Support de cours
+### 5.1 [Support de cours - les bases en java](cours.md)
 
-[Le support de cours](cours.md)
+### 5.2 [Tableaux](../2-tableaux/tableaux-java.md)
 
-## 2. Exercices individuels
+### 5.3 [Boucles](../2-tableaux/boucles-java.md)
+### 5.4 [Chaînes](../2-tableaux/chaines-java.md)
+
+## Exercices individuels
+
+### [Liste des exercices et mini-projets](../2-tableaux/exercices.md)
+
+[Les corrections des exos](../2-tableaux/corrections/README.md)
+
+## 6. Autres exercices individuels
 
 [Les exercices d'application du cours](exercices.md)
 
