@@ -65,6 +65,144 @@ La correction peut-être affichée avec un diagramme Flowgorithm ou bien en java
 
 ![sapin](images/sapin-eclipse.jpg)
 
+- Proposition de code java avec 2 classes :
+
+    * Classe **BeauSapin** pour construire notre Sapin
+    * Classe **MauvaiseNombreException** pour gérer les saisies erronées.
+
+```java
+package fr.bouget.beausapin;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+/*
+ * il exite aussi la classe StringUtils et d'autres qui permettent de simplifier notre algo.
+ * avec la classe "org.apache.commons.lang.StringUtils",
+ * on peut écrire ceci : 10Etoiles = 10Etoiles + StringUtils.repeat("*", 10);
+ */
+
+/**
+ * 
+ * @author Philippe
+ * @category Algo Sapin
+ * @version 1.0
+ *
+ */
+public class BeauSapin {
+
+	private int hauteur;
+	private final String ETOILE = "*";
+	private final String DIEZE = "#";
+
+	/**
+	 * Constructeur qui appelle 2 méthodes :
+	 * - saisir() pour la saisie de la hauteur par l'utilisateur
+	 * - construire() qui permet la construction de notre joli sapin
+	 */
+	public BeauSapin()
+	{
+		this.saisir();
+		this.construire();
+	}
+
+	/**
+	 * Méthode permettant la saisie d'une valeur pour la hauteur
+	 * Ici je traite des saisies invalides en utilisant une classe Exception 
+	 */
+	private void saisir() throws MauvaisNombreException
+	{
+		Scanner scanner = new Scanner(System.in);
+		try {
+
+			System.out.println("Entrez la hauteur de votre Sapin (entre 5 et 25 compris) : ");
+			this.hauteur= scanner.nextInt();
+			if (this.hauteur>25)
+			{
+				throw new MauvaisNombreException("le nombre "+this.hauteur+" est trop grand, ");
+				
+			}
+			else if (this.hauteur<5)
+			{
+				throw new MauvaisNombreException("le nombre "+this.hauteur+" est trop petit, ");
+			}
+			
+		}catch(InputMismatchException ime)
+		{
+			String info = (ime.getMessage() != null) ? ime.getMessage() : "Caractères invalides, ";
+			System.out.println(info+" veuillez recommencer...\n");
+			saisir();
+		}finally {
+			scanner.close();
+		}
+
+	}
+
+	/**
+	 * Génération du joli sapin
+	 */
+	private void construire()
+	{
+		StringBuilder lignes = new StringBuilder();
+		String symboles = null;
+		String espaces = null;
+		int j=0;
+		for(int i = 1 ; i < hauteur ; i++)
+		{
+			espaces = new String( new char[hauteur - i]).replace("\0", " ");
+			symboles = new String( new char[(i * 1) + j]).replace("\0", ETOILE);
+			lignes.append(espaces).append(symboles).append("\n");
+			j++;
+
+		}
+		lignes.append(construirePied(symboles.length()));
+		System.out.println(lignes.toString());
+	}
+
+	/**
+	 * Méthode de construction du pied centré
+	 * @param largeur
+	 * @return
+	 */
+	private String construirePied(int largeur) {
+		StringBuilder pied = new StringBuilder();
+		for (int i = 0; i < 3 ; i++)
+		{
+			String espaces = new String( new char[ ((int) (largeur/2)) ]).replace("\0", " ");
+			String tronc = new String( new char[3] ).replace("\0", DIEZE);
+			pied.append(espaces).append(tronc).append("\n");
+		}
+		return pied.toString();
+	}
+
+	/**
+	 * Méthode de lancement
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		// ici, on instancie notre objet BeauSapin en appelant son constructeur
+		// on ne lui donne aucun nom
+		new BeauSapin();
+	}
+}
+
+```
+
+- Classe : **MauvaisNombreException** qui hérite de **InputMismatchExcetpion**
+
+```java
+package fr.bouget.beausapin;
+import java.util.InputMismatchException;
+
+public class MauvaisNombreException extends InputMismatchException {
+	public MauvaisNombreException(String message) {
+		super( message );
+	}
+}
+
+```
+
 Pour les plus fort.e.s !
 
 * **Cryptographie** : Ecrire un algorithme qui permet de chiffrer et déchiffrer un message via le chiffrement de  [César](https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage). Vous pouvez limiter l'algorithme aux messages en majuscules. Pour mener à bien cet exercice, vous devrez vous servir des codes ASCII.
