@@ -162,9 +162,9 @@ int heure = 10
 
 1. Créer une condition **if** qui affecte la valeur "matinée" à la variable **periode** si l'heure est inférieure à 10. Afficher ensuite un message du type : "bonne <periode>"
 2. Ajouter un deuxième **if** qui affecte la valeur "après-midi" à la variable **periode** si l'heure est inférieure à 18. Tester avec heure = 10, cela devrait afficher "bonne après-midi" ...
-3. Corriger en remplaçant le **if** précédent par **elif**. Tester avec heure = 10 et heure = 15.
-4. Ajouter un **elif** si l'heure est inférieure à 0. Dans ce cas afficher "erreur de saisie" (remarque il aurait mieux valu arrêter le programme..)
-5. Ajouter un **elif** si l'heure est supérieure à 24. Dans ce cas afficher "erreur de saisie" (remarque il aurait mieux valu arrêter le programme..)
+3. Corriger en remplaçant le **if** précédent par **else if**. Tester avec heure = 10 et heure = 15.
+4. Ajouter un **else if** si l'heure est inférieure à 0. Dans ce cas afficher "erreur de saisie" (remarque il aurait mieux valu arrêter le programme..)
+5. Ajouter un **else if** si l'heure est supérieure à 24. Dans ce cas afficher "erreur de saisie" (remarque il aurait mieux valu arrêter le programme..)
 6. Grouper les deux cas précédent en utilisant un **or**.
 7. Dans tous les autres cas, affecter la valeur "soirée" à la variable **periode**. Tester avec heure = 8, heure = -5, heure = 12, heure = 18, heure = 23, heure = 35.
 
