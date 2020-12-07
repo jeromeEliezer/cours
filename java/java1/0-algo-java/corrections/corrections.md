@@ -68,7 +68,7 @@ La correction peut-être affichée avec un diagramme Flowgorithm ou bien en java
 - Proposition de code java avec 2 classes :
 
     * Classe **BeauSapin** pour construire notre Sapin
-    * Classe **MauvaiseNombreException** pour gérer les saisies erronées.
+    * Classe **MauvaisNombreException** pour gérer les saisies erronées.
 
 ```java
 package fr.bouget.beausapin;
