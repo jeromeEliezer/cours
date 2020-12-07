@@ -1,17 +1,13 @@
 # Cours sur Java
 
-## 1. Hello World
-
-## 2. Variables et opérations
-
-## 3. POO, dans les grandes lignes (classes et méthodes)
-
-## 4. Conditions, boucles, Chaînes, collections
+- Hello World
+- Variables et opérations
+- POO, dans les grandes lignes (classes et méthodes)
+- Conditions, boucles, Chaînes, collections...
 
 ## 5. Support de cours
 
-### 5.1 [Support de cours - les bases en java](cours.md)
-
+### 5.1 [Quelques bases en java](cours.md)
 ### 5.2 [Tableaux](../2-tableaux/tableaux-java.md)
 
 ### 5.3 [Boucles](../2-tableaux/boucles-java.md)
