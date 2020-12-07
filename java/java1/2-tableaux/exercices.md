@@ -2,7 +2,7 @@
 
 <center>
 
-![](../2-tableaux/images/tp.png)
+![](../images/tp.png)
 
 </center>
 
@@ -15,27 +15,42 @@ Les TP permettent de mettre en application les différentes notions abordées da
 a. Écrire une méthode qui affiche toutes les lettres d'un mot, une ligne par lettre.
 
 ```
-SIMPLON :
-S
-I
+FORMATION-JAVA :
+F
+O
+R
 M
-P
-L
+A
+T
+I
 O
 N
+-
+J
+A
+V
+A
 ```
 
 b. Écrire une méthode qui affiche toutes les lettres d'un mot, une ligne par lettre mais cette fois-ci en commençant par la fin !
 
 ```
 SIMPLON (à l'envers) :
+A
+V
+A
+J
+-
 N
 O
-L
-P
-M
 I
-S
+T
+A
+M
+R
+O
+F
+
 ```
 
 c. Écrire une méthode qui fait la même chose que **b** mais plutôt que d'afficher directement le résultat dans la console, vous utiliserez le mot `return` dans votre méthode pour ensuite afficher le résultat depuis votre méthode main.
@@ -69,7 +84,7 @@ System.out.println(Exercices.maMethode(unMot));
 
 Votre méthode doit prendre 2 paramètres, un String du mot et un String du bout de mot à rechercher.
 
-2. Écrire une méthode palindrome qui indique (true ou false) si un mot peut se lire de la même façon de gauche à droite et de droite à gauche.
+2. Écrire une méthode palindrome qui indique (true ou false) si un mot peut se lire de la même façon de gauche à droite et de droite à gauche. Vous l'avez déjà fait avec Flowgorithm.
 
 >N'hésitez pas à chercher sur internet !
 
