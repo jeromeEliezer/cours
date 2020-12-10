@@ -1,4 +1,4 @@
-# Les bases de java : exercices
+# Bases de java : exercices
 
 ## Etape 1 : Déclarons quelques variables
 

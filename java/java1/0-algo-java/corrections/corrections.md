@@ -77,7 +77,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
- * il exite aussi la classe StringUtils et d'autres qui permettent de simplifier notre algo.
+ * Il exite aussi la classe StringUtils et d'autres qui permettent de simplifier notre algo.
  * avec la classe "org.apache.commons.lang.StringUtils",
  * on peut écrire ceci : 10Etoiles = 10Etoiles + StringUtils.repeat("*", 10);
  */
@@ -143,10 +143,12 @@ public class BeauSapin {
 	 */
 	private void construire()
 	{
+		// nos variables internes à la méthode
 		StringBuilder lignes = new StringBuilder();
 		String symboles = null;
 		String espaces = null;
 		int j=0;
+		// notre boucle for
 		for(int i = 1 ; i < hauteur ; i++)
 		{
 			espaces = new String( new char[hauteur - i]).replace("\0", " ");
@@ -155,7 +157,9 @@ public class BeauSapin {
 			j++;
 
 		}
+		// appel à une méthode pour construire le pied
 		lignes.append(construirePied(symboles.length()));
+		// affichage du sapin complet dans la console.
 		System.out.println(lignes.toString());
 	}
 
@@ -165,13 +169,16 @@ public class BeauSapin {
 	 * @return
 	 */
 	private String construirePied(int largeur) {
+		// variable
 		StringBuilder pied = new StringBuilder();
+		// boucle for
 		for (int i = 0; i < 3 ; i++)
 		{
 			String espaces = new String( new char[ ((int) (largeur/2)) ]).replace("\0", " ");
 			String tronc = new String( new char[3] ).replace("\0", DIEZE);
 			pied.append(espaces).append(tronc).append("\n");
 		}
+		// renvoi du pied construit sous forme de chaîne de caractères
 		return pied.toString();
 	}
 

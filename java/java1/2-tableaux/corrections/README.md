@@ -49,7 +49,7 @@ public static void exerciceA(String chaine)
 public static void main(String[] args) {
 
 
-		String mot = "SIMPLON";
+		String mot = "FORMATION-AFPA";
 		Exercices.exercice1(mot);
 		exercice1bis(mot);
 		
@@ -256,7 +256,508 @@ public class Hasard {
 }
 
 ```
+### Exercice 4 :  Les cadeaux du père Noël
 
+Classe Enfant :
+
+```java
+package fr.bouget.agregation;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Enfant {
+
+	private String prenom;
+	private String nom;
+	private int age;
+	private ArrayList<Jouet> listeCadeaux;
+
+	/**
+	 * Constructeur sans argument
+	 */
+	public Enfant()
+	{
+		// appel du second constructeur 
+		this(null,null,0);
+	}
+	
+	/**
+	 * Constructeur avec 3 arguments
+	 * @param n
+	 * @param p
+	 * @param a
+	 */
+	public Enfant(String nom, String prenom, int age)
+	{
+		this.nom=nom;
+		this.prenom=prenom;
+		this.age=age;
+		// on instancie une liste qui va contenir des objets de type Jouet
+		this.listeCadeaux = new ArrayList<Jouet>();  
+	}
+	/**
+	 * @return retourne le prenom
+	 */
+	public String getPrenom() {
+		return prenom;
+	}
+	/**
+	 * @param prenom : initialise le prenom
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	/**
+	 * @return retourne le nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+	/**
+	 * @param nom : initialise le nom
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	/**
+	 * @return retourne l'age
+	 */
+	public int getAge() {
+		return age;
+	}
+	/**
+	 * @param age : initialise l'age
+	 */
+	public void setAge(int age) {
+		this.age = age;
+	}
+	/**
+	 * @return retourne la liste la listeCadeaux
+	 */
+	public ArrayList<Jouet> getListeCadeaux() {
+		return listeCadeaux;
+	}
+	/**
+	 * @param listeCadeaux : initialise la liste de cadeaux
+	 */
+	public void setListeCadeaux(ArrayList<Jouet> listeCadeaux) {
+		this.listeCadeaux = listeCadeaux;
+	}
+	
+	/**
+	 * Ajouter un cadeau à sa liste de cadeaux
+	 * @param j
+	 */
+	public void ajouterUnCadeau(Jouet j)
+	{
+		this.listeCadeaux.add(j);
+	}
+
+
+	/**
+	 * Afficher la liste de cadeaux de l'enfant
+	 */
+	public void afficher()
+	{
+		System.out.println(this.getNom()+ " "+	this.getPrenom()+" "+ this.getAge()+" ans");
+		
+		if (!listeCadeaux.isEmpty())
+		{
+			System.out.println("Voici le(s) cadeaux reçu(s) : ");
+			Iterator<Jouet> jouets = listeCadeaux.iterator();
+			while(jouets.hasNext())
+			{
+				Jouet j = jouets.next();
+				// ici on appelle la méthode de la classe Jouet
+				j.afficher();
+
+			}
+
+
+		}
+
+	}
+
+	@Override
+	public String toString() {
+		
+		StringBuilder stringBuilder = new StringBuilder();
+
+		stringBuilder.append(this.getNom()+ " "+this.getPrenom()+" "+ this.getAge()+ " ans");
+		
+		// on regarde s'il a des cadeaux :
+		if (!listeCadeaux.isEmpty())
+		{
+			stringBuilder.append("\nVoici le(s) cadeaux reçu(s) : \n");
+			for (Jouet jouet : listeCadeaux) {
+				
+				stringBuilder.append(jouet.getLibelle()+"\n");
+			}
+
+		}
+		return stringBuilder.toString();
+	}
+// ======================================== méthode hors TP ============
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+		result = prime * result + ((prenom == null) ? 0 : prenom.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Enfant))
+			return false;
+		Enfant other = (Enfant) obj;
+		if (age != other.age)
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (prenom == null) {
+			if (other.prenom != null)
+				return false;
+		} else if (!prenom.equals(other.prenom))
+			return false;
+		return true;
+	}
+}
+
+```
+
+Classe Jouet :
+
+```java
+package fr.bouget.agregation;
+
+/**
+ * La classe jouet possède 2 attributs : un libellé et un état, distribué ou pas.
+ * @author Philippe
+ *
+ */
+public class Jouet {
+
+	private String libelle;
+	private boolean distribuer=false;
+
+	/**
+	 * Contructeur avec un argument
+	 * @param libelle
+	 */
+	public Jouet(String libelle)
+	{
+		this.libelle=libelle;
+	}
+
+	public Jouet() {
+
+		this(null);
+
+	}
+
+	/**
+	 * @return the libelle
+	 */
+	public String getLibelle() {
+		return libelle;
+	}
+	/**
+	 * @return retourne distribuer
+	 */
+	public boolean isDistribuer() {
+		return distribuer;
+	}
+
+	/**
+	 * @param distribuer : initialise distribuer
+	 */
+	public void setDistribuer(boolean distribuer) {
+		this.distribuer = distribuer;
+	}
+
+
+	/**
+	 * @param libelle the libelle to set
+	 */
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+	public void afficher()
+	{
+		System.out.println(this.libelle + " (distribué = " + (isDistribuer()==true ? "Oui" : "Non")+ ")\n");
+	}
+
+	@Override
+	public String toString() {
+
+		return this.libelle + " (distribué = " + (isDistribuer()==true ? "Oui" : "Non")+ ")\n";
+	}
+}
+
+```
+
+Classe PereNoel :
+
+```java
+package fr.bouget.agregation;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ * ici, je n'ai pas fait d"héritage car j'ignore si le père noël est une personne
+ * et même s'il existe !
+ * Son job, affecter des cadeaux (1 ou plusieurs aux enfants)
+ * @author Philippe
+ *
+ */
+public class PereNoel {
+	
+	private ArrayList<Enfant> listeEnfants;
+	private ArrayList<Jouet> listeJouets;
+	
+	/**
+	 * Constructeur sans argument
+	 */
+	public PereNoel()
+	{
+		listeEnfants = new ArrayList<Enfant>();
+		listeJouets = new ArrayList<Jouet>();
+	}
+	
+	/**
+	 * Méthode qui permet d'ajouter un enfant à sa liste
+	 * @param e
+	 */
+	public void ajouterEnfant(Enfant e)
+	{
+		// ici il faut tester si l'enfant n'existe pas déjà dans
+		// la liste :
+		if (!listeEnfants.contains(e))
+		{
+			listeEnfants.add(e);
+		}
+	}
+	
+	/**
+	 * Méthode qui permet de supprimer un enfant de sa liste
+	 * @param e
+	 */
+	public void supprimerEnfant(Enfant e)
+	{
+		if (listeEnfants.contains(e))
+		{
+			listeEnfants.remove(e);	
+		}
+
+	}
+	
+	/**
+	 * Méthode qui permet d'ajouter un objet de type Jouet à sa liste de jouets
+	 * @param j
+	 */
+	public void ajouterJouet(Jouet j)
+	{
+		// ici on ne peut pas avoir plusieurs fois le même jouet dans notre liste :
+
+		if (!listeJouets.contains(j))
+		{
+			listeJouets.add(j);
+		}
+	}
+	
+	/**
+	 * Méthode qui permet de supprimer un jouet de la liste
+	 * @param j
+	 */
+	public void supprimerJouet(Jouet j)
+	{
+		if (listeJouets.contains(j))
+		{
+			listeJouets.remove(j);
+		}
+
+	}
+
+	public void afficherListeDesEnfants()
+	{
+		System.out.println("Voici la liste des enfants :\n");
+		
+		System.out.println("Démo en utilisant un Iterator<> et une boucle While() :");
+		Iterator<Enfant> enfant = listeEnfants.iterator();
+		while(enfant.hasNext())
+		{
+			// on récupère un objet de type enfant dans la liste :
+			Enfant e = (Enfant)enfant.next();
+			e.afficher(); // ici, quelle mérhode appelle t-on ?
+		}
+		
+		System.out.println("\nDémo en utilisant une boucle foreach :");
+		
+		for (Enfant petit : listeEnfants) {
+			
+			petit.afficher();
+		}
+		
+	}
+
+	
+	public void afficherListeDesJouets()
+	{
+		System.out.println("Voici la liste des jouets :");
+		
+		for (Jouet jouet : listeJouets) {
+		
+			jouet.afficher();
+		}
+		
+	}
+	
+	/**
+	 * Méthode qui permet au PèreNono d'associer un enfant et un jouet
+	 * On pourrait améliorer cette méthode en y ajoutant une exception personnalisée
+	 * qui permettrait de savoir si le cadeau existe et si l'enfant exite aussi dans la liste.
+	 * @param e
+	 * @param j
+	 */
+	public void distribuer(Enfant e, Jouet j)
+	{
+		// on teste si l'enfant et le jouet sont dans les listes
+		// du père Noël et aussi que le jouet n'est pas déjà distribué :
+		
+		if (listeEnfants.contains(e) && (listeJouets.contains(j) && j.isDistribuer()==false))
+		{
+			// avant d'effectuer la distribution, le père noel
+			// veut vérifier que l'enfant ne possède pas déjà ce jouet
+			// parmi ses cadeaux :
+			if (!e.getListeCadeaux().contains(j))
+			{
+				// on affecte le jouet à la liste de cadeaux de l'enfant
+				e.ajouterUnCadeau(j);
+				// on précise que ce jouet n'est plus disponible, donc 
+				// distribuer = true (vrai) :
+				j.setDistribuer(true);
+			}
+		}
+		else
+		{
+			System.out.printf("Désolé, le jouet %s n'est peut-être pas disponible !\n", j.getLibelle());
+			System.out.printf("Ou bien l'enfant %s %s n'est peut-être pas dans la liste !", e.getNom() , e.getPrenom());
+
+		}
+	}
+}
+
+```
+
+Classe TestExemple :
+
+```java
+package fr.bouget.agregation;
+
+/**
+ * Classe permettant de tester l'appli PèreNono
+ * @author Philippe
+ * Date : Décembre 2020
+ * 
+ * Objectifs :
+ * - manipulation de la notion de classe, propriétés et méthodes
+ * - utilisation des principes d'agrégation
+ * - manipulation d'un ArrayList<>
+ *
+ */
+public class TestExemple {
+
+
+	
+	public static void main(String[] args) {
+
+		// on va d'abord crée un Père Noel ! (même s'il n'existe pas)
+		PereNoel papaNono = new PereNoel();
+
+		// Ensuite on va crée 3 enfants :
+		
+		// Noémie Truc à 8 ans :
+		Enfant nono = new Enfant("Bidule","Noémie",8);
+		// Joachim Machin à 6 ans :
+		Enfant jojo = new Enfant("Machin","Joachim",6);
+		// Soufiane Touti à 9 ans :
+		Enfant souf = new Enfant("Truc","Soufiane",9);
+		
+		Enfant doublon = new Enfant("Bidule","Noémie",8); // un doublon pour tester les égalités
+
+		// Ensuite on crée les jouets à distribuer :
+		// on pourrait en mettre davantage
+		
+		Jouet joujou1 = new Jouet("Ferrari 308GTB");
+		Jouet joujou2 = new Jouet("BarbiZou la poupée qui gazouille ");
+		Jouet joujou3	= new Jouet("Super puzzle avec 180 pièces ");
+		Jouet joujou4 = new Jouet("Mikado");
+		Jouet joujou5 = new Jouet("Rubik's Cube");
+		Jouet joujou6	= new Jouet("iPad");
+
+		// le père Noel met dans sa hote des jouets :
+		
+		papaNono.ajouterJouet(joujou1);
+		papaNono.ajouterJouet(joujou2);
+		papaNono.ajouterJouet(joujou3);
+		papaNono.ajouterJouet(joujou4);
+		papaNono.ajouterJouet(joujou5);
+		papaNono.ajouterJouet(joujou6);
+
+		// le père Noel met dans sa liste des enfants :
+		
+		papaNono.ajouterEnfant(nono);
+		papaNono.ajouterEnfant(jojo);
+		papaNono.ajouterEnfant(souf);
+
+		// il affiche la liste des enfants à visiter et 
+		// les cadeaux à distribuer (ça va, il a pas trop de boulot):
+		
+		papaNono.afficherListeDesEnfants();
+		papaNono.afficherListeDesJouets();
+
+		// il affecte des cadeaux aux 3 enfants :
+		papaNono.distribuer(nono,joujou1);
+		papaNono.distribuer(jojo, joujou2);
+		papaNono.distribuer(souf,joujou3);
+		papaNono.distribuer(souf,joujou4);
+		papaNono.distribuer(nono,joujou5);
+		papaNono.distribuer(jojo,joujou6);
+
+		// il va afficher les enfants avec leurs cadeaux :
+		nono.afficher();
+		jojo.afficher();
+		souf.afficher();
+
+		// peut-il ajouter un autre jouet(joujou2) à nono ?
+		papaNono.distribuer(nono,joujou2);
+		
+		
+		
+		// pour le fun, on teste de la méthode equals rédéfinie dans la classe Enfant (hors TP)
+		
+		if (doublon.equals(nono)) System.out.println("\nIls ne portent pas la même référence mais ils ont la même valeur !");
+		if (doublon!=nono) System.out.println("\nOn compare leurs références... ce n'est pas la même !");
+	
+	}
+
+}
+
+
+```
 
 ### TP : Analyse d'une chaîne
 
@@ -378,7 +879,7 @@ public class ChaineSimple {
 
 ```
 
-### Biblio - Livre (TP un peu différent prévu sur les fichiers avec Josselin)
+### Biblio - Livre (TP un peu différent prévu sur les fichiers)
 
 #### Classe Livre
 
@@ -631,7 +1132,7 @@ package comptes;
 	TP - Gestion de Comptes Bancaires
 	Classes, constructeurs et encapsulation
 	Auteur		: Philippe Bouget
-	année		: 2019
+	année		: 2019/2020
 	Programme	: Compte.java
 	========================================
 	Objectifs pédagogiques :
@@ -847,7 +1348,7 @@ Solde = 11000.0 Euros.
 		// avec la méthode length()
 		System.out.printf("%nLongueur de  s1: %d", s1.length() );
 
-		// parcourir les caracters dans s1 avec charAt et afficher l'inverse
+		// parcourir les caracteres dans s1 avec charAt et afficher l'inverse
 		System.out.printf("%nLa chaîne inversée est : ");
 
 		for (int count = s1.length() - 1; count >= 0; count--)

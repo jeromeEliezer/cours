@@ -152,6 +152,92 @@ nombre = new Random().nextInt(100); // ici on veut un nombre inférieur à 100
 
 ```
 
+## Exercice 4 :  Les cadeaux du père Noël
+
+Enoncé :
+
+Enoncé :
+
+Le père Noël doit préparer la distribution des cadeaux aux enfants.
+Chaque enfant a un nom, un prénom, un âge et une liste de cadeaux.
+Il ne peut pas avoir 2 fois le même cadeau. Une fois qu'un cadeau est donné, il n'est plus disponible.
+
+Cette application doit permettre au Père Noël de gérer une liste d’enfants et une liste de cadeaux avec des méthodes pour affecter à chaque enfant un cadeau.
+
+Le Père Noël doit posséder 2 listes d’objets Enfants et Jouets. Un Jouet est caractérisé par un libellé (son intitulé) et un état pour dire s'il est ou pas distribué. 
+
+Le Père Noël est le seul capable de distribuer des cadeaux pour chaque enfant.
+
+Au final, l'application doit permettre de créer des enfants, des jouets et d'effectuer des distributions de cadeaux aux différents enfants.
+
+Pour vous aider, voici l'extrait du contenu de la méthode main() :
+
+```java
+public static void main(String[] args) {
+
+		// on va d'abord crée un Père Noel ! (même s'il n'existe pas)
+		PereNoel papaNono = new PereNoel();
+
+		// Ensuite on va crée 3 enfants :
+		
+		// Noémie Truc à 8 ans :
+		Enfant nono = new Enfant("Bidule","Noémie",8);
+		// Joachim Machin à 6 ans :
+		Enfant jojo = new Enfant("Machin","Joachim",6);
+		// Soufiane Touti à 9 ans :
+		Enfant souf = new Enfant("Truc","Soufiane",9);
+		
+		Enfant doublon = new Enfant("Bidule","Noémie",8);
+
+		// Ensuite on crée les jouets à distribuer :
+		// on pourrait en mettre davantage
+		
+		Jouet joujou1 = new Jouet("Ferrari 308GTB");
+		Jouet joujou2 = new Jouet("BarbiZou la poupée qui gazouille ");
+		Jouet joujou3	= new Jouet("Super puzzle avec 180 pièces ");
+		Jouet joujou4 = new Jouet("Mikado");
+		Jouet joujou5 = new Jouet("Rubik's Cube");
+		Jouet joujou6	= new Jouet("iPad");
+
+		// le père Noel met dans sa hote des jouets :
+		
+		papaNono.ajouterJouet(joujou1);
+		papaNono.ajouterJouet(joujou2);
+		papaNono.ajouterJouet(joujou3);
+		papaNono.ajouterJouet(joujou4);
+		papaNono.ajouterJouet(joujou5);
+		papaNono.ajouterJouet(joujou6);
+
+		// le père Noel met dans sa liste des enfants :
+		
+		papaNono.ajouterEnfant(nono);
+		papaNono.ajouterEnfant(jojo);
+		papaNono.ajouterEnfant(souf);
+
+		// il affiche la liste des enfants à visiter et 
+		// les cadeaux à distribuer (ça va, il a pas trop de boulot):
+		
+		papaNono.afficherListeDesEnfants();
+		papaNono.afficherListeDesJouets();
+
+		// il affecte des cadeaux aux 3 enfants :
+		papaNono.distribuer(nono,joujou1);
+		papaNono.distribuer(jojo, joujou2);
+		papaNono.distribuer(souf,joujou3);
+		papaNono.distribuer(souf,joujou4);
+		papaNono.distribuer(nono,joujou5);
+		papaNono.distribuer(jojo,joujou6);
+
+		// il va afficher les enfants avec leurs cadeaux :
+		nono.afficher();
+		jojo.afficher();
+		souf.afficher();
+
+		// peut-il ajouter un autre jouet(joujou2) à nono ?
+		papaNono.distribuer(nono,joujou2);
+}
+```
+
 ## TP1 : Analyser une phrase
 
 Notions abordées :

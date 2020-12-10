@@ -1,33 +1,39 @@
-# Java et les Exceptions
+# Exceptions en Java
 ## What is an exception?
-Une exception est le terme raccourci pour décrire un "événement exceptionnel". En programmation il s'agit d'un événement non voulu, d'un comportement anormal du programme développé.
 
-Il existe un mécanisme en Java qui permet de **lancer** et de **gérer** les exceptions. Ce mécanisme permet de gérer proprement les erreurs qui arrivent pendant l'exécution de notre programme.
+Une exception est le terme raccourci pour exprimer un **événement exceptionnel**. En programmation il s'agit d'un événement non désiré, d'un comportement anormal lors de l'exécution de notre application.
 
-Pour bien comprendre la gestion des exceptions, il est nécessaire de comprendre comment fonctionne un programme lorsque les fonctions s'appellent entre elles. Toutes les fonctions en cours d'exécution (appelées) sont stockées dans une **pile d'appel** (call stack in :gb: English :us:).
+Il existe un mécanisme en Java qui permet de **lancer** et **gérer** les exceptions. Ce mécanisme permet de gérer proprement les erreurs qui arrivent pendant l'exécution de notre programme.
+
+Pour bien comprendre la gestion des exceptions, il est nécessaire de comprendre comment fonctionne un programme lorsque les fonctions s'appellent entre elles. Toutes les fonctions en cours d'exécution (appelées) sont stockées dans une **pile d'appel**.
 
 ## La pile d'appel
 
-Prenons un exemple très simple d'un programme qui donne un chiffre aléatoire deux entiers `lowLimit` et `highLimit`;
+Prenons un exemple très simple d'un programme qui donne un chiffre aléatoire entre deux entiers `limiteSuperieure` et `limiteInferieure`;
 
 ```java
-public static void main(String[] args) {
-  int random = getNumberBetween(-10, 60);
-  System.out.println(random);
-}
+public class SansException {
 
-public static int getNumberBetween(int lowLimit, int highLimit) {
-  int result = 0;
-  if (lowLimit < 0 && highLimit < 0) {
-    result = (int) ((lowLimit - highLimit) * getRandomNumber()) + highLimit;
-  } else {
-    result = (int) ((highLimit - lowLimit) * getRandomNumber()) + lowLimit;
-  }
-  return result;
-}
+	public static void main(String[] args) {
+		int random = getNumberBetween(-10, 60);
+		System.out.printf("Nombre généré : %d", random);
 
-public static double getRandomNumber() {
-  return Math.random();
+	}
+
+	public static int getNumberBetween(int limiteInferieure, int limiteSuperieure) {
+		
+		int resultat = 0;
+		if (limiteInferieure < 0 && limiteSuperieure < 0) {
+			resultat = (int) ((limiteInferieure - limiteSuperieure) * getRandomNumber()) + limiteSuperieure;		
+	} else {
+			resultat = (int) ((limiteSuperieure - limiteInferieure) * getRandomNumber()) + limiteInferieure;
+		}
+		return resultat;
+	}
+
+	public static double getRandomNumber() {
+		return Math.random();
+	}
 }
 ```
 
@@ -44,7 +50,8 @@ Imaginons maintenant qu'une des fonctions de la pile d'appel présente un risque
 * Lire un fichier qui existe et contient du contenu valide mais mal formaté (le fichier commence à la ligne 4 au lieu de 1)
 * ...
 
-J'ai donc modifié mon programme pour lire les limites depuis un fichier texte. J'ai arbitrairement décidé que le fichier "limites" doit contenir deux lignes avec une limite par ligne. Ci dessous le contenu du fichier avec les limites :
+Il faut par conséquent modifier le programme pour lire les limites depuis un fichier texte. On peut arbitrairement décider que le fichier *limites* doit contenir deux lignes avec une limite par ligne.
+Ci dessous le contenu du fichier avec les limites :
 
 ```text
 -10
@@ -54,70 +61,102 @@ J'ai donc modifié mon programme pour lire les limites depuis un fichier texte. 
 Et maintenant un exemple possible de gestion des exceptions :
 
 ```java
+package correction.exception.exemple;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class AvecExceptions {
+
+
 public static void main(String[] args) {
-  System.out.println("Bienvenue dans l'application de calcul de nombre aléatoire !");
+	
+	  System.out.println("Calcul d'un nombre aléatoire !");
 
-  int[] limits;
-  try {
-    String limitPath = getFileNameFromConsole();
-    limits = getLimitsFromFile(limitPath);
-    System.out.println(getNumberBetween(limits[0], limits[1]));
-  } catch (FileNotFoundException e) {
-    System.out.println("Le fichier \"limite\" que vous avez spécifié n'existe pas.");
-    System.out.println("Impossible de calculer un nombre aléatoire.");
-  } finally {
-    System.out.println("Merci d'avoir utilisé mon application, aurevoir");
-  }
+	  int[] limits; // tableau des limites
+	  try {
 
-}
+	      String limitPath = getFileNameFromConsole();
+	      limits = getLimitsFromFile(limitPath);
+	      System.out.printf("Nombre généré : %d", getNumberBetween(limits[0], limits[1]));
+	    
 
-public static String getFileNameFromConsole() {
-  System.out.println("Veuillez spécifier l'emplacement du fichier limites :");
+	  } catch (FileNotFoundException e) {
+		  
+	    System.out.println("Le fichier \"limites\" que vous avez spécifié n'existe pas !");
+	    System.out.println("Impossible de calculer un nombre aléatoire.");
+	    
+	  } finally {
+	    System.out.println("Merci à bientôt !");
+	  }
 
-  Scanner scanner = new Scanner(System.in);
-  String limitPath = scanner.nextLine();
-  scanner.close();
+	}
 
-  return limitPath;
-}
+	/**
+	 * Méthode pour saisir le nom du fichier limites
+	 * @return
+	 */
+	public static String getFileNameFromConsole() {
+	  System.out.println("Veuillez spécifier l'emplacement du fichier limites :");
 
-public static int[] getLimitsFromFile(String limitPath) throws FileNotFoundException {
-  int[] limits = new int[2];
+	  Scanner scanner = new Scanner(System.in);
+	  String limitPath = scanner.nextLine();
+	  scanner.close();
 
-  Scanner scanner = new Scanner(new File(limitPath));
-  limits[0] = scanner.nextInt();
-  scanner.nextLine();
-  limits[1] = scanner.nextInt();
-  scanner.nextLine();
+	  return limitPath;
+	}
 
-  scanner.close();
+	/**
+	 * Méthode qui récupère le tableau des limites
+	 * @param limitPath
+	 * @return
+	 * @throws FileNotFoundException
+	 */
+	public static int[] getLimitsFromFile(String limitPath) throws FileNotFoundException {
+	  int[] limits = new int[2];
 
-  return limits;
-}
+	  Scanner scanner = new Scanner(new File(limitPath));
+	  
+	  limits[0] = scanner.nextInt();
+	  scanner.nextLine();
+	  limits[1] = scanner.nextInt();
+	  //scanner.nextLine(); 
+	  /* 	si on active cette ligne, cela va générer une exception
+	   		puisqu'il n'y a pas d'autres lignes dans le fichier !
+			voici l'exception qui sera générée : java.util.NoSuchElementException: No line found
+	   */
+	  scanner.close();
 
-public static int getNumberBetween(int lowLimit, int highLimit) {
-  int result = 0;
-  if (lowLimit < 0 && highLimit < 0) {
-    result = (int) ((lowLimit - highLimit) * getRandomNumber()) + highLimit;
-  } else {
-    result = (int) ((highLimit - lowLimit) * getRandomNumber()) + lowLimit;
-  }
-  return result;
-}
+	  return limits;
+	}
+	public static int getNumberBetween(int lowLimit, int highLimit) {
+	  int result = 0;
+	  if (lowLimit < 0 && highLimit < 0) {
+	    result = (int) ((lowLimit - highLimit) * getRandomNumber()) + highLimit;
+	  } else {
+	    result = (int) ((highLimit - lowLimit) * getRandomNumber()) + lowLimit;
+	  }
+	  return result;
+	}
 
-public static double getRandomNumber() {
-  return Math.random();
+	public static double getRandomNumber() {
+	  return Math.random();
+	}
+	
 }
 ```
 
-C'est notre fonction `getLimitsFromFile` qui peut poser problème.
+C'est notre fonction `getLimitsFromFile()` qui peut poser problème.
 
 ### Cas 1 : Fichier inexistant
+
 Essayez ce code et rentrez dans la console le chemin d'un fichier qui n'existe pas. Vous remarquerez alors que vous aurez un message vous disant que le fichier que vous avez spécifié n'existe pas. C'est normal, dans notre fonction `getLimitsFromFile()` nous **renvoyons** l'exception `FileNotFoundException` de la classe `File` qui survient quand on essaye de faire `new File(limitPath))` avec un chemin `limitPath` qui n'existe pas. Cette exception est ensuite **gérée** dans la méthode `main` grâce a un bloc `try\catch\finally` qui permet d'attraper les exceptions **lancées** et **non gérées** par les méthodes appelées dans le bloc `try`
 
 ![Pile d'appels](../presentation/reveal.js/images/call_stack_file.png)
 
 Détaillons un peu plus la gestion de l'exception faite dans la méthode `main`.
+
 * Le bloc `try` permet de spécifier que le code qui est exécuté à l'intérieur peur éventuellement renvoyer une exception.
 * Le bloc `catch` quant à lui se charge de gérer l'exception `FileNotFoundException` qui peut arriver dans le bloc `try`. On pourrait "attraper" d'autres exceptions si on pense qu'il est possible que d'autres surviennent dans le bloc `try`.
 * Le bloc `finally` qui s'exécute après la capture d'une exception, si capture il y a, ou après la fin du bloc `try` si tout s'est bien passé.
@@ -125,6 +164,7 @@ Détaillons un peu plus la gestion de l'exception faite dans la méthode `main`.
 Dans le cas d'une exception `FileNotFoundException` arrivant à l'appel de la fonction `getLimitsFromFile` toutes les actions après cette fonction seront ignorées et le programme exécutera directement les actions du bloc `catch`.
 
 ### Cas 2 : Contenu du fichier incorrect
+
 Essayez maintenant de donner au programme un fichier qui existe mais qui n'est pas au bon format (avec des chaînes de caractères à la place d'entiers par exemple). Dans ce cas vous verrez apparaître dans la console un message d'erreur. C'est dû au fait que je n'ai pas géré les exceptions que peut renvoyer de la méthode `nextInt()` de la classe `Scanner`. Du coup l'exception vous est renvoyée dans la console.
 
 ![Pile d'appels](../presentation/reveal.js/images/call_stack_format.png)
