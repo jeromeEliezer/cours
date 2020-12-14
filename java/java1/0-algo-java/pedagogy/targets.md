@@ -55,6 +55,14 @@
 - [Cookbook sur les Streams](../course/java_streams.md)
 - [Exercices Streams](../exercices/java_streams_ex.md)
 
+**Retrospective sur les bases de Java**
+* **Elément.s du programme :** Découvrir le notion de programmation orientée objet
+* **Objectif.s :** Comprendre pourquoi le code Java est modulaire, comprendre la différence entre références et valeurs
+* **Compétence.s visées.s :** 4) Développer une interface utilisateur [développer dans un langage objet]
+* **Contexte (prérequis) :** Savoir écrire un algorithme en Java (connaître les variables, les types de données, les structures de contrôle)
+* **Modalités pédagogiques :** Live coding
+* **Supports nécessaires :** Néant
+
 ## Gérer l'inattendu en programmation (Java Exceptions)
 
 * **Elément.s du programme :** Découvrir la gestion des **erreurs** en programmation
@@ -67,15 +75,6 @@
 - [Présentation Exceptions](../presentation/java_exceptions.html)
 - [Théorie sur les Exceptions](../../../java2/exception/exceptions.md)
 - [Exercices Exceptions]()
-
-
-**Retrospective sur les bases de Java**
-* **Elément.s du programme :** Découvrir le notion de programmation orientée objet
-* **Objectif.s :** Comprendre pourquoi le code Java est modulaire, comprendre la différence entre références et valeurs
-* **Compétence.s visées.s :** 4) Développer une interface utilisateur [développer dans un langage objet]
-* **Contexte (prérequis) :** Savoir écrire un algorithme en Java (connaître les variables, les types de données, les structures de contrôle)
-* **Modalités pédagogiques :** Live coding
-* **Supports nécessaires :** Néant
 
 ## Découverte de la programmation Objet : Encapsulation
 * **Elément.s du programme :** Classes, objets, instances, attributs, visibilités, constructeurs, méthodes.
