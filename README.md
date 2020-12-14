@@ -1,9 +1,6 @@
 # Formation Java - Swing
 
 Durée : 18 jours
-
-Période : novembre 2020
-
 ## Objectif
 
 > A partir d'un cahier des charges, chacun.e devra concevoir et réaliser une application de type Desktop en Java avec la mise en place d'une interface graphique développée avec l'API Swing. L'application devra permettre l'accès à une base de données MySQL.

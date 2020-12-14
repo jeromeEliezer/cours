@@ -1,54 +1,6 @@
-**2003/2010**
+# Programmation JAVA (Module 2)
 
-**Programmation**
-
-**avec**
-
-**JAVA**
-
-(Module 2)
-
-Table des Matières
-
-[1.Approfondissement sur la notion de polymorphisme 3](# __RefHeading___ Toc261260514)
-
-[2.Modificateur final sur une classe ou une méthode 5](# __RefHeading___ Toc261260515)
-
-[3.Les classes abstraites 5](# __RefHeading___ Toc261260516)
-
-[4.Les interfaces 8](# __RefHeading___ Toc261260517)
-
-[1.1Comparable et TreeSet 9](# __RefHeading___ Toc261260518)
-
-[1.2Serializable : Personnalisation de la sauvegarde des objets 11](# __RefHeading___ Toc261260519)
-
-[5.Packages 15](# __RefHeading___ Toc261260520)
-
-[6.Création d&#39;un JAR exécutable 15](# __RefHeading___ Toc261260521)
-
-[7.Instruction import 16](# __RefHeading___ Toc261260522)
-
-[8.Modificateurs d&#39;accès 16](# __RefHeading___ Toc261260523)
-
-[9.Exceptions 18](# __RefHeading___ Toc261260524)
-
-[10.Découvertes des entrées sorties 27](# __RefHeading___ Toc261260525)
-
-[11.La classe File 33](# __RefHeading___ Toc261260526)
-
-[12.Interfaces avec AWT (Abstract Windowing Toolkit) et SWING 40](# __RefHeading___ Toc261260527)
-
-[13.La gestion des événements : le modèle par délégation 41](# __RefHeading___ Toc261260528)
-
-[14.Découverte du multiprocessus (nos amis les Threads) 50](# __RefHeading___ Toc261260529)
-
-[15.Découverte des Applets 64](# __RefHeading___ Toc261260530)
-
-[16.Introspection d&#39;objet : utilisation dynamique 77](# __RefHeading___ Toc261260531)
-
-[17.Annexe 1 : Evénements par composant 79](# __RefHeading___ Toc261260532)
-
-# 1.Approfondissement sur la notion de polymorphisme
+## 1.Approfondissement sur la notion de polymorphisme
 
 - Ecriture invariante quel que soit le type de l&#39;objet.
 
@@ -593,7 +545,6 @@ System._out_.println( msg ) ;
 
 Exécutez ce programme et vérifiez l&#39;ordre d&#39;affichage des objets Voiture dans la console.
 
-  1.
 ## Serializable : Personnalisation de la sauvegarde des objets
 
 Pour bien comprendre ce chapitre sur l&#39;utilisation de l&#39;interface Serializable et de la possibilité de personnalisation de l&#39;écriture et de la lecture d&#39;objets dans un fichier, il vous faudra faire un tour au chapitre 10 sur la manipulation des fichiers et des objets. Dans l&#39;exemple présenté ci-dessous, on personnalise la sauvegarde d&#39;un objet de type Personne en redéfinissant 2 méthodes :

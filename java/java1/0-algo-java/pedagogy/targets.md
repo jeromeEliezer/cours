@@ -65,8 +65,8 @@
 * **Supports nécessaires :** :
 
 - [Présentation Exceptions](../presentation/java_exceptions.html)
-- [Théorie sur les Exceptions](../course/java_exceptions.md)
-- [Exercices Exceptions](../exercices/java_exceptions_ex.md)
+- [Théorie sur les Exceptions](../../../java2/exception/exceptions.md)
+- [Exercices Exceptions]()
 
 
 **Retrospective sur les bases de Java**
