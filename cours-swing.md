@@ -2642,25 +2642,25 @@ public class JTextAreaMoi extends JTextArea
 
 ### Documentation Oracle
 
-https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html
+[https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html](https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html)
 
-https://docs.oracle.com/javase/tutorial/uiswing/
+[https://docs.oracle.com/javase/tutorial/uiswing/](https://docs.oracle.com/javase/tutorial/uiswing/)
 
-https://www.oracle.com/java/technologies/a-swing-architecture.html
+[https://www.oracle.com/java/technologies/a-swing-architecture.html](https://www.oracle.com/java/technologies/a-swing-architecture.html)
 
 ### Tutoriel en anglais
 
-https://www.javatpoint.com/java-swing
+[https://www.javatpoint.com/java-swing](https://www.javatpoint.com/java-swing)
 
 ## Installer JavaFX pour Eclipse
 
-https://o7planning.org/fr/10619/installation-de-e-fx-clipse-sur-eclipse
+[https://o7planning.org/fr/10619/installation-de-e-fx-clipse-sur-eclipse](https://o7planning.org/fr/10619/installation-de-e-fx-clipse-sur-eclipse)
 
-https://www.eclipse.org/efxclipse/releases.html
+[https://www.eclipse.org/efxclipse/releases.html](https://www.eclipse.org/efxclipse/releases.html)
 
 version à prendre :
 
-http://download.eclipse.org/efxclipse/updates-released/3.3.0/site
+[http://download.eclipse.org/efxclipse/updates-released/3.3.0/site](http://download.eclipse.org/efxclipse/updates-released/3.3.0/site)
 
 ## Installer JavaFX Scene Builder
 
@@ -2670,13 +2670,16 @@ http://download.eclipse.org/efxclipse/updates-released/3.3.0/site
 
 Vous pouvez télécharger Scene Builder et exécuter le programme suivant sous windows :
 
-https://o7planning.org/fr/10621/installez-javafx-scene-builder-dans-eclipse
+[installer javafx scene builder dans eclipse](https://o7planning.org/fr/10621/installez-javafx-scene-builder-dans-eclipse)
 
-lien : https://www.oracle.com/java/technologies/javafxscenebuilder-1x-archive-downloads.html
+[Télécharger Scene builder (optionnel)](https://www.oracle.com/java/technologies/javafxscenebuilder-1x-archive-downloads.html)
 
-javafx_scenebuilder-2_0-windows.msi
+(*javafx_scenebuilder-2_0-windows.msi*)
 
-Formateur Informatique Indépendant   
-Philippe Bouget   
-Cours Java Swing   
-Mise à jour : le 09/11/2020   
+Formateur Informatique Indépendant
+
+Philippe Bouget
+
+Cours Java Swing
+
+Mise à jour : le 15/12/2020   

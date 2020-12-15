@@ -1,19 +1,16 @@
 # Travaux Pratiques : Java Swing & JDBC
 
-**Table des matières**
-
 **TP1 – Agencement de composants Swing**
 
 - Exercice simple avec agencement des composants
 
 **TP2 – Swing et gestion d'événements**
 
-- 1. IHM et manipulation des chaînes de caractères avec la classe Swing
-- 2. Construction IHM avec gestion des écouteurs
+2.1. IHM et manipulation des chaînes de caractères avec la classe Swing
+2.2. Construction IHM avec gestion des écouteurs
 
 **TP3 – IHM Swing et accès BD avec JDBC**
 
-#
 ## **TP1 – Agencement de composants Swing**
 
 Objectifs : Mettre en place des composants graphiques de Java Swing sans gérer les événements.
@@ -30,21 +27,20 @@ La partie supérieure de hauteur constante comprend :
 
 Chaque bouton graphique est associé à une image que vous pouvez chercher sur internet :
 
-  - *ouvrirFichier.png* pour le bouton ouvrirFichier
-  - *fermerFichier.png* pour le bouton fermerFichier
-  - *aidezMoi.png* pour le bouton aidezMoi
-
+- *ouvrirFichier.png* pour le bouton ouvrirFichier
+- *fermerFichier.png* pour le bouton fermerFichier
+- *aidezMoi.png* pour le bouton aidezMoi
 
 1. La partie médiane est une zone de texte multi-lignes (**JTextArea**) qui occupe le maximum d'espace en largeur avec un ascenseur (**JScrollPane** vertical toujours apparent)
 
-1. - La partie inférieure est constituée elle-même de 3 zones sur 2 lignes :
+2. - La partie inférieure est constituée elle-même de 3 zones sur 2 lignes :
 
 Première ligne :
 
 - JLabel (étiquette) qui affiche « Nom : »,
 - zone de saisie du type JTtextField qui prend le maximum de largeur
 - un JButton (bouton) ouvrir
- 
+
 Deuxième ligne :
 
 - JLabel (étiquette) qui affiche « type : »,
@@ -114,10 +110,10 @@ Modifier votre classe métier Chaîne selon les besoins :
 
 - Ajouter un constructeur pour y recevoir une chaîne de caractères.
 
--Ajouter 2 méthodes :
+- Ajouter 2 méthodes :
 
-- **getVoyelles()** pour retourner le nombre de voyelles
-- **getMots()** pour retourner le nombre de mots
+  - **getVoyelles()** pour retourner le nombre de voyelles
+  - **getMots()** pour retourner le nombre de mots
 
 Enlevez la classe dans laquelle se trouve la méthode main().
 
@@ -186,7 +182,7 @@ public class TesterMonProgramme
 
 - Ajouter un libellé et un champ texte de 3 caractères pour les espaces
 
-#
+
 - Fonctionnalité optionnelle
 Ajouter un bouton enregistrer pour écrire dans un fichier texte la chaîne étudiée avec tous les résultats de l'analyse générés par les méthodes de la classe chaîne. Vous devez présenter les résultats de l'analyse de la manière suivante :
 
@@ -207,8 +203,6 @@ Nombre de mots : résultat
 Fin analyse de la chaine.
 
 Vous êtes libre d'enregistrer vos données en flux de caractères ou d'octets. Vous nommerez votre fichier « EtudeChaîne.txt ». Vous pouvez aussi envoyer un message lorsqu'il y a une saisie erronée, l'enregistrement du fichier, etc.
-
-#
 
 Au travail…
 
@@ -250,4 +244,4 @@ Elle comporte 3 zones :
 
 Vamos, let's go, au travail,...
 
-*Philippe Bouget Mis à jour le vendredi 30/10/2020*
+*Philippe Bouget Mis à jour le vendredi 15/12/2020*
