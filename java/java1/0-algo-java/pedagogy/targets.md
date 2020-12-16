@@ -29,7 +29,7 @@
 
 - [Présentation Exceptions](../presentation/java_exceptions.html)
 - [Théorie sur les Exceptions](../../../java2/exception/exceptions.md)
-- [Exercices Exceptions]()
+- [Exercices Exceptions](../../../java2/exception/exceptions_ex.md)
 
 ## Découverte de la programmation Objet : Encapsulation
 
