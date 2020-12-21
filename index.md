@@ -1,77 +1,55 @@
-# Formation Java - Swing
+# Cours
 
-Durée : 18 jours
+## Java : Découverte
 
-Période : novembre 2020
+### [1. Entrainement à l'Algorithmie](cours-algo-java.md)
 
-## Objectif
+### [2. Bases du langage](java/java1/1-bases/README.md)
 
-> A partir d'un cahier des charges, chacun.e devra concevoir et réaliser une application de type Desktop en Java avec la mise en place d'une interface graphique développée avec l'API Swing. L'application devra permettre l'accès à une base de données MySQL.
+### [3. Tableaux](java/java1/2-tableaux/README.md)
 
-## Contraintes
+### [4. Fichiers](java/java1/3-fichiers)
 
-- Respecter le plus possible l'architecture MVC.
-- Réaliser la modélisation avec UML (use Case, diag de classe,...)
-- Modéliser les données avec les MCD/MLD/MPD de Merise ou un Diagramme de classe UML.
-- Mettre en place une base de données sous MySQL ou autre.
-- Réaliser des composants d'accès aux données aux choix (JDBC/DAO, JPA, Hibernate, EJB3).
-- Utiliser l'API SWING pour la mise en place de l'IHM.
-- Mettre en place une application multi-couches.
-- Mettre en place des tests et jeu d'essai. 
-- Déployer l'application en générant un JAR exécutable.
-- Réaliser une documentation Javadoc.
-- Gérer le multilingue (Anglais, Français, Allemand).
+### [5. IDE Eclipse](java/java2/5-ide/README.md)
 
-## Outils
+### [6. Héritage](java/java2/6-heritage/README.md)
 
-- IDE : Eclipse, NetBeans, IntelliJ (licence fournit si besoin)
-- Gestion de suivi du projet personnel : Trello
-- un cerveau...
+### [7. Rest API](java/java2/7-rest/README.md)
 
-## En pratique
+## Java Swing
 
-> Théorie suivie d'une mise en pratique en prenant les exemples du cours et en réalisant les différents TPs avant de passer au projet.
+### [1. Construire des IHMs avec Swing](cours-swing.md)
 
-### Semaine 1 (du 02/11 au 06/11)
+### [2. Approfondissement sur la gestion des événements](cours-java-evenement.md)
 
-- Découverte et pratique des bases pour la mise en place d'une IHM en Java Swing :
+### [3. Rappel : Connection à une BD avec JDBC](java/java2/8-jdbc/README.md)
 
-    - API et composants graphiques Swing.
-    - Gestion des événements permettant l'interactivité.
-    - Réalisation de 2 TPs
-    - Réalisation interface graphique du TP3
-    - Bilan des acquis 
+### [4. Gestion de configuration et des langues avec les fichiers **properties**](cours-properties.md)
 
-### Semaine 2 (du 09/11 au 13/11) sauf 10/11 et 11/11
+### [5. Exemple simple avec le Framework Hibernate](cours-hibernate.md)
 
-- Mettre en place la gestion multilingue en java (properties).
-- Respect du MVC dans une application Desktop.
-- Utilisation d'une connection JDBC avec MySQL
-- Découverte et mise en place du pattern DAO pour la partie persistence.
-- Réalisation d'un TP simple et complet (TP3)
-- Découverte du FrameWork Hibernate
-- Bilan de la semaine
+### [6. Travaux pratiques Swing](travaux-pratiques-swing.md)
 
-- Cahier des charges du projet à réaliser (toute proposition est bienvenue pour un autre projet personnel s'il répond aux exigences du CDC)
+### [7. Utilisation de l'encodage en java](cours-cryptage-simple.md)
 
-### Semaine 3 (du 16/11 au 20/11)
+### [8. Utilisation de JUnit](cours-tests-junit5.md)
 
-- Travail sur le projet
-- Partage des problèmes et solutions trouvées.
-- Suivi individuel
-- Point quotidien sur l'avancée de la conception et du développement
-- Bilan de la semaine
+### [9. CDC du Projet Gestion des Opérations Bancaires](projets/gestion-banque.md)
 
-### Semaine 4 (du 23/11 au 27/11)
+### 10. Aides, conseils et propositions de corrections
 
-- Travail sur le projet
-- Partage des problèmes et solutions trouvées.
-- Suivi individuel
-- Point quotidien sur l'avancée de la conception et du développement
-- Finalisation du projet avec Tests et déploiement.
-- Présentation de son projet au groupe.
-- Bilan de la formation Java-Swing.
+## Modélisation
 
-## Liens vers les cours et ressources
+### [Cours UML](uml/README.md)
 
-- [Cours, ressources, travaux pratiques et projets](cours-index.md)
+### [Cours Merise](2-mcd/README.md)
+
+## Bonus
+
+### [SpringBoot](framework-back/1-springboot/README.md)
+
+### [Java EJB](framework-back/1-jpa-orm/javaee-persistence-ejb3.md)
+
+### [Mapping ORM](framework-back/1-jpa-orm/mapping-orm.md)
+ 
+## ressources Web
