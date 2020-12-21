@@ -63,13 +63,13 @@ En Java, tout le code est implémenté sous forme de classes.
 <section id="slide-org836fbdf">
 <h2 id="org836fbdf"><span class="section-number-2">4</span> Packages</h2>
 <p>
-Les packages sont l'organisation hiérarchique des classes
-(cf. répertoires pour les fichiers).
+Les packages permettent d'organiser les classes
+(c'est l'équivalent des répertoires pour les fichiers).
 </p>
 
 <p>
-On peut utiliser un nom complètement qualifié (<i>fully qualified name</i>)
-<code>java.util.Scanner</code> ou utuliser des directives <code>import</code> : <code>import
+On peut utiliser un nom complet qualifié (<i>fully qualified name</i>)
+<code>java.util.Scanner</code> ou utiliser des directives <code>import</code> : <code>import
 java.util.Scanner</code> ou <code>java.util.*</code>.
 </p>
 </section>
@@ -89,13 +89,13 @@ complètement qualifié, puis avec un <code>import</code> spécifique, qui avec 
 <section id="slide-org9532636">
 <h2 id="org9532636"><span class="section-number-2">5</span> Interface et implémentation</h2>
 <ul>
-<li>Interface : "quoi" / ce qui est visible</li>
-<li>Implémentation : "comment" / ce qui est caché</li>
+<li>Interface : "quoi" => ce qui est visible</li>
+<li>Implémentation : "comment" => ce qui est caché</li>
 
 </ul>
 
 <p>
-On parle d' <i>encapsulation</i>. 
+On parle d' <i>Encapsulation</i>. 
 </p>
 
 </section>
@@ -105,7 +105,7 @@ On parle d' <i>encapsulation</i>.
 <h2 id="org2b7b59b"><span class="section-number-2">6</span> Minimisation de la compléxité</h2>
 <p>
 On minimise ce qui est visible : il n'y a pas de dépendance envers ce
-qui n'est pas visible (&rarr; possibilité d'évolutions).
+qui n'est pas visible (&rarr; possibilités d'évolutions).
 </p>
 
 </section>
@@ -143,13 +143,19 @@ qui est qualifié:
 </thead>
 <tbody>
 <tr>
+<td class="org-left"><code>private</code></td>
+<td class="org-left">✓</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+<tr>
 <td class="org-left"><code>public</code></td>
 <td class="org-left">✓</td>
 <td class="org-left">✓</td>
 <td class="org-left">✓</td>
 <td class="org-left">✓</td>
 </tr>
-
 <tr>
 <td class="org-left"><code>protected</code></td>
 <td class="org-left">✓</td>
@@ -157,7 +163,6 @@ qui est qualifié:
 <td class="org-left">✓</td>
 <td class="org-left">&#xa0;</td>
 </tr>
-
 <tr>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">✓</td>
@@ -166,40 +171,34 @@ qui est qualifié:
 <td class="org-left">&#xa0;</td>
 </tr>
 
-<tr>
-<td class="org-left"><code>private</code></td>
-<td class="org-left">✓</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
+
 </tbody>
 </table>
 
 <p>
-(sous-classe &rarr; cf. infra héritage)
+(sous-classe &rarr; héritage)
 </p>
 
 </section>
 <section id="slide-org1951f5f">
 <h3 id="org1951f5f"><span class="section-number-3">7.1</span> Pratique</h3>
 <ul>
-<li>Créer une classe <code>VisiP</code> sans qualificatif de visibilité dans un
-package <code>co.simplon.p1</code> avec une fonction :</li>
+<li>Créer une classe <code>MaClasse</code> sans qualificatif de visibilité dans un
+package <code>fr.formation.test</code> avec une fonction :</li>
 
 </ul>
 <div class="org-src-container">
 
 <pre  class="src src-java"><span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">message</span>(){
-System.out.println(<span style="color: #8b2252;">"Hello from VisiP !"</span>);
+System.out.println(<span style="color: #8b2252;">"Message depuis MaClasse !"</span>);
 }
 </pre>
 </div>
 <ul>
-<li>Créer une classe <code>Main</code> dans un package <code>co.simplon.p1</code> avec une
+<li>Créer une classe <code>Main</code> dans un package <code>fr.formation.test</code> avec une
 fonction <code>public static void main(String[] args)</code> qui essaie
-d'appeler <code>VisiP.message()</code>.</li>
-<li>Que se passe-t'il si <code>Main</code> est dans un package <code>co.simplon</code> ?
+d'appeler <code>MaClasse.message()</code>.</li>
+<li>Que se passe-t'il si <code>Main</code> est dans un package <code>fr.formation</code> ?
 Quelle(s) modification(s) faut-il faire ?</li>
 
 </ul>
@@ -211,7 +210,7 @@ Quelle(s) modification(s) faut-il faire ?</li>
 <h2 id="org1fcb5d0"><span class="section-number-2">8</span> Mot clé <code>static</code></h2>
 <p>
 Ce qui est qualifié de <code>static</code> concerne la classe (n'est pas créé en
-cours d'exécution). Cf. <code>public static vois main(String[] args)</code>.
+cours d'exécution). Cf. <code>public static void main(String[] args)</code>.
 </p>
 
 </section>
@@ -220,15 +219,14 @@ cours d'exécution). Cf. <code>public static vois main(String[] args)</code>.
 <section id="slide-org5b68117">
 <h2 id="org5b68117"><span class="section-number-2">9</span> Attributs de classe</h2>
 <p>
-On peut associer des données à une classe avec des
-<i>attributs</i>. Ceux-ci sont accessibles, selon leur visibilité, comme
+On peut associer des données à une classe avec des <i>attributs</i>. Ceux-ci sont accessibles, selon leur visibilité, comme
 des variables avec une durée de vie qui est celle du programme.
-On accède à un attribut d'une classe comme à une fonction (<i>méthode</i>) de classe:
+On accède à un attribut d'une classe comme à une fonction (<i>méthode</i>) de classe :
 </p>
 <div class="org-src-container">
 
 <pre  class="src src-java">System.out;
-<span style="color: #008b8b;">Integer</span>.MAX_VALUE;
+<span style="color: #008b8b;">Integer</span>.MIN_VALUE;
 </pre>
 </div>
 
@@ -240,11 +238,11 @@ On accède à un attribut d'une classe comme à une fonction (<i>méthode</i>) d
 <h2 id="orgcc05eae"><span class="section-number-2">10</span> Attributs constants</h2>
 <p>
 En fait, pour limiter le <i>couplage</i> on utilise généralement des
-attributs de classe qui sont déclarés constant :
+attributs de classe qui sont déclarés constants :
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #a020f0;">final</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">NB_OF_RETRIES</span>= 3;
+<pre  class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #a020f0;">final</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">NOMBRE_ESSAIS</span>= 5;
 </pre>
 </div>
 
@@ -252,8 +250,8 @@ attributs de classe qui sont déclarés constant :
 <section id="slide-org510033a">
 <h3 id="org510033a"><span class="section-number-3">10.1</span> En pratique 1/2</h3>
 <p>
-Dans la classe <code>VisiP</code>, mettre un attribut de classe <code>GREETING</code> de
-type <code>String</code> pour remplacer le <code>"hello"</code> de la classe <code>VisiP</code>.
+Dans la classe <code>MaClasse</code>, ajouter un attribut de classe <code>SALUT</code> de
+type <code>String</code> pour remplacer le mot <code>"message"</code> de la classe <code>MaClasse</code>.
 </p>
 
 </section>
@@ -283,8 +281,8 @@ Modifier la classe <code>Quizz</code> pour que la fonction <code>main</code> soi
 <section id="slide-org1342f7c">
 <h2 id="org1342f7c"><span class="section-number-2">11</span> Objets</h2>
 <p>
-Lorsque l'on veut manipuler différents <i>valeurs pour un même type
-composé, l'on doit /instancier</i> la classe décrivant ce type:
+Lorsqu'on veut manipuler différentes <i>valeurs pour un même type
+composé, on doit instancier</i> la classe décrivant ce type :
 </p>
 <div class="org-src-container">
 
@@ -329,7 +327,7 @@ constructeur) on peut accéder directement aux attributs de l'instance.
 <section id="slide-orgacce867">
 <h3 id="orgacce867"><span class="section-number-3">12.1</span> mot clé <code>this</code></h3>
 <p>
-On peut aussi préfixer avec le mot-clé <code>this</code> :
+On peut aussi préfixer notre attribut avec le mot-clé <code>this</code> :
 </p>
 <div class="org-src-container">
 
@@ -388,10 +386,10 @@ str.equals(<span style="color: #8b2252;">"test"</span>);
 <section id="slide-orgc335f56">
 <h2 id="orgc335f56"><span class="section-number-2">15</span> equals et toString</h2>
 <p>
-On réimplémente (cf. infra héritage) généralement au moins les
+On réimplémente (voir héritage et polymorphisme) généralement au moins les
 méthodes <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a> et <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--">toString</a>. Cette dernière est appellée
 automatiquement lors d'une concaténation ou d'un affichage avec
-<code>println</code>.
+<code>println()</code>.
 </p>
 
 </section>
