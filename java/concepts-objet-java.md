@@ -1,208 +1,196 @@
-# Concepts Objets pour Java
+# Concepts Objets et Java
 
-## 1.Utilisation de classes existantes
+## Utilisation de classes existantes
 
 **Objectifs :**
 
 - Comprendre la relation entre les objets et les classes
-- Comprendre et manipuler les références d&#39;objets
-- Connaître les conventions pour dénommer les classes et les variables
+- Comprendre et manipuler les références d'objets
+- Connaître les conventions pour nommer les classes et les propriétés
 - Savoir instancier les objets et appeler leurs méthodes
-- Se familiariser avec les classes _String_, _Vector_ et &#39;wrapper&#39; dites &quot;enveloppes&quot;
+- Se familiariser avec les classes courantes comme _String_, _ArrayList_ _HasTable_ les classes dites *wrapper* (_enveloppes_)
 
 **Découvertes des Objets :**
 
-- le monde réel est composé d&#39;objets.
-- Certains de ces objets peuvent être traités sur ordinateur.
-- La représentation informatique d&#39;un objet du monde réel s&#39;appelle **objet** ou **instance**.
-- Un objet contient des données appelées **variables**.
-- Un objet contient aussi la définition des traitements qu&#39;on peut effectuer sur ses données : il s&#39;agit des **méthodes**.
+- le monde réel est composé d'objets.
+- La représentation informatique d'un objet du monde réel s'appelle **objet** ou **instance**.
+- Un objet peut ne pas appartenir au monde réel.
+- Un objet contient des données appelées **propriétés**.
+- Un objet contient aussi la définition des traitements qu'on peut effectuer sur ses données : il s'agit des **méthodes** et plus particulièrement des *comportements*.
 
-## 2.Qu&#39;est-ce qu&#39;un Objet ?
+## Qu'est-ce qu'un Objet ?
 
-- Si les données ou attributs d&#39;un objet ne sont modifiables que par des méthodes, on parle d&#39; **encapsulation**.
-- Les attributs constituent **l&#39;état de l&#39;objet**
-- Les méthodes définissent le &quot; **comportement**&quot; de l&#39;objet.
+- Si les données ou attributs d'un objet ne sont modifiables que par des méthodes publiques, on parle d' **encapsulation**. Les attributs sont généralement **privés**
+- Les attributs constituent **l'état de l'objet**
+- Les méthodes définissent les **comportements** de l'objet.
 - Certains objets sont des représentations du monde réel
-- D&#39;autres sont des représentations abstraites ou internes
+- D'autres sont des représentations abstraites.
 
-**Voici un exemple d&#39;objet :**
+**Exemple d'un objet :**
 
-_Un client d&#39;une société peut être géré dans un objet_
+_Un client d'une société peut être un objet_
 
 Nom de la _classe_ : Client
 
-Référence de _l&#39;objet_ : trucMuche
-
 _Attributs :_
 
-Mr. Jean TrucMuche
- 12, Rue du figuier
- 30140 - Anduze
+	- prénom 	: Jean
+	- nom		: TrucMuche
+	- adresse	: 12, Rue du figuier, 30140 - Anduze
 
-_Méthodes_ (comportement) :
+_Méthodes_ (d'accès ou de comportements) :
 
-getNom() : Retourne le nom d&#39;un objet de type Client
- setNom() : Initialise le nom d&#39;un objet de type Client
- envoyerRelance() : Réalise un comportement (action)
+	- getNom() : Retourne le nom d'un objet de type Client
+	- setNom() : Initialise le nom d'un objet de type Client
+	- envoyerRelance() : Réalise un comportement (action)
+
+Représentation graphique de l'objet de type Client
 
 ![objet](images/objet.png)
 
-### Peut-on parler d&#39;objet ?
+### Peut-on parler d'objet ?
 
 - compte bancaire
-- employé
+- employé.e
+- apprenant.e
 - une fraction
 - un âge
+- un portefeuille d'action
 
-## 3.Distinction entre objet et Classe
+## Distinction entre Objet et Classe
 
-Voici 3 objets :
+Imaginons les 3 objets suivants :
 
-Attributs : Mr. Jean TrucMuche 12, Rue du figuier 30140 – Anduze
+- Mr. Jean TrucMuche 12, Rue du figuier 30140 – Anduze
+- Mme Magali Vergne 2, Rue des arbouses 75500 - Paris
+- Mr. Marc Pignon Chemin du muscat 31000 - Toulouse
 
-Méthodes  : getNom(), setNom(), envoyerRelance()
+>On a bien 3 objets différents mais ce sont toujours 3 Clients. La valeur des propriétés (données) est spécifique à chacun.
 
+>Les méthodes getNom(), getPrenom() et envoyerRelance() à réaliser sur les données sont les mêmes pour chacun des 3 objets.
 
-Attributs : Mme Magali Vergne 2, Rue des arbouses 34510 - Florensac
+On dit que ces 3 objets sont des **instances** de la même **classe.**, ici de la classe **Client**
 
-Méthodes  : getNom(), setNom(), envoyerRelance()
+> Attention : **Instance** et **Objet** sont synonymes.
 
-Attributs : Mr. Marc Pignon Chemin du muscat 34400 - Lunel
+## Classe : notion d'abstraction
 
-Méthodes  : getNom(), setNom(), envoyerRelance()
+### La classe est un **MOULE** ou un **MODELE** pour créer des objets.
 
->On a bien 3 objets différents mais ce sont toujours 3 Clients.
-La valeur des attributs (données) est spécifique à chacun.
+>En Java chaque objet est **l'instance** d'une classe. Sans classe, il ne peut pas y avoir d'objet !
 
->Les opérations à réaliser sur ces données sont les mêmes.
+Toutes les instances d'une classe partagent les mêmes structures de données et les mêmes méthodes.
 
-On dit que ces 3 objets sont des **instances** de la même **classe.**
+> Seule, la valeur des propriétés est spécifique à chaque instance.
 
-**Instance** et **Objet** sont synonymes.
+La classe permet une **représentation abstraite** d'objets concrêts (exemple : Client) ou d'objets abstraits (ex : pile, action, compte bancaire, portefeuille d'action, commande,...).
 
-## 4.La Classe : type de données abstrait
+Un diagramme de classe (voir cours UML) spécifie :
 
-### 4.1.La classe est un **MOULE** ou un **MODELE** pour créer des objets.
+- le nom de la classe écrite plutôt comme ceci **Client**
+- la définition de ses variables (attributs ou propriétés)
+- la définition de ses opérations (méthodes ou comportements).
 
-En Java chaque objet est **l&#39;instance** d&#39;une classe. Sans classe, il ne peut pas y avoir d&#39;objet !
-
-Toutes les instances d&#39;une classe partagent les mêmes structures de données et les mêmes méthodes. La valeur des données est spécifique à chaque instance. La classe permet une **représentation abstraite** d&#39;objets concrêts (exemple : Client) ou d&#39;objets abstraits (ex : pile, action, compte bancaire, portefeuille d&#39;action, commande, …).
-
-Un diagramme de classe (que nous étudierons en UML) spécifie :
-
-- le nom de la classe
-- la définition de ses variables (attributs)
-- la définition de ses opérations (méthodes).
-
-#### Exemple de description d&#39;une classe java :
+### Description d'une classe java
 
 _Nom de la classe : Client_
 
 _Liste des attributs :_
 
-_prenom : String
- nom : String
- age : int_
+_prenom : String   
+ nom 	: String   
+ age 	: int_   
 
 _Liste des méthodes :
- getAge()
- setAge(int)_
 
-**Voici ci-dessous une représentation sous forme graphique :**
+ getAge()   
+ setAge(int age)_
+
+**Représentation sous forme graphique**
 
 ![classe-client.png](images/classe-client.png)
 
->Comme nous le verrons dans la pratique, Java propose un grand nombre de classes :
+>Comme nous le verrons dans la pratique, Java propose un grand nombre de classes.
 
-**String** : sert à stocker des mots ou des phrases
+**String** : sert à stocker des mots ou des phrases (chaînes de caractères)
 
-**Vector** : ressemble à un tableau, mais avec beaucoup plus de fonctionnalités.
+**ArrayList** : ressemble à un tableau, mais avec beaucoup plus de fonctionnalités.
 
-**Wrappers** : classes qui permettent de traiter des types primitifs comme des objets, en
- élargissant ainsi les possibilités de traitements.
+**Wrappers** : classes qui permettent de traiter des types primitifs comme des objets, en élargissant ainsi les possibilités de traitements.
 
 **Déclaration des variables avec les types primitifs :**
 
 ```java
-int i;
-char c;
-float f = 0.0F;
+int indice;
+char monCaractere;
+float prix;
 ```
 
 **Déclaration avec des classes existantes :**
 
 ```java
-String s1;
-Vector v;
-String s2 = null;
+String chaineA;
+ArrayList tableauB;
+String chaineC;
 ```
 
->Attention **s1**, **v** et **s2** ne sont que des références d&#39;objets, pas des objets !
+>Attention **chaineA**, **tableauB** et **chaineC** ne sont que des références d'objets et non des objets !
 
-## 5.Méthodes d&#39;instance : comportement des objets
+## Méthodes d'instance : comportement des objets
 
 Chaque objet contenant des données peut subir des opérations (traitements). Les opérations sont faites en utilisant les **méthodes** qui recoivent des paramètres et peuvent renvoyer un résultat unique. Les méthodes utilisables sont définies dans la classe.
 
-Une méthode d&#39;instance traduit le **comportement** des objets de la classe à laquelle appartient cette méthode.
+> Une méthode d'instance traduit le **comportement** des objets de la classe à laquelle appartient cette méthode.
 
 Une méthode est constituée :
 
-- d&#39;une _Signature_ (nom de la méthode, type renvoyé et liste des paramètres)
-- d&#39;un _Corps_ (implémentation de la méthode entre accolades)
+- d'une _Signature_ (nom de la méthode, type renvoyé et une liste des paramètres si besoin)
+- d'un _Corps_ (implémentation de la méthode entre accolades)
 
 **Pour la classe String voici quelques méthodes avec leur fonctionnalité :**
 
-**Nom de la méthode Explication de son rôle**
+**charAt(int)** : renvoie le nième caractère de la chaîne
 
-**charAt** (int)renvoie le nième caractère de la chaîne
+**compareTo(String)** : compare la chaîne avec l'argument
 
-**compareTo** (String)compare la chaîne avec l&#39;argument
+**concat(String)** : ajoute l'argument à la chaîne et renvoie la nouvelle chaîne
 
-**concat** (String)ajoute l&#39;argument à la chaîne et renvoie la nouvelle chaîne
+**endsWith(String)** : vérifie si la chaîne se termine par l'argument
 
-**endsWith** (String)vérifie si la chaîne se termine par l&#39;argument
+**equalsIgnoreCase(String)** : compare la chaîne sans tenir compte de la casse
 
-**equalsIgnoreCase** (String)compare la chaîne sans tenir compte de la casse
+**indexOf(String)** : renvoie la position de début à laquelle l'argument est contenu dans la chaîne
 
-**indexOf** (String)renvoie la position de début à laquelle l&#39;argument est contenu dans la chaîne
+**lastIndexOf(String)** : renvoie la dernière position à laquelle l'argument est contenu dans la chaîne
 
-**lastIndexOf** (String)renvoie la dernière position à laquelle l&#39;argument est contenu dans la chaîne
+**lenght()** : renvoie la longueur de la chaîne
 
-**lenght** ()renvoie la longueur de la chaîne
+**replace(char,char)** : renvoie la chaîne dont les occurrences d'un caractère ont remplacées
 
-**replace** (char,char)renvoie la chaîne dont les occurrences d&#39;un caractère ont remplacées
+**startsWidt(String, int)** : Vérifie si la chaîne commence par la sous chaîne
 
-**startsWidt** (String int)Vérifie si la chaîne commence par la sous chaîne
+**substring(int,int)** : renvoie une partie de la chaîne
 
-**substring** (int,int)renvoie une partie de la chaîne
+**toLowCase()** : renvoie la chaîne en minuscule
 
-**toLowCase** ()renvoie la chaîne en minuscule
+**toUpperCase()** : renvoie la chaîne en majuscule
 
-**toUpperCase** ()renvoie la chaîne en majuscule
+**trim()** : enlève les caractères non significatifs de la chaîne
 
-**trim** ()enlève les caractères non significatifs de la chaîne
-
-## 6.Instanciation d&#39;un objet : mot clé NEW()
+## Instanciation avec le mot clé **New()**
 
 ### Nom de la classe : Client
 
 Liste des attributs :
 
-prenom : String
-
- nom : String
-
- age : int
-
+prenom : String   
+nom : String   
+age : int   
 
 Liste des méthodes :
 
-getAge()
-
+getAge()   
 setAge(int)
-
-- La classe
 
 
 ![](images/classe-client.png)
@@ -217,96 +205,100 @@ setAge(int)
 
 ![](images/objet.png)
 
-**L&#39;instanciation consiste à créer un objet, à partir d&#39;une classe (avec le mot clé**  **NEW**** ) :**
+>L'instanciation consiste à créer un objet, à partir d'une classe (avec le mot clé **new** )
 
-Client _trucMuche_ = **new** Client(&quot;jean&quot;,&quot;Trucmuche&quot;, &quot;12 rue du figuier&quot;, 30140, &quot;Anduze&quot;);
+```java
+Client trucMuche  = new Client("jean", "Trucmuche", "12 rue du figuier",30140, "Anduze");
 
-## 7.Comment utiliser une méthode ?
+```
 
-**INVOQUER** une méthode d&#39;instance correspond à la demande d&#39;un service à **l&#39;OBJET** , à l&#39;envoi d&#39;un **MESSAGE**. Nous allons prendre 2 méthodes :
+## Comment utiliser une méthode ?
 
-_setNom()
+**INVOQUER** une méthode d'instance correspond à la demande d'un service à **l'OBJET** , à l'envoi d'un **MESSAGE**. Nous allons prendre 2 méthodes :
+
+_setNom()  
  getNom()_
 
 **La structure est toujours la suivante**  :
 
-MaRéférenceObjet **POINT** MaMéthode **PARENTHESE** Liste des Paramètres **PARENTHESE**
+MaRéférenceObjet **POINT** MaMéthode **PARENTHESE OUVRANTE** Liste des Paramètres **PARENTHESE FERMANTE**
 
 **Voici un appel de la méthode setNom()** :
 
-MonObjetEmploye.setNom(&quot;Zouzou&quot;) ;
+```java
+monObjetEmploye.setNom("Artémis") ;
+```
 
 **La structure de cet appel est la suivante :**
 
-Référence objet **POINT** nom de méthode (&quot;valeur du paramètre&quot;) ;
+Référence objet **POINT** nom de méthode ("valeur du paramètre") ;
 
 **Voici un appel de la méthode getNom()** :
 
-String NomRécupéré = MaRéférenceObjet.getNom();
+```java
+String nomDeEmployéRécupéré = monObjetEmploye.getNom();
+```
 
 **La structure de cet appel est la suivante :**
 
 Variable locale = référence objet POINT nom de méthode ;
 
-**D&#39;abord il faut créer un objet :**
+**Il faut d'abord créer un objet :**
 
-String réponse = **new** String(&quot;Oui&quot;);
+```java
+String reponse = new String("O");
+```
 
 **Ensuite on peut appeler (invoquer) ses méthodes :**
 
 ```java
  boolean ditOui = false;
- if ( **reponse.length** () == 1)
- {
-
-if ( **reponse.equalsIgnoreCase** (&quot;o&quot;))
- {
-
-ditOui = true;
- }
-
-}
- else
- {
-
-String mot = reponse.trim();
- if ( **mot.equalsIgnoreCase** (&quot;Oui&quot;))
-
+ if ( reponse.length() == 1)
 {
-
-ditOui = true;
- }
-
+	if ( reponse.equalsIgnoreCase("o"))
+	{
+		ditOui = true;
+	}
+}
+else
+{
+	String mot = reponse.trim(); // on supprime les espaces à droite et à gauche
+	if ( mot.equalsIgnoreCase ("Oui"))
+	{
+		ditOui = true;
+	}
 }
 ```
 
-## 8.Syntaxe spécifique pour les Strings
+## Syntaxe spécifique pour les Strings
 
-L&#39;utilisation des _Strings_ est fondamentale en informatique. Le langage Java a créé quelques fonctionnalités spécifiques pour cette classe :
+>L'utilisation des _Strings_ est fondamentale en informatique. Le langage Java a créé quelques fonctionnalités spécifiques pour cette classe :
 
-**L&#39;instanciation est automatique (pas forcément besoin d&#39;utiliser new()) :**
+**L'instanciation est automatique (pas besoin d'utiliser new()) :**
 
 Constructeur explicite du String :
 
 ```java
-String MaChaine = new String("MaChaine est un objet");
+String maChaine = new String("MaChaine est un objet");
 ```
 
 Constructeur implicite du String :
 
 ```java
-String MaChaine = "MaChaine est considérée comme un objet avec cette écriture";
+String maChaine = "MaChaine est considérée comme un objet avec cette écriture";
 
-String s = "Hello";
+String s = "Salut";
 ```
 
-**Concaténation :**
+**Concaténation avec **+** :**
 
-String chaîneUn = &quot;Bernard&quot;;
- String chaîneDeux = &quot;Martin&quot;;
- String s3 = chaîneUn + &quot; &quot; + chaîneDeux;
+```java
+String chaîneUn = "Bernard";
+String chaîneDeux = "Martine"";
+String s3 = chaîneUn + " " + chaîneDeux;
+```
 
-### Comparaison de Strings
+**Comparaison de Strings :**
 
 La classe _String_ donne des méthodes pour comparer 2 _chaînes_ :
 
@@ -314,42 +306,41 @@ La classe _String_ donne des méthodes pour comparer 2 _chaînes_ :
 - int **compareToIgnoreCase** (String autreString)
 - boolean **equalsIgnoreCase** (String autreString)
 
-Ces 3 méthodes permettent de comparer le contenu d&#39;un _String_ avec le contenu d&#39;un autre _String._
+Ces 3 méthodes permettent de comparer le contenu d'un _String_ avec le contenu d'un autre _String._
 
-**Les Objets String ne sont pas modifiables**.
+> Attention : Les objets de type String ne sont pas modifiables. Il faut dans ce cas utiliser une classe comme
+**StringBuilder**
 
 Voici une illustration :
 
-Etape 1 : on écrit _**s1 = new String(&quot;Bonjour&quot;);**_
-Etape 2 : on écrit _**s1 = new String(&quot;Au revoir&quot;);**_
-Etape 3 : on écrit _**s2 = new String(&quot;Au revoir&quot;);**_
+Etape 1 : on écrit _**chaine1 = new String("Bonjour");**_
+Etape 2 : on écrit _**chaine1 = new String("Au revoir");**_
+Etape 3 : on écrit _**chaine2 = new String("Au revoir");**_
 Etape 4 : on utilise la fonction de comparaison de Chaînes : 
 
-_**s1.equals(s2)**_
+_**chaine1.equals(chaine2)**_
 
 **Que se passe t-il ?**
 
-Lors de l&#39;étape 2, s1 pointe vers l&#39;objet String Au revoir, tandis que l&#39;objet String Bonjour auparavant référencé est candidat à la poubelle (garbage Collector). Donc, maintenant, S1 pointe vers Au revoir. Lors de l&#39;étape 4, la fonction de comparaison retournera VRAI car s1 et s2 pointent vers des chaînes identiques.
+Lors de l'étape 2, chaine1 pointe vers l'objet String "Au revoir", tandis que l'objet String "Bonjour" auparavant référencé est *candidat à la poubelle* (garbage Collector). Donc, maintenant, chaine1 pointe vers "Au revoir". Lors de l'étape 4, la fonction de comparaison retournera VRAI (true) car chaine1 et chaine2 pointent vers des chaînes identiques.
 
-**Attention au piège de la comparaison directe !**
+> Attention au piège de la comparaison directe avec **==** !
 
 ```java
 boolean stringsIdentiques = false;
- String s1 = "Texte";
- String s2 = "Texte";
-**if** ( **s1 == s2** )
+String chaine1 = "Texte";
+String chaine2 = "Texte";
+if ( chaine1 == chaine2 )	// on compare la référence
  {
-
-**stringsIdentiques = true;**
-
+	stringsIdentiques = true;
 }
 ```
 
-**L&#39;opérateur &#39;==&#39; compare les références, pas les objets !**
+>l'opérateur **==** compare les références, pas les contenus des objets !
 
-## 9.Vector, ArrayList et Tableau
+## Vector, ArrayList et Tableau
 
-**Java permet de définir des tableaux de primitives ou d&#39;objets :**
+**Java permet de définir des tableaux de primitives ou d'objets :**
 
 ```java
 int[] tableauDEntier;
@@ -357,14 +348,14 @@ String[] tableauDeChaînes;
 Client[] tableauDObjetsClient ;
 ```
 
-Mais ...
+Mais ... il y a des limites :
 
 - un tableau, une fois créé a un **nombre fixe de postes**
-- un tableau ne peut contenir qu&#39;un seul type de données
+- un tableau ne peut contenir qu'un seul type de données
 
-Mieux vaut utiliser les classes _Vector_ ou _ArrayList_ plus souples :
+Mieux vaut utiliser les classes _Vector_ ou _ArrayList_, _Hashtable_, _HashMap_, _TreeSet_, ... plus souples :
 
-Par exemple, avec la classe Vector (obsolète), il existe de nombreuses methodes :
+Par exemple, avec la classe **Vector**, il existe de nombreuses methodes :
 
 - addElement(o:Object)
 - capacity():int
@@ -374,71 +365,68 @@ Par exemple, avec la classe Vector (obsolète), il existe de nombreuses methodes
 - toString():String
 - ...
 
-Un _Vector_ peut être agrandi ou réduit suivant le besoin.
- Un _Vector_ peut contenir des références à divers objets, mais il **ne peut contenir de types primitifs**.
- Un _Vector_ peut renvoyer la référence d&#39;un objet si on lui donne un rang (position).
- Quand on enlève un élément d&#39;un _Vector,_ il y a tassage automatique du _Vector._
- La méthode _toString()_ d&#39;un _Vector_ appelle la méthode _toString()_ pour chacun de ses éléments.
+Un tableau de type Vector peur : 
+
+- être agrandi ou réduit suivant le besoin.
+- contenir des références à divers objets, mais il **ne peut contenir de types primitifs**.
+- renvoyer la référence d'un objet si on lui donne un rang (position).
+
+Lorsqu'on enlève un élément d'un _Vector,_ il y a **tassage automatique** du _Vector._
+
+> Important : La méthode _toString()_ d'un _Vector_ appelle toujours la méthode _toString()_ pour chacun de ses objets stockés.
+Si bien que si vous ne redéfinissez pas la méthode de votre classe, je vous laisse découvrir ce que cela renvoi !
 
 **Quelques exemples sur des tableaux simples et des Vecteurs :**
 
 ```java
 String[] s = new String[7];
- Vector v = new Vector();
+Vector v = new Vector();
 
- String jour = &quot;Lundi&quot;;
- s[0] = jour;
- v.add(jour); // ou v.addElement(jour)
+String jour = &quot;Lundi&quot;;
+s[0] = jour;
+v.add(jour); // ou v.addElement(jour)
 
- jour = &quot;Mardi&quot;;
- s[1] = jour;
- v.add(jour);
+jour = "Mardi";
+s[1] = jour;
+v.add(jour);
 
- //...
- String aujourdhui = s[numJour];
- //...ou bien ...
- String aujourdhui = v.elementAt(numJour);
+//...
+String aujourdhui = s[numJour];
+//...ou bien ...
+String aujourdhui = v.elementAt(numJour);
 ```
 
-## 10.Iterateur : parcourir un tableau
+## Iterateur : pour parcourir un tableau
 
-Un itérateur est un objet java dont le travail consiste à se déplacer dans une séquence d&#39;objets et de sélectionner chaque objet de cette séquence. Très facile à construire et à utiliser, il ne peut se déplacer que dans un seul sens.
+>Un itérateur est un objet java dont le travail consiste à se déplacer dans une séquence d'objets et sélectionner chaque objet de cette séquence. Très facile à construire et à utiliser, il ne peut se déplacer que dans un seul sens. Cependant, il existe des interfaces permettant d'implémenter un déplacement dans les deux sens selon la classe utilisée !
 
-Pour cela, vous devez faire appel à la méthode **iterator()** généralement présente pour de nombreux vecteurs et tableaux. Cette méthode renvoie tout simplement un objet de type Iterator qui possède ses propres méthodes pour que l&#39;on puisse le parcourir et extraire chaque objet :
+Pour cela, vous devez faire appel à la méthode **iterator()** généralement présente pour de nombreux vecteurs et tableaux. Cette méthode renvoie tout simplement un objet de type **Iterator** qui possède ses propres méthodes pour que l'on puisse le parcourir et extraire chaque objet :
 
-**hasNext** () : méthode qui vérifie s&#39;il reste des objets dans la séquence
-**next** () : méthode qui renvoi l&#39;objet suivant.
-**remove** () : méthode pour enlever le dernier objet renvoyé par un next().
+**hasNext** () : méthode qui vérifie s'il reste des objets dans la séquence   
+**next** () : méthode qui renvoi l'objet suivant.   
+**remove** () : méthode pour enlever le dernier objet renvoyé par un next().   
 
 Exemple :
 
 ```java
-
-System._out_.println(&quot;Voici la liste des enfants :&quot;);
-
-Iterator\&lt;Enfant\&gt; enfant = listeEnfants.iterator();
-
-**while** (enfant.hasNext())
-
+System._out_.println("Voici la liste des enfants :");
+Iterator<Enfant> enfants = listeEnfants.iterator();
+while (enfants.hasNext())
 {
-
-// on récupère un objet de type enfant dans la liste :
-
-Enfant e = enfant.next();
-
-e.afficher();
-
+	// on récupère un objet de type enfant dans la liste :
+	Enfant e = enfants.next();
+	e.afficher();
 }
 
 ```
 
-## 11.Utilisation des Wrappers (Classes enveloppes)
+## Utilisation des Wrappers (Classes enveloppes)
 
 Problème : On veut stocker directement un type primitif (par exemple un _int_) dans un _Vector._
 
 **Impossible !!!**
 
-Solution : Utiliser un &quot;wrapper&quot; qui permettra de stocker la référence au type primitif. A chaque type primitif correspond une classe, qu&#39;on nomme wrapper (attention à la majuscule !) : par exemple _Boolean_ est le wrapper du type _boolean._
+>Solution : Utiliser un **wrapper** qui permettra de stocker la référence au type primitif. A chaque type primitif correspond une classe, qu'on nomme wrapper (attention à la majuscule !) : par exemple _Boolean_ est le wrapper du type _boolean._
 
 Attention aux exceptions : _Integer_ et _Character._
 
@@ -448,18 +436,21 @@ La classe  **Integer** :
 
 **Elle possède deux constructeurs :**
 
+```java
 Integer(String s);
 
 Integer(int i);
+```
 
 **Il est facile de passer du type primitif à la classe et réciproquement :**
 
+```java
 int i = 4;
 
 Integer objInt = new Integer(i);
 
 int j = objInt.intValue();
-
+```
 
 **Détail de la classe présentée dans le graphique de la page suivante :**
 
@@ -468,14 +459,15 @@ Attributs :**
 -value:int
 
 **Méthodes :**
-**compareTo** (i:Integer):int
-**byteValue** ():byte
-**shortValue** ():short
-**intValue** ():int
-**longValue** ():long
-**floatValue** ():float
-**doubleValue** ():double
-**toString** ():String
+
+**compareTo(i:Integer)** :int   
+**byteValue()** :byte   
+**shortValue()** :short   
+**intValue()** :int   
+**longValue()** :long   
+**floatValue()** :float   
+**doubleValue()** :double   
+**toString()** :String   
  ...
 
 ![](RackMultipart20201102-4-1quxlhz_html_9a7df89803154bd6.jpg)
@@ -491,81 +483,88 @@ Attributs :**
 | double | Double |
 | char | Character |
 
-## 12.Pourquoi devez-vous utiliser des Package ?
 
-Toute classe appartient à un _ **package** _. Si on ne le spécifie pas explicitement, la classe appartient au package par défaut. Trois raisons pour utiliser les packages :
+## Pourquoi utiliser des Packages ?
 
-  1. **regrouper** des classes pour des raisons d&#39;organisation
-  2. **contrôler** les accès à des données encapsulées
-  3. **éviter** les problèmes de noms de classe identiques
+>Toute classe appartient à un _ **package** _. Si on ne le spécifie pas explicitement, la classe appartient au package par défaut. Trois raisons pour utiliser les packages :
+
+- **regrouper** des classes pour des raisons d'organisation
+- **contrôler** les accès à des données encapsulées
+- **éviter** les problèmes de noms de classe identiques
 
 Pour affecter une classe à un package, on utilise la clause _package,_ **obligatoirement en première instruction** :
 
+```java
 package paie.info;
- public class ...
-{ ... }
+public class {
+	// code 
+ }
+`` 
 
 **Il existe de nombreux packages de base en Java :**
 
-java.lang
- java.awt
- java.io
- java.math
- java.net
- java.text
- java.util
- ...
+```java
+java.lang   
+java.awt   
+java.io   
+java.math   
+java.net   
+java.text   
+java.util   
+javax.swing   
+java.util   
+```
 
-Exemple d&#39;importation de package
- import java.util.Vector; // référence explicite à une classe
- import java.text.\*; // référence à toutes les classes d&#39;un package
+**Exemple d'importation de package**
+
+```java
+ import java.util.Vector;	 // référence explicite à une classe
+ import java.text.*;		 // référence à toutes les classes d'un package
 
 public class ExempleImport
  {
-
-public static void main(String[] args)
- {
- DateFormat df =DateFormat.getDateInstance(DateFormat.SHORT);
- Vector v = new Vector();
- v.add(df.parse(&quot;22/03/00&quot;));
- }
-
+	public static void main(String[] args)
+	{
+	DateFormat df =DateFormat.getDateInstance(DateFormat.SHORT);
+	Vector v = new Vector();
+	v.add(df.parse("22/03/00"));
+	}
 }
-
-## 13.Création de nouvelles classes : Abstraction
+```
+## Création de nouvelles classes : Abstraction
 
 **Objectifs :**
 
-Comprendre **l&#39;encapsulation**
-Comprendre **l&#39;agrégation**
-Ecrire des définitions de classe
-Comprendre et utiliser les **méthodes**
-Comprendre et utiliser les **constructeurs**
-Utiliser efficacement les variables
+Comprendre **l'encapsulation**   
+Comprendre **l'agrégation**   
+Ecrire des définitions de classe   
+Comprendre et utiliser les **méthodes**   
+Comprendre et utiliser les **constructeurs**   
+Utiliser efficacement les variables   
 
-Les classes de base Java sont très utiles pour écrire les programmes mais ne couvrent pas les domaines spécifiques de l&#39;entreprise. **Il faut pouvoir définir et utiliser ses propres classes** , par exemple un _ **Client** __,_ un _ **Compte**__ ,_ une _ **Adresse** __._ Ces objets du monde réel doivent donc être &quot;modélisés&quot; en classes. Ils seront ainsi plus faciles à manipuler.
+Les classes de base Java sont très utiles pour écrire les programmes mais ne couvrent pas les domaines spécifiques de l'entreprise. **Il faut pouvoir définir et utiliser ses propres classes** , par exemple un _ **Client** __,_ un _ **Compte**__ ,_ une _ **Adresse** __._ Ces objets du monde réel doivent donc être **modélisés** en classes. Ils seront ainsi plus faciles à manipuler.
 
-**On peut supposer qu&#39;un Client est caractérisé par :**
+**On peut supposer qu'un Client est caractérisé par :**
 
-un nom
-une adresse
-une taille
-un poids
-une couleur de cheveux
-un sexe
-un age
-une profession
-des parents
-des amis
-des hobbies, …
+un nom   
+une adresse   
+une taille   
+un poids   
+une couleur de cheveux   
+un sexe   
+un age   
+une profession   
+des parents   
+des amis   
+des hobbies,   
 
-**Principe d&#39;Encapsulation**
+**Principe d'Encapsulation**
 
-Quelques éléments de l&#39;objet peuvent être publics, d&#39;autres peuvent être privés.
+>Quelques éléments de l'objet peuvent être publics, d'autres peuvent être privés.
 
-En règle générale les données d&#39;un objet sont privées.
-
-En règle générale les méthodes d&#39;un objet sont publiques.
+>En règle générale :
+- les données d'un objet sont privées.
+- les méthodes d'un objet sont publiques.
 
 **Formalisme UML (graphique) pour la classe Client** :
 
@@ -576,22 +575,21 @@ En règle générale les méthodes d&#39;un objet sont publiques.
 Nom de la classe : Client
 **Liste des attributs :**
 
--nom : String
- -Adresse : Adresse
- -age : int
- -sexe : char
- ...
+- nom : String
+- Adresse : Adresse
+- age : int
+- sexe : char
 
 **Liste des méthodes publiques :**
 
 +setNom()
 
 Ici le symbole moins (-) placé devant les attributs signifie que les attributs sont privés.
- Le symbole plus (+) placé devant la méthode signifie qu&#39;elle doit être déclarées publiques.
+ Le symbole plus (+) placé devant la méthode signifie qu'elle doit être déclarées publiques.
 
 ## 14.Agrégation : Les cadeaux du Père Noël
 
-Un objet contient des données dont certaines peuvent elles-même être contenues dans d&#39;autres objets. Les données d&#39;un objet sont souvent **l&#39;agrégation** (la réunion) des données contenues dans d&#39;autres objets.
+Un objet contient des données dont certaines peuvent elles-même être contenues dans d'autres objets. Les données d'un objet sont souvent **l'agrégation** (la réunion) des données contenues dans d'autres objets.
 
 ![](RackMultipart20201102-4-1quxlhz_html_769ff2e3d1d936ae.jpg)
 
@@ -599,11 +597,11 @@ Client Mme Magali Vergne
 
 Adresse : 2 Rue des arbouses Florensac France
 
-Dans cet exemple peu représentatif de la réalité, nous avons un objet Client qui contient lui-même 2 références d&#39;objets Nom et Adresse. L&#39;objet Adresse contient lui-même 4 références différentes d&#39;objets Ligne1, Ligne2, ligne3 et codePostal. Il évident que cet exemple n&#39;a d&#39;utilité que pour illustrer le principe de l&#39;agrégation, il est rare que nous ayons besoin de détailler autant.
+Dans cet exemple peu représentatif de la réalité, nous avons un objet Client qui contient lui-même 2 références d'objets Nom et Adresse. L'objet Adresse contient lui-même 4 références différentes d'objets Ligne1, Ligne2, ligne3 et codePostal. Il évident que cet exemple n'a d'utilité que pour illustrer le principe de l'agrégation, il est rare que nous ayons besoin de détailler autant.
 
 Voici un exemple plus explicite :
 
-Le père Noël doit préparer la distribution des cadeaux aux enfants. Chaque enfant possède une liste de cadeaux et ne peut pas avoir 2 fois le même cadeau. Cette application doit permettre au Père Noël de gérer une liste d&#39;enfants, une liste de cadeaux et des méthodes pour affecter à chaque enfant un cadeau. Cet exemple illustre parfaitement le principe de l&#39;agrégation. Le Père Noël doit posséder 2 listes d&#39;objets **Enfants** et **Jouets**.
+Le père Noël doit préparer la distribution des cadeaux aux enfants. Chaque enfant possède une liste de cadeaux et ne peut pas avoir 2 fois le même cadeau. Cette application doit permettre au Père Noël de gérer une liste d'enfants, une liste de cadeaux et des méthodes pour affecter à chaque enfant un cadeau. Cet exemple illustre parfaitement le principe de l'agrégation. Le Père Noël doit posséder 2 listes d'objets **Enfants** et **Jouets**.
 
 
 Classe Enfant :
@@ -1136,32 +1134,32 @@ Classe : Client
  +Client(name:String)
  ...
 
-# 16.Variables d&#39;instance
+# 16.Variables d'instance
 
-Une variable d&#39;instance est généralement déclarée privée (_ **private** _) pour assurer l&#39;encapsulation.
- Elle peut contenir une valeur de type primitif ou une référence d&#39;objet. On peut l&#39;initialiser, sinon elle prend la valeur par défaut liée à son type.
+Une variable d'instance est généralement déclarée privée (_ **private** _) pour assurer l'encapsulation.
+ Elle peut contenir une valeur de type primitif ou une référence d'objet. On peut l'initialiser, sinon elle prend la valeur par défaut liée à son type.
 
 private int age;
  private String nom;
 
-Chaque objet (instance) possède ses propres valeurs pour les variables d&#39;instance.
+Chaque objet (instance) possède ses propres valeurs pour les variables d'instance.
 
-# 17.Méthodes d&#39;instance
+# 17.Méthodes d'instance
 
-Une méthode est l&#39;équivalent d&#39;une fonction effectuant un traitement spécifique pour une classe.
- Comme une fonction, une méthode peut recevoir plusieurs arguments et peut retourner un seul résultat. Une méthode d&#39;instance peut accéder à toutes les variables d&#39;instance de la classe.
+Une méthode est l'équivalent d'une fonction effectuant un traitement spécifique pour une classe.
+ Comme une fonction, une méthode peut recevoir plusieurs arguments et peut retourner un seul résultat. Une méthode d'instance peut accéder à toutes les variables d'instance de la classe.
 
 **public** String getNom()
  {
  String nom = prenom.trim();
- nom += &#39; &#39;;
+ nom += ' ';
  nom += nomFamille.trim();
  return nom;
  }
 
 **Les paramètres des méthodes :**
 
-La définition de la méthode indique le type et le nom des paramètres attendus. A l&#39;appel de la méthode, les valeurs des paramètres sont reçues dans des variables locales. Si une méthode ne renvoit pas de résultat, elle est définie de type _ **void** _et le _ **return** _ est facultatif.
+La définition de la méthode indique le type et le nom des paramètres attendus. A l'appel de la méthode, les valeurs des paramètres sont reçues dans des variables locales. Si une méthode ne renvoit pas de résultat, elle est définie de type _ **void** _et le _ **return** _ est facultatif.
 
 public void setTaille(int t)
  {
@@ -1171,7 +1169,7 @@ taille = t;
 
 # 18.La référence _this_
 
-_ **this** _ représente la référence de l&#39;objet courant. Dans cet exemple, _ **this** _ permet de lever une ambiguïté de nommage entre le nom du paramètre et la variable d&#39;instance :
+_ **this** _ représente la référence de l'objet courant. Dans cet exemple, _ **this** _ permet de lever une ambiguïté de nommage entre le nom du paramètre et la variable d'instance :
 
 public void setTaille(int taille)
  {
@@ -1201,13 +1199,13 @@ matricule = leMatricule;
 }
  ...
 
-Exemple d&#39;instanciation dans lequel on appelle le premier constructeur qui lui-même appelle le second constructeur grâce au mot clé THIS. Ceci évite de réécrire les mêmes instructions :
+Exemple d'instanciation dans lequel on appelle le premier constructeur qui lui-même appelle le second constructeur grâce au mot clé THIS. Ceci évite de réécrire les mêmes instructions :
 
 new **Employe** (41113);
 
 # 20.Variables locales
 
-Les valeurs des paramètres sont stockées dans des variables locales. On peut définir ses propres variables locales qui peuvent être des types primitifs ou des références d&#39;objets. Une variable locale doit être déclarée et initialisée avant d&#39;être utilisée. Les variables locales sont détruites en fin d&#39;exécution de la méthode. En Java, on doit tenir compte de deux points importants lorsqu&#39;on veut partager des données par paramètres :
+Les valeurs des paramètres sont stockées dans des variables locales. On peut définir ses propres variables locales qui peuvent être des types primitifs ou des références d'objets. Une variable locale doit être déclarée et initialisée avant d'être utilisée. Les variables locales sont détruites en fin d'exécution de la méthode. En Java, on doit tenir compte de deux points importants lorsqu'on veut partager des données par paramètres :
 
 Tous les paramètres sont passés par valeur :
 
@@ -1261,14 +1259,14 @@ class Swap2
  ??? on affiche toujours =\&gt; 3 et 4
 ```
 
-**Illustration par l&#39;exemple : Variables d&#39;instance, de classe et locale**
+**Illustration par l'exemple : Variables d'instance, de classe et locale**
 
 ```java
 public class Employe
 
 {
 
-// **variable d&#39;instance**
+// **variable d'instance**
  private String nom;
  private int matricule;
 
@@ -1288,7 +1286,7 @@ public void setNom(String nom);
 
 # 21.Surcharge des méthodes
 
-Quand on définit deux ou plusieurs _méthodes de même nom_, on dit que la méthode est &quot; **surchargée**&quot; (overloaded). **Ce n&#39;est possible que si les méthodes différent entre elles par le nombre et/ou le type des paramètres**. Par exemple la classe _String_ possède une méthode **substring** _()_ qui est surchargée :
+Quand on définit deux ou plusieurs _méthodes de même nom_, on dit que la méthode est &quot; **surchargée**&quot; (overloaded). **Ce n'est possible que si les méthodes différent entre elles par le nombre et/ou le type des paramètres**. Par exemple la classe _String_ possède une méthode **substring** _()_ qui est surchargée :
 
 ```java
 String substring (int indexDebut)
@@ -1298,9 +1296,9 @@ String substring (int indexDebut, int indexFin)
 
 # 22.Utilisation des Constructeurs
 
-Instanciation d&#39;une classe par l&#39;instruction **new** _._ L&#39;instruction new invoque un _constructeur._ Toute classe possède un constructeur par défaut, sans paramètres. Si le développeur écrit un constructeur avec des paramètres, le constructeur par défaut n&#39;existe plus. Les initialisations, implicites ou explicites, sont effectuées avant l&#39;exécution des constructeurs.
+Instanciation d'une classe par l'instruction **new** _._ L'instruction new invoque un _constructeur._ Toute classe possède un constructeur par défaut, sans paramètres. Si le développeur écrit un constructeur avec des paramètres, le constructeur par défaut n'existe plus. Les initialisations, implicites ou explicites, sont effectuées avant l'exécution des constructeurs.
 
-## 22.1.Un _constructeur_ est une méthode qui porte le même nom que la classe, il n&#39;est pas typé et ne doit pas être déclaré _void_
+## 22.1.Un _constructeur_ est une méthode qui porte le même nom que la classe, il n'est pas typé et ne doit pas être déclaré _void_
 
 Exemple :
 
@@ -1312,12 +1310,12 @@ Client unClient = new Client(&quot;Martin&quot;); // appel extérieur du constru
  private String nom;
  ...
 
-// Définition d&#39;un conctructeur recevant le nom en argument
- public Client(String n) // réception de l&#39;argument dans une
+// Définition d'un conctructeur recevant le nom en argument
+ public Client(String n) // réception de l'argument dans une
  // variable locale n
  {
 
-// initialisation de la variable d&#39;instance nom
+// initialisation de la variable d'instance nom
  nom = n;
  }
  ...
@@ -1335,7 +1333,7 @@ Client c = new Client(«Martin», 47); // nom et age
 Client c = new Client(6002372); // numéro
 ```
 
-En l&#39;absence de déclaration explicite d&#39;un constructeur, le compilateur en crée un par défaut (sans paramètres). A partir d&#39;un constructeur il est possible d&#39;en appeler un autre de la même classe avec l&#39;instruction **this** (_listeDesArguments_) :
+En l'absence de déclaration explicite d'un constructeur, le compilateur en crée un par défaut (sans paramètres). A partir d'un constructeur il est possible d'en appeler un autre de la même classe avec l'instruction **this** (_listeDesArguments_) :
 
 ```java
 public class Client
@@ -1362,7 +1360,7 @@ this.nom = nom ;
 }
 ```
 
-**Diagramme d&#39;une classe Compte :**
+**Diagramme d'une classe Compte :**
 
 ![](RackMultipart20201102-4-1quxlhz_html_4965b7c4219d5736.jpg)
 
@@ -1399,7 +1397,7 @@ public class Compte
  }
 ```
 
-**Après avoir écrit et compilé la classe Compte, on peut l&#39;utiliser :**
+**Après avoir écrit et compilé la classe Compte, on peut l'utiliser :**
 
 ```java
 Compte c1 = new Compte();
@@ -1413,7 +1411,7 @@ int total = c1.getSolde() + c2.getSolde();
 
 Les classes sont des types abstraits.
 
-La définition d&#39;une classe comprend la description des variables et le code des méthodes.
+La définition d'une classe comprend la description des variables et le code des méthodes.
 
 Les classes définies par le programmeur sont utilisées de la même façon que les classes de base de Java.
 
@@ -1423,9 +1421,9 @@ Tous les paramètres des méthodes sont passés par valeur, donc ils ne sont pas
 
 # 24.Méthodes et variables de classe
 
-Il faut faire la différence entre _membres de classe_ et _membres d&#39;instance (d&#39;objet)_
+Il faut faire la différence entre _membres de classe_ et _membres d'instance (d'objet)_
 
-Les méthodes et variables définies au niveau d&#39;une classe sont appelées méthodes et variables _de classe (statiques_). La variable de classe est un moyen d&#39; **ECHANGER** des informations entre les différents **OBJETS** d&#39;une même classe. Une variable de classe est déclarée **STATIQUE** avec le mot-clé anglais **STATIC.** Cette variable **STATIQUE** est **PARTAGEE** par toutes les instances de la classe.
+Les méthodes et variables définies au niveau d'une classe sont appelées méthodes et variables _de classe (statiques_). La variable de classe est un moyen d' **ECHANGER** des informations entre les différents **OBJETS** d'une même classe. Une variable de classe est déclarée **STATIQUE** avec le mot-clé anglais **STATIC.** Cette variable **STATIQUE** est **PARTAGEE** par toutes les instances de la classe.
 
 **Classe Client :**
 
@@ -1444,11 +1442,11 @@ setProchainNumClient(i:int)
 
 ![](RackMultipart20201102-4-1quxlhz_html_a26b8ff050be18f0.jpg)
 
-## 24.1.Les membres de classe, s&#39;utilisent sans avoir besoin d&#39;instancier la classe.
+## 24.1.Les membres de classe, s'utilisent sans avoir besoin d'instancier la classe.
 
-Les variables de classe sont initialisées au chargement de la classe. Une variable de classe n&#39;existe qu&#39;en un seul exemplaire.
+Les variables de classe sont initialisées au chargement de la classe. Une variable de classe n'existe qu'en un seul exemplaire.
 
-**Exemples d&#39;utilisation d&#39;une variable de classe :**
+**Exemples d'utilisation d'une variable de classe :**
 
 ```java
 public class Employe
@@ -1491,8 +1489,8 @@ double circonference = 2 \* rayon \* Math.PI;
  double sinusAngle = Math.sin(3.14159);
 ```
 
-Les méthodes de classe ne peuvent pas accéder aux membres d&#39;instance (variables ou méthodes)
- Les méthodes de classe sont l&#39;équivalent des &quot;librairies&quot; utilitaires du langage C ou d&#39;autres langages.
+Les méthodes de classe ne peuvent pas accéder aux membres d'instance (variables ou méthodes)
+ Les méthodes de classe sont l'équivalent des &quot;librairies&quot; utilitaires du langage C ou d'autres langages.
 
 Les membres de classes permettent de définir :
 
@@ -1514,7 +1512,7 @@ Compte compte1 = new Compte();
 double racineD = Math.sqrt(d);
 ```
 
-- des constantes &#39;globales&#39;
+- des constantes 'globales'
 
 ```java
 double surface = Math.PI
@@ -1557,7 +1555,7 @@ public static final double E = 2.718281828459045;
  public static double pow(double a, double b);
  public static double random();
 
-Exemples d&#39;utilisation :
+Exemples d'utilisation :
 
 // Choix aléatoire de 6 chiffres de loto (de 1 à 49)
  // Version simplifiée sans vérification entre les 6 numéros...
@@ -1573,7 +1571,7 @@ int[] grille = new int[6];
  System.out.println(n);
  }
 
-Pour résumer, une méthode de classe est toujours déclarée **STATIQUE**. Elle correspond a un **SERVICE** directement rendu par la **CLASSE**. Dans cette méthode, l&#39;accès aux membres de la classe est impossible.
+Pour résumer, une méthode de classe est toujours déclarée **STATIQUE**. Elle correspond a un **SERVICE** directement rendu par la **CLASSE**. Dans cette méthode, l'accès aux membres de la classe est impossible.
 
 Exemple de déclaration de la méthode **SIN** () de la classe **MATH :**
 
@@ -1589,20 +1587,20 @@ public static
 
 }
 
-Exemple d&#39;invocation de la méthode **SIN** () :
+Exemple d'invocation de la méthode **SIN** () :
 
 double sinus = Math.sin(3.14);
 
 _ **Que remarquez vous dans cette écriture ?** _
 
-L&#39;appel de la méthode statique **SIN** () se fait directement à partir du nom de la classe **MATH** , soit **Math.sin** () suffit. Vous n&#39;avez pas besoin d&#39;instancier un objet de la classe Math pour invoquer la méthode **SIN** (). Il en est ainsi pour toutes les méthodes de classe.
+L'appel de la méthode statique **SIN** () se fait directement à partir du nom de la classe **MATH** , soit **Math.sin** () suffit. Vous n'avez pas besoin d'instancier un objet de la classe Math pour invoquer la méthode **SIN** (). Il en est ainsi pour toutes les méthodes de classe.
 
 # 27.Formatage de dates, de nombres et générateur aléatoire
 
 Java fournit des techniques intéressantes pour formater les dates et les nombres.
  Il faut pour cela :
 
-Instancier _ **DateFormat** _ ou _ **NumberFormat** _ensuite appeler la méthode sur l&#39;instance en lui passant la donnée. La méthode renvoie la donnée formatée.
+Instancier _ **DateFormat** _ ou _ **NumberFormat** _ensuite appeler la méthode sur l'instance en lui passant la donnée. La méthode renvoie la donnée formatée.
 
 DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT);
  Date d = df.parse(&quot;22/03/98&quot;);
@@ -1614,14 +1612,14 @@ Vous pouvez aussi utiliser la classe _ **DecimalFormat** _ et sa méthode _ **fo
 DecimalFormat df = new DecimalFormat(&quot;###.##&quot;) ;
  System.out.println(&quot;nombre formatée : &quot;  +df.format(145.56298) );
 
-Ce code permettra d&#39;afficher le nombre passé en paramètre avec 2 décimales seulement en arrondissant à 145,55.
+Ce code permettra d'afficher le nombre passé en paramètre avec 2 décimales seulement en arrondissant à 145,55.
 
 Vous avez aussi la classe _ **Random** _ avec des méthodes pour générer des nombres aléatoires :
 
 Int unEntier = (new Random()).nextInt(49) ;
  System.out.println(&quot;Voici un entier tiré au hasard : &quot;  +unEntier) ;
 
-Cette méthode attend comme argument la limite supérieure, ici 49, les tirages iront de 0 à 49. Il y a d&#39;autres méthodes de cette classe permettant de récupérer des doubled, de flottants, … .
+Cette méthode attend comme argument la limite supérieure, ici 49, les tirages iront de 0 à 49. Il y a d'autres méthodes de cette classe permettant de récupérer des doubled, de flottants, … .
 
 Faites un petit tours dans le package **java.util** , il y a plein de trésors.
 
@@ -1630,22 +1628,22 @@ _Remarques sur les membres de classe :_
 **Les membres déclarés en** _ **static** _ **sont partagés par toutes les instances de la classe.
  On utilise indifféremment les termes variables de classe ou variables statiques.
  Même remarque pour les méthodes.
- Une méthode de classe peut être appelée même s&#39;il n&#39;existe aucune instance de la classe.
- Les méthodes de classe n&#39;ont pas accès à **_** this **_** , qui référence l&#39;instance &quot;courante&quot;.**
+ Une méthode de classe peut être appelée même s'il n'existe aucune instance de la classe.
+ Les méthodes de classe n'ont pas accès à **_** this **_** , qui référence l'instance &quot;courante&quot;.**
 
 **Résumé**
 
-**Les membres statiques existent indépendamment de toute instance d&#39;une classe.
+**Les membres statiques existent indépendamment de toute instance d'une classe.
  Les variables statiques sont intéressantes pour les constantes.
  Les méthodes statiques sont utiles pour des fonctions de base communes.
  Chaque application doit avoir une méthode **_** main **_** statique qui lui permet de démarrer.**
 
-# 28.Notion sur l&#39;Héritage et le polymorphisme
+# 28.Notion sur l'Héritage et le polymorphisme
 
-**La réutilisation avant l&#39;objet**...
+**La réutilisation avant l'objet**...
 
 Un problème classique en programmation : sur des structures de données &quot;similaires&quot; on doit faire des traitements identiques pour certaines données communes et des traitements spécifiques pour un
- certain nombre de données spécifiques. On s&#39;oriente alors trop souvent vers deux types de solutions qui vont bafouer les principes de base de la programmation.
+ certain nombre de données spécifiques. On s'oriente alors trop souvent vers deux types de solutions qui vont bafouer les principes de base de la programmation.
 
 Soit on intègre les traitements dans un même programme et on utilise une structure alternative pour les traitements spécifiques. On aboutit ainsi à un &quot;mégalithe&quot;.
 
@@ -1657,15 +1655,15 @@ Les SGBD montrent la voie. Chaque donnée élémentaire est gérée dans son Ent
 
 **Et si on pouvait appliquer le même principe aux traitements ?**
 
-Données + Traitements = Classes d&#39;objets
+Données + Traitements = Classes d'objets
 
 Une solution =\&gt; organisation hiérarchique des classes
 
-Un exemple simple d&#39;héritage
+Un exemple simple d'héritage
 
 ![](RackMultipart20201102-4-1quxlhz_html_667b8411a5c4b17d.jpg)
 
-Dans une application de santé publique, représentons l&#39;objet Individu et Patient :
+Dans une application de santé publique, représentons l'objet Individu et Patient :
 
 Classe : **Individu**
  Attributs :
@@ -1687,11 +1685,11 @@ Méthodes :
  +getPrenom() :String
  +getNumeroSecu():String
 
-**La relation d&#39;héritage avec UML**  :
+**La relation d'héritage avec UML**  :
 
 ![](RackMultipart20201102-4-1quxlhz_html_63f3dbefd09f650f.jpg)
 
-L&#39;héritage en Java donne le code suivant :
+L'héritage en Java donne le code suivant :
 
 class **Individu**
  {
@@ -1716,7 +1714,7 @@ class **Individu**
  }
  }
 
-Terminologie de l&#39;héritage :
+Terminologie de l'héritage :
 
 ![](RackMultipart20201102-4-1quxlhz_html_9adcdf44bec7164f.jpg)
 
@@ -1737,13 +1735,13 @@ Consultant hérite de Patient
  Patient hérite de Individu
  Employe hérite de Individu
 
-# 29.L&#39;ancêtre commun à toutes les classes
+# 29.L'ancêtre commun à toutes les classes
 
-Toutes les classes sont rattachées directement ou indirectement à la classe **Object** (_java.lang.Object_) de Java. Comme nous l&#39;avons vu plus haut, les classes sont organisées de manière hiérarchique. Toutes les classe ont un ancêtre et un seul.
+Toutes les classes sont rattachées directement ou indirectement à la classe **Object** (_java.lang.Object_) de Java. Comme nous l'avons vu plus haut, les classes sont organisées de manière hiérarchique. Toutes les classe ont un ancêtre et un seul.
 
 **java.lang.Object -\&gt; Employe -\&gt; Programmeur**
 
-Ici, la classe _ **Programmeur** _ hérite de la classe _ **Employé** _ qui elle-même hérite comme tous les objets Java, de la classe **OBJECT** du paquetage **Java.lang.Object**. Les termes utilisés pour exprimer le principe de l&#39;héritage sont multiples :
+Ici, la classe _ **Programmeur** _ hérite de la classe _ **Employé** _ qui elle-même hérite comme tous les objets Java, de la classe **OBJECT** du paquetage **Java.lang.Object**. Les termes utilisés pour exprimer le principe de l'héritage sont multiples :
 
   - _Dérivation_
   - _Héritage_
@@ -1769,9 +1767,9 @@ Pour écrire que la classe Programmeur hérite de la classe Employé, on utilise
 
 Exemple : _Class Programmeur_ _ **extends** _ _Employé_
 
-Nous n&#39;avons pas besoin de préciser que la classe Employé est dérivée de la classe **OBJECT** du langage Java, ceci se fait implicitement.
+Nous n'avons pas besoin de préciser que la classe Employé est dérivée de la classe **OBJECT** du langage Java, ceci se fait implicitement.
 
-C&#39;est l&#39;ancêtre commun (Root) de toutes les classes Java. Il propose des méthodes de base pour tous les comportements généraux comme :
+C'est l'ancêtre commun (Root) de toutes les classes Java. Il propose des méthodes de base pour tous les comportements généraux comme :
 
 **equals** ()
 **toString** ()
@@ -1779,16 +1777,16 @@ C&#39;est l&#39;ancêtre commun (Root) de toutes les classes Java. Il propose de
 
 Ces méthodes de base peuvent être utilisées directement sur tous les objets Java.
 
-# 30.Composition d&#39;un objet
+# 30.Composition d'un objet
 
-Un objet issu d&#39;une classe dérivée est composé de deux parties :
+Un objet issu d'une classe dérivée est composé de deux parties :
 
 Partie issue de la (ou des ...) classe(s) ancêtre(s)
  Partie propre à la classe dérivée
 
 Toutes les méthodes publiques de la classe ancêtre sont &quot;héritées&quot;, donc utilisables à partir de la classe dérivée.
 
-Dans un langage OO, c&#39;est l&#39;héritage des méthodes qui va considérablement augmenter le taux de réutilisation du code. Les constructeurs ne font pas partie de l&#39;héritage.
+Dans un langage OO, c'est l'héritage des méthodes qui va considérablement augmenter le taux de réutilisation du code. Les constructeurs ne font pas partie de l'héritage.
 
 # 31.Les opérateurs _this_ et _super_
 
@@ -1800,10 +1798,10 @@ Dans un langage OO, c&#39;est l&#39;héritage des méthodes qui va considérable
 
 super classe
  ( ancêtre )
- - attributs d&#39;Individu
- - méthodes d&#39;Individu
+ - attributs d'Individu
+ - méthodes d'Individu
 
-**this** désigne l&#39;objet courant :
+**this** désigne l'objet courant :
 
 La partie précédente accessible par Super et :
 
@@ -1837,7 +1835,7 @@ this( nom , &quot;Cobol&quot; ) ;
 
 }
 
-Voici les règles dans l&#39;utilisation du mot-clé **This**  :
+Voici les règles dans l'utilisation du mot-clé **This**  :
 
 - Obligatoirement dans un CONSTRUCTEUR
 - TOUJOURS en PREMIERE INSTRUCTION
@@ -1847,11 +1845,11 @@ Voici les règles dans l&#39;utilisation du mot-clé **This**  :
 
 **Quelques règles à savoir :**
 
-## 32.1.Les constructeurs ne font pas partie de l&#39;héritage.
+## 32.1.Les constructeurs ne font pas partie de l'héritage.
 
 Si la classe ancêtre ne possède pas de constructeur sans argument, le constructeur de la classe dérivée doit appeler le constructeur de son ancêtre.
 
-A la création d&#39;un objet d&#39;une classe dérivée on peut écrire un constructeur pour initaliser les données
+A la création d'un objet d'une classe dérivée on peut écrire un constructeur pour initaliser les données
  spécifiques à la classe dérivée.
 
 **Comment faire pour construire la partie ancêtre de la classe dérivée ?**
@@ -1882,16 +1880,16 @@ class Patient extends Individu
  ...
  }
 
-**Quelques règles sur les constructeurs d&#39;une même classe**  :
+**Quelques règles sur les constructeurs d'une même classe**  :
 
 Une classe peut avoir plusieurs constructeursUn constructeur peut faire appel à un autre de la même classe en utilisant this().
 
 # 33.Constructeur avec _super_
 
-**Réécriture d&#39;une méthode**
+**Réécriture d'une méthode**
 
-Une méthode contenue dans une classe ancêtre peut être réécrite (on dit aussi redéfinie) dans une classe dérivée. La méthode de la classe dérivée doit avoir la même signature que celle de la classe ancêtre, elle va &quot;surcharger&quot; (override) cette méthode ancêtre. C&#39;est toujours la méthode la plus
- interne qui sera exécutée. Par exemple si on a défini une méthode _print()_ pour la classe Individu, on pourra écrire un _print()_ spécifique pour la classe Patient. Mais dans le _print()_ de Patient on pourra aussi utiliser, grâce à _super()_, le _print()_ d&#39;Individu, puis compléter ...
+Une méthode contenue dans une classe ancêtre peut être réécrite (on dit aussi redéfinie) dans une classe dérivée. La méthode de la classe dérivée doit avoir la même signature que celle de la classe ancêtre, elle va &quot;surcharger&quot; (override) cette méthode ancêtre. C'est toujours la méthode la plus
+ interne qui sera exécutée. Par exemple si on a défini une méthode _print()_ pour la classe Individu, on pourra écrire un _print()_ spécifique pour la classe Patient. Mais dans le _print()_ de Patient on pourra aussi utiliser, grâce à _super()_, le _print()_ d'Individu, puis compléter ...
 
 Exemple de réécriture de méthode :
 
@@ -1920,19 +1918,19 @@ class Patient extends Individu
  ...
  }
 
-**Voici les règles dans l&#39;utilisation du mot-clé super :**
+**Voici les règles dans l'utilisation du mot-clé super :**
 
 Obligatoirement dans un CONSTRUCTEUR TOUJOURS en PREMIERE INSTRUCTION UNE SEULE FOIS par constructeur.
 
-La référence **super** () permet d&#39;appeler le constructeur de l&#39;ancêtre. Le constructeur de la classe dérivée doit fournir les valeurs nécessaires au constructeur de l&#39;ancêtre comme dans l&#39;exemple ci-dessous :
+La référence **super** () permet d'appeler le constructeur de l'ancêtre. Le constructeur de la classe dérivée doit fournir les valeurs nécessaires au constructeur de l'ancêtre comme dans l'exemple ci-dessous :
 
 public Programmeur( String unNom )
  {
 
-super( unNom ) ; // Appel du constructeur de l&#39;ancêtre
+super( unNom ) ; // Appel du constructeur de l'ancêtre
  }
 
-**Exemple avec l&#39;utilisation de super :**
+**Exemple avec l'utilisation de super :**
 
 public Employe( String n)
  {
@@ -1955,15 +1953,15 @@ on tape la commande : **new Programmeur(&quot;Vincent&quot;);**
 
 # 34.Le polymorphisme
 
-C&#39;est la capacité d&#39;envoyer un même message à des objets de classes différentes, mais d&#39;activer en fait une méthode spécifique à chaque classe.
+C'est la capacité d'envoyer un même message à des objets de classes différentes, mais d'activer en fait une méthode spécifique à chaque classe.
 
-Le polymorphisme est intéressant dans un contexte d&#39;héritage. Le même message peut être envoyé à divers objets de la hiérarchie mais il activera la méthode approprié en fonction de la nature de l&#39;objet récepteur.
+Le polymorphisme est intéressant dans un contexte d'héritage. Le même message peut être envoyé à divers objets de la hiérarchie mais il activera la méthode approprié en fonction de la nature de l'objet récepteur.
 
 Exemple : si on a mis dans un _Vector_ des objets _Individu, Patient,__Employe_ ... on activera la méthode _print()_ de la même façon sur tous les éléments du _Vector,_ sans se soucier de leur spécificité.
 
-# 35.L&#39;opérateur _instanceof_
+# 35.L'opérateur _instanceof_
 
-Il permet de comparer une instance d&#39;objet à une classe Java. Il renvoie vrai si le nom de la classe fait partie des classes dont l&#39;objet référencé est issu.
+Il permet de comparer une instance d'objet à une classe Java. Il renvoie vrai si le nom de la classe fait partie des classes dont l'objet référencé est issu.
 
 patient1 = new Patient(...)
  if (patient1 instanceof Patient) // Vrai
@@ -1976,9 +1974,9 @@ patient1 = new Patient(...)
 
 # 36.Héritage et Agrégation
 
-Utiliser l&#39;héritage quand il y a vraie filiation, spécialisation : un patient est un cas particulier d&#39;individu, c&#39;est normal et souhaitable qu&#39;il hérite de toutes ses méthodes.
+Utiliser l'héritage quand il y a vraie filiation, spécialisation : un patient est un cas particulier d'individu, c'est normal et souhaitable qu'il hérite de toutes ses méthodes.
 
-Utiliser l&#39;agrégation quand on a une relation de contenu à contenant. Une chaudière est un composant d&#39;une maison, mais son comportement est très spécifique.
+Utiliser l'agrégation quand on a une relation de contenu à contenant. Une chaudière est un composant d'une maison, mais son comportement est très spécifique.
 
 Exemple :
 
@@ -1989,14 +1987,14 @@ Exemple :
 
 **Résumé**
 
-L&#39;héritage est la base de la réutilisation en Orienté Objet.
+L'héritage est la base de la réutilisation en Orienté Objet.
 
-Les classes dérivées permettent d&#39;étendre _(extends)_ les fonctionnalités d&#39;une classe mère.
+Les classes dérivées permettent d'étendre _(extends)_ les fonctionnalités d'une classe mère.
 
 Un classe dérivée hérite de toutes les méthodes publiques des classes ancêtres.
 
 Toute classe en Java est dérivée de la classe Object.
 
-Le polymorphisme permet d&#39;utiliser un même nom de méthode sans préciser la nature de l&#39;objet récepteur.
+Le polymorphisme permet d'utiliser un même nom de méthode sans préciser la nature de l'objet récepteur.
 
-L&#39;héritage et l&#39;agrégation répondent à des cas de figure différents et sont complémentaires.
+L'héritage et l'agrégation répondent à des cas de figure différents et sont complémentaires.

@@ -63,8 +63,8 @@
       <section>
         <h3>Les 2 sens possibles</h3>
         <ul>
-          <li>Input : le flux entre dans le programme</li>
-          <li>Output : le flux sort du programme</li>
+          <li>Input  : le flux entre dans le programme (lecture)</li>
+          <li>Output : le flux sort du programme (écriture)</li>
         </ul>
       </section>
 
@@ -114,17 +114,17 @@
         <h3>Lire depuis un fichier</h3>
         <pre><code class="hljs java" data-trim>
           public static void readFromFile() {
-            String fileContent = "";
+            StringBuilder contenu = new StringBuilder();
             // Création d'un objet Scanner pour lire le fichier learners.txt.
             Scanner scanner = new Scanner(new File("learners.txt"));
             // Tant que l'objet scanner n'est pas à la fin du fichier, on lit.
             while (scanner.hasNextLine()) {
-              fileContent += scanner.nextLine() + "\n";
+              contenu.append(scanner.nextLine() + "\n");
             }
             // On ferme notre objet scanner car on a fini de lire le fichier.
             scanner.close();
-            // On afficher le contenu dans la console.
-            System.out.println(fileContent);
+            // On affiche le contenu dans la console.
+            System.out.println(contenu);
           }
         </code></pre>
       </section>
