@@ -33,8 +33,7 @@
 
 ## Découverte de la POO : Encapsulation...
 
-- [Initiation à la POO (org)](../course/Initiation_POO.org)
-- [Initiation à la POO (html)](../presentation/Initiation_POO.html)
+- [Initiation à la POO](../presentation/Initiation_POO.html)
 - [Version Orientée Objet du programme de Quizz](../resources/initiation_poo)
 - [Proposition de correction exercice Streams & Exceptions](../resources/java_streams/FoodDB.java)
 
