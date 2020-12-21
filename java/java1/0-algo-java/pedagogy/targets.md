@@ -14,24 +14,24 @@
 - [Découverte du langage Java](../../1-bases/README.md)
 - [Exercices initiation Java](../../1-bases/exercices.md)
 
-##  Java et les EDI
+##  Java et les EDI (Eclipse)
 
 - [Présentation succinte des EDI](../course/algo_java_edi.md)
 - [Exercices debug](../exercices/algo_java_debug_ex.md)
 
-## Utiliser des données externes (Java Streams)
+## Utiliser des données externes (Streams)
 
 - [Présentation Streams](../presentation/java_streams.html)
 - [Cookbook sur les Streams](../course/java_streams.md)
 - [Exercices Streams](../exercices/java_streams_ex.md)
 
-## Gérer l'inattendu en programmation (Java Exceptions)
+## Gérer les exceptions avec Java
 
 - [Présentation Exceptions](../presentation/java_exceptions.html)
 - [Théorie sur les Exceptions](../../../java2/exception/exceptions.md)
 - [Exercices Exceptions](../exercices/java_exceptions_ex.md)
 
-## Découverte de la programmation Objet : Encapsulation
+## Découverte de la POO : Encapsulation...
 
 - [Initiation à la POO (org)](../course/Initiation_POO.org)
 - [Initiation à la POO (html)](../presentation/Initiation_POO.html)
@@ -43,4 +43,3 @@
 - [Code Wars](https://www.codewars.com)
 - [Hacker Rank](https://www.hackerrank.com)
 
-## Solutions des premiers Exercices
