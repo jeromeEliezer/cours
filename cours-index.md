@@ -2,7 +2,7 @@
 
 ## Java : Découverte
 
-### [1. Entrainement à l'Algorithmie](cours-algo-java.md)
+### [1. Entrainement à l'Algorithmie](java/java1/0-algo-java/pedagogy/targets.md)
 
 ### [2. Bases du langage](java/java1/1-bases/README.md)
 

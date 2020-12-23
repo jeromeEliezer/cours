@@ -1107,8 +1107,7 @@ public class TestExemple {
 
 
 ```
-
-# 15.Les méthodes
+# Méthodes
 
 Une classe contient aussi des méthodes :
 
@@ -1120,84 +1119,81 @@ Par exemple : _envoiRelance()_
 
 **Détail du graphisme UML ci-dessus :**
 
-Classe : Client
 
-**Liste des Attributs :**
-
--taille : int
-
-**Liste des méthodes :**
-
- +getTaille():int
- +setTaille(t:int)
- +envoiRelance()
- +Client(name:String)
- ...
-
-# 16.Variables d'instance
+# Variables d'instance
 
 Une variable d'instance est généralement déclarée privée (_ **private** _) pour assurer l'encapsulation.
- Elle peut contenir une valeur de type primitif ou une référence d'objet. On peut l'initialiser, sinon elle prend la valeur par défaut liée à son type.
+ Elle peut contenir une valeur de type primitif ou une référence à un objet. On peut l'initialiser, sinon elle prend la valeur par défaut liée à son type.
 
+```java
 private int age;
- private String nom;
+private String nom;
+```
 
-Chaque objet (instance) possède ses propres valeurs pour les variables d'instance.
+Chaque objet (_instance_) possède ses propres valeurs pour les variables d'instance.
 
-# 17.Méthodes d'instance
+# Méthodes d'instance
 
-Une méthode est l'équivalent d'une fonction effectuant un traitement spécifique pour une classe.
- Comme une fonction, une méthode peut recevoir plusieurs arguments et peut retourner un seul résultat. Une méthode d'instance peut accéder à toutes les variables d'instance de la classe.
+>Une méthode est l'équivalent d'une fonction effectuant un traitement spécifique pour un objet.
 
-**public** String getNom()
+Comme une fonction, une méthode peut recevoir plusieurs arguments et peut retourner un seul résultat. Une méthode d'instance peut accéder à toutes les variables d'instance de la classe.
+
+```java
+public String getPrenomNom()
  {
- String nom = prenom.trim();
- nom += ' ';
- nom += nomFamille.trim();
- return nom;
+ 	return prenom.trim()+ " "+ nom.trim();
  }
-
+```
 **Les paramètres des méthodes :**
 
-La définition de la méthode indique le type et le nom des paramètres attendus. A l'appel de la méthode, les valeurs des paramètres sont reçues dans des variables locales. Si une méthode ne renvoit pas de résultat, elle est définie de type _ **void** _et le _ **return** _ est facultatif.
+La définition de la méthode indique le type et le nom des paramètres attendus. A l'appel de la méthode, les valeurs des paramètres sont reçues dans des variables locales.
 
+Si une méthode ne renvoit aucun résultat, elle est définie avec le type **void**.
+Si une méthode renvoit un résultat, elle doit avoir le mot clé **return** dans son corps.
+
+```java
 public void setTaille(int t)
  {
-
-taille = t;
+	taille = t;
  }
 
-# 18.La référence _this_
+ public void getTaille()
+ {
+	return this.taille;
+ }
+```
 
-_ **this** _ représente la référence de l'objet courant. Dans cet exemple, _ **this** _ permet de lever une ambiguïté de nommage entre le nom du paramètre et la variable d'instance :
+# La référence _this_
 
+>**this** représente la référence de l'objet courant.
+
+Dans l'exemple ci-dessous, le mot clé **this** permet de lever une ambiguïté de nommage entre le paramètre et la variable d'instance :
+
+```java
 public void setTaille(int taille)
- {
-
-this.taille = taille;
+{
+	this.taille = taille;
  }
+```
 
-# 19.Utilisation du mot clé THIS dans un constructeur
+# Utilisation du mot clé **THIS** dans un constructeur
 
-...
- private int matricule;
- private String diplome;
+```java
+private int matricule;
+private String diplome;
 
-Employe(int leMatricule) // premier constructeur
- {
-
-this( leMatricule,&quot;Non défini&quot;);
-
+// premier constructeur
+Employe(int matricule) 
+{
+	this(matricule,"titre CDA");
 }
 
-Employe(int leMatricule, String leDiplome) // second constructeur
- {
-
-matricule = leMatricule;
- diplome = leDiplome;
-
+Employe(int matricule, String diplome) // second constructeur
+{
+	this.matricule = matricule;
+ 	this.diplome = diplome;
 }
- ...
+```
 
 Exemple d'instanciation dans lequel on appelle le premier constructeur qui lui-même appelle le second constructeur grâce au mot clé THIS. Ceci évite de réécrire les mêmes instructions :
 
