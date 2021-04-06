@@ -1,8 +1,6 @@
 # Formation Java - Algo - Concepts Objets
 
-Durée : 19 jours
-
-Période : Décembre 2020
+Période : Avril 2021
 
 ## Objectif
 
@@ -20,34 +18,34 @@ Période : Décembre 2020
 
 - IDE : Eclipse ou un editeur comme VS Code.
 - un cerveau...
-- et un... ordinateur !
+- ...et un ordinateur !
 
 ## En pratique
 
 - Théorie suivie d'une mise en pratique en prenant les exemples du cours et en réalisant les différents TPs avant de passer au projet.
 - Mise en pratique en utilisant des sites dédiés à l'apprentissage pour se tester et apprendre à son rythme.  
 
-### Semaine 1 (du 30/12 au 04/12)
+### Etape 1 ()
 
 - Présentation des attentes et du cursus de chacun
-- Présentation du formateur et explication sur l'objectif de ce mois de formation.
+- Présentation du formateur et explication sur l'objectif de cette formation.
 - Découverte et pratique des bases de l'algorithmie
 - Nombreux exercices pour s'entrainer (web et dans le cours)
-- Bilan des acquis, remonté des diificultés.
+- Bilan des acquis, remonté des difficultés.
 
-### Semaine 2 (du 07/12 au 11/12)
+### Etape 2 ()
 
 - Découverte des concepts java
 - Mise en pratique avec des exercices algorithmiques simples.
 - Découverte de l'IDE Eclipse (installation si besoin)
-- Bilan de la semaine, remonté des diificultés.
+- Bilan de la semaine, remonté des difficultés.
 
-### Semaine 3 (du 14/12 au 18/12)
+### Etape 3 ()
 
 - Travail sur des TP introduisant l'algo et les concepts objets.
 - Bilan de la semaine
 
-### Semaine 4 (du 21/12 au 24/12)
+### Etape 4 ())
 
 - Travail sur TP
 - Partage des problèmes et solutions trouvées.
