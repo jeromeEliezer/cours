@@ -283,7 +283,7 @@ public class TestSQL
       Class.forName(pilote).newInstance();
       connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
       statement = getConnection().createStatement();
-      statement.executeUpdate("INSERT INTO unTable VALUES(X,Y,Z)");
+      statement.executeUpdate("INSERT INTO uneTable VALUES(X,Y,Z)");
     }
     catch (SQLException sqlException)
   {
@@ -311,7 +311,7 @@ public class TestSQL
 …   ...
     try
     {
-      ResultSet resultat =statement.executeQuery ("SELECT * FROM TABLEX");
+      ResultSet resultat =statement.executeQuery ("SELECT * FROM comptes");
       // next() renvoie vrai (true) lorsqu'il existe un enregistrement supplémentaire.
       while(resultat.next())
       {
@@ -326,7 +326,7 @@ public class TestSQL
 }
 ```
 
-### Les requêtes pré compilées (ou paramétrées)
+### Les requêtes pré-compilées (ou paramétrées)
 
 Les requêtes précompilées sont des requêtes « à trous » que le SGBD compile afin de préparer leur exécution. Cela permet d'accélérer leur traitement.
 
@@ -359,7 +359,7 @@ Le mode de fonctionnement par défaut est le mode **autocommit**.
 - setNull() met un paramètre à vide (null).
 - setXXX() xxx représente le type Java.
 
-Dans le cas d'un SELECT le traitement du ResultSet retourné est le même que pour une requête directe.
+Dans le cas d'un SELECT le traitement du **ResultSet** retourné est le même que pour une requête directe.
 
 Il est à noter que les points d'interrogation de la PreparedStatement ne remplacent que des valeurs de champs de la base. Ils ne peuvent pas se substituer à des noms de colonne ou de table, cela serait l'objet de la définition d'une nouvelle requête.
 

@@ -1,6 +1,6 @@
 # Evaluation Java Binome
 
-- Durée : 3h30
+- Durée : 4h30
 - Compétences évaluées : POO avec Java, collection, SQL et JDBC
 
 ## Enoncé
@@ -17,7 +17,8 @@ Voici les 6 classes :
 - **Connection** (Classe de connection à la base de données MySQL - Méthodes statiques)
 
 La **PromoQuatre** est constituée d'**Apprenants**.  
-Grâce à cette merveilleuse application, chaque **Apprenant.e** peut s'inscrire le matin même à l'un des restaurants enregistrés dans la base. Chaque **Restaurant** est associé à une et une seule **Spécialité**.   
+Grâce à cette merveilleuse application, chaque **Apprenant.e** peut s'inscrire le matin même à l'un des restaurants enregistrés dans la base. Chaque **Restaurant** est associé à une et une seule **Spécialité**.
+
 On ne s'occupe ni du prix car tout est gratuit, ni du menu !
 
 Travail :

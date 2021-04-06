@@ -25,7 +25,7 @@ Période : Avril 2021
 - Théorie suivie d'une mise en pratique en prenant les exemples du cours et en réalisant les différents TPs avant de passer au projet.
 - Mise en pratique en utilisant des sites dédiés à l'apprentissage pour se tester et apprendre à son rythme.  
 
-### Etape 1 ()
+### Etape 1
 
 - Présentation des attentes et du cursus de chacun
 - Présentation du formateur et explication sur l'objectif de cette formation.
@@ -33,19 +33,19 @@ Période : Avril 2021
 - Nombreux exercices pour s'entrainer (web et dans le cours)
 - Bilan des acquis, remonté des difficultés.
 
-### Etape 2 ()
+### Etape 2
 
 - Découverte des concepts java
 - Mise en pratique avec des exercices algorithmiques simples.
 - Découverte de l'IDE Eclipse (installation si besoin)
 - Bilan de la semaine, remonté des difficultés.
 
-### Etape 3 ()
+### Etape 3
 
 - Travail sur des TP introduisant l'algo et les concepts objets.
 - Bilan de la semaine
 
-### Etape 4 ())
+### Etape 4
 
 - Travail sur TP
 - Partage des problèmes et solutions trouvées.
