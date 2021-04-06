@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>memento-html5</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="mémento-html5" class="slide section level1">
+<h1>Mémento HTML5</h1>
+<p>Dans ce document vous trouverez les informations suivantes :</p>
+<ul>
+<li>Balises de premier niveau</li>
+<li>Balises d’en-tête</li>
+<li>Balises de structuration du texte</li>
+<li>Balises de listes</li>
+<li>Balises de tableau</li>
+<li>Balises de formulaire</li>
+<li>Balises sectionnantes</li>
+<li>Balises génériques</li>
+</ul>
+<h2 id="balises-de-premier-niveau">Balises de premier niveau</h2>
+<p>Les balises de premier niveau sont les principales balises qui structurent une page HTML. Elles sont indispensables pour réaliser le « code minimal » d’une page web.</p>
+<h3 id="balise-description">Balise Description</h3>
+<p><code>&lt;html&gt;</code> Balise principale</p>
+<p><code>&lt;head&gt;</code> En-tête de la page</p>
+<p><code>&lt;body&gt;</code> Corps de la page</p>
+<h3 id="code-minimal-dune-page-html">Code minimal d’une page HTML :</h3>
+<p>Code : HTML - Sélectionner</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        <span class="kw">&lt;title</span><span class="er">`Titre</span><span class="ot"> de la page</span><span class="er">&lt;/title</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    </a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<h2 id="balises-den-tête">Balises d’en-tête</h2>
+<p>Ces balises sont toutes situées dans l’en-tête de la page web, c’est-à-dire entre <code>&lt;head&gt;</code> et <code>&lt;/head&gt;</code> :</p>
+<h3 id="balise-description-1">Balise Description</h3>
+<p><code>&lt;link /&gt;</code> Liaison avec une feuille de style</p>
+<p><code>&lt;meta /&gt;</code> Métadonnées de la page web (charset, mots-clés, etc.)</p>
+<p><code>&lt;script&gt;</code> Code JavaScript</p>
+<p><code>&lt;style&gt;</code> Code CSS</p>
+<p><code>&lt;title&gt;</code> Titre de la page</p>
+<h2 id="balises-de-structuration-du-texte">Balises de structuration du texte</h2>
+<h3 id="balise-description-2">Balise Description</h3>
+<p><code>&lt;abbr&gt;</code> Abréviation</p>
+<p><code>&lt;blockquote&gt;</code> Citation (longue)</p>
+<p><code>&lt;cite&gt;</code> Citation du titre d’une œuvre ou d’un évènement</p>
+<p><code>&lt;q&gt;</code> Citation (courte)</p>
+<p><code>&lt;sup&gt;</code> Exposant</p>
+<p><code>&lt;sub&gt;</code> Indice</p>
+<p><code>&lt;strong&gt;</code> Mise en valeur forte</p>
+<p><code>&lt;em&gt;</code> Mise en valeur normale</p>
+<p><code>&lt;mark&gt;</code> Mise en valeur visuelle</p>
+<p><code>&lt;h1&gt;</code> Titre de niveau 1</p>
+<p><code>&lt;h2&gt;</code> Titre de niveau 2</p>
+<p><code>&lt;h3&gt;</code> Titre de niveau 3</p>
+<p><code>&lt;h4&gt;</code> Titre de niveau 4</p>
+<p><code>&lt;h5&gt;</code> Titre de niveau 5</p>
+<p><code>&lt;h6&gt;</code> Titre de niveau 6</p>
+<p><code>&lt;img /&gt;</code> Image</p>
+<p><code>&lt;figure&gt;</code> Figure (image, code, etc.)</p>
+<p><code>&lt;figcaption&gt;</code> Description de la figure</p>
+<p><code>&lt;audio&gt;</code> Son</p>
+<p><code>&lt;video&gt;</code> Vidéo</p>
+<p><code>&lt;source&gt;</code> Format source pour les balises <audio><code> et &lt;video&gt;</code></p>
+<p><code>&lt;a&gt;</code> Lien hypertexte</p>
+<p><code>&lt;br /&gt;</code> Retour à la ligne</p>
+<p><code>&lt;p&gt;</code> Paragraphe</p>
+<p><code>&lt;hr /&gt;</code> Ligne de séparation horizontale</p>
+<p><code>&lt;address&gt;</code> Adresse de contact</p>
+<p><code>&lt;del&gt;</code> Texte supprimé</p>
+<p><code>&lt;ins&gt;</code> Texte inséré</p>
+<p><code>&lt;dfn&gt;</code> Définition</p>
+<p><code>&lt;kbd&gt;</code> Saisie clavier</p>
+<p><code>&lt;pre&gt;</code> Affichage formaté (pour les codes sources)</p>
+<p><code>&lt;progress&gt;</code> Barre de progression</p>
+<p><code>&lt;time&gt;</code> Date ou heure</p>
+<h2 id="balises-de-listes">Balises de listes</h2>
+<p>Cette section énumère toutes les balises HTML permettant de créer des listes (listes à puces, listes numérotées, listes de définitions…)</p>
+<h3 id="balise-description-3">Balise Description</h3>
+<p><code>&lt;ul&gt;</code> Liste à puces, non numérotée</p>
+<p><code>&lt;ol&gt;</code> Liste numérotée</p>
+<p><code>&lt;li&gt;</code> Élément de la liste à puces</p>
+<p><code>&lt;dl&gt;</code> Liste de définitions</p>
+<p><code>&lt;dt&gt;</code> Terme à définir</p>
+<p><code>&lt;dd&gt;</code> Définition du terme</p>
+<h2 id="balises-de-tableau">Balises de tableau</h2>
+<h3 id="balise-description-4">Balise Description</h3>
+<p><code>&lt;table&gt;</code> Tableau</p>
+<p><code>&lt;caption&gt;</code> Titre du tableau</p>
+<p><code>&lt;tr&gt;</code> Ligne de tableau</p>
+<p><code>&lt;th&gt;</code> Cellule d’en-tête</p>
+<p><code>&lt;td&gt;</code> Cellule</p>
+<p><code>&lt;thead&gt;</code> Section de l’en-tête du tableau</p>
+<p><code>&lt;tbody&gt;</code> Section du corps du tableau</p>
+<p><code>&lt;tfoot&gt;</code> Section du pied du tableau</p>
+<h2 id="balises-de-formulaire">Balises de formulaire</h2>
+<h3 id="balise-description-5">Balise Description</h3>
+<p><code>&lt;form&gt;</code> Formulaire</p>
+<p><code>&lt;fieldset&gt;</code> Groupe de champs</p>
+<p><code>&lt;legend&gt;</code> Titre d’un groupe de champs</p>
+<p><code>&lt;label&gt;</code> Libellé d’un champ</p>
+<p><code>&lt;input /&gt;</code> Champ de formulaire (texte, mot de passe, case à cocher, bouton, etc.)</p>
+<p><code>&lt;textarea&gt;</code> Zone de saisie multiligne</p>
+<p><code>&lt;select&gt;</code> Liste déroulante</p>
+<p><code>&lt;option&gt;</code> Élément d’une liste déroulante</p>
+<p><code>&lt;optgroup&gt;</code> Groupe d’éléments d’une liste déroulante</p>
+<h2 id="balises-sectionnantes">Balises sectionnantes</h2>
+<p>Ces balises permettent de construire le squelette de notre site web.</p>
+<h3 id="balise-description-6">Balise Description</h3>
+<p><code>&lt;header&gt;</code> En-tête</p>
+<p><code>&lt;nav&gt;</code> Liens principaux de navigation</p>
+<p><code>&lt;footer&gt;</code> Pied de page</p>
+<p><code>&lt;section&gt;</code> Section de page</p>
+<p><code>&lt;article&gt;</code> Article (contenu autonome)</p>
+<p><code>&lt;aside&gt;</code> Informations complémentaires</p>
+<h2 id="balises-génériques">Balises génériques</h2>
+<p>Les balises génériques sont des balises qui n’ont pas de sens sémantique.</p>
+<p>En effet, toutes les autres balises HTML ont un sens : <code>&lt;p&gt;</code> signifie « Paragraphe », <code>&lt;h2&gt;</code> signifie « Sous-titre », etc. Parfois, on a besoin d’utiliser des balises génériques (aussi appelées balises universelles) car aucune des autres balises ne convient. On utilise le plus souvent des balises génériques pour construire son design.</p>
+<p>Il y a deux balises génériques : l’une est inline, l’autre est block.</p>
+<h3 id="balise-description-7">Balise Description</h3>
+<p><code>&lt;span&gt;</code> Balise générique de type inline</p>
+<p><code>&lt;div&gt;</code> Balise générique de type block</p>
+<p>Ces balises ont un intérêt uniquement si vous leur associez un attribut class, id ou style :</p>
+<ul>
+<li>class : indique le nom de la classe CSS à utiliser.</li>
+<li>id : donne un nom à la balise. Ce nom doit être unique sur toute la page car il permet d’identifier la balise.</li>
+</ul>
+<p>Vous pouvez vous servir de l’ID pour de nombreuses choses, par exemple pour créer un lien vers une ancre, pour un style CSS de type ID, pour des manipulations en JavaScript, etc.</p>
+<ul>
+<li>style : cet attribut vous permet d’indiquer directement le code CSS à appliquer. Vous n’êtes donc pas obligés d’avoir une feuille de style à part, vous pouvez mettre directement les attributs CSS. Notez qu’il est préférable de ne pas utiliser cet attribut et de passer à la place par une feuille de style externe, car cela rend votre site plus facile à mettre à jour par la suite. Ces trois attributs ne sont pas réservés aux balises génériques : vous pouvez aussi les utiliser sans aucun problème dans la plupart des autres balises.</li>
+</ul>
+</div>
+</body>
+</html>

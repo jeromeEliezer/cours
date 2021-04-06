@@ -1,21 +1,13 @@
-# Équipes pour le mini-projet restaurant
+# Équipes pour le mini-projet Restaurant
 
 Pour chacun des groupes suivants, la première personne du groupe écrit le code, la ou les autres conseillent.
 
-```
-gr1 : laetitia louis, tony deride, virgile oxaran
+## groupe 1 : 3 personnes maxi par groupe
 
-gr2 : sophie balcon, romain gallard
+## groupe 2 : ...
 
-gr3 : robert roussely, sébastien merchadou
+## groupe 3 : ...
 
-gr4 : didier fournol, bastien cacciuttolo
+## groupe 3 : ...
 
-gr5 : maureen defoort, cédric maunier
 
-gr6 : elodie pessy, camille paudrat
-
-gr7 : nicolas congard, olivier piveteau
-
-gr8 : florian dupont, francois mackowski
-```

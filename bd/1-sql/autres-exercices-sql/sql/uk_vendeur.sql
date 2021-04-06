@@ -1,0 +1,1 @@
+select * from vendeur where vendeur.nom = 'Cadoret' and vendeur.prenom = 'Marie'

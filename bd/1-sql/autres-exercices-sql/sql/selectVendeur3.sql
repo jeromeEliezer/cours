@@ -1,0 +1,1 @@
+select prenom from vendeur

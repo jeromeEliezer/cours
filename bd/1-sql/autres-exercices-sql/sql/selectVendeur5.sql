@@ -1,0 +1,1 @@
+select * from vendeur join ville on ville.id = vendeur.id_ville
