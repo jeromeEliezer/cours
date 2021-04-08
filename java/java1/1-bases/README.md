@@ -9,12 +9,13 @@
 
 ### 1.4 [Chaînes](../2-tableaux/chaines-java.md)
 ### 1.5 [Concepts objets](../../concepts-objet-java.md)
-
+<!-- 
 ### 1.6 [Bases en Java (cours complet)](../../cours-java-base.md)
+
 ### 1.7 [Cours java module 1](../../cours-java-module1.md)
 ### 1.8 [Cours java module 2](../../cours-java-module2.md)
 
-### 1.9 [Cours java module 3](../../cours-java-module3.md)
+### 1.9 [Cours java module 3](../../cours-java-module3.md) -->
 ## 2. Travaux pratiques
 ### 2.1 [Liste des TP et mini-projets](../2-tableaux/exercices.md)
 
