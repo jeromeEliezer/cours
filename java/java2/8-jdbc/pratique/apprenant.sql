@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `apprenant` (
   `email` varchar(40) NOT NULL,
   `emailpro` varchar(50) NOT NULL,
   `photo` varchar(150) NOT NULL,
-  `region_fk` int(40) DEFAULT NULL,
+  `region_fk` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_apprenant`),
   KEY `fk_apprenant_region` (`region_fk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
