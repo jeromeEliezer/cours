@@ -123,6 +123,20 @@ public static void main(String args[])
 
 ```
 
+Pour les plus fainéant.e.s vous pouvez utiliser la méthode **reverse()** de la classe **StringBuilder** :
+
+```java
+String mot = "kayak";
+StringBuilder mot2 = new StringBuilder();
+mot2.append(mot);
+mot2.reverse();
+System.out.println("mot à l'envers : "+mot2);
+        
+if (mot.equalsIgnoreCase(mot2.toString())) System.out.printf("%s est un palindrome !", mot);
+
+```
+
+
 ### Exercice 3 : Nombre Hasard
 
 ```java
@@ -254,8 +268,8 @@ public class Hasard {
 	}
 
 }
-
 ```
+
 ### Exercice 4 :  Les cadeaux du père Noël
 
 Classe Enfant :
