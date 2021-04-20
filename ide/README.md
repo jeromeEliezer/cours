@@ -1,6 +1,6 @@
 # IDE (Integrated Development Environment)
 
->En Français cela donne EDI pour *Environnement de Développement Intégré*. Un ensemble d'outils indispensables pour être productif.ve.
+>En Français cela donne EDI pour **Environnement de Développement Intégré**. Un ensemble d'outils indispensables pour être productif.ve.
 
 [Pour en savoir plus, allez sur Wikipédia](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement)
 
