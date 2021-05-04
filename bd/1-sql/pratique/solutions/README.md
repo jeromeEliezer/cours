@@ -14,7 +14,7 @@ Résultat :
 2) Liste des noms des pilotes
 
 ```sql 
-SELECT PI_NOM NOM
+SELECT PI_NOM Noms
 FROM pilote;
 ```
 
@@ -68,6 +68,10 @@ Résultat : 1 ligne (102, AIRBUS A320)
 
 7) Liste des avions AIRBUS allant à Paris
 
+>On peut l'écrire de différentes manières.
+
+En mode requêtes imbriquées :
+
 ```sql
 SELECT AV_ID, AV_MODELE, AV_SITE
 FROM avion
@@ -77,6 +81,31 @@ WHERE AV_CONST = 'AIRBUS' AND  AV_ID in
  FROM vol
  WHERE vo_site_arrivee= 'paris'
 );
+```
+En mode jointures de bases :
+
+```sql
+SELECT DISTINCT av_id , av_const , av_modele, vo_site_arrivee
+FROM avion, vol
+WHERE avion.AV_ID = vol.VO_AVION
+AND avion.AV_CONST  = "airbus" 
+AND vo_site_arrivee ="paris";
+
+```
+
+>Ici, la jointure se fait avec la ligne **WHERE avion.AV_ID = vol.VO_AVION** qui nous permet de préciser que le lien se fait avec l'identifiant de l'avion (av_id) que l'on retrouve dans la table VOL avec un nom de colonne différent (vo_avion)
+
+
+En mode jointure avec INNER JOIN :
+
+```sql
+SELECT DISTINCT av_id , av_const , av_modele, vo_site_arrivee
+FROM avion
+INNER JOIN vol
+ON avion.AV_ID = vol.VO_AVION
+WHERE avion.AV_CONST  = "airbus" 
+and 
+vo_site_arrivee ="paris";
 ```
 
 Résultat : 3 lignes AIRBUS (les 100, 102 et 109)

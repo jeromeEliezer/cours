@@ -6,6 +6,8 @@ La correction peut-être affichée avec un diagramme Flowgorithm ou bien en java
 
 * **Entrée/Sortie** : Ecrire un algorithme qui demande un nom en entrée et qui affiche "Hello " + nom_entrée + " !"
 
+![HelloNom](images/niveau1_saisie-nom.png)
+
 * **Entrée/Sortie** : Ecrire un algorithme qui calcule l'aire d'un triangle en demandant à l'utilisateur de rentrer la base et la hauteur d'un triangle
 
 ![aireTriangle](images/aireTriangle-Main.png)
@@ -33,8 +35,9 @@ La correction peut-être affichée avec un diagramme Flowgorithm ou bien en java
 
 ![conversionDegreRadian](images/conversionDegreRadian-Main.png)
 
-* **Conditions** : 
-  -   Écrire une fonction qui affiche si une année est bissextile ou non.
+* **Conditions** :
+
+  -   Écrire une fonction qui affiche si une année est bissextile ou non (Sachant qu'une année est bisextile si elle est divisible par 400 OU divisible par 4 ET non divisible par 100). Voilà, vous avez les infos pour écrire votre alogithme.
 
   -   Écrire une fonction qui affiche combien d'années dans un intervalle donné (par exemple \[1980, 2016\[ ) sont bissextiles ?
 
