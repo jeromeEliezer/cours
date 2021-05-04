@@ -625,7 +625,7 @@ INTERSECT
 WHERE av_capacite > 200);
 ```
 
-Attention, **INTERSECT** élimine les doublons s'il y en a !
+>Attention, **INTERSECT** élimine les doublons s'il y en a !
 
 qui peut aussi s’écrire :
 
@@ -1039,7 +1039,7 @@ Types de jointures
 
 Il y a plusieurs méthodes pour associer 2 tables ensemble. Voici la liste des différentes techniques qui sont utilisées :
 
-- **INNER JOIN** : Nous voulons les noms des pilotes en services (associé(e)s à un vol)
+- **INNER JOIN** : Nous voulons les noms des pilotes en services (associé(e)s à un vol). Cette commande est aussi nommée **EQUIJOIN*. **Elle retourne tous les enregistrements s'il y a au moins une ligne dans chaque colonne correspondant à la condition !**
 
 ```sql
 SELECT distinct pilote.PI_NOM
@@ -1059,9 +1059,9 @@ CROSS JOIN avion;
 
 On peut ajouter ORDER BY pi_nom pour afficher les 10 avions par pilote, ce qui fait bien 90 enregistrements.
 
-- LEFT JOIN : Retourne tous les enregistrements de la première table, celle de gauche, même si la condition n’est pas vérifiée pour l’autre table.
+- **LEFT JOIN** : Retourne tous les enregistrements de la première table, celle de gauche, même si la condition n’est pas vérifiée pour l’autre table.
 
-Si nous souhaitons afficher tous les pilotes et savoir ceux qui ne sont pas en services( ne volent pas)
+Si nous souhaitons afficher tous les pilotes et savoir ceux qui ne sont pas en services( qui ne volent pas)
 
 ```sql
 SELECT *
@@ -1074,6 +1074,7 @@ Tous les pilotes seront affichés y compris ceux et celles qui ne volent pas. De
 - **RIGHT JOIN** : retourne tous les enregistrements de la seconde table, celle de droite, même si la condition n’est pas vérifiée dans l’autre table.
 
 Exemple d’une requête qui affiche tous les vols y compris les avions qui ne volent pas.
+
 Les avions n°103, n°104 et 108 n’ont jamais volés !
 
 ```sql
@@ -1082,7 +1083,7 @@ FROM vol
 RIGHT JOIN avion ON vol.VO_AVION = avion.AV_ID;
 ```
 
-- FULL JOIN :  Retourne les résultats quand la condition est vraie dans au moins l’une des table.
+- **FULL JOIN** :  Retourne les résultats quand la condition est vraie dans au moins l’une des table.
 
 On veut retourner tous les pilotes qui ont ou pas volé.
 Pas de chance, FULL n’est pas reconnue, à vérifier.
@@ -1091,7 +1092,7 @@ Pas de chance, FULL n’est pas reconnue, à vérifier.
 Il faudrait que la table nécessite une relation réflexive.
 À trouver…
 
-- **NATURAL JOIN** : Jointure dite naturelle entre 2 tables car il y a au moins une colonne portant le même nom dans les 2 tables.
+- **NATURAL JOIN** : Jointure dite *naturelle* entre 2 tables car il y a au moins une colonne portant le même nom dans les 2 tables.
 
 - **UNION JOIN** : jointure d’union
 

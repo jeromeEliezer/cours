@@ -93,8 +93,13 @@ AND vo_site_arrivee ="paris";
 
 ```
 
->Ici, la jointure se fait avec la ligne **WHERE avion.AV_ID = vol.VO_AVION** qui nous permet de préciser que le lien se fait avec l'identifiant de l'avion (av_id) que l'on retrouve dans la table VOL avec un nom de colonne différent (vo_avion)
+>Ici, la jointure se fait avec la ligne **WHERE avion.AV_ID = vol.VO_AVION** qui nous permet de préciser que le lien se fait avec l'identifiant de l'avion (av_id) que l'on retrouve dans la table VOL avec un nom de colonne différent (vo_avion). Si nous avions eu le même nom de colonne dans les 2 tables (**av_id** par exemple), nous aurions pu écrire ceci :
 
+
+```sql
+JOIN vol
+USING(av_id);
+```
 
 En mode jointure avec INNER JOIN (jointure interne):
 
@@ -156,6 +161,17 @@ Résultat : 3 avions.
 
 ```sql
 SELECT *
+FROM avion
+WHERE av_const='AIRBUS'
+AND AV_ID IN
+(SELECT vo_avion FROM vol where vo_site_arrivee<>'PARIS');
+```
+Résultat : 2 Airbus. (le IN permet d'enlever les doublons ! voir cours 5.1)
+
+Par contre, si on écrit celle-ci qui ressemble fortement à celle du haut nous obtiendrons un résultat différent qui nous affichera 2 fois le même AIRBUS puisqu'il effectue 2 vols.
+
+```sql
+SELECT DISTINCT av_id, av_const, vo_site_arrivee
 FROM avion, vol
 WHERE av_id=vo_avion
  AND av_const='AIRBUS'
@@ -186,7 +202,9 @@ where av_id=vo_avion;
 
 Résultat : 12 avions
 
-même requête avec INNER JOIN :
+même requête avec **INNER JOIN** :
+
+>Après le mot-clé JOIN, on met la table que l'on souhaite relier et le lien entre les colonnes des 2 tables est précisé car dans notre cas, les noms de colonnes sont différents !
 
 ```sql
 select vo_id as Vol, av_const Constructeur, av_modele Modele
@@ -198,11 +216,13 @@ INNER JOIN avion ON av_id=vo_avion ;
 
 ```sql 
 select av_modele, av_capacite
-from avion,vol
+from avion, vol
 where av_id=vo_avion;
 ```
 
 16) Liste des avions qui ne sont pas des AIRBUS allant à Paris
+
+On peut l'écrire de plein de façons différentes.
 
 ```sql
 select *
