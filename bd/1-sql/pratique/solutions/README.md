@@ -96,7 +96,7 @@ AND vo_site_arrivee ="paris";
 >Ici, la jointure se fait avec la ligne **WHERE avion.AV_ID = vol.VO_AVION** qui nous permet de préciser que le lien se fait avec l'identifiant de l'avion (av_id) que l'on retrouve dans la table VOL avec un nom de colonne différent (vo_avion)
 
 
-En mode jointure avec INNER JOIN :
+En mode jointure avec INNER JOIN (jointure interne):
 
 ```sql
 SELECT DISTINCT av_id , av_const , av_modele, vo_site_arrivee
@@ -137,7 +137,7 @@ Résultat : 8 (4 Airbus et 4 Boeing)
 ```sql
 SELECT *
 FROM avion
-WHERE av_const='airbus' or av_capacite>=200;
+WHERE av_const='airbus' or av_capacite>200;
 ```
 
 Résultat : 9 avions
