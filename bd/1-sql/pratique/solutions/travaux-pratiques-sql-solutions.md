@@ -1,12 +1,10 @@
-# exercices SQL
+# Travaux pratiques SQL
 
-Entraînement SQL
-
-## Révision des notions abordées en Session 1
+## Révision des notions abordées
 
 Pour interroger une base de données relationnelle, vous avez découvert le langage SQL. 
 Vous allez vous entraîner en effectuant différentes requêtes sur une BD existante.  
-Vous utiliserez le SGBDR MySql.   
+Vous utiliserez le SGBDR MySQL   
 Le schéma et les données sont détaillés ci-dessous.
 
 ## Instructions qui seront utilisées
@@ -28,10 +26,10 @@ Le schéma et les données sont détaillés ci-dessous.
 
 ## Base de données
 
-![concession](conception/concession.png)
+![concession](concession.png)
 
-* [schema](conception/schema.sql)
-* [data](data/data.sql)
+* [Schema de la BD](schema.sql)
+* [Données à ajouter](data/data.sql)
 
 ## Notes
 
@@ -323,15 +321,15 @@ Cet exercice est plus difficile.
 
 voici un [fichier exemple](sql/transaction.sql) 
 
-## Les variables
+## Découverte des variables
 
 Il est possible d'utiliser des variables dans les requêtes SQL.
 
 Il existe des variables :
 
-* locales : contenues dans des procédures stockées (notion non vue ici)
-* de session (ou utilisateur): identifiées par **@**
-* globales : identifiées par **@@** 
+* **locales** : contenues dans des procédures stockées (notion non vue ici)
+* de **session** (ou utilisateur): identifiées par **@**
+* **globales** : identifiées par **@@** 
 
 Ces variables permettent d'écrire des scripts SQL plus complexes et plus lisibles. 
 Nous pouvons aussi les utiliser pour écrire des jeux d'essai cohérents pour tester notre application.
@@ -344,18 +342,18 @@ Nous pouvons aussi les utiliser pour écrire des jeux d'essai cohérents pour te
 
 ### A votre tour
 
-* Renseigner une variable avec le valeur "Leclerc", et afficher tous les vendeurs ayant ce nom  
+* Renseigner une variable avec le valeur "Leclerc", et afficher tous les vendeurs ayant ce nom.    
 => [solution](sql/varVendeur1.sql) 
-* Récupérer l'id du vendeur "Leclerc" dans une variable et l'afficher  
+* Récupérer l'id du vendeur "Leclerc" dans une variable et l'afficher.   
 => [solution](sql/varVendeur2.sql) 
-* En affectant la valeur "Le" à la variable @nom, afficher tous les vendeurs commençant par ce mot.  
+* En affectant la valeur "Le" à la variable @nom, afficher tous les vendeurs commençant par ce mot.   
 => [solution](sql/varVendeur3.sql)
 
 ## Script pour créer des jeux de données
 
 Voici quelques scripts pour alimenter la base avec un jeu de données cohérent. 
 
-Certains scripts utilisent les procédures stockées. Ces scripts sont complexes et sont ici dans le but de vous montrer ce que peuvent faire des procédures stockées. En aucun cas, il vous est demandé d'écrire des procédures stockées. Simplement de les comprendre et de savoir à quoi elles servent.
+Certains scripts utilisent les procédures stockées. Ces scripts sont complexes et sont présents dans le but de vous montrer ce que peuvent faire des procédures stockées. En aucun cas, il vous est demandé d'écrire des procédures stockées. Simplement de les comprendre et de savoir à quoi elles servent.
 
 * Script pour créer un véhicule à partir de variables.  
 => [solution 1](sql/insertVehicule1.sql)  

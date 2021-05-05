@@ -7,8 +7,8 @@ Les scripts SQL du schéma et des données sont détaillés ci-dessous.
 ## Base de données
 ![concession](conception/concession.png)
 
-* [schema](conception/schema.sql)
-* [data](data/data.sql)
+* [Schema de la BD Concession](conception/schema.sql)
+* [Les données à insérer](data/data.sql)
 
 ## Remarques
 
@@ -57,3 +57,8 @@ A vous de jouer...
 2. Mettre à jour le nom d'un vendeur.  
 3. Affecter tous les vendeurs de la ville de Nantes à la ville de Saint-Nazaire.  
 4. Supprimer le vendeur ayant l'id 8.
+
+
+## Solutions
+
+* [c'est par ici...](../pratique/solutions/travaux-pratiques-sql-solutions.md)
