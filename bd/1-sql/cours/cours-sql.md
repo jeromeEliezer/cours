@@ -1278,12 +1278,6 @@ INSERT INTO table (col1,.., coln)
 VALUES (val1,..., valn)
 ```
 
-ou
-
-```sql
-SELECT col1,..., coln FROM table2 WHERE prédicat
-```
-
 Exemple :
 
 ```sql
