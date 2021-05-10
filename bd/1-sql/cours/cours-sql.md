@@ -1278,6 +1278,14 @@ INSERT INTO table (col1,.., coln)
 VALUES (val1,..., valn)
 ```
 
+ou
+
+```sql
+INSERT
+INTO table
+VALUES (val1,..., valn)
+```
+
 Exemple :
 
 ```sql
