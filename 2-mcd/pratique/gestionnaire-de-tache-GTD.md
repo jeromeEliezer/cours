@@ -77,11 +77,8 @@ Travail à réaliser (modélisation de la base de données)
 
 ![mld-gtd](../img/gtd-mcd-basique.png)
 
-### MLD
+Attention, il y a un Bug, un utilisateur est ici associé à un seul profil...
 
-Voici le **Modèle Logique de Données** (MLD) que vous devez obtenir après transformation de votre MCD.
-
-![mld-gtd](../img/gtd-mld.png)
 
 ### MPD (script SQL)
 
