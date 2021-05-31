@@ -77,7 +77,7 @@ Travail à réaliser (modélisation de la base de données)
 
 ![mld-gtd](../img/gtd-mcd-basique.png)
 
-Attention, il y a un Bug, un utilisateur est ici associé à un seul profil...
+Attention, ci-dessous, il y a un Bug, un utilisateur est associé à un seul profil... comment le corriger ? Que peut-on faire ?
 
 
 ### MPD (script SQL)
