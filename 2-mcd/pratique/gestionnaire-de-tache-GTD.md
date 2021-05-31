@@ -6,31 +6,31 @@ Il s’agit ici de développer une application GTD multi-utilisateurs.
 
 ## Spécifications fonctionnelles
 
-L'application est destinée à être utilisé au sein d'une organisation et doit permettre aux membres de l'organisation de gérer la liste de leurs tâches à réaliser et de les partager avec les autres membres.
+L'application est destinée à être utilisé au sein d'une organisation et doit permettre aux membres de l'organisation de **gérer la liste de leurs tâches à réaliser et de les partager avec les autres membres**.
 
 ## Tâche
 
 Une tâche est définie par :
 
-- l'initiateur de la tâche (celui qui l'a créée),
-- la date de création de la tâche,
-- son intitulé,
-- la date de réalisation de la tâche, ou une date butoir,
-- déléguée à : éventuellement la personne à qui la tâche est déléguée,
-- le type de tâche à réaliser (cf. les types de tâches plus bas),
-- le statut de la tâche (initialisée, en cours, terminée),
-- durée estimée de réalisation de la tâche,
+- l'initiateur de la tâche (celui qui l'a créée)
+- la date de création de la tâche
+- son intitulé
+- la date de réalisation de la tâche, ou une date butoir
+- déléguée à : éventuellement la personne à qui la tâche est déléguée
+- le type de tâche à réaliser (cf. les types de tâches plus bas)
+- le statut de la tâche (initialisée, en cours, terminée)
+- durée estimée de réalisation de la tâche
 - priorité de la tâche (de 1 à 3).
 
 ## Types de tâche
 
-- téléphoner
-- envoyer un mail
-- envoyer un courrier
-- rencontrer
-- rédiger un document
-- aller à
-- planifier une tâche
+- Téléphoner
+- Envoyer un mail
+- Envoyer un courrier
+- Rencontrer
+- Rédiger un document
+- Aller à
+- Planifier une tâche
 
 On définira un code abrégé et une icône pour chaque type de tâche.
 
@@ -40,23 +40,24 @@ Les utilisateurs doivent s'authentifier pour accéder à l'application (donc êt
 
 On distinguera 2 profils :
 
-- Administrateur : dispose des droits d’administration en plus des droits « utilisateur »,
+- Administrateur : dispose des droits d’administration en plus des droits « utilisateur »
 - Utilisateur.
 
-Une fois authentifié, un profil utilisateur accède à la liste de ses tâches non terminées.
-Il peut éditer/supprimer les tâches ou créer d'autres tâches, pour cela il dispose de boutons d’actions.
+Une fois authentifié, un profil utilisateur **accède à la liste de ses tâches non terminées**.
+Il peut éditer ou supprimer les tâches ou en créer d'autres.
+
 Il doit aussi pouvoir modifier les données d’une tâche directement à partir de la liste.
 
-L'utilisateur visualise également les tâches qui lui ont été déléguées, celles-ci ne sont pas modifiables sauf le statut qui peut être passé à « terminée ».
+L'utilisateur visualise également les tâches qui lui ont été déléguées, par contre, celles-ci ne sont pas modifiables sauf le statut qui peut être passé à «**terminée**».
 
 ## Règles de gestion pour vous aider dans la modélisation
 
-Un utilisateur dispose est associé à un et un seul type.
-Une tâche possède un et un seul type.
-Une tâche est créée par un et un seul utilisateur.
-Une tâche peut être est déléguée à un autre utilisateur.
-Une tâche a un un seul statut.
-Une tâche a une priorité et une seule qui est un entier.
+Un utilisateur peut avoir plusieurs profil.   
+Une tâche correcpond à un et un seul type (tâche).   
+Une tâche est créée par un et un seul utilisateur.   
+Une tâche peut être est déléguée à un autre utilisateur.   
+Une tâche a un et un seul statut.   
+Une tâche a une priorité et une seule qui est un entier.   
 
 ## Vues (ultérieurement - ne pas traiter pour le moment)
 
