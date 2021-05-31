@@ -1,6 +1,11 @@
 
 # MERISE
 
+## Logiciel gratuit de modélisation
+
+- [Looping](https://www.looping-mcd.fr/)
+- [JMerise](https://www.jfreesoft.com/JMerise/)
+
 ## Modèle Conceptuel de Données
 
 ![](img/mcd-exemple.png)
