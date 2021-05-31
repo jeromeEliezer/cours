@@ -53,7 +53,7 @@ L'utilisateur visualise également les tâches qui lui ont été déléguées, p
 ## Règles de gestion pour vous aider dans la modélisation
 
 Un utilisateur peut avoir plusieurs profils.   
-Une tâche correcpond à un et un seul type (tâche).   
+Une tâche correspond à un et un seul type (tâche).   
 Une tâche est créée par un et un seul utilisateur.   
 Une tâche peut être est déléguée à un autre utilisateur.   
 Une tâche a un et un seul statut.   
