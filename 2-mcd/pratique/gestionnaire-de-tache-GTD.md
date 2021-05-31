@@ -32,13 +32,13 @@ Une tâche est définie par :
 - Aller à
 - Planifier une tâche
 
-On définira un code abrégé et une icône pour chaque type de tâche.
+On définira un *code abrégé* et une *icône* pour chaque type de tâche.
 
 ## Utilisateurs
 
 Les utilisateurs doivent s'authentifier pour accéder à l'application (donc être inscrits au préalable).
 
-On distinguera 2 profils :
+On distinguera 2 *profils* :
 
 - Administrateur : dispose des droits d’administration en plus des droits « utilisateur »
 - Utilisateur.
@@ -49,7 +49,7 @@ Il peut éditer ou supprimer les tâches ou en créer d'autres.
 
 Il doit aussi pouvoir modifier les données d’une tâche directement à partir de la liste.
 
-L'utilisateur visualise également les tâches qui lui ont été déléguées, par contre, *celles-ci ne sont pas modifiables*. Il n'y a que le statut qui peut être passé à «**terminée**».
+L'utilisateur visualise également les tâches qui lui ont été déléguées, par contre, *celles-ci ne sont pas modifiables*. Il n'y a que le statut de la tâche qui peut être passé à «**terminée**».
 
 ## Règles de gestion pour vous aider dans la modélisation
 
@@ -80,7 +80,6 @@ Travail à réaliser (modélisation de la base de données)
 ![mld-gtd](../img/gtd-mcd-basique.png)
 
 Attention, ci-dessous, il y a un Bug, un utilisateur est associé à un seul profil... comment le corriger ? Que peut-on faire ?
-
 
 ### MPD (script SQL)
 
