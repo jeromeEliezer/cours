@@ -53,9 +53,8 @@ L'utilisateur visualise également les tâches qui lui ont été déléguées, p
 
 ## Règles de gestion pour vous aider dans la modélisation
 
-
 Un utilisateur peut avoir plusieurs profils.   
-(Dans la version précédente, un utilisateur ne pouvait être associé qu'à un seul profil, Vous avez le choix !)   
+(Dans la version précédente, un utilisateur ne pouvait être associé qu'à un seul profil, Vous avez le choix ! Dans la solution j'ai conservé celui-ci)   
 Une tâche correspond à un et un seul type (de tâche).   
 Une tâche est créée par un et un seul utilisateur.   
 Une tâche peut être est déléguée à un autre utilisateur.   
@@ -77,11 +76,17 @@ Travail à réaliser (modélisation de la base de données)
 
 ### MCD basique
 
-![mld-gtd](../img/gtd-mcd-basique.png)
+![mld-gtd](../img/gtd-mcd.png)
 
-Attention, ci-dessous, il y a un Bug, un utilisateur est associé à un seul profil... comment le corriger ? Que peut-on faire ?
 
-### MPD (script SQL)
+Attention, ci-dessus, il y a un bug, un utilisateur est associé à un seul profil... comment le corriger ? Que peut-on faire ?
+
+### MLD correspond (avec Looping)
+
+![mld-gtd](../img/gtd-mld.png)
+
+Le problème dans ce MLD concerne les clefs étrangères qui devraient prendre les noms utilisés pour les rôles comme dans un diagramme de classe UML.
+### MPD (script SQL de création des tables uniquement)
 
 ```sql
 create table profil
