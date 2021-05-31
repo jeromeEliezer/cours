@@ -56,7 +56,7 @@ L'utilisateur visualise également les tâches qui lui ont été déléguées, p
 
 Un utilisateur peut avoir plusieurs profils.   
 (Dans la version précédente, un utilisateur ne pouvait être associé qu'à un seul profil, Vous avez le choix !)   
-Une tâche correspond à un et un seul type (tâche).   
+Une tâche correspond à un et un seul type (de tâche).   
 Une tâche est créée par un et un seul utilisateur.   
 Une tâche peut être est déléguée à un autre utilisateur.   
 Une tâche a un et un seul statut.   
