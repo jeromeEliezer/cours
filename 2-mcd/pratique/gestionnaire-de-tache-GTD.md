@@ -44,11 +44,12 @@ On distinguera 2 profils :
 - Utilisateur.
 
 Une fois authentifié, un profil utilisateur **accède à la liste de ses tâches non terminées**.
+
 Il peut éditer ou supprimer les tâches ou en créer d'autres.
 
 Il doit aussi pouvoir modifier les données d’une tâche directement à partir de la liste.
 
-L'utilisateur visualise également les tâches qui lui ont été déléguées, par contre, celles-ci ne sont pas modifiables sauf le statut qui peut être passé à «**terminée**».
+L'utilisateur visualise également les tâches qui lui ont été déléguées, par contre, *celles-ci ne sont pas modifiables*. Il n'y a que le statut qui peut être passé à «**terminée**».
 
 ## Règles de gestion pour vous aider dans la modélisation
 
