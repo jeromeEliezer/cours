@@ -6,7 +6,7 @@ Il s’agit ici de développer une application GTD multi-utilisateurs.
 
 ## Spécifications fonctionnelles
 
-L'application est destinée à être utilisé au sein d'une organisation et doit permettre aux membres de l'organisation de **gérer la liste de leurs tâches à réaliser et de les partager avec les autres membres**.
+L'application est destinée à être utilisé au sein d'une organisation et doit permettre aux *membres* de l'organisation de **gérer la liste de leurs tâches à réaliser et de les partager avec les autres membres**.
 
 ## Tâche
 
