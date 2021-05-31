@@ -59,14 +59,6 @@ Une tâche peut être est déléguée à un autre utilisateur.
 Une tâche a un et un seul statut.   
 Une tâche a une priorité et une seule qui est un entier.   
 
-## Vues (ultérieurement - ne pas traiter pour le moment)
-
-On définira plusieurs vues possibles pour l'affichage des tâches :
-
-- une vue liste : liste des tâches d'un utilisateur donné, possibilité de trier cette liste suivant divers critères (date butoir, types de tâche, statut, durée, priorité...), possibilité d’édition inline.
-- une vue planning : affichage dans un calendrier mensuel des tâches d'un utilisateur donné.
-- une vue planning partagée : affichage dans un calendrier mensuel des tâches de plusieurs utilisateurs sélectionnés au préalable.
-
 Travail à réaliser (modélisation de la base de données)
 
 1. Trouver les entités et leurs attributs ainsi que les relations et réaliser le MCD
@@ -85,7 +77,6 @@ Travail à réaliser (modélisation de la base de données)
 ![mld-gtd](../img/gtd-mcd-basique.png)
 
 ### MLD
-
 
 Voici le **Modèle Logique de Données** (MLD) que vous devez obtenir après transformation de votre MCD.
 
@@ -131,7 +122,7 @@ create table tache
   intitule      varchar(255) not null,
   date_fin      datetime     null,
   priorite      int          not null,
-  type     int          not null,
+  type          int          not null,
   createur      int          not null,
   delegue       int          null,
   statut        int          not null,
