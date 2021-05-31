@@ -1,7 +1,7 @@
 
 # MERISE
 
-## Logiciel gratuit de modélisation
+## Logiciels gratuits de modélisation
 
 - [Looping](https://www.looping-mcd.fr/)
 - [JMerise](https://www.jfreesoft.com/JMerise/)
