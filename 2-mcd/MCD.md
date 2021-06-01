@@ -4,7 +4,8 @@
 ## Logiciels gratuits de modélisation
 
 - [Looping](https://www.looping-mcd.fr/)
-- [JMerise](https://www.jfreesoft.com/JMerise/)
+- [JMerise](https://www.jfreesoft.com/JMerise/) (version limitée à 10 entités)
+- [AnalyseSI](https://launchpad.net/analysesi)
 
 ## Modèle Conceptuel de Données
 
