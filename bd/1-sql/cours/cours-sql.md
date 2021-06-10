@@ -9,10 +9,11 @@
 1.2. Définition   
 
 2. Concepts des SGBD relationnels  
+2.0. Notions de DataBase et de Schèma
 2.1. Structure  des données  
 2.2. Les Règles (ou contraintes) d'intégrité
 
-3. Algèbre relationnelle  
+1. Algèbre relationnelle  
 3.1. Base de travail  
 3.2. Opérateurs unaires relationnels  
 3.3. Opérateurs ensemblistes   
@@ -87,6 +88,35 @@ S.Q.L. est un langage interactif, cependant, il peut aussi être intégré
 dans un langage de programmation pour le développement d’applications.
 
 ## 2 Concepts des SGBD relationnels   
+
+2.0. Notions de DataBase et Schèma
+----------------------------------
+
+Avant d'aller plus loin, voici quelques explications sur 2 notions qui prêtent à confusion.
+
+Techniquement parlant, un **schéma de base de données est la structure sous-jacente décrite et supportée par le système de gestion de base de données utilisé pour stocker les enregistrements**.
+
+Généralement, *un schéma est un niveau d'abstraction plus élevé des modèles de conception* qui sont capturés et documentés par les concepteurs de bases de données et les analystes métier pendant la phase d'analyse d'un projet ou de développement de produit. Ils n'existent pas en tant que tels dans une base de données, mais dans certaines variantes de bases de données, ils peuvent être réalisés à certains niveaux sous une forme physique.
+
+Lorsque nous introduisons un utilisateur dans cette perspective, nous pouvons définir ces trois entités (*base de données*, *schéma* et *utilisateur*) comme suit :
+
+- La base de données est une collection de fichiers physiques.
+
+- L'utilisateur est celui qui se connecte à une base de données.
+
+- Le schéma est la collection d'objets appartenant à l'utilisateur.
+
+Pour résumer brièvement, **un schéma est généralement une représentation graphique de la structure du système de base de données** alors que **la base de données elle-même est une collection structurée d'enregistrements ou de données**.
+
+- Une base de données est la **structure physique**.
+
+- Le schéma est la **structure logique**.
+
+- Une base de données est une **collection d'enregistrements** et de données connexes stockés dans des **tables**.
+
+- Un schéma, d'autre part, est une définition logique de la base de données ou, en d'autres termes, un plan qui définit les noms de toutes les tables et colonnes et définit le type de chaque colonne.
+
+- **Dans certains systèmes de SGBD, un schéma peut être réalisé sous une forme physique à n'importe lequel des niveaux**.
 
 2.1. Structure  des données  
 ---------------------------

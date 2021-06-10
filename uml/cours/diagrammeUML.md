@@ -51,7 +51,7 @@ Pour l'enchaînement des écrans, on utilise le diagramme de navigation qui perm
 
 ![Diagramme de Séquences](../img/exemple-diagramme-sequence.png)
 
-Lien vers une petite vidéo Youtube qui explique bien ce diagramme : https://www.youtube.com/watch?v=rDe6Hzsv68g
+Lien vers une petite vidéo Youtube qui explique bien ce diagramme :[https://www.youtube.com/watch?v=rDe6Hzsv68g](https://www.youtube.com/watch?v=rDe6Hzsv68g)
 
 ### Le diagramme d'activités
 

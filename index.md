@@ -104,7 +104,7 @@ avec navigateur, Front-end, back-end et BD avec MVC.
 
 ### [1.1. Projet **Mon site HTML**](./html-css/1-introduction/travail/site-web-statique-C1-C2.md)
 
-### 1.2. Fameworks CSS et site Responsive
+### 1.2. Frameworks CSS et site Responsive
 ## SQL et NoSQL (back)
 
 ### [1. Installation de MySQL, DataGrip, cours et TP](./bd/1-sql/README.md)
