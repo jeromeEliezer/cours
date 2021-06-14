@@ -1,9 +1,15 @@
 # Outils
 
-Il existe plusieurs produits sur le marché comme PowerAMC, ArgoUml, StarUml, BoUml ou Dia.  
+Il existe plusieurs produits sur le marché comme PowerAMC, ArgoUml, StarUml, UMLet, BoUml ou Dia.  
 J'ai selectionné pour vous 4 produits.  
-Je vous conseille de démarrer avec StartUML qui répond bien à nos besoins. Il y a aussi UMLet qui est gratuit.
+Je vous conseille de démarrer avec StarUML qui répond bien à nos besoins. Il y a aussi UMLet qui est gratuit.
+Et puis **VisualParadigm gratuit dans la version Community et pas limité** !
 
+## Visual Paradigm (version Community)
+
+[https://www.visual-paradigm.com/download/community.jsp](https://www.visual-paradigm.com/download/community.jsp)
+
+## UMLet
 
 [https://www.umlet.com/changes.htm](https://www.umlet.com/changes.htm)
 
