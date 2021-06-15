@@ -2,7 +2,7 @@
 
 **Open Web Application Security Project**
 
-![](owasp-ten.png)
+![owasp-ten.png](owasp-ten.png)
 
 Voici le lien officiel : https://www.owasp.org
 

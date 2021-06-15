@@ -142,15 +142,15 @@ avec navigateur, Front-end, back-end et BD avec MVC.
 
 ### 10. Aides, conseils et propositions de corrections
 
-## Sécurité web et OWASP ZAP
+### [11. Sécurité web et OWASP ZAP](outils/owasp/README.md)
 
-### 1. Mise en place de JWT (JSON Web Token)
+### 12. Mise en place de JWT (JSON Web Token)
 
-## Accessibilité et outils
+### [13. Accessibilité et outils](outils/accessibilite/README.md)
 
-## Découverte du framework Angular (front)
+### Découverte du framework Angular (front)
 
-## Tests Unitaires
+### Tests Unitaires
 
 ## Quelques outils pratiques et méthodologie
 ## Modélisation
