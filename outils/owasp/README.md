@@ -18,7 +18,7 @@ Utilisez le `Code Review Guide` : [Ici](https://www.owasp.org/index.php/File:OWA
 
 idem : lien vers ce Schéma réalisé avec MindMup qui résume les attaques et solutions (non exhaustives) :
 
-https://atlas.mindmup.com/2020/03/be1e1b2061f411eaac2127beb7bef55d/owasp_top_10_des_attaques_/index.html
+[lien vers la carte](https://atlas.mindmup.com/2020/03/be1e1b2061f411eaac2127beb7bef55d/owasp_top_10_des_attaques_/index.html)
 
 ## Outils
 
@@ -39,6 +39,27 @@ Lien vers des [outils de Hack](https://www.journaldunet.com/solutions/dsi/110076
 [Cross-Site Scripting (XSS)](http://blog.clever-age.com/fr/2014/02/10/owasp-xss-cross-site-scripting/)
 
 [Local-Remote File Inclusion (LFI / RFI)](http://blog.clever-age.com/fr/2014/10/21/owasp-local-remote-file-inclusion-lfi-rfi/)
+
+
+## Sites dives pour comprendre et tester les injections SQL
+
+‌[Injection sql exemple]( http://www.codingame.com/playgrounds/154/sql-injection-demo/sql-injection‌)
+
+Exemple de condition :
+
+```xml
+username: admin
+password: unknown' or '1'='1
+query: SELECT name FROM user where username = 'admin' and password = 'unknown' or '1'='1'
+```
+‌
+A visiter :
+
+[http://www.codingame.com/playgrounds/154/sql-injection-demo/sql-injection‌](http://www.codingame.com/playgrounds/154/sql-injection-demo/sql-injection‌)
+
+[https://thehackerish.com/sql-injection-examples-for-practice/](https://thehackerish.com/sql-injection-examples-for-practice/)
+
+[https://kinsta.com/fr/blog/injections-sql/](https://kinsta.com/fr/blog/injections-sql/)
 
 ## Liste de sites pour la mise en pratique
 

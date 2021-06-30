@@ -133,7 +133,6 @@ La directrice vous demande d'écrire un Trigger qui permet lors de chaque ouvert
 - enregistrer l'**opération d'ouverture** de compte à la date du jour (table opération)
 - dupliquer la totalité des informations de ce nouveau compte dans la table **compteriche** si celui-ci rempli la condition.  
 
-
 ## 2.2 Historisation automatique avec le Trigger : **histotitulaire**
 
 On vous demande de mettre en place un trigger qui permet après chaque mise à jour des informations d'un Titulaire, de conserver les anciennes données dans la table en y ajoutant la date du jour de la modification et le type d'action. Ici, l'action sera égale à "MAJ" pour mise à jour.
@@ -158,20 +157,25 @@ CREATE TABLE `histotitulaire` (
 
 Voici un lien vers une démo d'appli qui utilise la transaction avant la mise en pratique.
 
+Comme vous pouvez le constater, comme le moteur **MyISAM** ne permet pas la gestion des clefs étrangères, on utilise le moteur **InnoDB**.
+
+> Remarques : Les tables qui utilisent le moteur **MyISAM** sont non transactionnelles et par conséquent, ne supportent pas les transactions. Les tables qui utilisent le moteur **InnoDB** sont *transactionnelles* et supportent les transactions.
+
 [Demo Transaction](transactions-spring/demo.md)
 
 Grâce à votre code java, vous allez effectuer une connexion à la base de données **banque** et réaliser les opérations suivantes sous la forme d'une Transaction pour respecter les contraintes ACID.
 
-- Effectuer un virement de 3000 euros du compte n°1002 de Juliette vers le compte n°1005 de Jonathan.
-- Effectuer un virement de 140 euros du compte n°1010 vers le compte n°1004.
+* Effectuer un virement de 3000 euros du compte n°1002 de Juliette vers le compte n°1005 de Jonathan.
+* Effectuer un virement de 140 euros du compte n°1010 vers le compte n°1004.
 
 Vous avez un tutoriel sur OpenClassroom qui est bien écrit et peut vous aider et aussi des explications détaillées ci-dessous.
 
-[Tuto sur openclassroom sur les Transactions avec Spring](https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1972254-structurer-ses-instructions)
+[Tuto sur openclassroom sur les Transactions](https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1970063-transactions)
 
 ### Généralités
 
 Une transaction est un bloc d'instructions de mise à jour dans la base de données.
+
 C'est une suite de requêtes `INSERT`, `UPDATE` ou `DELETE` qui ne sera validée définitivement qu'à la fin du bloc.
 
 On commence une transaction par l'instruction `START TRANSACTION`, et c'est l'instruction `COMMIT` qui valide cette transaction.
@@ -182,10 +186,10 @@ Il est possible d'annuler une transaction en cours grâce à l'instruction `ROLL
 
 L'acronyme `ACID` désigne les quatre attributs fondamentaux d'un gestionnaire de transaction :
 
-* Atomicité : la transaction est entière c'est tout ou rien
-* Cohérence : une transaction crée un nouvel état de données. En cas de panne, on retourne à l'état précédent comme si rien ne s'était passé.
-* Isolation : une transaction en cours est isolée
-* Durabilité : les données restent disponibles après la transaction.
+* **Atomicité** : la transaction est entière c'est tout ou rien
+* **Cohérence** : une transaction crée un nouvel état de données. En cas de panne, on retourne à l'état précédent comme si rien ne s'était passé.
+* **Isolation** : une transaction en cours est isolée
+* **Durabilité** : les données restent disponibles après la transaction.
 
 ### Autocommit
 
@@ -201,8 +205,9 @@ C'est souvent de cette façon qu'on gère les transactions dans un programme jav
 
 ### Moteur de stockage
 
-Les bases de données fonctionnent avec des moteurs différents. On ne choisit pas son moteur sous Oracle ou Postgres. 
-Par contre avec MySql, nous avons le choix entre InnoDB et MylSAM. MylSAM ne gère pas les transactions (ni la gestion des clefs étrangères d'ailleurs).  
+Les bases de données fonctionnent avec des moteurs différents. On ne choisit pas son moteur sous Oracle ou Postgres.
+
+Par contre avec MySql, nous avons le choix entre **InnoDB** et **MylSAM**. MylSAM ne gère pas les transactions (ni la gestion des clefs étrangères d'ailleurs).  
 
 ### Fonctionnement
 
@@ -229,25 +234,36 @@ La transaction a besoin d'un gestionnaire de transaction.
 
 >Ce gestionnaire sera différent selon qu'on utilise du **jdbc**, du **jpa**, ou autre. Heureusement avec Spring Boot, il n'y a pas besoin de configurer ce gestionnaire.
 
+Il faut simplement ajouter la dépendance **Spring Data JPA** comme ci-dessous :
+
+```xml
+<dependency>  
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+
 #### La propagation
 
 Nous allons voir la propagation du contexte transactionnel.
 
 Spring a ajouté un niveau supplémentaire : la **transaction logique**.
 
->Une méthode **@Transactional** peut appeler une autre méthode **@Transactional**. Ceci déclenche une sous-transaction.
+>Une méthode avec l'annotation **@Transactional** peut appeler une autre méthode **@Transactional**. Ceci déclenche une sous-transaction.
 
 Que faut-il faire dans ce cas pour garder les propriétés ACID de la transaction ?
 
 Continuer dans la même transaction ? Faire une nouvelle transaction ?
 
 >2 méthodes de propagation sont intéressantes :
- - `@Transactional(propagation=Propagation.REQUIRED)` (par défaut)
- - `@Transactional(propagation=Propagation.REQUIRES_NEW)` (créer une nouvelle transaction physique)
+
+* `@Transactional(propagation=Propagation.REQUIRED)` (par défaut)
+  
+* `@Transactional(propagation=Propagation.REQUIRES_NEW)` (créer une nouvelle transaction physique)
 
  Lisez le paragraphe *propagation du contexte transactionnel* de ce [tuto](https://openclassrooms.com/courses/simplifiez-le-developpement-dapplications-java-avec-spring/gerer-les-transactions-avec-spring-tx) pour bien comprendre la différence avant de vous lancer dans le TP pour effectuer l'exercice sur le virement.
 
- ## Transactions et notions de verrous
+## Transactions et notions de verrous
 
  >Lorsque vous effectuer 2 opérations de virement au même moment, que faire ?
 
@@ -279,7 +295,7 @@ Les transactions fonctionnent de la manière suivante :
 – Un verrou explicite peut être demandé sur une ligne donnée en ajoutant l’indication **FOR UPDATE à la fin d’un ordre SELECT**
 – Les verrous sont relâchés à la fin d’une transaction, soit par un ordre **COMMIT qui valide la transaction**, soit par un ordre **ROLLBACK qui annule l’ensemble de la transaction**. Une panne ou une erreur d’exécution ont le même effet qu’un ROLLBACK. Utiliser le système transactionnel de MySQL pour résoudre les trois incohérences constatées précédemment.
 
->Le **moteur InnoD**B** possède en fait plusieurs modes de gestion des transactions :
+>Le **moteur InnoDB** possède en fait plusieurs modes de gestion des transactions :
 
 - READ UNCOMMITTED
 - READ COMMITTED
@@ -288,4 +304,4 @@ Les transactions fonctionnent de la manière suivante :
 
 Ces modes peuvent être choisis avant le début d’une transaction, avec l’ordre **SET TRANSACTION ISOLATION LEVEL**.
 
-Pour comprendre les différences, expérimentez ces quatre modes. Quels avantages voyez-vous à chacun de ces modes ?
+Pour comprendre les différences, expérimentez ces quatres modes. Quels avantages voyez-vous à chacun de ces modes ?

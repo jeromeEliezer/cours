@@ -109,13 +109,15 @@ avec navigateur, Front-end, back-end et BD avec MVC.
 
 ### [1. Installation de MySQL, DataGrip, cours et TP](./bd/1-sql/README.md)
 
+#### [1.1 Gestion des Utilisateurs et des privilèges avec MySQL](./bd/0-privileges-et-droits/README.md)
+
 ### [2. Triggers, procédures stockées et Transactions](./bd/4-sql-avance/README.md)
 
 #### [2.1 Cours complet](./bd/4-sql-avance/README.md)
 #### [2.2 Transactions](./bd/4-sql-avance/sql-avance.md)
 #### [2.3 Corrections des TP](./bd/4-sql-avance/correction-sql-avance.md)
 
-#### [3. Les SGBD NoSQL](./bd/1-sql/cours/no-sql.md)
+### [3. Les SGBD NoSQL](./bd/1-sql/cours/no-sql.md)
 
 ## Web Dynamique : JavaScript (front)
 
