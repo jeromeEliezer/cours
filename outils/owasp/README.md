@@ -63,9 +63,9 @@ A visiter :
 
 ## Liste de sites pour la mise en pratique
 
-https://www.web-eau.net/blog/10-outils-en-ligne-pour-tester-la-securite-de-votre-site
+[https://www.web-eau.net/blog/10-outils-en-ligne-pour-tester-la-securite-de-votre-site](https://www.web-eau.net/blog/10-outils-en-ligne-pour-tester-la-securite-de-votre-site)
 
-https://www.httpcs.com/fr/cartographie-complete-site-web
+[https://www.httpcs.com/fr/cartographie-complete-site-web](https://www.httpcs.com/fr/cartographie-complete-site-web)
 
 ## Mise en pratique
 
@@ -74,6 +74,6 @@ Proposez des solutions si vous découvrez une faille !
 
 Voici le lien vers la mise en place d'un site web avec des failles et des aides d'OWASP pour apprendre à détecter les failles et les éviter.
 
-https://github.com/WebGoat/WebGoat
+[https://github.com/WebGoat/WebGoat](https://github.com/WebGoat/WebGoat)
 
 Vous devez vous déconnecter d'internet pour lancer cette application de démo.
