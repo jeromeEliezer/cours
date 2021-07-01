@@ -188,7 +188,7 @@ L'acronyme `ACID` désigne les quatre attributs fondamentaux d'un gestionnaire d
 
 * **Atomicité** : la transaction est entière c'est tout ou rien
 * **Cohérence** : une transaction crée un nouvel état de données. En cas de panne, on retourne à l'état précédent comme si rien ne s'était passé.
-* **Isolation** : une transaction en cours est isolée
+* **Isolation** : une transaction en cours est isolée par rapport aux autres.
 * **Durabilité** : les données restent disponibles après la transaction.
 
 ### Autocommit
@@ -265,11 +265,32 @@ Continuer dans la même transaction ? Faire une nouvelle transaction ?
 
 ## Transactions et notions de verrous
 
+### Notion de @Transactionnal **isolation**
+
+Vous pouvez déclarer le niveau d'isolation que vous souhaitez utiliser avec cette propriété. Elle permet de gérer la pose des verrous.
+
+Les options sont :
+
+* DEFAULT
+* READ_UNCOMMITTED
+* READ_COMMITTED
+* REPEATABLE_READ
+* SERIALIZABLE
+
+L'option par défaut et la plus pratique consiste à utiliser **Isolation.DEFAULT** pour déléguer le paramètre à la base de données.
+
+Cette propriété s'applique uniquement aux transactions nouvellement démarrées, elle ne fonctionne donc qu'avec Propagation.REQUIRED et Propagation.REQUIRED_NEW
+
+L'exemple ci-dessous définit le niveau d'isolement sur READ_COMMITTED
+
  >Lorsque vous effectuer 2 opérations de virement au même moment, que faire ?
 
 Une première solution pour résoudre ces incohérences est de **poser un verrou sur une table** (en écriture ou en lecture, suivant le cas) avant d’effectuer toute séquence d’opération réalisant une transaction sur cette table.
 
 Un seul verrou en écriture peut être détenu à un moment donné, et un verrou en lecture ne peut être détenu en même temps qu’un verrou en écriture.
+
+### Manuellement, voici ce que cela implique
+
 Les ordres pertinents sont :
 
 ```sql
@@ -295,13 +316,15 @@ Les transactions fonctionnent de la manière suivante :
 – Un verrou explicite peut être demandé sur une ligne donnée en ajoutant l’indication **FOR UPDATE à la fin d’un ordre SELECT**
 – Les verrous sont relâchés à la fin d’une transaction, soit par un ordre **COMMIT qui valide la transaction**, soit par un ordre **ROLLBACK qui annule l’ensemble de la transaction**. Une panne ou une erreur d’exécution ont le même effet qu’un ROLLBACK. Utiliser le système transactionnel de MySQL pour résoudre les trois incohérences constatées précédemment.
 
->Le **moteur InnoDB** possède en fait plusieurs modes de gestion des transactions :
+>Le **moteur InnoDB** possède en fait plusieurs modes de gestion des transactions que nous avons déjà cités plus haut :
 
-- READ UNCOMMITTED
-- READ COMMITTED
-- REPEATABLE READ
-- SERIALIZABLE
+- READ UNCOMMITTED (tous les phénomènes de lecture peuvent se produire)
+- READ COMMITTED (des lectures non répétables et fantômes peuvent se produire)
+- REPEATABLE READ (seules des lectures fantômes peuvent se produire)
+- SERIALIZABLE (tous les phénomènes de lecture ne se produisent pas)
 
 Ces modes peuvent être choisis avant le début d’une transaction, avec l’ordre **SET TRANSACTION ISOLATION LEVEL**.
 
 Pour comprendre les différences, expérimentez ces quatres modes. Quels avantages voyez-vous à chacun de ces modes ?
+
+Découvrez la [documentation de Spring](https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/transaction.html)
